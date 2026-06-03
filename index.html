@@ -1,443 +1,1151 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operation Smile</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="img/fevicon.png">
-    <!-- Font Awesome for Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operation Smile</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="img/fevicon.png" />
+  <!-- Font Awesome for Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+
+  <meta name="google-site-verification" content="KZfZV6VwWikHtxXy9d7yp49FC-kskXThjoKhUUOwEDs" />
 </head>
+
 <body>
-   
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-
-        <div class="container">
-          <div class="logo">
-            <img src="img/logo.png" alt="Logo" />
-          </div>
-            <a class="navbar-brand" href="#">Operation Smile</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="partners.html">Our Partners</a></li>
-                    <li class="nav-item"><a class="nav-link" href="initiatives.html">Our Initiatives</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-
-           <a href="donate.html"><button class="donate">Donate</button></a>
-
-
-            <div>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSei2fpCRa2_GZXVfZZdAst9PCeLmhK4gxhIc6ewTaGBo-2vcg/viewform">
-            <button class="volunteer"><i class="animation"></i>Volunteer<i class="animation"></i>
-            </button>
-            </a>
-            </div>
-
-            
-            
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <a href="index.html" class="logo-link">
+        <div class="logo">
+          <img src="img/logo.png" alt="Logo" />
         </div>
-    </nav>
-
-    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-      </div>
-      <div class="carousel-inner">
-          <div class="carousel-item active" style="background-image: url('img/hero1.jpg')">
-              <div class="overlay"></div>
-              <div class="carousel-caption text-center text-black">
-                  <h1 class="fw-bold">सेवा परमो धर्मः।</h1>
-                  <p>"सेवा ही सर्वोच्च धर्म है"<br>"Selfless service is the highest virtue"</p>
-              </div>
-          </div>
-          <div class="carousel-item" style="background-image: url('img/hero2.jpg');">
-              <div class="overlay"></div>
-              <div class="carousel-caption text-center text-black">
-                  <h1 class="fw-bold">नास्ति दया समं दानम्।</h1>
-                  <p>"दया से बड़ा कोई दान नहीं।"<br>"No charity is greater than compassion"</p>
-              </div>
-          </div>
-          <div class="carousel-item" style="background-image: url('img/hero3.jpg');">
-              <div class="overlay"></div>
-              <div class="carousel-caption text-center text-black">
-                  <h1 class="fw-bold">नर सेवा नारायण सेवा।</h1>
-                  <p>"मनुष्य की सेवा, ईश्वर की सेवा है।"<br>"Service to mankind is service to God"</p>
-              </div>
-          </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="navbar-brand" href="index.html">Operation Smile</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-      </button>
-  </div>
-    
-  <section class="container my-5">
-    <div class="row about-content d-flex align-items-center">
-        <div class="col-md-6">
-            <h2 class="mb-4">About Us</h2>
-            <ul class="nav nav-tabs" id="aboutTabs" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="founder-tab" data-bs-toggle="tab" data-bs-target="#founder" type="button" role="tab">Our Founder</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="mission-tab" data-bs-toggle="tab" data-bs-target="#mission" type="button" role="tab">Our Mission</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision" type="button" role="tab">Our Vision</button>
-                </li>
-            </ul>
-            <div class="tab-content mt-3" id="aboutContent">
-                <div class="tab-pane fade show active" id="founder" role="tabpanel">
-                    <h3>Our Founder</h3>
-                    <p>
-                      Ashutosh Sharma <br>
-                      A visionary, a mentor, and a relentless seeker of excellence—Ashutosh Sharma is the driving force behind this NGO. His diverse passions and unwavering dedication shape the foundation of our mission.
-                      <br>
-                      🧘‍♂️ <b>Meditator</b> – Finding balance in mindfulness, He believes true change starts from within.<br>
-                      🏃‍♂️ <b>Long-Distance Runner</b> – Pushing boundaries, step by step, just as he does in life and philanthropy.<br>
-                      🚀 <b>Rocket Enthusiast</b> – A firm believer that the sky is not the limit but just the beginning.<br>
-                      🔧 <b>Handyman</b> – Solving problems with both intellect and hands-on creativity.<br>
-                      🏆 <b>Coach to an All-Girls Robotics Team</b> – Empowering young minds to innovate and lead in the world of technology.<br>
-                      🏹 <b>Amateur Archer</b> – Precision, patience, and focus—skills he applies both in archery and in his vision for change.
-                  </p>
-                </div>
-                <div class="tab-pane fade" id="mission" role="tabpanel">
-                    <h3>Our Mission</h3>
-                        <p>
-                          At <strong>Operation Smile</strong>, our mission is to uplift underprivileged children by ensuring they have access to the essentials they deserve. We are dedicated to:
-                        </p>
-                        <ul>
-                          <li>👶 <strong>Childcare</strong> – Providing a safe, loving, and supportive environment for children in need.</li>
-                          <li>📚 <strong>Education</strong> – Ensuring every child receives quality education and the tools to build a better future.</li>
-                          <li>🏥 <strong>Healthcare</strong> – Delivering essential medical care and promoting overall well-being for a healthier tomorrow.</li>
-                          <li>💖 <strong>Empowerment</strong> – Encouraging confidence, self-worth, and opportunities for growth.</li>
-                          <li>🤝 <strong>Community Engagement</strong> – Partnering with families, volunteers, and local leaders to create lasting change.</li>
-                        </ul>
-                        <p>
-                          Together, we’re building a world where every child can smile without fear and dream without limits.
-                        </p>
-                </div>
-                <div class="tab-pane fade" id="vision" role="tabpanel">
-                    <h3>Our Vision</h3>
-                    <p>
-                        At <strong>Operation Smile</strong>, our vision is a world where every child—regardless of background—has the opportunity to live a healthy, educated, and fulfilling life. We envision communities where:
-                      </p>
-                      <ul>
-                        <li>🌍 <strong>Equality thrives</strong> – Every child is treated with dignity and given equal chances to grow and succeed.</li>
-                        <li>🏫 <strong>Learning never stops</strong> – Education is accessible, empowering, and a lifelong journey for all children.</li>
-                        <li>❤️ <strong>Health is a right</strong> – Every child receives the care they need to lead a healthy and happy life.</li>
-                        <li>🌱 <strong>Communities grow stronger</strong> – Through compassion, collaboration, and collective action.</li>
-                        <li>✨ <strong>Smiles shine bright</strong> – Because joy, hope, and dreams belong to every child, everywhere.</li>
-                      </ul>
-                      <p>
-                        We are driven by hope, guided by compassion, and inspired by the belief that small efforts lead to big change.
-                      </p>
-                </div>
-            </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="partners.html">Our Partners</a></li>
+          <li class="nav-item"><a class="nav-link" href="initiatives.html">Our Initiatives</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+        <!-- Mobile buttons inside hamburger menu -->
+        <div class="nav-buttons-mobile">
+          <a href="donate.html" class="nav-link-donate">Donate</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSei2fpCRa2_GZXVfZZdAst9PCeLmhK4gxhIc6ewTaGBo-2vcg/viewform"
+            class="nav-link-volunteer">Volunteer</a>
         </div>
-        <div class="col-md-6 about-image text-center">
-            <img src="img/founder.png" alt="About Image" class="img-fluid rounded">
-        </div>
+      </div>
+      <!-- Desktop buttons outside collapse -->
+      <div class="nav-buttons-desktop">
+        <a href="donate.html"><button class="donate">Donate</button></a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSei2fpCRa2_GZXVfZZdAst9PCeLmhK4gxhIc6ewTaGBo-2vcg/viewform">
+          <button class="volunteer">Volunteer</button>
+        </a>
+      </div>
     </div>
-</section>  
+  </nav>
 
-<section class="py-5 bg-light">
-  <div class="container text-center">
-      <!-- Section Heading -->
-      <h2 class="mb-3">Our Partners</h2>
-      <p class="mb-5">Our NGO partners are committed to education, healthcare, sustainability, and social welfare. They drive positive change through environmental conservation, child welfare, and women’s empowerment, working together to create a better, more inclusive world.</p>
+  <!-- Hero Carousel - Modern Card Style -->
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="hero-card">
+          <div class="hero-card-image" style="background-image: url(&quot;img/hero1.jpg&quot;)"></div>
+          <div class="hero-card-content">
+            <h1 class="hero-title">सेवा परमो धर्मः।</h1>
+            <p class="hero-subtitle">"सेवा ही सर्वोच्च धर्म है"</p>
+            <p class="hero-description">
+              Selfless service is the highest virtue
+            </p>
+            <div class="hero-badge">✨ Inspiring Lives ✨</div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="hero-card">
+          <div class="hero-card-image" style="background-image: url(&quot;img/hero2.jpg&quot;)"></div>
+          <div class="hero-card-content">
+            <h1 class="hero-title">नास्ति दया समं दानम्।</h1>
+            <p class="hero-subtitle">"दया से बड़ा कोई दान नहीं।"</p>
+            <p class="hero-description">
+              No charity is greater than compassion
+            </p>
+            <div class="hero-badge">💖 Compassion First 💖</div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="hero-card">
+          <div class="hero-card-image" style="background-image: url(&quot;img/hero4.jpeg&quot;)"></div>
+          <div class="hero-card-content">
+            <h1 class="hero-title">नर सेवा नारायण सेवा।</h1>
+            <p class="hero-subtitle">"मनुष्य की सेवा, ईश्वर की सेवा है।"</p>
+            <p class="hero-description">
+              Service to mankind is service to God
+            </p>
+            <div class="hero-badge">🙏 Serve to Inspire 🙏</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <section class="recent-activities">
+    <div class="container">
+      <div class="section-title animate__animated animate__fadeInDown">
+        <h2>A Proud Moment for Operation Smile 🏆</h2>
+        <div class="title-decoration"></div>
+        <p>
+          The founder of Operation Smile was recently honoured for
+          contributions in the field of social service and community welfare.
+          The recognition reflects the organisation’s continued efforts and
+          meaningful impact through its initiatives. This achievement marks an
+          important milestone for Operation Smile and its dedicated team.
+        </p>
+      </div>
 
       <div class="row">
-          <!-- Service Box 1 -->
-          <div class="col-md-4 mb-4">
-              <div class="card p-4 shadow-sm border-0">
-                  <div class="partner">
-                      <img src="img/visan.png" alt="Visan" class="partner1">
-                  </div>
-                  <h4 class="name">Visan Foundation</h4>
+        <!-- Video Column -->
+        <div class="col-lg-6">
+          <div class="video-section animate__animated animate__fadeInLeft">
+            <div class="video-header">
+              <div class="video-icon">
+                <i class="fas fa-play-circle"></i>
               </div>
-          </div>
-
-          <!-- Service Box 2 -->
-          <div class="col-md-4 mb-4">
-              <div class="card p-4 shadow-sm border-0">
-                  <div class="partner">
-                      <img src="img/sevabharti.png" alt="Seva Bharti" class="partner2">
-                  </div>
-                  <h4 class="name">Seva Bharti Foundation</h4>
+              <div class="video-title">
+                <h3>🎥 Operation Smile in the Spotlight</h3>
+                <p>
+                  This video features the Founder of Operation Smile sharing
+                  insights about the organisation’s ongoing initiatives and
+                  its commitment to social welfare. It reflects the
+                  organisation’s active engagement and continued efforts
+                  toward community development.
+                </p>
               </div>
-          </div>
-
-          <!-- Service Box 3 -->
-          <div class="col-md-4 mb-4">
-              <div class="card p-4 shadow-sm border-0">
-                  <div class="partner">
-                      <img src="img/saadhak.png" alt="Saadhak" class="partner3">
-                  </div>
-                  <h4 class="name">Saadhak Foundation</h4>
-              </div>
-          </div>
-
-      </div>
-  </div>
-</section>
-
- <!-- Our Initiatives Section -->
- <section class="initiatives">
-  <div class="container">
-    <h2>Our Initiatives</h2>
-
-    <!-- Tab Content -->
-    <div class="tab-content">
-      <!-- All Tab -->
-      <div class="tab-pane fade show active" id="all">
-        <div class="gallery">
-    
-          <div class="image">
-            <img src="img/Initiative 1.jpg" alt="Initiative 1">
-            <div class="overlay">
-              <h3>Child care</h3>
-              <p>“बचपन को अवसर मिलना चाहिए, सहानुभूति नहीं।”</p>
             </div>
-          </div>
 
-          <div class="image">
-            <img src="img/Initiative 2.jpg" alt="Initiative 2">
-            <div class="overlay">
-              <h3>Education</h3>
-              <p>“जहाँ शिक्षा है, वहाँ प्रगति है।”</p>
-            </div>
-          </div>
+            <div class="video-container">
+              <video id="activityVideo" autoplay muted loop>
+                <source src="img/interview.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
 
-          
-          <div class="image">
-            <img src="img/Initiative 3.jpg" alt="Initiative 3">
-            <div class="overlay">
-              <h3>Health Care</h3>
-              <p>“हर व्यक्ति को इलाज, दवा और देखभाल का अधिकार है।”</p>
-            </div>
-          </div>
-
-          <div class="image">
-            <img src="img/Initiative 4.jpg" alt="Initiative 4">
-            <div class="overlay">
-              <h3>Social</h3>
-              <p>“हमारा लक्ष्य – सेवा, समर्पण और सामाजिक परिवर्तन।”</p>
-            </div>
-          </div>
-
-
-          <div class="image">
-            <img src="img/Initiative 5.jpg" alt="Initiative 5">
-            <div class="overlay">
-              <h3>Animal Welfare</h3>
-              <p>“जानवर हमारी भाषा नहीं समझते, लेकिन हमारी भावनाएँ ज़रूर समझते हैं।”</p>
-            </div>
-          </div>
-
-          <div class="image">
-            <img src="img/Initiative 6.jpg" alt="Initiative 6">
-            <div class="overlay">
-              <h3>Empowerment</h3>
-              <p>“हम बदलाव की उम्मीद नहीं, बदलाव की शुरुआत बनें।”</p>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-
-
-<!-- contact section -->
-<section class="container py-5">
-    <div class="contact-section">
-        <h2 class="text-center mb-4 text-primary">Contact Us</h2>
-        <p class="text-center">We'd love to hear from you! Reach out to us for any queries or assistance.</p>
-        <p class="text-center">Our team is here to help and will respond as soon as possible.</p>
-        <div class="row mt-4">
-            <div class="col-md-6 contact-info">
-                <h3>Contact Details</h3>
-                <p class="con"><strong>Address:</strong> A1, DDA Colony, New Jaffrabad, Shahdara, New Delhi, Delhi, 110032</p>
-                <p class="con"><strong>Phone:</strong> +91 8595588085</p>
-                <p class="con"><strong>Email:</strong> operationsmile2303@gmail.com</p>
-                <p class="con"><strong>Instagram ID:</strong> operation.smile__</p>
-            </div>
-            <div class="col-md-6 map">
-                <h3>Our Location</h3>
-                <div class="ratio ratio-16x9">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7000.670068665495!2d77.26913039247113!3d28.679622902555927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sA1%2C%20DDA%20Colony%2C%20New%20Jaffrabad%2C%20Shahdara%2C%20New%20Delhi%2C%20Delhi%2C%20110032%3C!5e0!3m2!1sen!2sin!4v1740066155596!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" 
-                        allowfullscreen="" loading="lazy" class="rounded"></iframe>
+              <div class="video-controls">
+                <div class="control-buttons">
+                  <button class="control-btn" id="playPauseBtn">
+                    <i class="fas fa-pause"></i>
+                  </button>
+                  <button class="control-btn" id="muteBtn">
+                    <i class="fas fa-volume-mute"></i>
+                  </button>
+                  <button class="control-btn" id="replayBtn">
+                    <i class="fas fa-redo"></i>
+                  </button>
                 </div>
+                <div class="video-status" id="videoStatus">
+                  Playing • Muted
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</section>
 
- <!-- FAQ Header -->
- <section class="faq-header">
+        <!-- Photos Column -->
+        <div class="col-lg-6">
+          <div class="photos-section animate__animated animate__fadeInRight">
+            <div class="photos-header">
+              <div class="photos-icon">
+                <i class="fas fa-camera-retro"></i>
+              </div>
+              <div class="photos-title">
+                <h3>📸 Award Recognition & Press Highlights</h3>
+                <p>
+                  The photographs capture moments from the award presentation
+                  ceremony and the newspaper publications covering the
+                  recognition of Operation Smile and its founder.
+                </p>
+              </div>
+            </div>
+
+            <div class="photo-grid">
+              <div class="photo-item">
+                <img src="img/06.jpeg" alt="Community Outreach" />
+                <div class="photo-overlay">
+                  <h6>Honour by Dainik Jagran</h6>
+                </div>
+              </div>
+              <div class="photo-item">
+                <img src="img/02.jpeg" alt="Education Program" />
+                <div class="photo-overlay">
+                  <h6>Honour by Dainik Jagran</h6>
+                </div>
+              </div>
+              <div class="photo-item">
+                <img src="img/01.jpeg" alt="Health Camp" />
+                <div class="photo-overlay">
+                  <h6>Honour by Dainik Jagran</h6>
+                </div>
+              </div>
+              <div class="photo-item">
+                <img src="img/03.jpg" alt="Tree Planting" />
+                <div class="photo-overlay">
+                  <h6>Jagran City</h6>
+                </div>
+              </div>
+              <div class="photo-item">
+                <img src="img/04.jpg" alt="Fundraising Event" />
+                <div class="photo-overlay">
+                  <h6>Gagan Media</h6>
+                </div>
+              </div>
+              <div class="photo-item">
+                <img src="img/05.jpg" alt="Volunteers" />
+                <div class="photo-overlay">
+                  <h6>Project Arpan</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-section">
+    <!-- Animated background elements -->
+    <div class="bg-elements">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
     <div class="container">
+      <div class="section-heading">
+        <h2>Ongoing Projects</h2>
+        <p>
+          🙏 सेवा ही परमो धर्मः 🙏 <br />
+          Our projects are dedicated to creating positive change in society.
+        </p>
+      </div>
+
+      <div class="row">
+        <!-- Project 1 -->
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-img">
+              <img src="img/marg-cover.webp" alt="Education for All" />
+              <div class="project-logo">
+                <img src="img/margdharshan.png" />
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>🌟 Project MargDarshan 🏆</h3>
+              <p>
+                Your guide from confusion to career <br />
+                – empowering the next generation. 🎯
+              </p>
+              <a href="marg.html" class="project-btn">Know More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-img">
+              <img src="img/anad-cover.jpg" alt="Green Earth Initiative" />
+              <div class="project-logo">
+                <img src="img/anandam.png" />
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>🧘🏻‍♀ Project Anandam 🧘🏻‍♂</h3>
+              <p>
+                शरीरमाद्यं खलु धर्मसाधनम् <br />
+                The body is the foremost instrument of dharma. 📚
+              </p>
+              <a href="anand.html" class="project-btn">Know More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="container">
+      <div class="row about-content">
+        <!-- Left Column - Content that changes -->
+        <div class="col-lg-6">
+          <div class="about-header">
+            <h2>About Us</h2>
+            <p class="about-subtitle">
+              Know more about our journey, mission & vision
+            </p>
+          </div>
+
+          <ul class="nav nav-tabs" id="aboutTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="founder-tab" data-bs-toggle="tab" data-bs-target="#founder"
+                type="button" role="tab">
+                <i class="fas fa-user-tie"></i> Our Founder
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="mission-tab" data-bs-toggle="tab" data-bs-target="#mission" type="button"
+                role="tab">
+                <i class="fas fa-bullseye"></i> Our Mission
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision" type="button"
+                role="tab">
+                <i class="fas fa-eye"></i> Our Vision
+              </button>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="aboutContent">
+            <!-- Founder Tab -->
+            <div class="tab-pane fade show active" id="founder" role="tabpanel">
+              <div class="founder-intro">
+                <h3>Ashutosh Sharma</h3>
+                <p class="founder-quote">
+                  "A visionary, a mentor, and a relentless seeker of
+                  excellence"
+                </p>
+                <p>
+                  Ashutosh Sharma is the driving force behind this NGO. His
+                  diverse passions and unwavering dedication shape the
+                  foundation of our mission.
+                </p>
+              </div>
+              <div class="traits-grid">
+                <div class="trait-item">
+                  <span class="trait-icon">🧘‍♂️</span>
+                  <div class="trait-info">
+                    <strong>Meditator</strong>
+                    <span>Finding balance in mindfulness, true change starts from
+                      within.</span>
+                  </div>
+                </div>
+                <div class="trait-item">
+                  <span class="trait-icon">🏃‍♂️</span>
+                  <div class="trait-info">
+                    <strong>Long-Distance Runner</strong>
+                    <span>Pushing boundaries, step by step, in life and
+                      philanthropy.</span>
+                  </div>
+                </div>
+                <div class="trait-item">
+                  <span class="trait-icon">🚀</span>
+                  <div class="trait-info">
+                    <strong>Rocket Enthusiast</strong>
+                    <span>The sky is not the limit but just the beginning.</span>
+                  </div>
+                </div>
+                <div class="trait-item">
+                  <span class="trait-icon">🔧</span>
+                  <div class="trait-info">
+                    <strong>Handyman</strong>
+                    <span>Solving problems with intellect and hands-on
+                      creativity.</span>
+                  </div>
+                </div>
+                <div class="trait-item">
+                  <span class="trait-icon">🏆</span>
+                  <div class="trait-info">
+                    <strong>Coach to All-Girls Robotics Team</strong>
+                    <span>Empowering young minds to innovate and lead in
+                      technology.</span>
+                  </div>
+                </div>
+                <div class="trait-item">
+                  <span class="trait-icon">🏹</span>
+                  <div class="trait-info">
+                    <strong>Amateur Archer</strong>
+                    <span>Precision, patience, and focus for change.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mission Tab -->
+            <div class="tab-pane fade" id="mission" role="tabpanel">
+              <div class="mission-header">
+                <h3>Our Mission</h3>
+                <p>
+                  At <strong>Operation Smile</strong>, our mission is to
+                  uplift underprivileged children by ensuring they have access
+                  to the essentials they deserve.
+                </p>
+              </div>
+              <div class="mission-grid">
+                <div class="mission-card">
+                  <div class="mission-icon">👶</div>
+                  <div class="mission-content">
+                    <strong>Childcare</strong>
+                    <span>Providing a safe, loving, and supportive environment
+                      for children in need.</span>
+                  </div>
+                </div>
+                <div class="mission-card">
+                  <div class="mission-icon">📚</div>
+                  <div class="mission-content">
+                    <strong>Education</strong>
+                    <span>Ensuring every child receives quality education and
+                      tools for a better future.</span>
+                  </div>
+                </div>
+                <div class="mission-card">
+                  <div class="mission-icon">🏥</div>
+                  <div class="mission-content">
+                    <strong>Healthcare</strong>
+                    <span>Delivering essential medical care for a healthier
+                      tomorrow.</span>
+                  </div>
+                </div>
+                <div class="mission-card">
+                  <div class="mission-icon">💖</div>
+                  <div class="mission-content">
+                    <strong>Empowerment</strong>
+                    <span>Encouraging confidence, self-worth, and opportunities
+                      for growth.</span>
+                  </div>
+                </div>
+                <div class="mission-card">
+                  <div class="mission-icon">🤝</div>
+                  <div class="mission-content">
+                    <strong>Community Engagement</strong>
+                    <span>Partnering with families, volunteers, and local leaders
+                      for lasting change.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mission-footer">
+                <p>
+                  ✨ Together, we're building a world where every child can
+                  smile without fear and dream without limits. ✨
+                </p>
+              </div>
+            </div>
+
+            <!-- Vision Tab -->
+            <div class="tab-pane fade" id="vision" role="tabpanel">
+              <div class="vision-header">
+                <h3>Our Vision</h3>
+                <p>
+                  A world where every child—regardless of background—has the
+                  opportunity to live a healthy, educated, and fulfilling
+                  life.
+                </p>
+              </div>
+              <div class="vision-grid">
+                <div class="vision-card">
+                  <div class="vision-icon">🌍</div>
+                  <div class="vision-content">
+                    <strong>Equality thrives</strong>
+                    <span>Every child treated with dignity and given equal
+                      chances to grow.</span>
+                  </div>
+                </div>
+                <div class="vision-card">
+                  <div class="vision-icon">🏫</div>
+                  <div class="vision-content">
+                    <strong>Learning never stops</strong>
+                    <span>Education accessible, empowering, and a lifelong
+                      journey.</span>
+                  </div>
+                </div>
+                <div class="vision-card">
+                  <div class="vision-icon">❤️</div>
+                  <div class="vision-content">
+                    <strong>Health is a right</strong>
+                    <span>Every child receives the care they need for a happy
+                      life.</span>
+                  </div>
+                </div>
+                <div class="vision-card">
+                  <div class="vision-icon">🌱</div>
+                  <div class="vision-content">
+                    <strong>Communities grow stronger</strong>
+                    <span>Through compassion, collaboration, and collective
+                      action.</span>
+                  </div>
+                </div>
+                <div class="vision-card">
+                  <div class="vision-icon">✨</div>
+                  <div class="vision-content">
+                    <strong>Smiles shine bright</strong>
+                    <span>Joy, hope, and dreams belong to every child,
+                      everywhere.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="vision-footer">
+                <p>
+                  🌟 Driven by hope, guided by compassion, inspired by the
+                  belief that small efforts lead to big change. 🌟
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column - Fixed Image Card-->
+        <div class="col-lg-6">
+          <div class="about-image-card">
+            <div class="image-wrapper">
+              <img src="img/founder.png" alt="Founder - Ashutosh Sharma" class="founder-image" />
+              <div class="image-overlay">
+                <div class="overlay-content">
+                  <i class="fas fa-quote-right"></i>
+                  <p>Service to mankind is service to God</p>
+                </div>
+              </div>
+            </div>
+            <div class="image-decoration">
+              <div class="decoration-circle"></div>
+              <div class="decoration-circle-small"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Initiatives Section -->
+  <section class="initiatives">
+    <div class="container">
+      <h2>Our Initiatives</h2>
+
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="all">
+          <div class="gallery">
+            <!-- Initiative 1 -->
+            <div class="image">
+              <img src="img/Initiative 1.jpg" alt="Initiative 1" />
+              <div class="overlay">
+                <h3>MISSION SUCCESSFUL</h3>
+                <p>Team OPERATION SMILE succeeded in distributing MOSQUITO NETS to 40 families living near the Yamuna
+                  river, providing safety from waterborne diseases.</p>
+                <small>@operation.smile___</small>
+              </div>
+            </div>
+
+            <!-- Initiative 2 -->
+            <div class="image">
+              <img src="img/Initiative 2.jpg" alt="Initiative 2" />
+              <div class="overlay">
+                <h3>Health Camp</h3>
+                <p>"स्वास्थ्य सेवा ही समाज का सर्वस्व है" - In collaboration with Saadhak Foundation</p>
+                <small>@operation.smile__ | +91 8595588085</small>
+              </div>
+            </div>
+
+            <!-- Initiative 3 -->
+            <div class="image">
+              <img src="img/Initiative 3.jpg" alt="Initiative 3" />
+              <div class="overlay">
+                <h3>Girls Team Initiative</h3>
+                <p>Operation Smile's Girls Team conducted blanket distribution drive for the needy.</p>
+                <small>@operation.smile__</small>
+              </div>
+            </div>
+
+            <!-- Initiative 4 -->
+            <div class="image">
+              <img src="img/Initiative 4.jpg" alt="Initiative 4" />
+              <div class="overlay">
+                <h3>Tree Plantation Drive</h3>
+                <p>Operation Smile Team being a part of Trees Plantation Drive for a greener tomorrow.</p>
+                <small>@operation.smile</small>
+              </div>
+            </div>
+
+            <!-- Initiative 5 -->
+            <div class="image">
+              <img src="img/Initiative 5.jpg" alt="Initiative 5" />
+              <div class="overlay">
+                <h3>Dipotsav Celebration</h3>
+                <p>Celebrating the festival of lights with Saadhak Foundation - spreading joy and togetherness.</p>
+                <small>@operation.smile__ | +91 8595588085</small>
+              </div>
+            </div>
+
+            <!-- Initiative 6 -->
+            <div class="image">
+              <img src="img/Initiative 6.jpg" alt="Initiative 6" />
+              <div class="overlay">
+                <h3>Community Langar</h3>
+                <p>16 June 2024 - Thanks to everyone's support, Operation Smile team organized a successful community
+                  food distribution event.</p>
+                <small>@operation.smile__</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact section -->
+  <section class="contact-section-modern">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-header">
+          <h2>Get In Touch</h2>
+          <p class="contact-subtitle">We'd love to hear from you</p>
+          <div class="header-decoration"></div>
+          <p class="contact-description">
+            Reach out to us for any queries or assistance. Our team is here to
+            help and will respond as soon as possible.
+          </p>
+        </div>
+
+        <div class="contact-content">
+          <div class="contact-info-card">
+            <div class="info-header">
+              <i class="fas fa-address-card"></i>
+              <h3>Contact Details</h3>
+            </div>
+            <div class="info-items">
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-text">
+                  <strong>Address</strong>
+                  <span>B-76, F/F, DDA Colony, New Zafrabad, Near Shiv Mandir,
+                    Delhi-110032</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="info-text">
+                  <strong>Phone</strong>
+                  <span>+91 8595588085</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info-text">
+                  <strong>Email</strong>
+                  <span>operationsmile2303@gmail.com</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fab fa-instagram"></i>
+                </div>
+                <div class="info-text">
+                  <strong>Instagram</strong>
+                  <span>@operation.smile__</span>
+                </div>
+              </div>
+            </div>
+            <div class="social-connect">
+              <p>Connect with us</p>
+              <div class="social-links">
+                <a href="https://www.instagram.com/operation.smile__/" class="social-link" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <!-- <a href="#" class="social-link">
+                    <i class="fab fa-facebook-f"></i>
+                  </a> -->
+                <!-- <a href="https://x.com/smilengo23?s=11" class="social-icon" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-twitter-x" viewBox="0 0 16 16">
+                    <path
+                      d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                  </svg>
+                </a> -->
+                <a href="https://www.linkedin.com/in/operation-smile-foundation-1079993b8" class="social-link">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-card">
+            <div class="map-header">
+              <i class="fas fa-location-dot"></i>
+              <h3>Our Location</h3>
+            </div>
+            <div class="map-wrapper">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.1725501505657!2d77.27622537529109!3d28.684484575636368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd000f415199%3A0x1fc2e7c0c2fe7ec6!2sNew%20jafrabad!5e0!3m2!1sen!2sin!4v1767096939388!5m2!1sen!2sin"
+                width="100%" height="300" style="border: 0; border-radius: 16px" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+            <div class="map-footer">
+              <p>
+                <i class="fas fa-clock"></i> We're available Mon-Sat, 10 AM -
+                6 PM
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section - Modern Redesign -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="faq-header">
+        <div class="faq-header-icon">
+          <i class="fas fa-question-circle"></i>
+        </div>
         <h1>Frequently Asked Questions</h1>
-        <p>Find answers to common questions about our NGO's mission, programs, and how you can get involved in making a difference.</p>
-    </div>
-</section>
+        <div class="header-decoration"></div>
+        <p>
+          Find answers to common questions about our NGO's mission, programs,
+          and how you can get involved in making a difference.
+        </p>
+      </div>
 
-<!-- FAQ Accordion -->
-<section class="container mb-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-8">
+      <div class="faq-content">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
             <div class="accordion" id="faqAccordion">
-                <!-- FAQ Item 1 -->
-                <div class="accordion-item mb-3 border-0 shadow-sm rounded">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            <i class="fas fa-question-circle faq-icon"></i>  What is Operation Smile?
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Operation Smile is a non-profit organization dedicated to improving the lives of underprivileged children and communities by providing access to education, healthcare, and emotional well-being support.
-                        </div>
+              <!-- FAQ Item 1 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <div class="faq-number">01</div>
+                    <div class="faq-question">
+                      <i class="fas fa-question-circle faq-icon"></i>
+                      <span>What is Operation Smile?</span>
                     </div>
+                    <i class="fas fa-chevron-down accordion-arrow"></i>
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    <p>
+                      Operation Smile is a non-profit organization dedicated
+                      to improving the lives of underprivileged children and
+                      communities by providing access to education,
+                      healthcare, and emotional well-being support.
+                    </p>
+                  </div>
                 </div>
-                
-                <!-- FAQ Item 2 -->
-                <div class="accordion-item mb-3 border-0 shadow-sm rounded">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <i class="fas fa-hand-holding-heart faq-icon"></i>  Can I make monthly donations?
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Yes! Recurring donations help us plan long-term. Let us know if you want to contribute monthly, and we’ll set it up with you. </div>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 3 -->
-                <div class="accordion-item mb-3 border-0 shadow-sm rounded">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            <i class="fas fa-users faq-icon"></i> How can I volunteer with your NGO?
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            We love welcoming new volunteers! You can fill out the volunteer form on our website or email us at [operationsmile2303@gmail.com]. We'll get in touch with the next steps. </div>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 4 -->
-                <div class="accordion-item mb-3 border-0 shadow-sm rounded">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            <i class="fas fa-chart-pie faq-icon"></i> How are my donations used?
-                        </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            100% of your donation goes toward our programs—education materials, food, medical supplies, and operational costs. We believe in full transparency and provide updates through social media.
+              </div>
 
-
-                        </div>
+              <!-- FAQ Item 2 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <div class="faq-number">02</div>
+                    <div class="faq-question">
+                      <i class="fas fa-hand-holding-heart faq-icon"></i>
+                      <span>Can I make monthly donations?</span>
                     </div>
+                    <i class="fas fa-chevron-down accordion-arrow"></i>
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    <p>
+                      Yes! Recurring donations help us plan long-term. Let us
+                      know if you want to contribute monthly, and we'll set it
+                      up with you.
+                    </p>
+                  </div>
                 </div>
-                
-                <!-- FAQ Item 5 -->
-                <div class="accordion-item mb-3 border-0 shadow-sm rounded">
-                    <h2 class="accordion-header" id="headingFive">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            <i class="fas fa-box-open faq-icon"></i>  What items can I donate?
-                        </button>
-                    </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            You can donate:
-                            <ul class="mt-2">
-                                <li>Stationery and books</li>
-                                <li>Clean clothes and footwear</li>
-                                <li>Food grains and snacks</li>
-                                <li>First-aid and hygiene kits</li>
-                                <li>Toys (in good condition)</li>
-                            
-                            </ul>
-                            If you're unsure, just message us and we'll guide you!
+              </div>
 
-
-                        </div>
+              <!-- FAQ Item 3 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <div class="faq-number">03</div>
+                    <div class="faq-question">
+                      <i class="fas fa-users faq-icon"></i>
+                      <span>How can I volunteer with your NGO?</span>
                     </div>
+                    <i class="fas fa-chevron-down accordion-arrow"></i>
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    <p>
+                      We love welcoming new volunteers! You can fill out the
+                      volunteer form on our website or email us at
+                      operationsmile2303@gmail.com. We'll get in touch with
+                      the next steps.
+                    </p>
+                  </div>
                 </div>
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <div class="faq-number">04</div>
+                    <div class="faq-question">
+                      <i class="fas fa-chart-pie faq-icon"></i>
+                      <span>How are my donations used?</span>
+                    </div>
+                    <i class="fas fa-chevron-down accordion-arrow"></i>
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    <p>
+                      100% of your donation goes toward our programs—education
+                      materials, food, medical supplies, and operational
+                      costs. We believe in full transparency and provide
+                      updates through social media.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ Item 5 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <div class="faq-number">05</div>
+                    <div class="faq-question">
+                      <i class="fas fa-box-open faq-icon"></i>
+                      <span>What items can I donate?</span>
+                    </div>
+                    <i class="fas fa-chevron-down accordion-arrow"></i>
+                  </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    <p>You can donate:</p>
+                    <ul class="donation-list">
+                      <li>
+                        <i class="fas fa-book"></i> Stationery and books
+                      </li>
+                      <li>
+                        <i class="fas fa-tshirt"></i> Clean clothes and
+                        footwear
+                      </li>
+                      <li>
+                        <i class="fas fa-apple-alt"></i> Food grains and
+                        snacks
+                      </li>
+                      <li>
+                        <i class="fas fa-medkit"></i> First-aid and hygiene
+                        kits
+                      </li>
+                      <li>
+                        <i class="fas fa-gamepad"></i> Toys (in good
+                        condition)
+                      </li>
+                    </ul>
+                    <p class="mt-2">
+                      If you're unsure, just message us and we'll guide you!
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            
+
             <!-- Contact Card -->
-            <div class="contact-card text-center">
-                <h3 class="mb-3">Still have questions?</h3>
-                <p class="mb-4">We're here to help! Contact our team for more information about our work and how you can get involved.</p>
-                <a href="contact.html" class="btn contact-btn text-white"><i class="fas fa-envelope me-2"></i> Contact Us</a>
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <i class="fas fa-comment-dots"></i>
+              </div>
+              <h3>Still have questions?</h3>
+              <p>
+                We're here to help! Contact our team for more information
+                about our work and how you can get involved.
+              </p>
+              <a href="contact.html" class="contact-btn">
+                <i class="fas fa-envelope me-2"></i> Contact Us
+                <i class="fas fa-arrow-right ms-2"></i>
+              </a>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
-
-<footer class="bg-dark text-light py-4">
+  <footer class="footer">
     <div class="container">
-        <div class="row">
-            <!-- About Section -->
-            <div class="col-md-4">
-                <h5>About Us</h5>
-                <p>We are a non-profit organization dedicated to making a difference in the community through various initiatives.</p>
+      <div class="footer-content">
+        <div class="footer-row">
+          <!-- About Section -->
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img src="img/logo.png" alt="Operation Smile Logo" class="footer-logo-img" />
+              <h5>Operation Smile</h5>
             </div>
-            
-            <!-- Quick Links -->
-            <div class="col-md-4">
-                <h5>Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="initiatives.html">Initiatives</a></li>
-                    <li><a href="donate.html">Donate</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
+            <p class="footer-description">
+              We are a non-profit organization dedicated to making a
+              difference in the community through various initiatives.
+            </p>
+            <div class="footer-social">
+              <a href="https://www.instagram.com/operation.smile__/" class="social-icon" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <!-- <a href="#" class="social-icon" target="_blank">
+                  <i class="fab fa-facebook-f"></i>
+                </a> -->
+              <a href="https://x.com/smilengo23?s=11" class="social-icon" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-twitter-x" viewBox="0 0 16 16">
+                  <path
+                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/operation-smile-foundation-1079993b8" class="social-icon"
+                target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.youtube.com/@OperationSmilefoundation23" class="social-icon" target="_blank">
+                <i class="fab fa-youtube"></i>
+              </a>
             </div>
-            
-            <!-- Contact Information -->
-            <div class="col-md-4">
-                <h5>Contact Us</h5>
-                <p>Email: operationsmile2303@gmail.com</p>
-                <p>Phone:  +91 8595588085</p>
-                <p>Address: A1, DDA Colony, New Jaffrabad, Shahdara, New Delhi, Delhi, 110032</p> 
+          </div>
 
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/operation.smile__/"><i class="fab fa-instagram"></i></a>
+          <!-- Quick Links -->
+          <div class="footer-col">
+            <h5>Quick Links</h5>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+              </li>
+              <li>
+                <a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a>
+              </li>
+              <li>
+                <a href="initiatives.html"><i class="fas fa-chevron-right"></i> Initiatives</a>
+              </li>
+              <li>
+                <a href="donate.html"><i class="fas fa-chevron-right"></i> Donate</a>
+              </li>
+              <li>
+                <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="footer-col">
+            <h5>Contact Us</h5>
+            <ul class="footer-contact">
+              <li>
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <span>Email</span>
+                  <a href="mailto:operationsmile2303@gmail.com">operationsmile2303@gmail.com</a>
                 </div>
-            </div>
+              </li>
+              <li>
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                  <span>Phone</span>
+                  <a href="tel:+918595588085">+91 85955 88085</a>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <span>Address</span>
+                  <p>
+                    B-76, F/F, DDA Colony, New Zafrabad, Near Shiv Mandir,
+                    Delhi-110032
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-    </div>
-    <div class="text-center mt-3">
-        <p class="mb-0">&copy; 2025 Operation Smile. All Rights Reserved.</p>
-    </div>
-</footer>
 
+        <!-- Newsletter Section -->
+        <!-- <div class="footer-newsletter">
+            <h5>Stay Updated</h5>
+            <p>Subscribe to our newsletter for latest updates and stories</p>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                required
+              />
+              <button type="submit">
+                <i class="fas fa-paper-plane"></i> Subscribe
+              </button>
+            </form>
+          </div>
+        </div> -->
 
- <!-- Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-<!-- Bootstrap Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>`
+        <div class="footer-bottom">
+          <p>&copy; 2025 Operation Smile. All Rights Reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+      </div>
+  </footer>
 
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+  <!-- Bootstrap Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Video Controls
+    const video = document.getElementById("activityVideo");
+    const playPauseBtn = document.getElementById("playPauseBtn");
+    const muteBtn = document.getElementById("muteBtn");
+    const replayBtn = document.getElementById("replayBtn");
+    const videoStatus = document.getElementById("videoStatus");
+
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+
+    playPauseBtn.addEventListener("click", function () {
+      if (video.paused) {
+        video.play();
+        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        updateVideoStatus();
+      } else {
+        video.pause();
+        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        updateVideoStatus();
+      }
+    });
+
+    muteBtn.addEventListener("click", function () {
+      if (video.muted) {
+        video.muted = false;
+        muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+        updateVideoStatus();
+      } else {
+        video.muted = true;
+        muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        updateVideoStatus();
+      }
+    });
+
+    replayBtn.addEventListener("click", function () {
+      video.currentTime = 0;
+      video.play();
+      playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+
+      replayBtn.classList.add("animate__animated", "animate__rotateIn");
+      setTimeout(() => {
+        replayBtn.classList.remove("animate__animated", "animate__rotateIn");
+      }, 500);
+
+      updateVideoStatus();
+    });
+
+    function updateVideoStatus() {
+      let statusText = "";
+
+      if (video.paused) {
+        statusText += "Paused • ";
+      } else {
+        statusText += "Playing • ";
+      }
+
+      if (video.muted) {
+        statusText += "Muted";
+      } else {
+        statusText += "Unmuted";
+      }
+
+      videoStatus.textContent = statusText;
+    }
+
+    updateVideoStatus();
+
+    // Photo interactions
+    document.querySelectorAll(".photo-item").forEach((item) => {
+      item.addEventListener("click", function () {
+        this.classList.add("animate__animated", "animate__pulse");
+        setTimeout(() => {
+          this.classList.remove("animate__animated", "animate__pulse");
+        }, 500);
+      });
+    });
+  </script>
+
+  <script>
+    // Create scroll to top button
+    const scrollBtn = document.createElement("div");
+    scrollBtn.className = "scroll-indicator";
+    scrollBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    document.body.appendChild(scrollBtn);
+
+    // Show/hide button based on scroll position
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 300) {
+        scrollBtn.classList.add("show");
+      } else {
+        scrollBtn.classList.remove("show");
+      }
+    });
+
+    // Scroll to top on click
+    scrollBtn.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+
+    // Add smooth scroll to all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>

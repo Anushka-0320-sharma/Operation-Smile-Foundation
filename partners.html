@@ -1,345 +1,1315 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Operation Smile Partners</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="icon" type="image/png" href="img/fevicon.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Our Partners - Operation Smile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="icon" type="image/png" href="img/fevicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background: linear-gradient(135deg, #f17cd2, #6a9aee);
-      color: white;
+      font-family: "Inter", "Arial", sans-serif;
+      background: linear-gradient(145deg, #ffffff 0%, #fefaf5 100%);
+      color: #2c3e2f;
       text-align: center;
-      padding: 20px;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
       overflow-x: hidden;
     }
 
-    .container {
-      width: 100%;
+    @import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    .navbar-brand {
+      font-family: "Playfair Display", "Georgia", serif;
     }
 
-    .partner-card {
-      background: white;
-      color: black;
-      padding: 20px;
+    p,
+    .nav-link,
+    .btn,
+    .partner-description {
+      font-family: "Inter", sans-serif;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f3e7d3;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease-in-out;
-      height: 100%;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #e67e22, #f39c12);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(135deg, #d35400, #e67e22);
+    }
+
+    /* Navbar */
+    .navbar.navbar-custom {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 248, 235, 0.94);
+      backdrop-filter: blur(16px);
+      z-index: 1000;
+      padding: 8px 0;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .logo img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      margin: 0 12px 0 0;
+      border: 2px solid #f39c12;
+      transition: all 0.3s ease;
+      object-fit: cover;
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+      border-color: #e67e22;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #d35400, #e67e22, #f39c12);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-item {
+      padding: 0 6px;
+    }
+
+    .navbar-custom .navbar-nav .nav-link {
+      color: #3b2a1f !important;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-custom .navbar-nav .nav-link:hover {
+      color: #e67e22 !important;
+      background: rgba(230, 126, 34, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* Desktop buttons container */
+    .nav-buttons-desktop {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      gap: 12px;
       align-items: center;
     }
 
+    /* Mobile buttons will be inside collapse */
+    .nav-buttons-mobile {
+      display: none;
+    }
+
+    body {
+      padding-top: 80px;
+    }
+
+    /* Buttons */
+    .donate,
+    .volunteer {
+      padding: 0.5rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .donate {
+      background: linear-gradient(95deg, #f39c12, #e67e22);
+      color: white;
+      box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+    }
+
+    .donate:hover {
+      background: linear-gradient(95deg, #e67e22, #d35400);
+      transform: translateY(-2px);
+    }
+
+    .donate::before {
+      content: "🙏";
+      font-size: 1rem;
+    }
+
+    .donate:hover::before {
+      content: "❤️";
+    }
+
+    .volunteer {
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+      color: white;
+      box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+    }
+
+    .volunteer:hover {
+      background: linear-gradient(135deg, #2ecc71, #27ae60);
+      transform: translateY(-2px);
+    }
+
+    .volunteer::before {
+      content: "🤝";
+      font-size: 1rem;
+    }
+
+    .volunteer:hover::before {
+      transform: scale(1.1);
+    }
+
+    /* Mobile nav buttons styling */
+    .nav-link-donate,
+    .nav-link-volunteer {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      margin: 5px 0;
+    }
+
+    .nav-link-donate {
+      background: linear-gradient(95deg, #f39c12, #e67e22);
+      color: white;
+    }
+
+    .nav-link-donate:hover {
+      background: linear-gradient(95deg, #e67e22, #d35400);
+      transform: translateY(-2px);
+      color: white;
+    }
+
+    .nav-link-donate::before {
+      content: "🙏";
+      margin-right: 6px;
+    }
+
+    .nav-link-volunteer {
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+      color: white;
+    }
+
+    .nav-link-volunteer:hover {
+      background: linear-gradient(135deg, #2ecc71, #27ae60);
+      transform: translateY(-2px);
+      color: white;
+    }
+
+    .nav-link-volunteer::before {
+      content: "🤝";
+      margin-right: 6px;
+    }
+
+    /* Hero Section */
+    .partners-hero {
+      padding: 60px 0 40px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 50px;
+      border-radius: 0 0 40px 40px;
+    }
+
+    .partners-hero::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(243, 156, 18, 0.15), transparent);
+      border-radius: 50%;
+    }
+
+    .partners-hero::after {
+      content: "";
+      position: absolute;
+      bottom: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(230, 126, 34, 0.1), transparent);
+      border-radius: 50%;
+    }
+
+    .partners-hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .partners-hero p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+      opacity: 0.95;
+    }
+
+    /* Partner Cards - Improved for tablets */
+    .partner-card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 24px;
+      box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      border: 1px solid rgba(230, 126, 34, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .partner-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #e67e22, #f39c12);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .partner-card:hover::before {
+      transform: scaleX(1);
+    }
+
     .partner-card:hover {
-      transform: scale(1.05);
+      transform: translateY(-10px);
+      box-shadow: 0 25px 45px -15px rgba(230, 126, 34, 0.25);
+      border-color: rgba(230, 126, 34, 0.3);
     }
 
     .partner-logo {
       width: 100px;
       height: 100px;
       object-fit: contain;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+      border-radius: 50%;
+      background: white;
+      padding: 10px;
     }
 
-    .row {
-      align-items: center;
+    .partner-card:hover .partner-logo {
+      transform: scale(1.08);
+    }
+
+    .partner-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #c0392b;
+      margin-bottom: 12px;
     }
 
     .partner-description {
-      font-size: 14px;
-      margin-top: 10px;
-      color: #555;
+      font-size: 0.85rem;
+      color: #6a5a4a;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex: 1;
     }
 
-    @media (max-width: 768px) {
-      .partner-card {
-        margin-bottom: 20px;
-      }
+    .partner-card .btn {
+      background: linear-gradient(135deg, #e67e22, #f39c12);
+      border: none;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+      margin-top: auto;
     }
 
-    .navbar-brand {
-      font-weight: bold;
-      font-size: 1.5rem;
+    .partner-card .btn:hover {
+      background: linear-gradient(135deg, #c0392b, #e67e22);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
     }
 
-    .nav-item {
-      padding: 9px;
+    /* Volunteers Section */
+    .volunteers-section {
+      background: linear-gradient(145deg, #fefaf5, #ffffff);
+      padding: 60px 0;
+      margin-top: 40px;
     }
 
-    .logo img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      margin: 10px;
+    .volunteers-section h4 {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #c0392b, #e67e22, #f39c12);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 30px;
+      font-family: "Playfair Display", "Georgia", serif;
     }
 
-    .navbar.navbar-custom {
-      position: fixed;
+    .volunteer-box {
+      max-height: 400px;
+      overflow-y: auto;
+      background: white;
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(230, 126, 34, 0.15);
+    }
+
+    .volunteer-box::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .volunteer-box::-webkit-scrollbar-track {
+      background: #f3e7d3;
+      border-radius: 10px;
+    }
+
+    .volunteer-box::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #e67e22, #f39c12);
+      border-radius: 10px;
+    }
+
+    .volunteer-name {
+      background: linear-gradient(135deg, #fefaf5, #ffffff);
+      color: #c0392b;
+      padding: 8px 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 50px;
+      text-align: center;
+      border: 1px solid rgba(230, 126, 34, 0.15);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .volunteer-name:hover {
+      transform: translateY(-2px);
+      border-color: #e67e22;
+      background: linear-gradient(135deg, #fff8f0, #ffffff);
+      box-shadow: 0 4px 10px rgba(230, 126, 34, 0.1);
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: white;
+      padding: 60px 0 30px;
+      position: relative;
+      margin-top: 60px;
+    }
+
+    .footer::before {
+      content: "";
+      position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      background: rgba(151, 96, 96, 0.3);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      z-index: 1000;
-      transition: background 0.3s ease-in-out;
-      padding: 12px 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #e67e22, #f39c12, #e67e22);
     }
 
-    .navbar-custom .navbar-nav .nav-link {
-      color: rgb(0, 0, 0) !important;
-      font-weight: 500;
-      transition: color 0.3s;
-      font-size: larger;
-    }
-
-    .navbar-custom .navbar-nav .nav-link:hover {
-      color: #3e0df0 !important;
-    }
-
-    .mb-4 {
-      margin-top: 150px;
-    }
-
-    .donate {
-      padding: 0.5rem 2.5rem;
-      height: 50px;
-      border: 1px solid black;
-      border-radius: 0.5rem;
-      font-size: 0.9rem;
-      background-image: linear-gradient(to right, rgb(252, 116, 5), rgb(255, 254, 251), rgb(4, 250, 4));
-      color: black;
-      font-weight: bolder;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    .footer h5 {
+      color: #f39c12;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
       position: relative;
-      transition: all 0.9s ease-in-out;
-      text-transform: uppercase;
+      display: inline-block;
     }
 
-    .donate:hover {
-      background-image: linear-gradient(to right, rgb(248, 236, 3), rgb(245, 2, 209), rgb(1, 46, 247));
+    .footer h5::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, #e67e22, #f39c12);
+      border-radius: 3px;
+    }
+
+    .footer a {
+      color: #b8b8b8;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #f39c12;
+      padding-left: 5px;
+    }
+
+    .footer ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #f39c12;
+      object-fit: cover;
+    }
+
+    .footer-logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #f39c12, #e67e22);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-family: "Playfair Display", "Georgia", serif;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    .footer-contact-icon {
+      width: 35px;
+      height: 35px;
+      background: rgba(243, 156, 18, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .footer-contact-item:hover .footer-contact-icon {
+      background: linear-gradient(135deg, #e67e22, #f39c12);
+      transform: scale(1.05);
+    }
+
+    .footer-contact-icon i {
+      color: #f39c12;
+      font-size: 1rem;
+    }
+
+    .footer-contact-item:hover .footer-contact-icon i {
       color: white;
     }
 
-    .donate::before {
-      content: "🙏";
-      position: absolute;
-      left: -0rem;
-      top: 0rem;
-      font-size: 1.55rem;
-      transition: all 0.9s ease-in-out;
-    }
-
-    .donate:hover::before {
-      content: "❤️";
-      transform: rotate(40deg);
-      font-size: 2.5rem;
-      top: -0.75rem;
-      animation: rightRun 2s forwards;
-    }
-
-    .donate:active::before {
-      content: "💝";
-    }
-
-    @keyframes rightRun {
-      100% {
-        transform: translateX(100px);
-      }
-    }
-
-    .volunteer {
-      outline: 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #04843b;
-      min-width: 80px;
-      border: 0;
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 16px 20px;
-      color: #000000;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      overflow: hidden;
-      cursor: pointer;
-      margin-left: 10px;
-    }
-
-    .volunteer:hover {
-      opacity: 0.95;
-    }
-
-    .volunteer .animation {
-      border-radius: 100%;
-      animation: ripple 0.6s linear infinite;
-    }
-
-    @keyframes ripple {
-      0% {
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
-      }
-
-      100% {
-        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
-      }
-    }
-
-    .custom-footer {
-      background-color: #1b1f23;
-      color: #ffffff;
-      padding: 60px 0 30px;
-      font-size: 16px;
-      width: 100%;
+    .footer-contact-text {
+      flex: 1;
       text-align: left;
     }
 
-    .custom-footer h5 {
-      margin-bottom: 20px;
-      font-weight: 600;
+    .footer-contact-text span {
+      display: block;
+      font-size: 0.7rem;
+      color: #8a8a8a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
     }
 
-    .custom-footer a {
+    .footer-contact-text p,
+    .footer-contact-text a {
+      font-size: 0.85rem;
       color: #ffffff;
-      text-decoration: none;
+      margin: 0;
     }
 
-    .custom-footer a:hover {
-      text-decoration: underline;
+    .footer-contact-text a:hover {
+      color: #f39c12;
+      padding-left: 0;
     }
 
-    .custom-footer .footer-bottom {
+    .footer-social {
+      margin-top: 20px;
+    }
+
+    .footer-social p {
+      color: #b8b8b8;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+      text-align: left;
+    }
+
+    .footer-social-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social-icon {
+      width: 38px;
+      height: 38px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .footer-social-icon:hover {
+      background: linear-gradient(135deg, #e67e22, #f39c12);
+      transform: translateY(-3px);
+      color: white;
+    }
+
+    .footer-bottom {
       text-align: center;
       margin-top: 40px;
-      font-size: 15px;
-      color: #ccc;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+      color: #8a8a8a;
     }
 
+    /* Responsive - Tablet & Mobile Optimized */
+    /* iPad Pro (1024px and above) */
+    @media (min-width: 1024px) and (max-width: 1366px) {
+      .partners-hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .partner-card {
+        padding: 25px 15px;
+      }
+
+      .partner-logo {
+        width: 90px;
+        height: 90px;
+      }
+
+      .partner-card h3 {
+        font-size: 1.2rem;
+      }
+
+      .partner-description {
+        font-size: 0.8rem;
+      }
+    }
+
+    /* iPad Air & Tablets (768px - 1024px) */
+    @media (max-width: 1024px) {
+      body {
+        padding-top: 70px;
+      }
+
+      .partners-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .partners-hero p {
+        font-size: 1rem;
+        padding: 0 20px;
+      }
+
+      /* 2 columns on tablets */
+      .row-cols-md-2 {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .col {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
+
+    /* Mobile devices */
     @media (max-width: 768px) {
-      .custom-footer .col-md-4,
-      .custom-footer .col-md-3 {
-        margin-bottom: 30px;
+      .nav-buttons-desktop {
+        display: none !important;
+      }
+
+      .nav-buttons-mobile {
+        display: block;
+        margin-top: 10px;
+      }
+
+      .partners-hero {
+        padding: 40px 0 30px;
+        border-radius: 0 0 30px 30px;
+      }
+
+      .partners-hero h1 {
+        font-size: 2rem;
+      }
+
+      .partner-card {
+        padding: 20px;
+      }
+
+      .partner-logo {
+        width: 80px;
+        height: 80px;
+      }
+
+      .partner-card h3 {
+        font-size: 1.1rem;
+      }
+
+      /* Single column on mobile */
+      .col {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      .footer {
+        text-align: center;
+      }
+
+      .footer-logo {
+        justify-content: center;
+      }
+
+      .footer h5::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .footer-contact-item {
+        justify-content: center;
+      }
+
+      .footer-contact-text {
+        text-align: left;
+      }
+
+      .footer-social p {
+        text-align: center;
+      }
+
+      .footer-social-icons {
+        justify-content: center;
+      }
+    }
+
+    /* Small mobile devices */
+    @media (max-width: 576px) {
+      .partners-hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .partner-card .btn {
+        padding: 8px 20px;
+        font-size: 0.75rem;
+      }
+
+      .partner-description {
+        font-size: 0.75rem;
+      }
+    }
+
+    /* Samsung S8+ specific (360px width) */
+    @media (max-width: 380px) {
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+
+      .logo img {
+        width: 45px;
+        height: 45px;
+      }
+
+      .partners-hero h1 {
+        font-size: 1.6rem;
+      }
+
+      .partner-card h3 {
+        font-size: 1rem;
+      }
+
+      .partner-logo {
+        width: 70px;
+        height: 70px;
+      }
+
+      .partner-card .btn {
+        padding: 6px 15px;
+        font-size: 0.7rem;
+      }
+
+      .volunteer-name {
+        font-size: 0.7rem;
+        padding: 6px 8px;
       }
     }
   </style>
 </head>
+
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-  <div class="container">
-    <div class="logo">
-      <img src="img/logo.png" alt="Logo" />
-    </div>
-    <a class="navbar-brand" href="#">Operation Smile</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="partners.html">Our Partners</a></li>
-        <li class="nav-item"><a class="nav-link" href="initiatives.html">Our Initiatives</a></li>
-        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-      </ul>
-    </div>
-    <a href="donate.html"><button class="donate">Donate</button></a>
-    <div>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSei2fpCRa2_GZXVfZZdAst9PCeLmhK4gxhIc6ewTaGBo-2vcg/viewform">
-        <button class="volunteer"><i class="animation"></i>Volunteer<i class="animation"></i></button>
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+      <a href="index.html" class="logo-link">
+        <div class="logo"><img src="img/logo.png" alt="Logo" /></div>
       </a>
-    </div>
-  </div>
-</nav>
-
-<div class="container">
-        <h1 class="mb-4">Our Partners</h1>
-        <p class="mb-3">हमारे साझेदार निस्वार्थ सेवा और समर्पण के साथ समाज के उत्थान के लिए कार्यरत हैं।
-            वे करुणा और सहयोग से जरूरतमंदों को सशक्त बनाकर सकारात्मक बदलाव ला रहे हैं।</p>
-        <p class="mb-5">Our partners are dedicated to social upliftment with selfless service and commitment.
-            Through compassion and collaboration, they empower the needy and bring positive change.
-        </p>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <div class="partner-card p-3">
-                    <img src="img/saadhak.png" alt="Saadhak Foundation" class="partner-logo">
-                    <h3>Saadhak Foundation</h3>
-                    <p class="partner-description">स्वस्मै स्वल्पं समाजाय सर्वस्वं।
-                    </p>
-                    <a href="https://www.saadhakfoundation.org/" class="btn btn-primary" target="_blank">Visit Website</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="partner-card p-3">
-                    <img src="img/sevabharti.png" alt="Seva Bharti Foundation" class="partner-logo">
-                    <h3>Seva Bharti Foundation</h3>
-                    <p class="partner-description">सर्वे भवन्तु सुखिनः, सर्वे सन्तु निरामयाः।
-                        सर्वे भद्राणि पश्यन्तु, मा कश्चित् दुःखभाग्भवेत्॥</p>
-                    <a href="https://www.sewabhartidelhi.org/" class="btn btn-primary" target="_blank">Visit Website</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="partner-card p-3">
-                    <img src="img/visan.png" alt="Visan Foundation" class="partner-logo">
-                    <h3>Visan Foundation</h3>
-                    <p class="partner-description">Partner Three is a trusted name in digital transformation, providing top-notch IT solutions.</p>
-                    <a href="https://visanfoundation.org/" class="btn btn-primary" target="_blank">Visit Website</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="partner-card p-3">
-                    <img src="img/visan.png" alt="Visan Foundation" class="partner-logo">
-                    <h3>NGO Pehal Ek Jeevan Ki</h3>
-                    <p class="partner-description">भारत की पहली संस्था जो गऊ माता और बेज़ुबान जानवरो का अंतिम संस्कार करती है 🕉️</p>
-                    <a href="https://pehalekjeevanki.com/" class="btn btn-primary" target="_blank">Visit Website</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-<!-- Footer -->
-<footer class="custom-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h5>About Us</h5>
-        <p>We are dedicated to making a difference through community-driven initiatives and impactful projects.</p>
-      </div>
-      <div class="col-md-3">
-        <h5>Quick Links</h5>
-        <ul class="list-unstyled">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="initiatives.html">Projects</a></li>
-          <li><a href="donate.html">Donate</a></li>
-          <li><a href="contact.html">Contact</a></li>
+      <a class="navbar-brand" href="index.html">Operation Smile</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="partners.html">Our Partners</a></li>
+          <li class="nav-item"><a class="nav-link" href="initiatives.html">Our Initiatives</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
         </ul>
+        <div class="nav-buttons-mobile">
+          <a href="donate.html" class="nav-link-donate">Donate</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSei2fpCRa2_GZXVfZZdAst9PCeLmhK4gxhIc6ewTaGBo-2vcg/viewform"
+            class="nav-link-volunteer">Volunteer</a>
+        </div>
       </div>
-      <div class="col-md-5">
-        <h5>Contact Us</h5>
-        <p>Email: <a href="mailto:operationsmile2303@gmail.com">operationsmile2303@gmail.com</a></p>
-        <p>Phone: +91 8595588085</p>
-        <p>Address: A1, DDA Colony, New Jaffrabad, Shahdara, New Delhi, Delhi, 110032</p>
+      <div class="nav-buttons-desktop">
+        <a href="donate.html"><button class="donate">Donate</button></a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSei2fpCRa2_GZXVfZZdAst9PCeLmhK4gxhIc6ewTaGBo-2vcg/viewform">
+          <button class="volunteer">Volunteer</button>
+        </a>
       </div>
     </div>
-    <div class="footer-bottom mt-4">&copy; 2025 Operation Smile. All Rights Reserved.</div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="partners-hero">
+    <div class="container">
+      <h1 class="animate__animated animate__fadeInDown">Our Partners</h1>
+      <p class="animate__animated animate__fadeInUp animate__delay-1s">
+        हमारे साझेदार निस्वार्थ सेवा और समर्पण के साथ समाज के उत्थान के लिए कार्यरत हैं। वे करुणा और सहयोग से जरूरतमंदों
+        को सशक्त बनाकर सकारात्मक बदलाव ला रहे हैं।
+      </p>
+      <p class="animate__animated animate__fadeInUp animate__delay-2s">
+        Our partners are dedicated to social upliftment with selfless service and commitment. Through compassion and
+        collaboration, they empower the needy and bring positive change.
+      </p>
+    </div>
+  </section>
+
+  <!-- Partners Grid -->
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      <!-- Partner cards (all 16 partners) -->
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.05s">
+        <div class="partner-card">
+          <img src="img/Partners/Saadhak Foundation.png" alt="Saadhak Foundation" class="partner-logo" />
+          <h3>Saadhak Foundation</h3>
+          <p class="partner-description">स्वस्मै स्वल्पं समाजाय सर्वस्वं।</p>
+          <a href="https://www.instagram.com/saadhakfoundation" class="btn" target="_blank">Visit Us</a>
+        </div>
+      </div>
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+        <div class="partner-card">
+          <img src="img/Partners/sevabharti.png" alt="Seva Bharti Foundation" class="partner-logo" />
+          <h3>Seva Bharti Foundation</h3>
+          <p class="partner-description">सर्वे भवन्तु सुखिनः, सर्वे सन्तु निरामयाः। सर्वे भद्राणि पश्यन्तु, मा कश्चित्
+            दुःखभाग्भवेत्॥</p>
+          <a href="https://www.sewabhartidelhi.org/" class="btn" target="_blank">Visit Us</a>
+        </div>
+      </div>
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.15s">
+        <div class="partner-card">
+          <img src="img/Partners/visan.png" alt="Visan Foundation" class="partner-logo" />
+          <h3>Visan Foundation</h3>
+          <p class="partner-description">Empowering communities through digital transformation and innovative IT
+            solutions for social good.</p>
+          <a href="https://visanfoundation.org/" class="btn" target="_blank">Visit Us</a>
+        </div>
+      </div>
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+        <div class="partner-card">
+          <img src="img/Partners/pehel.png" alt="NGO Pehal Ek Jeevan Ki" class="partner-logo" />
+          <h3>NGO Pehal Ek Jeevan Ki</h3>
+          <p class="partner-description">भारत की पहली संस्था जो गऊ माता और बेज़ुबान जानवरो का अंतिम संस्कार करती है 🕉️
+          </p>
+          <a href="https://www.instagram.com/ngo_pehalekjeevanki/?hl=en" class="btn" target="_blank">Visit Us</a>
+        </div>
+      </div>
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.25s">
+        <div class="partner-card">
+          <img src="img/Partners/Apna Ghar Ashram.png" alt="Apna Ghar Ashram" class="partner-logo" />
+          <h3>Apna Ghar Ashram</h3>
+          <p class="partner-description">A shelter providing care, support, and hope to the homeless and underprivileged
+            in Noida.</p>
+          <a href="https://www.instagram.com/apna.gharashramnoida" class="btn" target="_blank">Visit Us</a>
+        </div>
+      </div>
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
+        <div class="partner-card">
+          <img src="img/Partners/Arohana Foundation.png" alt="Arohana Foundation" class="partner-logo" />
+          <h3>Arohana Foundation</h3>
+          <p class="partner-description">Dedicated to uplifting marginalized communities through education, health, and
+            empowerment programs.</p>
+          <a href="https://www.instagram.com/arohana_foundation" class="btn" target="_blank">Visit Us</a>
+        </div>
+      </div>
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.35s">
+        <div class="partner-card">
+          <img src="img/Partners/Bharat Blind School.png" alt="Bharat Blind School" class="partner-logo" />
+          <h3>Bharat Blind School</h3>
+          <p class="partner-description">Empowering visually impaired students with education, skills, and opportunities
+            for an independent life.</p>
+          <a href="#" class="btn" target="_blank">Visit Us</a>
+        </div>
+      </div>
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+        <div class="partner-card">
+          <img src="img/Partners/Delhi Police.png" alt="Delhi Police" class="partner-logo" />
+          <h3>Delhi Police</h3>
+          <p class="partner-description">Collaborating for community safety, child protection, and social welfare
+            initiatives across the capital.</p>
+          <a href="https://www.instagram.com/delhi.police_official" class="btn" target="_blank">Visit Us</a>
+        </div>
+      </div>
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.45s">
+        <div class="partner-card">
+          <img src="img/Partners/Human Peace Foundation.png" alt="Human Peace Foundation" class="partner-logo" />
+          <h3>Human Peace Foundation</h3>
+          <p class="partner-description">Working tirelessly for peace, harmony, and humanitarian aid for the most
+            vulnerable sections of society.</p>
+          <a href="https://www.instagram.com/hpftrust" class="btn" target="_blank">Visit Us</a>
+        </div>
+      </div>
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.5s">
+        <div class="partner-card">
+          <img src="img/Partners/Ikshana.png" alt="Ikshana" class="partner-logo" />
+          <h3>Ikshana</h3>
+          <p class="partner-description">A youth-led organization focused on mental health awareness, skill development,
+            and social impact.</p>
+          <a href="https://www.instagram.com/ikshhana" class="btn" target="_blank">Visit Us</a>
+        </div>
+      </div>
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.55s">
+        <div class="partner-card">
+          <img src="img/Partners/KUKA Foundation.png" alt="KUKA Foundation" class="partner-logo" />
+          <h3>KUKA Foundation</h3>
+          <p class="partner-description">Promoting education, healthcare, and women empowerment through grassroots
+            initiatives.</p>
+          <a href="https://www.instagram.com/kukafoundation" class="btn" target="_blank">Visit Us</a>
+        </div>
+      </div>
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
+        <div class="partner-card">
+          <img src="img/Partners/Robin Hood Army Foundation.png" alt="Robin Hood Army Foundation"
+            class="partner-logo" />
+          <h3>Robin Hood Army</h3>
+          <p class="partner-description">A volunteer-based organization fighting hunger and spreading smiles by serving
+            surplus food to the needy.</p>
+          <a href="https://www.instagram.com/rha_india" class="btn" target="_blank">Visit Us</a>
+        </div>
+      </div>
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.65s">
+        <div class="partner-card">
+          <img src="img/Partners/Roti Bank Foundation.png" alt="Roti Bank Foundation" class="partner-logo" />
+          <h3>Roti Bank Foundation</h3>
+          <p class="partner-description">Collecting and distributing excess food to feed the hungry and reduce food
+            waste across Delhi NCR.</p>
+          <a href="https://www.instagram.com/rotibankdelhi" class="btn" target="_blank">Visit Us</a>
+        </div>
+      </div>
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.7s">
+        <div class="partner-card">
+          <img src="img/Partners/Sewa Foundation.png" alt="Sewa Foundation" class="partner-logo" />
+          <h3>Sewa Foundation</h3>
+          <p class="partner-description">Committed to selfless service, providing aid and support to underprivileged
+            families and children.</p>
+          <a href="#" class="btn" target="_blank">Visit Us</a>
+        </div>
+      </div>
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.75s">
+        <div class="partner-card">
+          <img src="img/Partners/TCR.png" alt="TCR" class="partner-logo" />
+          <h3>TCR</h3>
+          <p class="partner-description">The Change Route - Inspiring young minds towards social change through
+            education and mentorship programs.</p>
+          <a href="https://www.instagram.com/teamtcr_edu" class="btn" target="_blank">Visit Us</a>
+        </div>
+      </div>
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.8s">
+        <div class="partner-card">
+          <img src="img/Partners/Vriksh Mitra Parivar.png" alt="Vriksh Mitra Parivar" class="partner-logo" />
+          <h3>Vriksh Mitra Parivar</h3>
+          <p class="partner-description">Promoting environmental awareness, tree plantation, and sustainable living for
+            a greener tomorrow.</p>
+          <a href="https://www.instagram.com/vriksh_mitra__" class="btn" target="_blank">Visit Us</a>
+        </div>
+      </div>
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.85s">
+        <div class="partner-card">
+          <img src="img/Partners/We 4 You Foundation.png" alt="We 4 You Foundation" class="partner-logo" />
+          <h3>We 4 You Foundation</h3>
+          <p class="partner-description">A youth-driven initiative working towards education, health, and welfare of
+            underprivileged children.</p>
+          <a href="https://www.instagram.com/we4.you2021" class="btn" target="_blank">Visit Us</a>
+        </div>
+      </div>
+    </div>
   </div>
-</footer>
 
-<!-- ✅ Bootstrap JS (required for hamburger) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Volunteers Section -->
+  <section class="volunteers-section">
+    <div class="container">
+      <h4 class="animate__animated animate__fadeInDown">
+        <i class="fas fa-heart" style="color: #e67e22; margin-right: 10px"></i>
+        Our Volunteers
+        <i class="fas fa-smile" style="color: #e67e22; margin-left: 10px"></i>
+      </h4>
+      <div class="volunteer-box mx-auto animate__animated animate__fadeInUp">
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-2">
+          <div class="col">
+            <div class="volunteer-name">1. Ayush Maan</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">2. Rakhi Verma</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">3. Sheetal Yadav</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">4. Prashant Sharma</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">5. Tushar Sharma</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">6. Himanshi Sharma</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">7. Aarushi Singh</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">8. Reena</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">9. Vineet Jatt</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">10. Divyanshi</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">11. Srishti Goyal</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">12. Drishti Singh</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">13. Vasu Sharma</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">14. Pinky</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">15. Anmol Jaiswal</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">16. Mahima Pandey</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">17. Sandhya</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">18. Sarika</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">19. Sagar Gupta</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">20. Kundan Kumar Ojha</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">21. Kartik Joshia Pradhan</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">22. Shubham Kanwar</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">23. Suraj Sharma</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">24. Nitesh Phogat</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">25. Piyush Dubey</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">26. Manisha</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">27. Aman Chopra</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">28. Divyansh</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">29. Tanya Grovet</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">30. Saranya Singh</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">31. Palak Choudhary</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">32. Rajat</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">33. Tanisha Yadav</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">34. Pooja Gole</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">35. Ankit Sanatani</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">36. Hitanshi Bhatia</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">37. Devanshi Tyagi</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">38. Himanshi Verma</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">39. Khushi</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">40. Vaishnavi Bhadauria</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">41. Raj Yadav</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">42. Uday Bari</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">43. Afruj Jarin</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">44. Sujal</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">45. Shivani Khurana</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">46. Bhagat Singh</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">47. Mukta Dutt</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">48. Vansh Jain</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">49. Yash Aggarwal</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">50. Sagar Jha</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">51. Bhavya Jain</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">52. Archana Kumari</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">53. Deepu</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">54. Muskan</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">55. Pooja Sharma</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">56. Vaishali Chaudhary</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">57. Roshni</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">58. Radhika Sharma</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">59. Himanshu</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">60. Shraddha Srivastava</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">61. Chehak Bansal</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">62. Ashpreet Kaur</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">63. Prableen Kaur</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">64. Savreen</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">65. Simran</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">66. Sundus</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">67. Parth Kohli</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">68. Shivani Raghav</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">69. Vansh Chauhan</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">70. Shivani Tyagi</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">71. Asif Raine</div>
+          </div>
+          <div class="col">
+            <div class="volunteer-name">72. Ranjana</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 animate__animated animate__fadeInUp">
+          <div class="footer-logo">
+            <img src="img/logo.png" alt="Logo" class="footer-logo-img" />
+            <span class="footer-logo-text">Operation Smile</span>
+          </div>
+          <p class="mb-3" style="color: #b8b8b8; font-size: 0.85rem">We are dedicated to making a difference through
+            community-driven initiatives and impactful projects.</p>
+          <div class="footer-social">
+            <p>Follow Us</p>
+            <div class="footer-social-icons">
+              <a href="https://www.instagram.com/operation.smile__/" class="footer-social-icon" target="_blank"><i
+                  class="fab fa-instagram"></i></a>
+              <a href="https://x.com/smilengo23?s=11" class="footer-social-icon" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-twitter-x" viewBox="0 0 16 16">
+                  <path
+                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/operation-smile-foundation-1079993b8" class="footer-social-icon"
+                target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.youtube.com/@OperationSmilefoundation23" class="footer-social-icon"
+                target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="initiatives.html">Initiatives</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4 animate__animated animate__fadeInUp animate__delay-2s">
+          <h5>Contact Us</h5>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="footer-contact-text"><span>EMAIL</span><a
+                href="mailto:operationsmile2303@gmail.com">operationsmile2303@gmail.com</a></div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="footer-contact-text"><span>PHONE</span><a href="tel:+918595588085">+91 85955 88085</a></div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="footer-contact-text"><span>ADDRESS</span>
+              <p>B-76, F/F, DDA Colony, New Zafrabad, Near Shiv Mandir, Delhi-110032</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom animate__animated animate__fadeInUp">
+      <p class="mb-0">&copy; 2025 Operation Smile. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

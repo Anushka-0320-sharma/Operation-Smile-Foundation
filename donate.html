@@ -1,148 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate Operation Smile</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="img/fevicon.png">
-    <style>
-        /* Custom CSS for the entire page */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
-            min-height: 100vh;
-            color: #333;
-            cursor: grab;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Donate - Operation Smile</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="icon" type="image/png" href="img/fevicon.png" />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
 
-        /* Donate Section */
-        .donate-section {
-            padding: 80px 0 60px 0; /* Adjusted padding */
-            text-align: center;
-        }
-
-        .donate-section .container {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .donate-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #ff6f61;
-            margin-top: 100px;
-        }
-
-        .donate-section h3 {
-            font-size: 1.8rem;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            color: #ff6f61;
-        }
-
-        .donate-section p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .donate-section .qr-code {
-            max-width: 500px;
-            margin: 20px auto;
-            border: 5px solid black;
-        }
-
-        .donate-section .account-details, .donate-section .contact-details {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px auto;
-            max-width: 500px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* Media query for smaller screens */
-        @media (max-width: 768px) {
-            .donate-section h2 {
-                font-size: 2rem;
-            }
-
-            .donate-section h3 {
-                font-size: 1.5rem;
-            }
-
-            .donate-section p {
-                font-size: 1rem;
-            }
-
-            .donate-section .qr-code {
-                max-width: 150px;
-            }
-        }
-
-.navbar-brand {
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-
-.nav-item {
-  padding: 9px;
-}
-
-.logo img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin: 10px;
-}
-
-.navbar.navbar-custom {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(151, 96, 96, 0.3); /* Semi-transparent */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* Safari Support */
-  z-index: 1000;
-  transition: background 0.3s ease-in-out;
-  padding: 12px 0;
-}
-
-/* Ensure navbar items are visible */
-.navbar-custom .navbar-nav .nav-link {
-  color: rgb(0, 0, 0) !important;
-  font-weight: 500;
-  transition: color 0.3s;
-  font-size: larger;
-}
-
-.navbar-custom .navbar-nav .nav-link:hover {
-  color: #3e0df0 !important; /* Highlight effect */
-}
-
-@media (max-width: 768px) {
-        footer .container {
-            text-align: center;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .donation-box {
-      background: #ffffff;
+    body {
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(145deg, #ffffff 0%, #fefaf5 100%);
+      color: #2c3e2f;
+      cursor: default;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    .navbar-brand,
+    .donation-title {
+      font-family: "Playfair Display", serif;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f3e7d3;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #e67e22, #f39c12);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(135deg, #d35400, #e67e22);
+    }
+
+    /* Navbar - Same as Partners Page */
+    .navbar.navbar-custom {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 248, 235, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 1000;
+      transition: all 0.3s ease;
+      padding: 8px 0;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .logo img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      margin: 0 12px 0 0;
+      border: 2px solid #f39c12;
+      transition: all 0.3s ease;
+      object-fit: cover;
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+      border-color: #e67e22;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #d35400, #e67e22, #f39c12);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      white-space: nowrap;
+    }
+
+    .nav-item {
+      padding: 0 6px;
+    }
+
+    .navbar-custom .navbar-nav .nav-link {
+      color: #3b2a1f !important;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-custom .navbar-nav .nav-link:hover {
+      color: #e67e22 !important;
+      background: rgba(230, 126, 34, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* Desktop buttons container */
+    .nav-buttons-desktop {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    /* Mobile buttons container */
+    .nav-buttons-mobile {
+      display: none;
+      text-align: center;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      justify-content: center;
+      gap: 15px;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    /* Ensure collapse content is centered */
+    .navbar-collapse {
+      text-align: center;
+    }
+
+    .navbar-nav {
+      margin: 0 auto;
+    }
+
+    /* Hide desktop buttons on mobile/tablet, show mobile buttons inside hamburger */
+    @media (max-width: 991.98px) {
+      .navbar-nav {
+        text-align: center;
+      }
+
+      .nav-item {
+        margin: 5px 0;
+      }
+
+      .nav-buttons-mobile {
+        display: flex !important;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .nav-buttons-desktop {
+        display: none !important;
+      }
+    }
+
+    /* On large screens, hide mobile buttons and show desktop buttons */
+    @media (min-width: 992px) {
+      .nav-buttons-mobile {
+        display: none !important;
+      }
+
+      .nav-buttons-desktop {
+        display: flex !important;
+      }
+    }
+
+    body {
+      padding-top: 80px;
+    }
+
+    /* Nav Buttons */
+    .donate-nav,
+    .volunteer-nav {
+      padding: 0.5rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .donate-nav {
+      background: linear-gradient(95deg, #f39c12, #e67e22);
+      color: white;
+      box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+    }
+
+    .donate-nav:hover {
+      background: linear-gradient(95deg, #e67e22, #d35400);
+      transform: translateY(-2px);
+    }
+
+    .donate-nav::before {
+      content: "🙏";
+      font-size: 1rem;
+    }
+
+    .donate-nav:hover::before {
+      content: "❤️";
+    }
+
+    .volunteer-nav {
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+      color: white;
+      box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+    }
+
+    .volunteer-nav:hover {
+      background: linear-gradient(135deg, #2ecc71, #27ae60);
+      transform: translateY(-2px);
+    }
+
+    .volunteer-nav::before {
+      content: "🤝";
+      font-size: 1rem;
+    }
+
+    .volunteer-nav:hover::before {
+      transform: scale(1.1);
+    }
+
+    /* Mobile nav buttons styling */
+    .nav-link-donate,
+    .nav-link-volunteer {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      margin: 5px 0;
+    }
+
+    .nav-link-donate {
+      background: linear-gradient(95deg, #f39c12, #e67e22);
+      color: white;
+    }
+
+    .nav-link-donate:hover {
+      background: linear-gradient(95deg, #e67e22, #d35400);
+      transform: translateY(-2px);
+      color: white;
+    }
+
+    .nav-link-donate::before {
+      content: "🙏";
+      margin-right: 6px;
+    }
+
+    .nav-link-volunteer {
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+      color: white;
+    }
+
+    .nav-link-volunteer:hover {
+      background: linear-gradient(135deg, #2ecc71, #27ae60);
+      transform: translateY(-2px);
+      color: white;
+    }
+
+    .nav-link-volunteer::before {
+      content: "🤝";
+      margin-right: 6px;
+    }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(135deg,
+          #1a1a2e 0%,
+          #16213e 50%,
+          #0f3460 100%);
+      padding: 80px 0 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: "❤️";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      font-size: 200px;
+      opacity: 0.05;
+      z-index: 0;
+    }
+
+    .page-header::after {
+      content: "🙏";
+      position: absolute;
+      bottom: -50px;
+      left: -50px;
+      font-size: 180px;
+      opacity: 0.05;
+      z-index: 0;
+    }
+
+    .page-header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      color: #b8b8b8;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Donate Section */
+    .donate-section {
+      padding: 60px 0;
+      background: linear-gradient(145deg, #fefaf5, #ffffff);
+    }
+
+    .donate-card {
+      background: white;
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(230, 126, 34, 0.1);
+    }
+
+    .donate-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 45px -15px rgba(230, 126, 34, 0.15);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #6a5a4a;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .qr-code {
+      max-width: 250px;
+      margin: 20px auto;
+      padding: 15px;
+      background: white;
       border-radius: 20px;
-      padding: 40px 30px;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-      margin-bottom: 30px;
+      box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .qr-code:hover {
+      transform: scale(1.02);
+    }
+
+    .qr-code img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .info-box {
+      background: linear-gradient(145deg, #fefaf5, #ffffff);
+      padding: 25px;
+      border-radius: 20px;
+      margin: 20px 0;
+      border: 1px solid rgba(230, 126, 34, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .info-box:hover {
+      border-color: rgba(230, 126, 34, 0.3);
+      transform: translateX(5px);
+    }
+
+    .info-box h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #c0392b;
+      margin-bottom: 20px;
+    }
+
+    .info-box p {
+      margin-bottom: 12px;
+      color: #5a4a3a;
+    }
+
+    .info-box strong {
+      color: #e67e22;
+    }
+
+    /* Donation Campaign Cards */
+    .donation-box {
+      background: white;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
+      border: 1px solid rgba(230, 126, 34, 0.1);
+      height: 100%;
+    }
+
+    .donation-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 35px -12px rgba(230, 126, 34, 0.2);
+      border-color: rgba(230, 126, 34, 0.25);
     }
 
     .donation-header {
@@ -154,407 +447,815 @@
     }
 
     .donation-title {
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      color: #0d6efd;
+      color: #c0392b;
       margin: 0;
-      white-space: nowrap;
+    }
+
+    .donation-title i {
+      color: #e67e22;
+      margin-right: 8px;
     }
 
     .donation-topic {
-      font-size: 1.25rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      color: #198754;
+      color: white;
+      background: linear-gradient(135deg, #e67e22, #f39c12);
+      padding: 5px 12px;
+      border-radius: 50px;
     }
 
     .donation-description {
-      font-size: 1.05rem;
-      color: #555;
+      font-size: 0.9rem;
+      color: #6a5a4a;
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
 
     .donation-stats p {
-      font-size: 1.1rem;
+      font-size: 0.85rem;
       margin: 8px 0;
+      color: #5a4a3a;
     }
 
-    .icon {
-      color: #0d6efd;
-      margin-right: 5px;
+    .donation-stats i {
+      color: #e67e22;
+      width: 25px;
     }
 
     .progress {
-      height: 25px;
-      border-radius: 15px;
-      overflow: hidden;
-      background-color: #dee2e6;
+      height: 10px;
+      border-radius: 10px;
+      background-color: #f0e8dc;
     }
 
     .progress-bar {
-      font-weight: 600;
-      background-image: linear-gradient(45deg, #28a745, #218838);
+      background: linear-gradient(90deg, #e67e22, #f39c12);
+      border-radius: 10px;
+      font-size: 0.75rem;
+      line-height: 10px;
     }
 
     .btn-donate {
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      padding: 10px 25px;
-      background-color: #198754;
-      color: white;
+      background: linear-gradient(135deg, #e67e22, #f39c12);
       border: none;
+      border-radius: 50px;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: white;
+      transition: all 0.3s ease;
+      width: 100%;
     }
 
     .btn-donate:hover {
-      background-color: #157347;
+      background: linear-gradient(135deg, #c0392b, #e67e22);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
     }
 
-    @media (max-width: 576px) {
-      .donation-header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg,
+          #1a1a2e 0%,
+          #16213e 50%,
+          #0f3460 100%);
+      color: white;
+      padding: 60px 0 30px;
+      position: relative;
+      margin-top: 60px;
+    }
+
+    .footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #e67e22, #f39c12, #e67e22);
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #f39c12;
+      object-fit: cover;
+    }
+
+    .footer-logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #f39c12, #e67e22);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-family: "Playfair Display", "Georgia", serif;
+    }
+
+    .footer h5 {
+      color: #f39c12;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .footer h5::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, #e67e22, #f39c12);
+      border-radius: 3px;
+    }
+
+    .footer a {
+      color: #b8b8b8;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #f39c12;
+      padding-left: 5px;
+    }
+
+    .footer ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    .footer-contact-icon {
+      width: 35px;
+      height: 35px;
+      background: rgba(243, 156, 18, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .footer-contact-item:hover .footer-contact-icon {
+      background: linear-gradient(135deg, #e67e22, #f39c12);
+      transform: scale(1.05);
+    }
+
+    .footer-contact-icon i {
+      color: #f39c12;
+      font-size: 1rem;
+    }
+
+    .footer-contact-item:hover .footer-contact-icon i {
+      color: white;
+    }
+
+    .footer-contact-text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .footer-contact-text span {
+      display: block;
+      font-size: 0.7rem;
+      color: #8a8a8a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+
+    .footer-contact-text p,
+    .footer-contact-text a {
+      font-size: 0.85rem;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .footer-contact-text a:hover {
+      color: #f39c12;
+      padding-left: 0;
+    }
+
+    .footer-social {
+      margin-top: 20px;
+    }
+
+    .footer-social p {
+      color: #b8b8b8;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+      text-align: left;
+    }
+
+    .footer-social-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social-icon {
+      width: 38px;
+      height: 38px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .footer-social-icon:hover {
+      background: linear-gradient(135deg, #e67e22, #f39c12);
+      transform: translateY(-3px);
+      color: white;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+      color: #8a8a8a;
+    }
+
+    /* ==================== */
+    /* RESPONSIVE FIXES */
+    /* ==================== */
+
+    /* iPad Pro specific - smaller buttons to prevent cutting */
+    @media (min-width: 1024px) and (max-width: 1368px) {
+      .nav-buttons-desktop {
+        gap: 6px;
+      }
+
+      .donate-nav,
+      .volunteer-nav {
+        padding: 0.3rem 1rem;
+        font-size: 0.65rem;
+        gap: 5px;
+      }
+
+      .donate-nav::before,
+      .volunteer-nav::before {
+        font-size: 0.7rem;
+      }
+
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+
+      .nav-link {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+      }
+    }
+
+    /* iPad Air landscape fix */
+    @media (min-width: 820px) and (max-width: 1024px) {
+      .nav-buttons-desktop {
+        gap: 5px;
+      }
+
+      .donate-nav,
+      .volunteer-nav {
+        padding: 0.25rem 0.8rem;
+        font-size: 0.6rem;
+        gap: 4px;
+      }
+
+      .donate-nav::before,
+      .volunteer-nav::before {
+        font-size: 0.65rem;
+      }
+
+      .navbar-brand {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Samsung S8+ specific */
+    @media (max-width: 400px) {
+      .navbar-brand {
+        font-size: 0.9rem;
+        max-width: 110px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .logo img {
+        width: 35px;
+        height: 35px;
+        margin-right: 6px;
+      }
+
+      .navbar-toggler {
+        padding: 4px 8px;
+      }
+
+      .navbar.navbar-custom {
+        padding: 5px 0;
+      }
+
+      .nav-link-donate,
+      .nav-link-volunteer {
+        padding: 6px 12px;
+        min-width: 90px;
+        font-size: 0.7rem;
+      }
+
+      .page-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .page-header p {
+        font-size: 0.85rem;
+      }
+
+      .donate-card {
+        padding: 20px;
       }
 
       .donation-title {
-        font-size: 1.75rem;
-        white-space: normal;
-      }
-
-      .donation-topic {
-        margin-top: 10px;
-        font-size: 1.15rem;
-      }
-
-      .donation-description {
-        margin-top: 10px;
-        margin-bottom: 20px;
+        font-size: 1.2rem;
       }
     }
 
-    .donate {
-  padding: 0.5rem 2.5rem 0.5rem 2.5rem;
-  height: 50px;
-  border: 1px solid black;
-  border-radius: 0.5rem;
-  font-size: 0.9rem;
-  background-image: linear-gradient(
-      to right,
-      rgb(252, 116, 5),
-      rgb(255, 254, 251),
-      rgb(4, 250, 4)
-    );
-  color: black;
-  font-weight: bolder;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  position: relative;
-  transition: all .9s ease-in-out;
-  text-transform: uppercase;
-}
+    /* General responsive */
+    @media (max-width: 992px) {
+      body {
+        padding-top: 70px;
+      }
 
-.donate:hover {
-  background-image: linear-gradient(
-      to right,
-      rgb(248, 236, 3),
-      rgb(245, 2, 209),
-      rgb(1, 46, 247)
-    );
-  color: white;
-}
+      .page-header h1 {
+        font-size: 2.5rem;
+      }
+    }
 
-.donate::before {
-  content: "🙏";
-  position: absolute;
-  left: -0rem;
-  top: 0rem;
-  opacity: 1;
-  font-size: 1.55rem;
-  transition: all .9s ease-in-out;
-  transform: rotate(0deg);
-}
+    @media (max-width: 768px) {
+      .page-header {
+        padding: 60px 0 40px;
+      }
 
-.donate:hover::before {
-  content: "❤️";
-  opacity: 1;
-  visibility: visible;
-  transform: rotate(40deg);
-  font-size: 2.5rem;
-  top: -0.75rem;
-  transition: all .9s ease-in-out;
-  animation: rightRun 2s forwards;
-}
+      .page-header h1 {
+        font-size: 2rem;
+      }
 
-.donate:active::before {
-  content: "💝";
-}
+      .donation-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
 
-@keyframes rightRun {
-  100% {
-    transform: translateX(100px);
-  }
-}
+      .donation-title {
+        font-size: 1.3rem;
+      }
 
-.volunteer {
-  outline: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #04843b;
-  min-width: 80px;
-  border: 0;
-  border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
-  box-sizing: border-box;
-  padding: 16px 20px;
-  color: #000000;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  overflow: hidden;
-  cursor: pointer;
-  margin-left: 10px;
-}
+      .footer {
+        text-align: center;
+      }
 
-.volunteer:hover {
-  opacity: .95;
-}
+      .footer-logo {
+        justify-content: center;
+      }
 
-.volunteer .animation {
-  border-radius: 100%;
-  animation: ripple 0.6s linear infinite;
-}
+      .footer h5::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
 
-@keyframes ripple {
-  0% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
-  }
+      .footer-contact-item {
+        justify-content: center;
+      }
 
-  100% {
-    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
-  }
-}
+      .footer-contact-text {
+        text-align: left;
+      }
 
-    </style>
+      .footer-social p {
+        text-align: center;
+      }
+
+      .footer-social-icons {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .page-header h1 {
+        font-size: 1.6rem;
+      }
+
+      .donate-card {
+        padding: 20px;
+      }
+
+      .info-box {
+        padding: 18px;
+      }
+
+      .info-box h3 {
+        font-size: 1.1rem;
+      }
+
+      .donation-box {
+        padding: 20px;
+      }
+
+      .footer-contact-text p,
+      .footer-contact-text a {
+        font-size: 0.75rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-
-        <div class="container">
-          <div class="logo">
-            <img src="img/logo.png" alt="Logo" />
-          </div>
-            <a class="navbar-brand" href="#">Operation Smile</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="partners.html">Our Partners</a></li>
-                    <li class="nav-item"><a class="nav-link" href="initiatives.html">Our Initiatives</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-           <a href="donate.html"><button class="donate">Donate</button></a>
-
-
-            <div>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSei2fpCRa2_GZXVfZZdAst9PCeLmhK4gxhIc6ewTaGBo-2vcg/viewform">
-            <button class="volunteer"><i class="animation"></i>Volunteer<i class="animation"></i>
-            </button>
-            </a>
-            </div>
-
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+      <a href="index.html" class="logo-link">
+        <div class="logo">
+          <img src="img/logo.png" alt="Logo" />
         </div>
-    </nav>
+      </a>
+      <a class="navbar-brand" href="index.html">Operation Smile</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="partners.html">Our Partners</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="initiatives.html">Our Initiatives</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+        <!-- Mobile buttons inside hamburger menu -->
+        <div class="nav-buttons-mobile">
+          <a href="donate.html" class="nav-link-donate">Donate</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSei2fpCRa2_GZXVfZZdAst9PCeLmhK4gxhIc6ewTaGBo-2vcg/viewform"
+            class="nav-link-volunteer">Volunteer</a>
+        </div>
+      </div>
+      <!-- Desktop buttons outside collapse -->
+      <div class="nav-buttons-desktop">
+        <a href="donate.html"><button class="donate-nav">Donate</button></a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSei2fpCRa2_GZXVfZZdAst9PCeLmhK4gxhIc6ewTaGBo-2vcg/viewform">
+          <button class="volunteer-nav">Volunteer</button>
+        </a>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Donate Section -->
-    <section class="donate-section">
-        <div class="container">
-            <h2>Donate Now!</h2>
-            <p>Your donation can make a difference. Help us continue our mission by contributing today.</p>
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Support Our Cause</h1>
+      <p>
+        Your donation can make a difference. Help us continue our mission by
+        contributing today.
+      </p>
+    </div>
+  </section>
+
+  <!-- Donate Section -->
+  <section class="donate-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="donate-card">
+            <h2 style="text-align: center; color: #c0392b; margin-bottom: 10px">
+              Donate Now!
+            </h2>
+            <p class="section-subtitle">
+              Your generosity helps us reach more children in need
+            </p>
 
             <!-- QR Code Scanner Section -->
-            <h3>Scan to Donate</h3>
-            <div class="qr-code">
-                <img src="img/qr.png" alt="QR Code" class="img-fluid">
+            <div class="text-center">
+              <h3 style="font-size: 1.3rem; color: #e67e22; margin-bottom: 15px">
+                Scan to Donate
+              </h3>
+              <div class="qr-code mx-auto">
+                <img src="img/qr.png" alt="QR Code" class="img-fluid" />
+              </div>
             </div>
 
             <!-- Account Details Section -->
-            <div class="account-details">
-                <h3>Bank Account Details</h3>
-                <p><strong>Name:</strong> Operation Smile</p>
-                <p><strong>VPA:</strong> merchant1524783.augp@aubank</p>
-                <p><strong>Account Number:</strong> 2402254959634033</p>
-                <p><strong>IFSC Code:</strong> AUBL0002549</p>
+            <div class="info-box">
+              <h3>
+                <i class="fas fa-university me-2"></i> Bank Account Details
+              </h3>
+              <p><strong>Name:</strong> Operation Smile</p>
+              <p><strong>VPA:</strong> merchant1524783.augp@aubank</p>
+              <p><strong>Account Number:</strong> 2402254959634033</p>
+              <p><strong>IFSC Code:</strong> AUBL0002549</p>
             </div>
 
             <!-- Contact Details Section -->
-            <div class="contact-details">
-                <h3>Contact Us</h3>
-                <p><strong>Email:</strong> operationsmile2303@gmail.com</p>
-                <p><strong>Phone:</strong> +91 8595588085</p>
-                <p><strong>Address:</strong> A1, DDA Colony, New Jaffrabad, Shahdara, New Delhi, Delhi, 110032</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="container my-5">
-  <div class="row g-4">
-    <div class="col-md-6">
-      <div class="donation-box">
-        <div class="donation-header">
-          <h2 class="donation-title"><i class="bi bi-hand-thumbs-up-fill"></i>Child Education</h2>
-          <span class="donation-topic">Stationery Kits</span>
-        </div>
-        <p class="donation-description">
-          Your generous donation provides essential stationery like notebooks, pens, and pencils—tools that empower children to learn and succeed.
-        </p>
-        <div class="row align-items-center mt-4">
-          <div class="col-6 donation-stats">
-            <p><i class="bi bi-bullseye icon"></i><strong>Goal:</strong> ₹20,000</p>
-            <p><i class="bi bi-piggy-bank-fill icon"></i><strong>Collected:</strong> ₹13,000</p>
-            <p><i class="bi bi-cash-stack icon"></i><strong>Remaining:</strong> ₹7000</p>
-          </div>
-          <div class="col-6">
-            <div class="progress mb-3">
-              <div class="progress-bar" style="width: 65%;">65% Raised</div>
-            </div>
-            <div class="d-grid">
-              <a href="donate.html"><button class="btn btn-donate"><i class="bi bi-heart-fill me-2"></i>Donate Now</button></a>
+            <div class="info-box">
+              <h3><i class="fas fa-address-card me-2"></i> Contact Us</h3>
+              <p><strong>Email:</strong> operationsmile2303@gmail.com</p>
+              <p><strong>Phone:</strong> +91 8595588085</p>
+              <p>
+                <strong>Address:</strong> B-76. F/F. DDA Colony, New Zafrabad,
+                Near Shiv Mandir, Delhi-110032
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="col-md-6">
-      <div class="donation-box">
-        <div class="donation-header">
-          <h2 class="donation-title"><i class="bi bi-heart-pulse-fill"></i> Medical Aid</h2>
-          <span class="donation-topic">Emergency Treatments</span>
-        </div>
-        <p class="donation-description">
-          Help us provide critical medical aid to children in emergencies and improve their quality of life.
-        </p>
-        <div class="row align-items-center mt-4">
-          <div class="col-6 donation-stats">
-            <p><i class="bi bi-bullseye icon"></i><strong>Goal:</strong> ₹10,000</p>
-            <p><i class="bi bi-piggy-bank-fill icon"></i><strong>Collected:</strong> ₹6300</p>
-            <p><i class="bi bi-cash-stack icon"></i><strong>Remaining:</strong> ₹3700</p>
+  <!-- Donation Campaigns -->
+  <div class="container my-5">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="donation-box">
+          <div class="donation-header">
+            <h2 class="donation-title">
+              <i class="fas fa-hand-holding-heart"></i> Child Education
+            </h2>
+            <span class="donation-topic">Stationery Kits</span>
           </div>
-          <div class="col-6">
-            <div class="progress mb-3">
-              <div class="progress-bar" style="width: 62.5%;">63% Raised</div>
+          <p class="donation-description">
+            Your generous donation provides essential stationery like
+            notebooks, pens, and pencils—tools that empower children to learn
+            and succeed.
+          </p>
+          <div class="row align-items-center mt-4">
+            <div class="col-6 donation-stats">
+              <p>
+                <i class="fas fa-bullseye"></i> <strong>Goal:</strong> ₹20,000
+              </p>
+              <p>
+                <i class="fas fa-piggy-bank"></i>
+                <strong>Collected:</strong> ₹13,000
+              </p>
+              <p>
+                <i class="fas fa-chart-line"></i>
+                <strong>Remaining:</strong> ₹7,000
+              </p>
             </div>
-            <div class="d-grid">
-              <a href="donate.html"><button class="btn btn-donate"><i class="bi bi-heart-fill me-2"></i>Donate Now</button></a>
+            <div class="col-6">
+              <div class="progress mb-3">
+                <div class="progress-bar" style="width: 65%"></div>
+              </div>
+              <div class="d-grid">
+                <a href="#"><button class="btn btn-donate">
+                    <i class="fas fa-heart me-2"></i>Donate Now
+                  </button></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-md-6">
-      <div class="donation-box">
-        <div class="donation-header">
-          <h2 class="donation-title"><i class="bi bi-book-half"></i> Clothing Care</h2>
-          <span class="donation-topic">Clothing Support</span>
-        </div>
-        <p class="donation-description">
-          Help us supply warm and durable clothes to children in need, protecting them through all seasons.
-        </p>
-        <div class="row align-items-center mt-4">
-          <div class="col-6 donation-stats">
-            <p><i class="bi bi-bullseye icon"></i><strong>Goal:</strong> ₹30,000</p>
-            <p><i class="bi bi-piggy-bank-fill icon"></i><strong>Collected:</strong> ₹20,100</p>
-            <p><i class="bi bi-cash-stack icon"></i><strong>Remaining:</strong> ₹9900</p>
+      <div class="col-md-6">
+        <div class="donation-box">
+          <div class="donation-header">
+            <h2 class="donation-title">
+              <i class="fas fa-heartbeat"></i> Medical Aid
+            </h2>
+            <span class="donation-topic">Emergency Treatments</span>
           </div>
-          <div class="col-6">
-            <div class="progress mb-3">
-              <div class="progress-bar" style="width: 66.6%;">67% Raised</div>
+          <p class="donation-description">
+            Help us provide critical medical aid to children in emergencies
+            and improve their quality of life.
+          </p>
+          <div class="row align-items-center mt-4">
+            <div class="col-6 donation-stats">
+              <p>
+                <i class="fas fa-bullseye"></i> <strong>Goal:</strong> ₹10,000
+              </p>
+              <p>
+                <i class="fas fa-piggy-bank"></i>
+                <strong>Collected:</strong> ₹6,300
+              </p>
+              <p>
+                <i class="fas fa-chart-line"></i>
+                <strong>Remaining:</strong> ₹3,700
+              </p>
             </div>
-            <div class="d-grid">
-              <a href="donate.html"><button class="btn btn-donate"><i class="bi bi-heart-fill me-2"></i>Donate Now</button></a>
+            <div class="col-6">
+              <div class="progress mb-3">
+                <div class="progress-bar" style="width: 63%"></div>
+              </div>
+              <div class="d-grid">
+                <a href="#"><button class="btn btn-donate">
+                    <i class="fas fa-heart me-2"></i>Donate Now
+                  </button></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-md-6">
-      <div class="donation-box">
-        <div class="donation-header">
-          <h2 class="donation-title"><i class="bi bi-house-heart-fill"></i> Feeding Animals</h2>
-          <span class="donation-topic">Nourish the Voiceless</span>
-        </div>
-        <p class="donation-description">
-          Your support delivers nourishing food to animals in need, giving them strength and hope for a better tomorrow..
-        </p>
-        <div class="row align-items-center mt-4">
-          <div class="col-6 donation-stats">
-            <p><i class="bi bi-bullseye icon"></i><strong>Goal:</strong> ₹10,000</p>
-            <p><i class="bi bi-piggy-bank-fill icon"></i><strong>Collected:</strong> ₹5000</p>
-            <p><i class="bi bi-cash-stack icon"></i><strong>Remaining:</strong> ₹5000</p>
+      <div class="col-md-6">
+        <div class="donation-box">
+          <div class="donation-header">
+            <h2 class="donation-title">
+              <i class="fas fa-tshirt"></i> Clothing Care
+            </h2>
+            <span class="donation-topic">Clothing Support</span>
           </div>
-          <div class="col-6">
-            <div class="progress mb-3">
-              <div class="progress-bar" style="width: 50%;">50% Raised</div>
+          <p class="donation-description">
+            Help us supply warm and durable clothes to children in need,
+            protecting them through all seasons.
+          </p>
+          <div class="row align-items-center mt-4">
+            <div class="col-6 donation-stats">
+              <p>
+                <i class="fas fa-bullseye"></i> <strong>Goal:</strong> ₹30,000
+              </p>
+              <p>
+                <i class="fas fa-piggy-bank"></i>
+                <strong>Collected:</strong> ₹20,100
+              </p>
+              <p>
+                <i class="fas fa-chart-line"></i>
+                <strong>Remaining:</strong> ₹9,900
+              </p>
             </div>
-            <div class="d-grid">
-              <a href="donate.html"><button class="btn btn-donate"><i class="bi bi-heart-fill me-2"></i>Donate Now</button></a>
+            <div class="col-6">
+              <div class="progress mb-3">
+                <div class="progress-bar" style="width: 67%"></div>
+              </div>
+              <div class="d-grid">
+                <a href="#"><button class="btn btn-donate">
+                    <i class="fas fa-heart me-2"></i>Donate Now
+                  </button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="donation-box">
+          <div class="donation-header">
+            <h2 class="donation-title">
+              <i class="fas fa-paw"></i> Feeding Animals
+            </h2>
+            <span class="donation-topic">Nourish the Voiceless</span>
+          </div>
+          <p class="donation-description">
+            Your support delivers nourishing food to animals in need, giving
+            them strength and hope for a better tomorrow.
+          </p>
+          <div class="row align-items-center mt-4">
+            <div class="col-6 donation-stats">
+              <p>
+                <i class="fas fa-bullseye"></i> <strong>Goal:</strong> ₹10,000
+              </p>
+              <p>
+                <i class="fas fa-piggy-bank"></i>
+                <strong>Collected:</strong> ₹5,000
+              </p>
+              <p>
+                <i class="fas fa-chart-line"></i>
+                <strong>Remaining:</strong> ₹5,000
+              </p>
+            </div>
+            <div class="col-6">
+              <div class="progress mb-3">
+                <div class="progress-bar" style="width: 50%"></div>
+              </div>
+              <div class="d-grid">
+                <a href="#"><button class="btn btn-donate">
+                    <i class="fas fa-heart me-2"></i>Donate Now
+                  </button></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-
-
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center text-md-start">
-            <div class="row">
-                <!-- About Section -->
-                <div class="col-md-4 mb-3">
-                    <h5>About Us</h5>
-                    <p>We are dedicated to making a difference through community-driven initiatives and impactful projects.</p>
-                </div>
-                
-                <!-- Quick Links -->
-                <div class="col-md-4 mb-3">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                    <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
-                    <li><a href="about.html" class="text-white text-decoration-none">About</a></li>
-                    <li><a href="initiatives.html" class="text-white text-decoration-none">Projects</a></li>
-                    <li><a href="donate.html" class="text-white text-decoration-none">Donate</a></li>
-                    <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Contact Info -->
-                <div class="col-md-4 mb-3">
-                    <h5>Contact Us</h5>
-                    <p>Email: operationsmile2303@gmail.com</p>
-                <p>Phone:  +91 8595588085</p>
-                <p>Address: A1, DDA Colony, New Jaffrabad, Shahdara, New Delhi, Delhi, 110032</p>
-                    
-                </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="footer-logo">
+            <img src="img/logo.png" alt="Logo" class="footer-logo-img" />
+            <span class="footer-logo-text">Operation Smile</span>
+          </div>
+          <p class="mb-3" style="color: #b8b8b8; font-size: 0.85rem">
+            We are dedicated to making a difference through community-driven
+            initiatives and impactful projects.
+          </p>
+          <div class="footer-social">
+            <p>Follow Us</p>
+            <div class="footer-social-icons">
+              <a href="https://www.instagram.com/operation.smile__/" class="footer-social-icon" target="_blank"><i
+                  class="fab fa-instagram"></i></a>
+              <a href="https://x.com/smilengo23?s=11" class="footer-social-icon" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-twitter-x" viewBox="0 0 16 16">
+                  <path
+                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/operation-smile-foundation-1079993b8" class="footer-social-icon"
+                target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.youtube.com/@OperationSmilefoundation23" class="footer-social-icon"
+                target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
+          </div>
         </div>
-        
-        <div class="text-center mt-3">
-            <p class="mb-0">&copy; 2025 Operation Smile. All Rights Reserved.</p>
+        <div class="col-md-4 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="initiatives.html">Initiatives</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
         </div>
-    </footer>
+        <div class="col-md-4 mb-4">
+          <h5>Contact Us</h5>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="footer-contact-text">
+              <span>EMAIL</span>
+              <a href="mailto:operationsmile2303@gmail.com">operationsmile2303@gmail.com</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="footer-contact-text">
+              <span>PHONE</span>
+              <a href="tel:+918595588085">+91 85955 88085</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="footer-contact-text">
+              <span>ADDRESS</span>
+              <p>
+                B-76, F/F, DDA Colony, New Zafrabad, Near Shiv Mandir,
+                Delhi-110032
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="mb-0">&copy; 2025 Operation Smile. All Rights Reserved.</p>
+    </div>
+  </footer>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
