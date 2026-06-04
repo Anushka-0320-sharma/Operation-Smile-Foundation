@@ -10,6 +10,8 @@
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
   <link rel="icon" type="image/png" href="img/fevicon.png" />
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
@@ -68,12 +70,12 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(255, 248, 235, 0.94);
+      background: rgba(255, 248, 235, 0.95);
       backdrop-filter: blur(16px);
       z-index: 1000;
       padding: 8px 0;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+      border-bottom: 1px solid rgba(230, 126, 34, 0.1);
     }
 
     .logo img {
@@ -291,46 +293,63 @@
     /* Page Header */
     .page-header {
       background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-      padding: 80px 0 60px;
+      padding: 100px 0 80px;
       text-align: center;
       position: relative;
       overflow: hidden;
-      margin-bottom: 50px;
+      margin-bottom: 60px;
+      border-radius: 0 0 60px 60px;
     }
 
     .page-header::before {
       content: "📸";
       position: absolute;
-      top: -50px;
-      right: -50px;
-      font-size: 200px;
+      top: -80px;
+      right: -80px;
+      font-size: 300px;
       opacity: 0.05;
       z-index: 0;
+      animation: float 20s ease-in-out infinite;
     }
 
     .page-header::after {
       content: "✨";
       position: absolute;
-      bottom: -50px;
-      left: -50px;
-      font-size: 180px;
+      bottom: -80px;
+      left: -80px;
+      font-size: 280px;
       opacity: 0.05;
       z-index: 0;
+      animation: float 15s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-25px) rotate(10deg);
+      }
     }
 
     .page-header h1 {
-      font-size: 3.5rem;
+      font-size: 4rem;
       font-weight: 800;
       color: white;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       position: relative;
       z-index: 1;
+      text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+      letter-spacing: 2px;
     }
 
     .page-header p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #b8b8b8;
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto;
       position: relative;
       z-index: 1;
@@ -338,36 +357,36 @@
 
     /* Gallery Container */
     .gallery-container {
-      padding: 0 20px 60px;
+      padding: 0 20px 80px;
     }
 
     .gallery-title {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
     .gallery-title h2 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       font-weight: 800;
       background: linear-gradient(135deg, #c0392b, #e67e22, #f39c12);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .gallery-title .divider {
-      width: 80px;
+      width: 100px;
       height: 4px;
-      background: linear-gradient(90deg, #e67e22, #f39c12);
-      margin: 0 auto 20px;
+      background: linear-gradient(90deg, #e67e22, #f39c12, #e67e22);
+      margin: 0 auto 25px;
       border-radius: 4px;
     }
 
     .gallery-title p {
       color: #6a5a4a;
-      font-size: 1rem;
-      max-width: 600px;
+      font-size: 1.1rem;
+      max-width: 650px;
       margin: 0 auto;
     }
 
@@ -375,34 +394,52 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
     }
 
     .gallery-item {
       position: relative;
-      width: 280px;
-      height: 280px;
+      width: 300px;
+      height: 300px;
       overflow: hidden;
-      border-radius: 20px;
+      border-radius: 24px;
       cursor: pointer;
-      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.15);
+      transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.15);
+    }
+
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(230, 126, 34, 0.3), rgba(243, 156, 18, 0.1));
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 1;
+      border-radius: 24px;
+    }
+
+    .gallery-item:hover::before {
+      opacity: 1;
     }
 
     .gallery-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 30px -12px rgba(230, 126, 34, 0.25);
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 25px 45px -15px rgba(230, 126, 34, 0.3);
     }
 
     .gallery img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: transform 0.6s ease;
     }
 
     .gallery-item:hover img {
-      transform: scale(1.08);
+      transform: scale(1.1);
     }
 
     .gallery-overlay {
@@ -410,11 +447,12 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-      padding: 15px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+      padding: 20px;
       text-align: center;
       transform: translateY(100%);
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease;
+      z-index: 2;
     }
 
     .gallery-item:hover .gallery-overlay {
@@ -423,23 +461,36 @@
 
     .gallery-overlay i {
       color: #f39c12;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      margin-right: 8px;
     }
 
+    .gallery-overlay span {
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Loading Indicator */
     .loading-indicator {
       text-align: center;
-      padding: 40px;
+      padding: 50px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 15px;
     }
 
     .loading-indicator i {
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: #e67e22;
       animation: spin 1s linear infinite;
+    }
+
+    .loading-indicator p {
+      color: #6a5a4a;
+      font-size: 1rem;
     }
 
     @keyframes spin {
@@ -452,23 +503,30 @@
       }
     }
 
+    /* Image Counter */
     .image-counter {
       text-align: center;
-      margin-top: 30px;
-      padding: 15px;
-      background: white;
-      border-radius: 50px;
+      margin-top: 40px;
+      padding: 15px 30px;
+      background: linear-gradient(145deg, #ffffff, #fefaf5);
+      border-radius: 60px;
       display: inline-block;
       width: auto;
       margin-left: auto;
       margin-right: auto;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(230, 126, 34, 0.15);
     }
 
     .image-counter p {
       margin: 0;
       color: #e67e22;
       font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .image-counter i {
+      margin-right: 8px;
     }
 
     /* Footer */
@@ -657,7 +715,7 @@
       color: #8a8a8a;
     }
 
-    /* Responsive */
+    /* iPad Pro specific */
     @media (min-width: 1024px) and (max-width: 1368px) {
       .nav-buttons-desktop {
         gap: 6px;
@@ -668,6 +726,7 @@
         padding: 0.3rem 1rem;
         font-size: 0.65rem;
         gap: 5px;
+        height: 38px;
       }
 
       .donate::before,
@@ -683,6 +742,15 @@
         font-size: 0.8rem;
         padding: 4px 8px;
       }
+
+      .page-header h1 {
+        font-size: 3rem;
+      }
+
+      .gallery-item {
+        width: 260px;
+        height: 260px;
+      }
     }
 
     @media (min-width: 820px) and (max-width: 1024px) {
@@ -695,6 +763,7 @@
         padding: 0.25rem 0.8rem;
         font-size: 0.6rem;
         gap: 4px;
+        height: 34px;
       }
 
       .donate::before,
@@ -704,6 +773,11 @@
 
       .navbar-brand {
         font-size: 1.1rem;
+      }
+
+      .gallery-item {
+        width: 240px;
+        height: 240px;
       }
     }
 
@@ -728,21 +802,25 @@
       .nav-link-donate,
       .nav-link-volunteer {
         padding: 6px 12px;
-        min-width: 90px;
-        font-size: 0.7rem;
+        min-width: 85px;
+        font-size: 0.65rem;
       }
 
       .page-header h1 {
         font-size: 1.8rem;
       }
 
+      .page-header {
+        padding: 60px 0 40px;
+      }
+
       .gallery-title h2 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
       }
 
       .gallery-item {
         width: 100%;
-        height: 220px;
+        height: 250px;
       }
     }
 
@@ -760,18 +838,24 @@
       }
 
       .gallery-item {
-        width: 240px;
-        height: 240px;
+        width: 260px;
+        height: 260px;
       }
     }
 
     @media (max-width: 768px) {
       .page-header {
         padding: 60px 0 40px;
+        border-radius: 0 0 35px 35px;
       }
 
       .page-header h1 {
         font-size: 2rem;
+      }
+
+      .page-header p {
+        font-size: 0.9rem;
+        padding: 0 20px;
       }
 
       .gallery-title h2 {
@@ -819,7 +903,7 @@
       }
 
       .gallery-title h2 {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
       }
 
       .gallery-item {
@@ -872,25 +956,29 @@
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
-      <h1>Our Gallery</h1>
-      <p>Capturing moments of joy, hope, and transformation through our initiatives</p>
+      <h1 class="animate__animated animate__fadeInDown">✨ Our Gallery ✨</h1>
+      <p class="animate__animated animate__fadeInUp animate__delay-1s">
+        Capturing moments of joy, hope, and transformation through our initiatives
+      </p>
     </div>
   </section>
 
   <!-- Gallery Section -->
   <div class="gallery-container">
     <div class="container">
-      <div class="gallery-title">
+      <div class="gallery-title" data-aos="fade-up">
         <h2><i class="fas fa-camera me-2"></i> Our Smiles Gallery</h2>
         <div class="divider"></div>
-        <p>Every picture tells a story of hope, resilience, and the smiles we've created together</p>
+        <p>
+          Every picture tells a story of hope, resilience, and the smiles we've created together
+        </p>
       </div>
       <div class="gallery" id="gallery">
         <!-- Images will be loaded here by JavaScript -->
       </div>
       <div class="loading-indicator" id="loadingIndicator">
-        <i class="fas fa-spinner"></i>
-        <p>Loading images...</p>
+        <i class="fas fa-camera-retro"></i>
+        <p>Discovering precious moments...</p>
       </div>
     </div>
   </div>
@@ -961,33 +1049,47 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100,
+      easing: 'ease-in-out'
+    });
+
     const gallery = document.getElementById("gallery");
     const folderPath = "images/gallery";
     const extension = "png";
 
     let foundImages = [];
     let loadedCount = 0;
-    let totalToCheck = 0;
     const loadingIndicator = document.getElementById("loadingIndicator");
 
     function createGalleryItem(imgSrc, imageNumber) {
       const div = document.createElement("div");
       div.className = "gallery-item";
+      div.setAttribute("data-aos", "fade-up");
+      div.setAttribute("data-aos-duration", "600");
+
       const img = document.createElement("img");
       img.src = imgSrc;
       img.alt = `Gallery Image ${imageNumber}`;
       img.loading = "lazy";
+
       const overlay = document.createElement("div");
       overlay.className = "gallery-overlay";
-      overlay.innerHTML = `<i class="fas fa-search-plus"></i><span style="margin-left: 8px;">Image ${imageNumber}</span>`;
+      overlay.innerHTML = `<i class="fas fa-search-plus"></i><span>Image ${imageNumber}</span>`;
+
       div.appendChild(img);
       div.appendChild(overlay);
+
       div.addEventListener("click", function () {
         this.classList.add("animate__animated", "animate__pulse");
         setTimeout(() => this.classList.remove("animate__animated", "animate__pulse"), 300);
       });
+
       return div;
     }
 
@@ -997,10 +1099,10 @@
       if (container && !existingCounter) {
         const counterDiv = document.createElement("div");
         counterDiv.className = "image-counter";
-        counterDiv.innerHTML = `<p><i class="fas fa-images me-2"></i> Showing ${count} Moments of Joy</p>`;
+        counterDiv.innerHTML = `<p><i class="fas fa-images me-2"></i> Showing ${count} Beautiful Moments of Joy</p>`;
         container.appendChild(counterDiv);
       } else if (existingCounter) {
-        existingCounter.innerHTML = `<p><i class="fas fa-images me-2"></i> Showing ${count} Moments of Joy</p>`;
+        existingCounter.innerHTML = `<p><i class="fas fa-images me-2"></i> Showing ${count} Beautiful Moments of Joy</p>`;
       }
     }
 
@@ -1020,7 +1122,7 @@
           const galleryItem = createGalleryItem(imgSrc, number);
           gallery.appendChild(galleryItem);
           loadedCount++;
-          loadingIndicator.innerHTML = `<i class="fas fa-spinner"></i><p>Loaded ${loadedCount} images... (checking ${number})</p>`;
+          loadingIndicator.innerHTML = `<i class="fas fa-camera-retro"></i><p>Found ${loadedCount} precious moments... (scanning ${number})</p>`;
           resolve(true);
         };
 
@@ -1035,17 +1137,15 @@
 
     async function scanAndLoadImages() {
       loadingIndicator.style.display = "flex";
-      loadingIndicator.innerHTML = '<i class="fas fa-spinner"></i><p>Scanning gallery...</p>';
+      loadingIndicator.innerHTML = '<i class="fas fa-camera-retro"></i><p>Discovering precious moments...</p>';
 
-      // First, quickly find which numbers exist by checking in parallel batches
-      const BATCH_SIZE = 35;
+      const BATCH_SIZE = 20;
       let currentNumber = 1;
       let consecutiveMissing = 0;
       const MAX_NUMBER = 500;
-      const CONSECUTIVE_LIMIT = 50;
+      const CONSECUTIVE_LIMIT = 35;
 
       while (currentNumber <= MAX_NUMBER && consecutiveMissing < CONSECUTIVE_LIMIT) {
-        // Process batch in parallel
         const batchNumbers = [];
         for (let i = 0; i < BATCH_SIZE && currentNumber <= MAX_NUMBER; i++) {
           batchNumbers.push(currentNumber);
@@ -1061,12 +1161,14 @@
           consecutiveMissing = 0;
         }
 
-        // Small delay between batches
         await new Promise(resolve => setTimeout(resolve, 50));
       }
 
       loadingIndicator.style.display = "none";
       addImageCounter(foundImages.length);
+
+      // Reinitialize AOS for newly added elements
+      AOS.refresh();
     }
 
     scanAndLoadImages();

@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="icon" type="image/png" href="img/fevicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -67,12 +69,12 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(255, 248, 235, 0.94);
+      background: rgba(255, 248, 235, 0.95);
       backdrop-filter: blur(16px);
       z-index: 1000;
       padding: 8px 0;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+      border-bottom: 1px solid rgba(230, 126, 34, 0.1);
     }
 
     .logo img {
@@ -242,63 +244,86 @@
 
     /* Hero Section */
     .partners-hero {
-      padding: 60px 0 40px;
+      padding: 100px 0 80px;
       background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
       color: white;
       text-align: center;
       position: relative;
       overflow: hidden;
       margin-bottom: 50px;
-      border-radius: 0 0 40px 40px;
+      border-radius: 0 0 60px 60px;
     }
 
     .partners-hero::before {
-      content: "";
+      content: "🤝";
       position: absolute;
-      top: -100px;
-      left: -100px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(243, 156, 18, 0.15), transparent);
-      border-radius: 50%;
+      top: -80px;
+      right: -80px;
+      font-size: 350px;
+      opacity: 0.05;
+      z-index: 0;
+      animation: float 20s ease-in-out infinite;
     }
 
     .partners-hero::after {
-      content: "";
+      content: "💝";
       position: absolute;
-      bottom: -100px;
-      right: -100px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(230, 126, 34, 0.1), transparent);
-      border-radius: 50%;
+      bottom: -80px;
+      left: -80px;
+      font-size: 320px;
+      opacity: 0.05;
+      z-index: 0;
+      animation: float 15s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-25px) rotate(10deg);
+      }
     }
 
     .partners-hero h1 {
-      font-size: 3rem;
+      font-size: 4rem;
       font-weight: 800;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       position: relative;
       z-index: 1;
+      text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+      letter-spacing: 2px;
+    }
+
+    .partners-hero h1 span {
+      background: linear-gradient(135deg, #f39c12, #e67e22, #f39c12);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
     }
 
     .partners-hero p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       max-width: 800px;
       margin: 0 auto;
-      line-height: 1.7;
+      line-height: 1.8;
       position: relative;
       z-index: 1;
       opacity: 0.95;
     }
 
-    /* Partner Cards - Improved for tablets */
+    /* Partner Cards - Enhanced Premium Design */
     .partner-card {
-      background: white;
-      padding: 30px 20px;
-      border-radius: 24px;
-      box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.1);
-      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(2px);
+      padding: 35px 25px;
+      border-radius: 32px;
+      box-shadow: 0 25px 45px -15px rgba(0, 0, 0, 0.1);
+      transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -308,104 +333,186 @@
       border: 1px solid rgba(230, 126, 34, 0.1);
       position: relative;
       overflow: hidden;
+      cursor: pointer;
     }
 
+    /* Animated gradient border on hover */
     .partner-card::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #e67e22, #f39c12);
+      height: 5px;
+      background: linear-gradient(90deg, #e67e22, #f39c12, #e67e22);
       transform: scaleX(0);
       transform-origin: left;
-      transition: transform 0.4s ease;
+      transition: transform 0.6s ease;
     }
 
     .partner-card:hover::before {
       transform: scaleX(1);
     }
 
+    /* Glowing effect on hover */
+    .partner-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(230, 126, 34, 0.12), transparent);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      border-radius: 32px;
+    }
+
+    .partner-card:hover::after {
+      opacity: 1;
+    }
+
     .partner-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 25px 45px -15px rgba(230, 126, 34, 0.25);
+      transform: translateY(-18px) scale(1.02);
+      box-shadow: 0 40px 60px -20px rgba(230, 126, 34, 0.4);
       border-color: rgba(230, 126, 34, 0.3);
     }
 
     .partner-logo {
-      width: 100px;
-      height: 100px;
+      width: 130px;
+      height: 130px;
       object-fit: contain;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
+      margin-bottom: 25px;
+      transition: all 0.5s ease;
       border-radius: 50%;
-      background: white;
-      padding: 10px;
+      background: linear-gradient(145deg, #ffffff, #fefaf5);
+      padding: 18px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
     }
 
     .partner-card:hover .partner-logo {
-      transform: scale(1.08);
+      transform: scale(1.12) rotate(5deg);
+      box-shadow: 0 18px 35px rgba(230, 126, 34, 0.25);
     }
 
     .partner-card h3 {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 700;
-      color: #c0392b;
-      margin-bottom: 12px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      background: linear-gradient(135deg, #c0392b, #8b2c1a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .partner-card:hover h3 {
+      background: linear-gradient(135deg, #e67e22, #f39c12);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 0.5px;
     }
 
     .partner-description {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: #6a5a4a;
-      line-height: 1.6;
-      margin-bottom: 20px;
+      line-height: 1.7;
+      margin-bottom: 25px;
       flex: 1;
     }
 
     .partner-card .btn {
       background: linear-gradient(135deg, #e67e22, #f39c12);
       border: none;
-      padding: 10px 25px;
+      padding: 12px 32px;
       border-radius: 50px;
       font-weight: 600;
       font-size: 0.85rem;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
       margin-top: auto;
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+
+    .partner-card .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .partner-card .btn:hover::before {
+      width: 300px;
+      height: 300px;
     }
 
     .partner-card .btn:hover {
       background: linear-gradient(135deg, #c0392b, #e67e22);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(230, 126, 34, 0.5);
+    }
+
+    /* AOS Animation Overrides */
+    [data-aos] {
+      pointer-events: auto !important;
     }
 
     /* Volunteers Section */
     .volunteers-section {
-      background: linear-gradient(145deg, #fefaf5, #ffffff);
-      padding: 60px 0;
+      background: linear-gradient(145deg, #fff8f0, #ffffff);
+      padding: 80px 0;
       margin-top: 40px;
+      position: relative;
+    }
+
+    .volunteers-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #e67e22, #f39c12, #e67e22, transparent);
+    }
+
+    .volunteers-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #f39c12, #e67e22, #f39c12, transparent);
     }
 
     .volunteers-section h4 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: 800;
       background: linear-gradient(135deg, #c0392b, #e67e22, #f39c12);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       font-family: "Playfair Display", "Georgia", serif;
     }
 
     .volunteer-box {
-      max-height: 400px;
+      max-height: 500px;
       overflow-y: auto;
       background: white;
-      border-radius: 24px;
-      padding: 20px;
-      box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(230, 126, 34, 0.15);
+      border-radius: 32px;
+      padding: 30px;
+      box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(230, 126, 34, 0.12);
     }
 
     .volunteer-box::-webkit-scrollbar {
@@ -425,12 +532,12 @@
     .volunteer-name {
       background: linear-gradient(135deg, #fefaf5, #ffffff);
       color: #c0392b;
-      padding: 8px 12px;
+      padding: 12px 15px;
       font-size: 0.85rem;
       font-weight: 600;
       border-radius: 50px;
       text-align: center;
-      border: 1px solid rgba(230, 126, 34, 0.15);
+      border: 1px solid rgba(230, 126, 34, 0.12);
       transition: all 0.3s ease;
       white-space: nowrap;
       overflow: hidden;
@@ -438,10 +545,10 @@
     }
 
     .volunteer-name:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       border-color: #e67e22;
       background: linear-gradient(135deg, #fff8f0, #ffffff);
-      box-shadow: 0 4px 10px rgba(230, 126, 34, 0.1);
+      box-shadow: 0 8px 18px rgba(230, 126, 34, 0.12);
     }
 
     /* Footer */
@@ -630,20 +737,42 @@
       color: #8a8a8a;
     }
 
-    /* Responsive - Tablet & Mobile Optimized */
-    /* iPad Pro (1024px and above) */
-    @media (min-width: 1024px) and (max-width: 1366px) {
-      .partners-hero h1 {
-        font-size: 2.8rem;
+    /* iPad Pro specific - smaller buttons to prevent cutting */
+    @media (min-width: 1024px) and (max-width: 1368px) {
+      .nav-buttons-desktop {
+        gap: 6px;
+      }
+
+      .donate,
+      .volunteer {
+        padding: 0.3rem 1rem;
+        font-size: 0.65rem;
+        gap: 5px;
+        height: 38px;
+        min-width: 85px;
+      }
+
+      .donate::before,
+      .volunteer::before {
+        font-size: 0.7rem;
+      }
+
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+
+      .nav-link {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+      }
+
+      .partner-logo {
+        width: 100px;
+        height: 100px;
       }
 
       .partner-card {
         padding: 25px 15px;
-      }
-
-      .partner-logo {
-        width: 90px;
-        height: 90px;
       }
 
       .partner-card h3 {
@@ -655,25 +784,50 @@
       }
     }
 
-    /* iPad Air & Tablets (768px - 1024px) */
+    /* iPad Air landscape specific */
+    @media (min-width: 820px) and (max-width: 1024px) {
+      .nav-buttons-desktop {
+        gap: 5px;
+      }
+
+      .donate,
+      .volunteer {
+        padding: 0.25rem 0.8rem;
+        font-size: 0.6rem;
+        gap: 4px;
+        height: 34px;
+        min-width: 75px;
+      }
+
+      .donate::before,
+      .volunteer::before {
+        font-size: 0.65rem;
+      }
+
+      .navbar-brand {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Responsive */
+    @media (min-width: 1024px) and (max-width: 1366px) {
+      .partners-hero h1 {
+        font-size: 3.2rem;
+      }
+    }
+
     @media (max-width: 1024px) {
       body {
         padding-top: 70px;
       }
 
       .partners-hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
       }
 
       .partners-hero p {
         font-size: 1rem;
         padding: 0 20px;
-      }
-
-      /* 2 columns on tablets */
-      .row-cols-md-2 {
-        display: flex;
-        flex-wrap: wrap;
       }
 
       .col {
@@ -682,7 +836,6 @@
       }
     }
 
-    /* Mobile devices */
     @media (max-width: 768px) {
       .nav-buttons-desktop {
         display: none !important;
@@ -694,12 +847,12 @@
       }
 
       .partners-hero {
-        padding: 40px 0 30px;
-        border-radius: 0 0 30px 30px;
+        padding: 60px 0 40px;
+        border-radius: 0 0 35px 35px;
       }
 
       .partners-hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
 
       .partner-card {
@@ -707,18 +860,17 @@
       }
 
       .partner-logo {
-        width: 80px;
-        height: 80px;
+        width: 90px;
+        height: 90px;
       }
 
-      .partner-card h3 {
-        font-size: 1.1rem;
-      }
-
-      /* Single column on mobile */
       .col {
         flex: 0 0 100%;
         max-width: 100%;
+      }
+
+      .volunteers-section h4 {
+        font-size: 1.8rem;
       }
 
       .footer {
@@ -751,7 +903,6 @@
       }
     }
 
-    /* Small mobile devices */
     @media (max-width: 576px) {
       .partners-hero h1 {
         font-size: 1.8rem;
@@ -759,46 +910,36 @@
 
       .partner-card .btn {
         padding: 8px 20px;
-        font-size: 0.75rem;
+        font-size: 0.7rem;
       }
 
-      .partner-description {
-        font-size: 0.75rem;
+      .volunteers-section h4 {
+        font-size: 1.5rem;
       }
     }
 
-    /* Samsung S8+ specific (360px width) */
     @media (max-width: 380px) {
       .navbar-brand {
         font-size: 1.2rem;
       }
 
       .logo img {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
       }
 
       .partners-hero h1 {
-        font-size: 1.6rem;
-      }
-
-      .partner-card h3 {
-        font-size: 1rem;
+        font-size: 1.5rem;
       }
 
       .partner-logo {
-        width: 70px;
-        height: 70px;
-      }
-
-      .partner-card .btn {
-        padding: 6px 15px;
-        font-size: 0.7rem;
+        width: 80px;
+        height: 80px;
       }
 
       .volunteer-name {
-        font-size: 0.7rem;
-        padding: 6px 8px;
+        font-size: 0.65rem;
+        padding: 6px 10px;
       }
     }
   </style>
@@ -841,7 +982,7 @@
   <!-- Hero Section -->
   <section class="partners-hero">
     <div class="container">
-      <h1 class="animate__animated animate__fadeInDown">Our Partners</h1>
+      <h1 class="animate__animated animate__fadeInDown">✨ <span>Our Partners</span> ✨</h1>
       <p class="animate__animated animate__fadeInUp animate__delay-1s">
         हमारे साझेदार निस्वार्थ सेवा और समर्पण के साथ समाज के उत्थान के लिए कार्यरत हैं। वे करुणा और सहयोग से जरूरतमंदों
         को सशक्त बनाकर सकारात्मक बदलाव ला रहे हैं।
@@ -853,161 +994,192 @@
     </div>
   </section>
 
-  <!-- Partners Grid -->
+  <!-- Partners Grid with AOS Scroll Animations -->
   <div class="container">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-      <!-- Partner cards (all 16 partners) -->
-      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.05s">
+      <!-- Partner 1 -->
+      <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">
         <div class="partner-card">
           <img src="img/Partners/Saadhak Foundation.png" alt="Saadhak Foundation" class="partner-logo" />
           <h3>Saadhak Foundation</h3>
           <p class="partner-description">स्वस्मै स्वल्पं समाजाय सर्वस्वं।</p>
-          <a href="https://www.instagram.com/saadhakfoundation" class="btn" target="_blank">Visit Us</a>
+          <a href="https://www.instagram.com/saadhakfoundation" class="btn" target="_blank">Visit Us <i
+              class="fas fa-arrow-right ms-2"></i></a>
         </div>
       </div>
-      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+      <!-- Partner 2 -->
+      <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
         <div class="partner-card">
           <img src="img/Partners/sevabharti.png" alt="Seva Bharti Foundation" class="partner-logo" />
           <h3>Seva Bharti Foundation</h3>
           <p class="partner-description">सर्वे भवन्तु सुखिनः, सर्वे सन्तु निरामयाः। सर्वे भद्राणि पश्यन्तु, मा कश्चित्
             दुःखभाग्भवेत्॥</p>
-          <a href="https://www.sewabhartidelhi.org/" class="btn" target="_blank">Visit Us</a>
+          <a href="https://www.sewabhartidelhi.org/" class="btn" target="_blank">Visit Us <i
+              class="fas fa-arrow-right ms-2"></i></a>
         </div>
       </div>
-      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.15s">
+      <!-- Partner 3 -->
+      <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
         <div class="partner-card">
           <img src="img/Partners/visan.png" alt="Visan Foundation" class="partner-logo" />
           <h3>Visan Foundation</h3>
           <p class="partner-description">Empowering communities through digital transformation and innovative IT
             solutions for social good.</p>
-          <a href="https://visanfoundation.org/" class="btn" target="_blank">Visit Us</a>
+          <a href="https://visanfoundation.org/" class="btn" target="_blank">Visit Us <i
+              class="fas fa-arrow-right ms-2"></i></a>
         </div>
       </div>
-      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+      <!-- Partner 4 -->
+      <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
         <div class="partner-card">
           <img src="img/Partners/pehel.png" alt="NGO Pehal Ek Jeevan Ki" class="partner-logo" />
           <h3>NGO Pehal Ek Jeevan Ki</h3>
           <p class="partner-description">भारत की पहली संस्था जो गऊ माता और बेज़ुबान जानवरो का अंतिम संस्कार करती है 🕉️
           </p>
-          <a href="https://www.instagram.com/ngo_pehalekjeevanki/?hl=en" class="btn" target="_blank">Visit Us</a>
+          <a href="https://www.instagram.com/ngo_pehalekjeevanki/?hl=en" class="btn" target="_blank">Visit Us <i
+              class="fas fa-arrow-right ms-2"></i></a>
         </div>
       </div>
-      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.25s">
+      <!-- Partner 5 -->
+      <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
         <div class="partner-card">
           <img src="img/Partners/Apna Ghar Ashram.png" alt="Apna Ghar Ashram" class="partner-logo" />
           <h3>Apna Ghar Ashram</h3>
           <p class="partner-description">A shelter providing care, support, and hope to the homeless and underprivileged
             in Noida.</p>
-          <a href="https://www.instagram.com/apna.gharashramnoida" class="btn" target="_blank">Visit Us</a>
+          <a href="https://www.instagram.com/apna.gharashramnoida" class="btn" target="_blank">Visit Us <i
+              class="fas fa-arrow-right ms-2"></i></a>
         </div>
       </div>
-      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
+      <!-- Partner 6 -->
+      <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
         <div class="partner-card">
           <img src="img/Partners/Arohana Foundation.png" alt="Arohana Foundation" class="partner-logo" />
           <h3>Arohana Foundation</h3>
           <p class="partner-description">Dedicated to uplifting marginalized communities through education, health, and
             empowerment programs.</p>
-          <a href="https://www.instagram.com/arohana_foundation" class="btn" target="_blank">Visit Us</a>
+          <a href="https://www.instagram.com/arohana_foundation" class="btn" target="_blank">Visit Us <i
+              class="fas fa-arrow-right ms-2"></i></a>
         </div>
       </div>
-      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.35s">
+      <!-- Partner 7 -->
+      <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="350">
         <div class="partner-card">
           <img src="img/Partners/Bharat Blind School.png" alt="Bharat Blind School" class="partner-logo" />
           <h3>Bharat Blind School</h3>
           <p class="partner-description">Empowering visually impaired students with education, skills, and opportunities
             for an independent life.</p>
-          <a href="#" class="btn" target="_blank">Visit Us</a>
+          <a href="#" class="btn" target="_blank">Visit Us <i class="fas fa-arrow-right ms-2"></i></a>
         </div>
       </div>
-      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+      <!-- Partner 8 -->
+      <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
         <div class="partner-card">
           <img src="img/Partners/Delhi Police.png" alt="Delhi Police" class="partner-logo" />
           <h3>Delhi Police</h3>
           <p class="partner-description">Collaborating for community safety, child protection, and social welfare
             initiatives across the capital.</p>
-          <a href="https://www.instagram.com/delhi.police_official" class="btn" target="_blank">Visit Us</a>
+          <a href="https://www.instagram.com/delhi.police_official" class="btn" target="_blank">Visit Us <i
+              class="fas fa-arrow-right ms-2"></i></a>
         </div>
       </div>
-      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.45s">
+      <!-- Partner 9 -->
+      <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="450">
         <div class="partner-card">
           <img src="img/Partners/Human Peace Foundation.png" alt="Human Peace Foundation" class="partner-logo" />
           <h3>Human Peace Foundation</h3>
           <p class="partner-description">Working tirelessly for peace, harmony, and humanitarian aid for the most
             vulnerable sections of society.</p>
-          <a href="https://www.instagram.com/hpftrust" class="btn" target="_blank">Visit Us</a>
+          <a href="https://www.instagram.com/hpftrust" class="btn" target="_blank">Visit Us <i
+              class="fas fa-arrow-right ms-2"></i></a>
         </div>
       </div>
-      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.5s">
+      <!-- Partner 10 -->
+      <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
         <div class="partner-card">
           <img src="img/Partners/Ikshana.png" alt="Ikshana" class="partner-logo" />
           <h3>Ikshana</h3>
           <p class="partner-description">A youth-led organization focused on mental health awareness, skill development,
             and social impact.</p>
-          <a href="https://www.instagram.com/ikshhana" class="btn" target="_blank">Visit Us</a>
+          <a href="https://www.instagram.com/ikshhana" class="btn" target="_blank">Visit Us <i
+              class="fas fa-arrow-right ms-2"></i></a>
         </div>
       </div>
-      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.55s">
+      <!-- Partner 11 -->
+      <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="550">
         <div class="partner-card">
           <img src="img/Partners/KUKA Foundation.png" alt="KUKA Foundation" class="partner-logo" />
           <h3>KUKA Foundation</h3>
           <p class="partner-description">Promoting education, healthcare, and women empowerment through grassroots
             initiatives.</p>
-          <a href="https://www.instagram.com/kukafoundation" class="btn" target="_blank">Visit Us</a>
+          <a href="https://www.instagram.com/kukafoundation" class="btn" target="_blank">Visit Us <i
+              class="fas fa-arrow-right ms-2"></i></a>
         </div>
       </div>
-      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
+      <!-- Partner 12 -->
+      <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
         <div class="partner-card">
           <img src="img/Partners/Robin Hood Army Foundation.png" alt="Robin Hood Army Foundation"
             class="partner-logo" />
           <h3>Robin Hood Army</h3>
           <p class="partner-description">A volunteer-based organization fighting hunger and spreading smiles by serving
             surplus food to the needy.</p>
-          <a href="https://www.instagram.com/rha_india" class="btn" target="_blank">Visit Us</a>
+          <a href="https://www.instagram.com/rha_india" class="btn" target="_blank">Visit Us <i
+              class="fas fa-arrow-right ms-2"></i></a>
         </div>
       </div>
-      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.65s">
+      <!-- Partner 13 -->
+      <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="650">
         <div class="partner-card">
           <img src="img/Partners/Roti Bank Foundation.png" alt="Roti Bank Foundation" class="partner-logo" />
           <h3>Roti Bank Foundation</h3>
           <p class="partner-description">Collecting and distributing excess food to feed the hungry and reduce food
             waste across Delhi NCR.</p>
-          <a href="https://www.instagram.com/rotibankdelhi" class="btn" target="_blank">Visit Us</a>
+          <a href="https://www.instagram.com/rotibankdelhi" class="btn" target="_blank">Visit Us <i
+              class="fas fa-arrow-right ms-2"></i></a>
         </div>
       </div>
-      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.7s">
+      <!-- Partner 14 -->
+      <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
         <div class="partner-card">
           <img src="img/Partners/Sewa Foundation.png" alt="Sewa Foundation" class="partner-logo" />
           <h3>Sewa Foundation</h3>
           <p class="partner-description">Committed to selfless service, providing aid and support to underprivileged
             families and children.</p>
-          <a href="#" class="btn" target="_blank">Visit Us</a>
+          <a href="#" class="btn" target="_blank">Visit Us <i class="fas fa-arrow-right ms-2"></i></a>
         </div>
       </div>
-      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.75s">
+      <!-- Partner 15 -->
+      <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="750">
         <div class="partner-card">
           <img src="img/Partners/TCR.png" alt="TCR" class="partner-logo" />
           <h3>TCR</h3>
           <p class="partner-description">The Change Route - Inspiring young minds towards social change through
             education and mentorship programs.</p>
-          <a href="https://www.instagram.com/teamtcr_edu" class="btn" target="_blank">Visit Us</a>
+          <a href="https://www.instagram.com/teamtcr_edu" class="btn" target="_blank">Visit Us <i
+              class="fas fa-arrow-right ms-2"></i></a>
         </div>
       </div>
-      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.8s">
+      <!-- Partner 16 -->
+      <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
         <div class="partner-card">
           <img src="img/Partners/Vriksh Mitra Parivar.png" alt="Vriksh Mitra Parivar" class="partner-logo" />
           <h3>Vriksh Mitra Parivar</h3>
           <p class="partner-description">Promoting environmental awareness, tree plantation, and sustainable living for
             a greener tomorrow.</p>
-          <a href="https://www.instagram.com/vriksh_mitra__" class="btn" target="_blank">Visit Us</a>
+          <a href="https://www.instagram.com/vriksh_mitra__" class="btn" target="_blank">Visit Us <i
+              class="fas fa-arrow-right ms-2"></i></a>
         </div>
       </div>
-      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.85s">
+      <!-- Partner 17 -->
+      <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="850">
         <div class="partner-card">
           <img src="img/Partners/We 4 You Foundation.png" alt="We 4 You Foundation" class="partner-logo" />
           <h3>We 4 You Foundation</h3>
           <p class="partner-description">A youth-driven initiative working towards education, health, and welfare of
             underprivileged children.</p>
-          <a href="https://www.instagram.com/we4.you2021" class="btn" target="_blank">Visit Us</a>
+          <a href="https://www.instagram.com/we4.you2021" class="btn" target="_blank">Visit Us <i
+              class="fas fa-arrow-right ms-2"></i></a>
         </div>
       </div>
     </div>
@@ -1016,228 +1188,229 @@
   <!-- Volunteers Section -->
   <section class="volunteers-section">
     <div class="container">
-      <h4 class="animate__animated animate__fadeInDown">
-        <i class="fas fa-heart" style="color: #e67e22; margin-right: 10px"></i>
-        Our Volunteers
-        <i class="fas fa-smile" style="color: #e67e22; margin-left: 10px"></i>
+      <h4 class="animate__animated animate__fadeInDown" data-aos="fade-up" data-aos-duration="800">
+        <i class="fas fa-heart" style="color: #e67e22; margin-right: 12px"></i>
+        Our Heartful Volunteers
+        <i class="fas fa-smile" style="color: #e67e22; margin-left: 12px"></i>
       </h4>
-      <div class="volunteer-box mx-auto animate__animated animate__fadeInUp">
+      <div class="volunteer-box mx-auto animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-duration="800"
+        data-aos-delay="100">
         <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-2">
           <div class="col">
-            <div class="volunteer-name">1. Ayush Maan</div>
+            <div class="volunteer-name">👨‍💼 Ayush Maan</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">2. Rakhi Verma</div>
+            <div class="volunteer-name">👩‍💼 Rakhi Verma</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">3. Sheetal Yadav</div>
+            <div class="volunteer-name">👩‍🏫 Sheetal Yadav</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">4. Prashant Sharma</div>
+            <div class="volunteer-name">👨‍💻 Prashant Sharma</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">5. Tushar Sharma</div>
+            <div class="volunteer-name">👨‍🎓 Tushar Sharma</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">6. Himanshi Sharma</div>
+            <div class="volunteer-name">👩‍🎨 Himanshi Sharma</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">7. Aarushi Singh</div>
+            <div class="volunteer-name">👩‍⚕️ Aarushi Singh</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">8. Reena</div>
+            <div class="volunteer-name">👩‍🍳 Reena</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">9. Vineet Jatt</div>
+            <div class="volunteer-name">👨‍🌾 Vineet Jatt</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">10. Divyanshi</div>
+            <div class="volunteer-name">👩‍💼 Divyanshi</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">11. Srishti Goyal</div>
+            <div class="volunteer-name">👩‍🎓 Srishti Goyal</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">12. Drishti Singh</div>
+            <div class="volunteer-name">👩‍💼 Drishti Singh</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">13. Vasu Sharma</div>
+            <div class="volunteer-name">👨‍💼 Vasu Sharma</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">14. Pinky</div>
+            <div class="volunteer-name">👩‍🍳 Pinky</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">15. Anmol Jaiswal</div>
+            <div class="volunteer-name">👨‍💻 Anmol Jaiswal</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">16. Mahima Pandey</div>
+            <div class="volunteer-name">👩‍🎓 Mahima Pandey</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">17. Sandhya</div>
+            <div class="volunteer-name">👩‍⚕️ Sandhya</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">18. Sarika</div>
+            <div class="volunteer-name">👩‍🏫 Sarika</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">19. Sagar Gupta</div>
+            <div class="volunteer-name">👨‍💼 Sagar Gupta</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">20. Kundan Kumar Ojha</div>
+            <div class="volunteer-name">👨‍💻 Kundan Ojha</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">21. Kartik Joshia Pradhan</div>
+            <div class="volunteer-name">👨‍🎓 Kartik Pradhan</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">22. Shubham Kanwar</div>
+            <div class="volunteer-name">👨‍💼 Shubham Kanwar</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">23. Suraj Sharma</div>
+            <div class="volunteer-name">👨‍🌾 Suraj Sharma</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">24. Nitesh Phogat</div>
+            <div class="volunteer-name">👨‍💼 Nitesh Phogat</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">25. Piyush Dubey</div>
+            <div class="volunteer-name">👨‍💻 Piyush Dubey</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">26. Manisha</div>
+            <div class="volunteer-name">👩‍⚕️ Manisha</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">27. Aman Chopra</div>
+            <div class="volunteer-name">👨‍💼 Aman Chopra</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">28. Divyansh</div>
+            <div class="volunteer-name">👨‍🎓 Divyansh</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">29. Tanya Grovet</div>
+            <div class="volunteer-name">👩‍💼 Tanya Grovet</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">30. Saranya Singh</div>
+            <div class="volunteer-name">👩‍🎓 Saranya Singh</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">31. Palak Choudhary</div>
+            <div class="volunteer-name">👩‍🏫 Palak Choudhary</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">32. Rajat</div>
+            <div class="volunteer-name">👨‍💼 Rajat</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">33. Tanisha Yadav</div>
+            <div class="volunteer-name">👩‍🎨 Tanisha Yadav</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">34. Pooja Gole</div>
+            <div class="volunteer-name">👩‍⚕️ Pooja Gole</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">35. Ankit Sanatani</div>
+            <div class="volunteer-name">👨‍💻 Ankit Sanatani</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">36. Hitanshi Bhatia</div>
+            <div class="volunteer-name">👩‍🎓 Hitanshi Bhatia</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">37. Devanshi Tyagi</div>
+            <div class="volunteer-name">👩‍💼 Devanshi Tyagi</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">38. Himanshi Verma</div>
+            <div class="volunteer-name">👩‍🎨 Himanshi Verma</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">39. Khushi</div>
+            <div class="volunteer-name">👩‍🍳 Khushi</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">40. Vaishnavi Bhadauria</div>
+            <div class="volunteer-name">👩‍💼 Vaishnavi</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">41. Raj Yadav</div>
+            <div class="volunteer-name">👨‍🌾 Raj Yadav</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">42. Uday Bari</div>
+            <div class="volunteer-name">👨‍💼 Uday Bari</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">43. Afruj Jarin</div>
+            <div class="volunteer-name">👩‍🏫 Afruj Jarin</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">44. Sujal</div>
+            <div class="volunteer-name">👨‍🎓 Sujal</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">45. Shivani Khurana</div>
+            <div class="volunteer-name">👩‍⚕️ Shivani Khurana</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">46. Bhagat Singh</div>
+            <div class="volunteer-name">👨‍💼 Bhagat Singh</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">47. Mukta Dutt</div>
+            <div class="volunteer-name">👩‍🎨 Mukta Dutt</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">48. Vansh Jain</div>
+            <div class="volunteer-name">👨‍💻 Vansh Jain</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">49. Yash Aggarwal</div>
+            <div class="volunteer-name">👨‍💼 Yash Aggarwal</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">50. Sagar Jha</div>
+            <div class="volunteer-name">👨‍🎓 Sagar Jha</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">51. Bhavya Jain</div>
+            <div class="volunteer-name">👨‍💼 Bhavya Jain</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">52. Archana Kumari</div>
+            <div class="volunteer-name">👩‍🏫 Archana Kumari</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">53. Deepu</div>
+            <div class="volunteer-name">👨‍🌾 Deepu</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">54. Muskan</div>
+            <div class="volunteer-name">👩‍🍳 Muskan</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">55. Pooja Sharma</div>
+            <div class="volunteer-name">👩‍💼 Pooja Sharma</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">56. Vaishali Chaudhary</div>
+            <div class="volunteer-name">👩‍🎓 Vaishali</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">57. Roshni</div>
+            <div class="volunteer-name">👩‍⚕️ Roshni</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">58. Radhika Sharma</div>
+            <div class="volunteer-name">👩‍🎨 Radhika Sharma</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">59. Himanshu</div>
+            <div class="volunteer-name">👨‍💼 Himanshu</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">60. Shraddha Srivastava</div>
+            <div class="volunteer-name">👩‍🏫 Shraddha</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">61. Chehak Bansal</div>
+            <div class="volunteer-name">👩‍🎓 Chehak Bansal</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">62. Ashpreet Kaur</div>
+            <div class="volunteer-name">👩‍💼 Ashpreet Kaur</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">63. Prableen Kaur</div>
+            <div class="volunteer-name">👩‍⚕️ Prableen Kaur</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">64. Savreen</div>
+            <div class="volunteer-name">👩‍🍳 Savreen</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">65. Simran</div>
+            <div class="volunteer-name">👩‍🎓 Simran</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">66. Sundus</div>
+            <div class="volunteer-name">👩‍🏫 Sundus</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">67. Parth Kohli</div>
+            <div class="volunteer-name">👨‍💻 Parth Kohli</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">68. Shivani Raghav</div>
+            <div class="volunteer-name">👩‍💼 Shivani Raghav</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">69. Vansh Chauhan</div>
+            <div class="volunteer-name">👨‍🎓 Vansh Chauhan</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">70. Shivani Tyagi</div>
+            <div class="volunteer-name">👩‍⚕️ Shivani Tyagi</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">71. Asif Raine</div>
+            <div class="volunteer-name">👨‍🌾 Asif Raine</div>
           </div>
           <div class="col">
-            <div class="volunteer-name">72. Ranjana</div>
+            <div class="volunteer-name">👩‍🍳 Ranjana</div>
           </div>
         </div>
       </div>
@@ -1309,7 +1482,18 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS (Animate on Scroll)
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100,
+      easing: 'ease-in-out'
+    });
+  </script>
 </body>
 
 </html>

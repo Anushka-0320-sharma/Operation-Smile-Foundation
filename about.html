@@ -8,6 +8,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="icon" type="image/png" href="img/fevicon.png" />
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     * {
@@ -67,12 +69,12 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(255, 248, 235, 0.94);
+      background: rgba(255, 248, 235, 0.95);
       backdrop-filter: blur(16px);
       z-index: 1000;
       padding: 8px 0;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+      border-bottom: 1px solid rgba(230, 126, 34, 0.1);
     }
 
     .logo img {
@@ -119,14 +121,14 @@
       transform: translateY(-2px);
     }
 
-    /* Desktop buttons container - visible only on desktop */
+    /* Desktop buttons container */
     .nav-buttons-desktop {
       display: flex;
       gap: 12px;
       align-items: center;
     }
 
-    /* Mobile buttons container - visible only on mobile/tablet when hamburger is open */
+    /* Mobile buttons container */
     .nav-buttons-mobile {
       display: none;
       text-align: center;
@@ -140,7 +142,6 @@
       width: 100%;
     }
 
-    /* Ensure collapse content is centered on iPad / mobile */
     .navbar-collapse {
       text-align: center;
     }
@@ -149,7 +150,6 @@
       margin: 0 auto;
     }
 
-    /* Hide desktop buttons on mobile/tablet, show mobile buttons inside hamburger */
     @media (max-width: 991.98px) {
       .navbar-nav {
         text-align: center;
@@ -165,13 +165,11 @@
         width: 100%;
       }
 
-      /* Hide desktop buttons on tablet/mobile to prevent duplication */
       .nav-buttons-desktop {
         display: none !important;
       }
     }
 
-    /* On large screens, hide mobile buttons and show desktop buttons */
     @media (min-width: 992px) {
       .nav-buttons-mobile {
         display: none !important;
@@ -186,7 +184,6 @@
       padding-top: 80px;
     }
 
-    /* Buttons */
     .donate,
     .volunteer {
       padding: 0.5rem 2rem;
@@ -201,6 +198,7 @@
       justify-content: center;
       gap: 8px;
       transition: all 0.3s ease;
+      white-space: nowrap;
     }
 
     .donate {
@@ -243,22 +241,20 @@
       transform: scale(1.1);
     }
 
-    /* Mobile nav buttons styling - centered and consistent */
     .nav-link-donate,
     .nav-link-volunteer {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 10px 24px;
+      padding: 8px 20px;
       border-radius: 50px;
       font-size: 0.85rem;
       font-weight: 700;
       text-transform: uppercase;
       transition: all 0.3s ease;
       text-decoration: none;
-      margin: 0 5px;
-      min-width: 130px;
+      margin: 5px 0;
     }
 
     .nav-link-donate {
@@ -295,34 +291,47 @@
 
     /* Hero Section */
     .about-section {
-      padding: 80px 0;
+      padding: 100px 0 80px;
       background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
       color: white;
       text-align: center;
       position: relative;
       overflow: hidden;
+      border-radius: 0 0 60px 60px;
     }
 
     .about-section::before {
-      content: "";
+      content: "🌟";
       position: absolute;
-      top: -100px;
-      left: -100px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(243, 156, 18, 0.15), transparent);
-      border-radius: 50%;
+      top: -80px;
+      right: -80px;
+      font-size: 300px;
+      opacity: 0.05;
+      z-index: 0;
+      animation: float 20s ease-in-out infinite;
     }
 
     .about-section::after {
-      content: "";
+      content: "💫";
       position: absolute;
-      bottom: -100px;
-      right: -100px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(230, 126, 34, 0.1), transparent);
-      border-radius: 50%;
+      bottom: -80px;
+      left: -80px;
+      font-size: 280px;
+      opacity: 0.05;
+      z-index: 0;
+      animation: float 15s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-25px) rotate(10deg);
+      }
     }
 
     .containers {
@@ -331,30 +340,35 @@
     }
 
     .about-section h1 {
-      font-size: 3.5rem;
+      font-size: 4rem;
       font-weight: 800;
-      margin-bottom: 20px;
-      letter-spacing: 2px;
+      margin-bottom: 25px;
+      letter-spacing: 3px;
       animation: fadeInDown 1s ease-out;
+      text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
     }
 
     .about-section p {
-      font-size: 1rem;
-      max-width: 700px;
+      font-size: 1.2rem;
+      max-width: 800px;
       margin: 0 auto;
-      line-height: 1.5;
+      line-height: 1.8;
       font-style: italic;
       animation: fadeInUp 1s ease-out 0.3s both;
       word-break: break-word;
       padding: 0 15px;
+      color: #e8d5c0;
     }
 
     /* Who We Are */
     .about-content h3 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 700;
-      color: #c0392b;
-      margin-bottom: 20px;
+      background: linear-gradient(135deg, #c0392b, #e67e22, #f39c12);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 25px;
       position: relative;
       display: inline-block;
     }
@@ -362,51 +376,62 @@
     .about-content h3::after {
       content: "";
       position: absolute;
-      bottom: -8px;
+      bottom: -12px;
       left: 0;
-      width: 60px;
-      height: 3px;
+      width: 70px;
+      height: 4px;
       background: linear-gradient(90deg, #e67e22, #f39c12);
-      border-radius: 3px;
+      border-radius: 4px;
     }
 
     .about-content p {
-      color: #4a3a2a;
-      line-height: 1.7;
+      color: #5a4a3a;
+      line-height: 1.8;
       font-size: 1rem;
     }
 
     .about-img {
       max-width: 100%;
-      border-radius: 24px;
-      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
-      transition: all 0.4s ease;
+      border-radius: 32px;
+      box-shadow: 0 25px 45px -15px rgba(0, 0, 0, 0.15);
+      transition: all 0.5s ease;
       border: 3px solid rgba(243, 156, 18, 0.2);
       animation: fadeInRight 1s ease-out;
     }
 
     .about-img:hover {
-      transform: scale(1.02);
-      border-color: rgba(243, 156, 18, 0.4);
+      transform: scale(1.02) translateY(-5px);
+      border-color: rgba(243, 156, 18, 0.5);
+      box-shadow: 0 35px 55px -20px rgba(230, 126, 34, 0.3);
     }
 
     /* Team Section - Infinite Scroll */
     .team-section {
-      padding: 70px 0;
-      background: linear-gradient(145deg, #fefaf5, #ffffff);
+      padding: 80px 0;
+      background: linear-gradient(145deg, #fff8f0, #ffffff);
       text-align: center;
       overflow: hidden;
       position: relative;
     }
 
+    .team-section::before {
+      content: "🤝";
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      font-size: 180px;
+      opacity: 0.03;
+      z-index: 0;
+    }
+
     .team-section h2 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       font-weight: 800;
       background: linear-gradient(135deg, #c0392b, #e67e22, #f39c12);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       font-family: "Playfair Display", "Georgia", serif;
       animation: fadeInDown 0.8s ease-out;
     }
@@ -429,19 +454,19 @@
 
     .team-member {
       text-align: center;
-      width: 220px;
+      width: 230px;
       margin: 10px 15px;
-      padding: 20px 15px;
+      padding: 25px 15px;
       background: white;
-      border-radius: 24px;
-      box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
+      border-radius: 32px;
+      box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       flex-shrink: 0;
     }
 
     .team-member:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 30px -12px rgba(230, 126, 34, 0.25);
+      transform: translateY(-12px);
+      box-shadow: 0 25px 45px -15px rgba(230, 126, 34, 0.25);
     }
 
     .team-member img {
@@ -449,15 +474,10 @@
       height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 15px;
+      margin-bottom: 18px;
       border: 3px solid #f39c12;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
       background: #f0e8dc;
-    }
-
-    /* Fallback for broken images */
-    .team-member img.error {
-      content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23e67e22"/><text x="50" y="65" text-anchor="middle" fill="white" font-size="40">👤</text></svg>');
     }
 
     .team-member:hover img {
@@ -466,10 +486,10 @@
     }
 
     .team-member h5 {
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: #c0392b;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
 
     .team-member h6 {
@@ -490,27 +510,27 @@
 
     /* Registration Card */
     .registration-card {
-      border-radius: 28px;
-      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+      border-radius: 32px;
+      box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.12);
       overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.4s ease;
       border: none;
     }
 
     .registration-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 25px 45px -15px rgba(230, 126, 34, 0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 35px 55px -20px rgba(230, 126, 34, 0.2);
     }
 
     .card-header {
       background: linear-gradient(135deg, #e67e22, #f39c12);
       color: white;
       font-weight: 700;
-      padding: 1.5rem;
+      padding: 1.8rem;
     }
 
     .card-header h3 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       margin: 0;
     }
 
@@ -521,9 +541,9 @@
     }
 
     .detail-item {
-      padding: 1.25rem 1.5rem;
-      border-bottom: 1px solid rgba(230, 126, 34, 0.15);
-      border-right: 1px solid rgba(230, 126, 34, 0.15);
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba(230, 126, 34, 0.12);
+      border-right: 1px solid rgba(230, 126, 34, 0.12);
       background: linear-gradient(145deg, #ffffff, #fefaf5);
       transition: all 0.3s ease;
     }
@@ -548,6 +568,7 @@
       margin-bottom: 0.5rem;
       font-size: 0.85rem;
       text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .detail-value {
@@ -558,8 +579,8 @@
 
     /* Image Section */
     .image-section {
-      padding: 70px 0;
-      background: linear-gradient(145deg, #fefaf5, #ffffff);
+      padding: 80px 0;
+      background: linear-gradient(145deg, #fff8f0, #ffffff);
     }
 
     .section-heading {
@@ -568,17 +589,17 @@
     }
 
     .section-heading h2 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       font-weight: 800;
       background: linear-gradient(135deg, #c0392b, #e67e22, #f39c12);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .section-heading .subtitle {
-      font-size: 1rem;
+      font-size: 1.05rem;
       color: #6a5a4a;
       max-width: 700px;
       margin: 0 auto;
@@ -594,16 +615,16 @@
     .image-box {
       flex: 1 1 45%;
       min-width: 320px;
-      border-radius: 24px;
+      border-radius: 28px;
       overflow: hidden;
-      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.12);
       transition: all 0.4s ease;
       background: white;
     }
 
     .image-box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 30px 45px -15px rgba(230, 126, 34, 0.2);
+      transform: translateY(-10px);
+      box-shadow: 0 35px 50px -18px rgba(230, 126, 34, 0.25);
     }
 
     .image-wrapper {
@@ -612,7 +633,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 30px;
+      padding: 35px;
     }
 
     .image-wrapper img {
@@ -647,35 +668,35 @@
 
     /* Values Section */
     .values-section {
-      padding: 70px 0;
-      background: linear-gradient(145deg, #ffffff, #fefaf5);
+      padding: 80px 0;
+      background: linear-gradient(145deg, #ffffff, #fff8f0);
       text-align: center;
     }
 
     .values-section h2 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       font-weight: 800;
       background: linear-gradient(135deg, #c0392b, #e67e22, #f39c12);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-bottom: 45px;
+      margin-bottom: 50px;
     }
 
     .value-card {
-      padding: 30px 25px;
+      padding: 35px 25px;
       background: white;
-      border-radius: 24px;
-      box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease;
+      border-radius: 28px;
+      box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
       border: 1px solid rgba(230, 126, 34, 0.1);
       height: 100%;
     }
 
     .value-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(230, 126, 34, 0.3);
-      box-shadow: 0 20px 35px -12px rgba(230, 126, 34, 0.15);
+      transform: translateY(-8px);
+      border-color: rgba(230, 126, 34, 0.4);
+      box-shadow: 0 25px 45px -15px rgba(230, 126, 34, 0.2);
     }
 
     .value-card h4 {
@@ -697,6 +718,7 @@
       color: white;
       padding: 60px 0 30px;
       position: relative;
+      margin-top: 60px;
     }
 
     .footer::before {
@@ -911,13 +933,7 @@
       }
     }
 
-    /* ==================== */
-    /* IMPROVED RESPONSIVE STYLES FOR ALL DEVICES */
-    /* ==================== */
-
-    /* Desktop/Laptop (default) - Already set above */
-
-    /* iPad Pro & Large Tablets (1024px - 1368px) */
+    /* Responsive */
     @media (min-width: 1024px) and (max-width: 1368px) {
       .nav-buttons-desktop {
         gap: 6px;
@@ -928,6 +944,7 @@
         padding: 0.3rem 1rem;
         font-size: 0.65rem;
         gap: 4px;
+        height: 38px;
       }
 
       .donate::before,
@@ -945,11 +962,7 @@
       }
 
       .about-section h1 {
-        font-size: 2.8rem;
-      }
-
-      .about-section p {
-        font-size: 0.9rem;
+        font-size: 3rem;
       }
 
       .about-content h3 {
@@ -961,26 +974,17 @@
       }
 
       .team-member {
-        width: 190px;
+        width: 200px;
         margin: 8px 12px;
-        padding: 15px 10px;
+        padding: 18px 10px;
       }
 
       .team-member img {
         width: 110px;
         height: 110px;
       }
-
-      .team-member h5 {
-        font-size: 0.9rem;
-      }
-
-      .team-member h6 {
-        font-size: 0.7rem;
-      }
     }
 
-    /* iPad Air & Medium Tablets (768px - 1024px) */
     @media (min-width: 768px) and (max-width: 1024px) {
       .nav-buttons-desktop {
         gap: 5px;
@@ -991,6 +995,7 @@
         padding: 0.25rem 0.8rem;
         font-size: 0.6rem;
         gap: 3px;
+        height: 34px;
       }
 
       .donate::before,
@@ -1002,22 +1007,51 @@
         font-size: 1.1rem;
       }
 
-      .nav-link {
-        font-size: 0.75rem;
-        padding: 4px 6px;
-      }
-
       .about-section {
-        padding: 50px 0;
+        padding: 60px 0 40px;
       }
 
       .about-section h1 {
         font-size: 2.3rem;
       }
 
+      .about-content {
+        text-align: center;
+      }
+
+      .about-content h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .team-section h2 {
+        font-size: 2rem;
+      }
+
+      .team-member {
+        width: 180px;
+        margin: 8px;
+        padding: 15px;
+      }
+
+      .team-member img {
+        width: 95px;
+        height: 95px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .about-section {
+        padding: 50px 0;
+        border-radius: 0 0 30px 30px;
+      }
+
+      .about-section h1 {
+        font-size: 2rem;
+      }
+
       .about-section p {
         font-size: 0.85rem;
-        padding: 0 20px;
       }
 
       .about-content {
@@ -1033,27 +1067,23 @@
         transform: translateX(-50%);
       }
 
-      .about-img {
-        margin-top: 25px;
-      }
-
       .team-section {
-        padding: 50px 0;
+        padding: 40px 0;
       }
 
       .team-section h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
 
       .team-member {
-        width: 170px;
-        margin: 8px 10px;
-        padding: 15px 10px;
+        width: 160px;
+        margin: 8px;
+        padding: 12px;
       }
 
       .team-member img {
-        width: 95px;
-        height: 95px;
+        width: 85px;
+        height: 85px;
       }
 
       .team-member h5 {
@@ -1065,78 +1095,10 @@
       }
     }
 
-    /* Mobile Devices (max-width: 767px) */
-    @media (max-width: 767px) {
-      .about-section {
-        padding: 50px 0;
-      }
-
-      .about-section h1 {
-        font-size: 2rem;
-      }
-
-      .about-section p {
-        font-size: 0.8rem;
-        padding: 0 15px;
-      }
-
-      .about-content {
-        text-align: center;
-      }
-
-      .about-content h3 {
-        font-size: 1.5rem;
-      }
-
-      .about-content h3::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .about-content p {
-        font-size: 0.85rem;
-      }
-
-      .about-img {
-        margin-top: 20px;
-      }
-
-      .team-section {
-        padding: 40px 0;
-      }
-
-      .team-section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 25px;
-      }
-
-      .team-member {
-        width: 150px;
-        margin: 8px;
-        padding: 12px 8px;
-      }
-
-      .team-member img {
-        width: 85px;
-        height: 85px;
-      }
-
-      .team-member h5 {
-        font-size: 0.8rem;
-      }
-
-      .team-member h6 {
-        font-size: 0.65rem;
-      }
-    }
-
-    /* Samsung Galaxy S8+ & Small Phones (max-width: 400px) */
     @media (max-width: 400px) {
       .navbar-brand {
         font-size: 0.9rem !important;
         max-width: 110px;
-        overflow: hidden;
-        text-overflow: ellipsis;
       }
 
       .logo img {
@@ -1147,11 +1109,6 @@
 
       .navbar-toggler {
         padding: 4px 8px;
-        margin-left: auto;
-      }
-
-      .navbar.navbar-custom {
-        padding: 5px 0;
       }
 
       .nav-link-donate,
@@ -1165,44 +1122,26 @@
         font-size: 1.8rem;
       }
 
-      .about-section p {
-        font-size: 0.75rem;
-      }
-
-      .about-content h3 {
-        font-size: 1.4rem;
-      }
-
-      .about-content p {
-        font-size: 0.8rem;
-      }
-
-      .team-section h2 {
-        font-size: 1.5rem;
-      }
-
       .team-member {
-        width: 130px;
+        width: 140px;
         margin: 6px;
-        padding: 10px 6px;
+        padding: 10px;
       }
 
       .team-member img {
         width: 75px;
         height: 75px;
-        margin-bottom: 10px;
       }
 
       .team-member h5 {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
       }
 
       .team-member h6 {
-        font-size: 0.6rem;
+        font-size: 0.65rem;
       }
     }
 
-    /* Extra Small Devices (max-width: 340px) */
     @media (max-width: 340px) {
       .navbar-brand {
         font-size: 0.75rem !important;
@@ -1217,20 +1156,12 @@
       }
 
       .team-member {
-        width: 120px;
+        width: 130px;
       }
 
       .team-member img {
         width: 65px;
         height: 65px;
-      }
-
-      .team-member h5 {
-        font-size: 0.65rem;
-      }
-
-      .team-member h6 {
-        font-size: 0.55rem;
       }
     }
   </style>
@@ -1273,15 +1204,16 @@
   <!-- Hero Section -->
   <section class="about-section">
     <div class="containers">
-      <h1>About Us</h1>
-      <p>"विद्यया अमृतमश्नुते, आरोग्यं परमं धनम्। बालसेवा परं धर्मः, लोकहिताय सतां व्रतम्॥"</p>
+      <h1 class="animate__animated animate__fadeInDown">✨ About Us ✨</h1>
+      <p class="animate__animated animate__fadeInUp animate__delay-1s">"विद्यया अमृतमश्नुते, आरोग्यं परमं धनम्। बालसेवा
+        परं धर्मः, लोकहिताय सतां व्रतम्॥"</p>
     </div>
   </section>
 
   <!-- Who We Are -->
   <div class="container mt-5">
     <div class="row align-items-center">
-      <div class="col-md-6 about-content">
+      <div class="col-md-6 about-content" data-aos="fade-right">
         <h3>Who We Are</h3>
         <p>We are dedicated to empowering children through education, healthcare, and holistic care. We strive to create
           a brighter future by providing quality learning opportunities and medical support to underprivileged children.
@@ -1289,7 +1221,7 @@
           healthy and educated life. Together, we work towards building a compassionate and self-reliant society.</p>
         <p><strong>Journey: 2020 - 2025 | Impacting Lives Every Day</strong></p>
       </div>
-      <div class="col-md-6 text-center">
+      <div class="col-md-6 text-center" data-aos="fade-left">
         <img src="img/about.png" class="about-img" alt="About Us Image" />
       </div>
     </div>
@@ -1298,127 +1230,139 @@
   <!-- Meet Our Team - Infinite Scroll -->
   <section class="team-section">
     <div class="container">
-      <h2>✨ Meet Our Team ✨</h2>
-      <div class="slider-container">
+      <h2 data-aos="fade-up">✨ Meet Our Team ✨</h2>
+      <div class="slider-container" data-aos="fade-up" data-aos-delay="100">
         <div class="team-slider">
-          <!-- First Set - All team members with larger circular images -->
-          <div class="team-member"><img src="img/TeamMembers/founder.png" alt="Ashutosh Sharma"
+          <!-- First Set -->
+          <div class="team-member">
+            <img src="img/TeamMembers/founder.png" alt="Ashutosh Sharma"
               onerror="this.src='https://via.placeholder.com/140x140?text=👤'" />
             <h5>Ashutosh Sharma</h5>
             <h6>The Founder</h6>
           </div>
-          <div class="team-member"><img src="img/TeamMembers/CharuVerma.jpeg" alt="Charu Verma"
+          <div class="team-member">
+            <img src="img/TeamMembers/CharuVerma.jpeg" alt="Charu Verma"
               onerror="this.src='https://via.placeholder.com/140x140?text=CV'" />
             <h5>Charu Verma</h5>
             <h6>PR and Communications Head</h6>
           </div>
-          <div class="team-member"><img src="img/TeamMembers/HimanshiVerma.jpeg" alt="Himanshi Verma"
+          <div class="team-member">
+            <img src="img/TeamMembers/HimanshiVerma.jpeg" alt="Himanshi Verma"
               onerror="this.src='https://via.placeholder.com/140x140?text=HV'" />
             <h5>Himanshi Verma</h5>
-            <h6>Art & Craft Sessions in Schools</h6>
+            <h6>Art & Craft Sessions</h6>
           </div>
-          <div class="team-member"><img src="img/TeamMembers/TanishaSharma.jpeg" alt="Tanisha Sharma"
+          <div class="team-member">
+            <img src="img/TeamMembers/TanishaSharma.jpeg" alt="Tanisha Sharma"
               onerror="this.src='https://via.placeholder.com/140x140?text=TS'" />
             <h5>Tanisha Sharma</h5>
             <h6>General Executive</h6>
           </div>
-          <div class="team-member"><img src="img/TeamMembers/Charu.jpeg" alt="Charu"
+          <div class="team-member">
+            <img src="img/TeamMembers/Charu.jpeg" alt="Charu"
               onerror="this.src='https://via.placeholder.com/140x140?text=C'" />
             <h5>Charu</h5>
             <h6>Dance Teacher</h6>
           </div>
-          <div class="team-member"><img src="https://via.placeholder.com/140x140?text=👩‍💼" alt="Anushka Sharma"
+          <div class="team-member">
+            <img src="img/TeamMembers/AnushkaSharma.jpeg" alt="Anushka Sharma"
               onerror="this.src='https://via.placeholder.com/140x140?text=AS'" />
             <h5>Anushka Sharma</h5>
-            <h6>Core Member</h6>
+            <h6>Technical Operations Lead</h6>
           </div>
-          <div class="team-member"><img src="img/TeamMembers//NityaJoshi.jpeg" alt="Nitya Joshi"
+          <div class="team-member">
+            <img src="img/TeamMembers/NityaJoshi.jpeg" alt="Nitya Joshi"
               onerror="this.src='https://via.placeholder.com/140x140?text=NJ'" />
             <h5>Nitya Joshi</h5>
             <h6>Social Media Manager</h6>
           </div>
-          <div class="team-member"><img src="https://via.placeholder.com/140x140?text=👩‍⚕️" alt="Pooja Gole"
-              onerror="this.src='https://via.placeholder.com/140x140?text=PG'" />
-            <h5>Pooja Gole</h5>
-            <h6>Core Member</h6>
-          </div>
-          <div class="team-member"><img src="img/TeamMembers/Yuvika.jpeg" alt="Yuvika Govil"
+          <div class="team-member">
+            <img src="img/TeamMembers/Yuvika.jpeg" alt="Yuvika Govil"
               onerror="this.src='https://via.placeholder.com/140x140?text=YG'" />
             <h5>Yuvika Govil</h5>
             <h6>LinkedIn Manager</h6>
           </div>
-          <div class="team-member"><img src="img/TeamMembers/NehaDatewani.jpeg" alt="Neha Datewani"
+          <div class="team-member">
+            <img src="img/TeamMembers/NehaDatewani.jpeg" alt="Neha Datewani"
               onerror="this.src='https://via.placeholder.com/140x140?text=ND'" />
             <h5>Neha Datewani</h5>
             <h6>PR and Communications Head</h6>
           </div>
-          <div class="team-member"><img src="https://via.placeholder.com/140x140?text=👨‍💼" alt="Shagun Malhotra"
+          <div class="team-member">
+            <img src="img/TeamMembers/ShagunMalhotra.jpeg" alt="Shagun Malhotra"
               onerror="this.src='https://via.placeholder.com/140x140?text=SM'" />
             <h5>Shagun Malhotra</h5>
             <h6>Operations Head</h6>
           </div>
-          <div class="team-member"><img src="img/TeamMembers/AshishMishra.jpeg" alt="Ashish Kumar Mishra"
+          <div class="team-member">
+            <img src="img/TeamMembers/AshishMishra.jpeg" alt="Ashish Kumar Mishra"
               onerror="this.src='https://via.placeholder.com/140x140?text=AM'" />
             <h5>Ashish Kumar Mishra</h5>
             <h6>Technical Operations Head</h6>
           </div>
           <!-- Duplicate Set for Seamless Loop -->
-          <div class="team-member"><img src="img/TeamMembers/founder.png" alt="Ashutosh Sharma"
+          <div class="team-member">
+            <img src="img/TeamMembers/founder.png" alt="Ashutosh Sharma"
               onerror="this.src='https://via.placeholder.com/140x140?text=👤'" />
             <h5>Ashutosh Sharma</h5>
             <h6>The Founder</h6>
           </div>
-          <div class="team-member"><img src="img/TeamMembers/CharuVerma.jpeg" alt="Charu Verma"
+          <div class="team-member">
+            <img src="img/TeamMembers/CharuVerma.jpeg" alt="Charu Verma"
               onerror="this.src='https://via.placeholder.com/140x140?text=CV'" />
             <h5>Charu Verma</h5>
             <h6>PR and Communications Head</h6>
           </div>
-          <div class="team-member"><img src="img/TeamMembers/HimanshiVerma.jpeg" alt="Himanshi Verma"
+          <div class="team-member">
+            <img src="img/TeamMembers/HimanshiVerma.jpeg" alt="Himanshi Verma"
               onerror="this.src='https://via.placeholder.com/140x140?text=HV'" />
             <h5>Himanshi Verma</h5>
-            <h6>Art & Craft Sessions in Schools</h6>
+            <h6>Art & Craft Sessions</h6>
           </div>
-          <div class="team-member"><img src="img/TeamMembers/TanishaSharma.jpeg" alt="Tanisha Sharma"
+          <div class="team-member">
+            <img src="img/TeamMembers/TanishaSharma.jpeg" alt="Tanisha Sharma"
               onerror="this.src='https://via.placeholder.com/140x140?text=TS'" />
             <h5>Tanisha Sharma</h5>
             <h6>General Executive</h6>
           </div>
-          <div class="team-member"><img src="https://via.placeholder.com/140x140?text=👩‍🎨" alt="Charu"
+          <div class="team-member">
+            <img src="img/TeamMembers/Charu.jpeg" alt="Charu"
               onerror="this.src='https://via.placeholder.com/140x140?text=C'" />
             <h5>Charu</h5>
             <h6>Dance Teacher</h6>
           </div>
-          <div class="team-member"><img src="https://via.placeholder.com/140x140?text=👩‍💼" alt="Anushka Sharma"
+          <div class="team-member">
+            <img src="img/TeamMembers/AnushkaSharma.jpeg" alt="Anushka Sharma"
               onerror="this.src='https://via.placeholder.com/140x140?text=AS'" />
             <h5>Anushka Sharma</h5>
-            <h6>Core Member</h6>
+            <h6>Technical Operations Lead</h6>
           </div>
-          <div class="team-member"><img src="https://via.placeholder.com/140x140?text=👩‍🏫" alt="Nitya Joshi"
+          <div class="team-member">
+            <img src="img/TeamMembers/NityaJoshi.jpeg" alt="Nitya Joshi"
               onerror="this.src='https://via.placeholder.com/140x140?text=NJ'" />
             <h5>Nitya Joshi</h5>
-            <h6>Core Member</h6>
+            <h6>Social Media Manager</h6>
           </div>
-          <div class="team-member"><img src="https://via.placeholder.com/140x140?text=👩‍⚕️" alt="Pooja Gole"
-              onerror="this.src='https://via.placeholder.com/140x140?text=PG'" />
-            <h5>Pooja Gole</h5>
-            <h6>Core Member</h6>
-          </div>
-          <div class="team-member"><img src="img/TeamMembers/Yuvika.jpeg" alt="Yuvika Govil"
+          <div class="team-member">
+            <img src="img/TeamMembers/Yuvika.jpeg" alt="Yuvika Govil"
               onerror="this.src='https://via.placeholder.com/140x140?text=YG'" />
             <h5>Yuvika Govil</h5>
             <h6>LinkedIn Manager</h6>
           </div>
-          <div class="team-member"><img src="img/TeamMembers/NehaDatewani.jpeg" alt="Neha Datewani"
+          <div class="team-member">
+            <img src="img/TeamMembers/NehaDatewani.jpeg" alt="Neha Datewani"
               onerror="this.src='https://via.placeholder.com/140x140?text=ND'" />
             <h5>Neha Datewani</h5>
             <h6>PR and Communications Head</h6>
           </div>
-          <div class="team-member"><img src="https://via.placeholder.com/140x140?text=👨‍💼" alt="Shagun Malhotra"
+          <div class="team-member">
+            <img src="img/TeamMembers/ShagunMalhotra.jpeg" alt="Shagun Malhotra"
               onerror="this.src='https://via.placeholder.com/140x140?text=SM'" />
             <h5>Shagun Malhotra</h5>
             <h6>Operations Head</h6>
           </div>
-          <div class="team-member"><img src="img/TeamMembers/AshishMishra.jpeg" alt="Ashish Kumar Mishra"
+          <div class="team-member">
+            <img src="img/TeamMembers/AshishMishra.jpeg" alt="Ashish Kumar Mishra"
               onerror="this.src='https://via.placeholder.com/140x140?text=AM'" />
             <h5>Ashish Kumar Mishra</h5>
             <h6>Technical Operations Head</h6>
@@ -1431,7 +1375,7 @@
   <!-- Registration Details -->
   <div class="container py-5">
     <div class="row justify-content-center">
-      <div class="col-lg-10 col-md-12">
+      <div class="col-lg-10 col-md-12" data-aos="fade-up">
         <div class="registration-card">
           <div class="card-header text-center">
             <h3><i class="fas fa-certificate me-2"></i> Operation Smile Foundation - Registration Details</h3>
@@ -1464,19 +1408,19 @@
   <!-- Footprints Section -->
   <section class="image-section">
     <div class="container">
-      <div class="section-heading">
-        <h2>Operation Smile Foundation Footprints</h2>
+      <div class="section-heading" data-aos="fade-up">
+        <h2>🌍 Operation Smile Foundation Footprints 🌍</h2>
         <p class="subtitle">Spreading smiles across the nation through our dedicated initiatives</p>
       </div>
       <div class="image-container">
-        <div class="image-box">
+        <div class="image-box" data-aos="fade-right" data-aos-delay="100">
           <div class="image-wrapper"><img src="img/Delhi.png" alt="Delhi Mission" /></div>
           <div class="image-caption">
             <h3><i class="fas fa-map-marker-alt me-2"></i> Delhi – The Heart of Our Mission</h3>
             <p>At the heart of the capital, we stand as a pillar of hope for those in need.</p>
           </div>
         </div>
-        <div class="image-box">
+        <div class="image-box" data-aos="fade-left" data-aos-delay="200">
           <div class="image-wrapper"><img src="img/india_map.jpg" alt="India Map" /></div>
           <div class="image-caption">
             <h3><i class="fas fa-globe-asia me-2"></i> Impact Across the Nation</h3>
@@ -1491,25 +1435,25 @@
   <!-- Core Values -->
   <section class="values-section">
     <div class="container">
-      <h2>Our Core Values</h2>
+      <h2 data-aos="fade-up">💖 Our Core Values 💖</h2>
       <div class="row g-4">
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
           <div class="value-card"><i class="fas fa-child"
-              style="font-size: 2.5rem; color: #e67e22; margin-bottom: 15px; display: inline-block;"></i>
+              style="font-size: 2.8rem; color: #e67e22; margin-bottom: 18px; display: inline-block;"></i>
             <h4>Childcare</h4>
             <p>Safe shelter, care, and opportunities for underprivileged children.</p>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
           <div class="value-card"><i class="fas fa-graduation-cap"
-              style="font-size: 2.5rem; color: #e67e22; margin-bottom: 15px; display: inline-block;"></i>
+              style="font-size: 2.8rem; color: #e67e22; margin-bottom: 18px; display: inline-block;"></i>
             <h4>Education</h4>
             <p>Educational programs to equip them with knowledge and skills.</p>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
           <div class="value-card"><i class="fas fa-heartbeat"
-              style="font-size: 2.5rem; color: #e67e22; margin-bottom: 15px; display: inline-block;"></i>
+              style="font-size: 2.8rem; color: #e67e22; margin-bottom: 18px; display: inline-block;"></i>
             <h4>Healthcare</h4>
             <p>Healthcare initiatives to ensure they grow up healthy and strong.</p>
           </div>
@@ -1529,16 +1473,21 @@
             making a difference in the community through various initiatives.</p>
           <div class="footer-social">
             <p>Follow Us</p>
-            <div class="social-icons"><a href="https://www.instagram.com/operation.smile__/" class="social-icon"
-                target="_blank"><i class="fab fa-instagram"></i></a><a href="https://x.com/smilengo23?s=11"
-                class="social-icon" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                  fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+            <div class="social-icons">
+              <a href="https://www.instagram.com/operation.smile__/" class="social-icon" target="_blank"><i
+                  class="fab fa-instagram"></i></a>
+              <a href="https://x.com/smilengo23?s=11" class="social-icon" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-twitter-x" viewBox="0 0 16 16">
                   <path
                     d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
-                </svg></a><a href="https://www.linkedin.com/in/operation-smile-foundation-1079993b8" class="social-icon"
-                target="_blank"><i class="fab fa-linkedin-in"></i></a><a
-                href="https://www.youtube.com/@OperationSmilefoundation23" class="social-icon" target="_blank"><i
-                  class="fab fa-youtube"></i></a></div>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/operation-smile-foundation-1079993b8" class="social-icon"
+                target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.youtube.com/@OperationSmilefoundation23" class="social-icon" target="_blank"><i
+                  class="fab fa-youtube"></i></a>
+            </div>
           </div>
         </div>
         <div class="col-md-4 mb-4">
@@ -1577,6 +1526,16 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100,
+      easing: 'ease-in-out'
+    });
+  </script>
 </body>
 
 </html>
