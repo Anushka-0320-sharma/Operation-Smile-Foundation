@@ -1153,19 +1153,19 @@
   <section class="counter-section">
     <div class="container">
       <div class="total-count" data-aos="fade-up">
-        <span class="total" data-target="500">0</span>
+        <span class="total" data-target="250000+">0</span>
       </div>
       <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Total Lives Impacted</p>
       <div class="d-flex justify-content-center flex-wrap">
         <div class="counter-item" data-aos="fade-up" data-aos-delay="150">
           <i class="fas fa-users"></i>
-          <h2 class="count" data-target="300">0</h2>
-          <p>Total Team Members</p>
+          <h2 class="count" data-target="600+">0</h2>
+          <p>Total Volunteers</p>
         </div>
         <div class="counter-item" data-aos="fade-up" data-aos-delay="200">
           <i class="fas fa-child"></i>
-          <h2 class="count" data-target="400">0</h2>
-          <p>Our children</p>
+          <h2 class="count" data-target="850+">0</h2>
+          <p>Our Children</p>
         </div>
         <div class="counter-item" data-aos="fade-up" data-aos-delay="250">
           <i class="fas fa-hand-holding-heart"></i>
@@ -1319,11 +1319,17 @@
     const speed = 1000;
 
     const updateCount = (counter, target) => {
-      const count = +counter.innerText;
-      const increment = target / speed;
+      // Handle target with "+" suffix (e.g., "600+")
+      const targetStr = target.toString();
+      const hasPlus = targetStr.includes('+');
+      const numericTarget = parseInt(targetStr.replace(/[^0-9]/g, ''));
 
-      if (count < target) {
-        counter.innerText = Math.ceil(count + increment);
+      const count = parseInt(counter.innerText.replace(/[^0-9]/g, '')) || 0;
+      const increment = numericTarget / speed;
+
+      if (count < numericTarget) {
+        const newCount = Math.ceil(count + increment);
+        counter.innerText = newCount + (hasPlus ? '+' : '');
         setTimeout(() => updateCount(counter, target), 1);
       } else {
         counter.innerText = target;
@@ -1331,12 +1337,27 @@
     };
 
     counters.forEach((counter) => {
-      const target = +counter.getAttribute("data-target");
+      const target = counter.getAttribute("data-target");
       updateCount(counter, target);
     });
 
-    const totalTarget = +totalCounter.getAttribute("data-target");
-    updateCount(totalCounter, totalTarget);
+    // Handle total counter separately
+    const totalTarget = totalCounter.getAttribute("data-target");
+    const hasTotalPlus = totalTarget.includes('+');
+    const totalNumeric = parseInt(totalTarget.replace(/[^0-9]/g, ''));
+    let totalCount = 0;
+    const totalIncrement = totalNumeric / speed;
+
+    const updateTotal = () => {
+      if (totalCount < totalNumeric) {
+        totalCount = Math.ceil(totalCount + totalIncrement);
+        totalCounter.innerText = totalCount + (hasTotalPlus ? '+' : '');
+        setTimeout(updateTotal, 1);
+      } else {
+        totalCounter.innerText = totalTarget;
+      }
+    };
+    updateTotal();
   </script>
 </body>
 

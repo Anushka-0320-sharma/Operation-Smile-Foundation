@@ -121,14 +121,12 @@
       transform: translateY(-2px);
     }
 
-    /* Desktop buttons container */
     .nav-buttons-desktop {
       display: flex;
       gap: 12px;
       align-items: center;
     }
 
-    /* Mobile buttons container */
     .nav-buttons-mobile {
       display: none;
       text-align: center;
@@ -419,114 +417,213 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .timeline-section .subtitle {
       font-size: 1.05rem;
       color: #6a5a4a;
       max-width: 700px;
-      margin: 0 auto 50px auto;
+      margin: 0 auto 40px auto;
+    }
+
+    /* Timeline wrapper - ensures everything fits */
+    .timeline-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      overflow: visible;
+      padding: 10px 0;
     }
 
     .timeline {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 30px 40px;
-      max-width: 1100px;
-      margin: 0 auto;
+      gap: 20px 25px;
       position: relative;
+      padding: 20px 10px;
     }
 
+    /* Animated connecting line */
     .timeline::before {
       content: "";
       position: absolute;
       top: 50%;
-      left: 10%;
-      right: 10%;
+      left: 8%;
+      right: 8%;
       height: 4px;
       background: linear-gradient(90deg, #f39c12, #e67e22, #d35400);
       border-radius: 4px;
       transform: translateY(-50%);
       z-index: 0;
+      animation: timelineGrow 1.5s ease-out forwards;
+    }
+
+    @keyframes timelineGrow {
+      0% {
+        transform: translateY(-50%) scaleX(0);
+        transform-origin: left center;
+      }
+
+      100% {
+        transform: translateY(-50%) scaleX(1);
+        transform-origin: left center;
+      }
     }
 
     .timeline-item {
-      flex: 0 0 180px;
+      flex: 0 1 150px;
+      min-width: 120px;
       background: white;
-      padding: 25px 18px;
-      border-radius: 28px;
-      box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
-      border: 1px solid rgba(230, 126, 34, 0.12);
-      transition: all 0.4s ease;
+      padding: 20px 14px;
+      border-radius: 24px;
+      box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(230, 126, 34, 0.1);
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       position: relative;
       z-index: 1;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(4px);
+      text-align: center;
+      opacity: 0;
+      animation: itemFadeUp 0.6s ease forwards;
+    }
+
+    .timeline-item:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .timeline-item:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .timeline-item:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .timeline-item:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .timeline-item:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+
+    .timeline-item:nth-child(6) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes itemFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
     .timeline-item:hover {
-      transform: translateY(-10px);
+      transform: translateY(-8px) scale(1.03);
       border-color: #f39c12;
-      box-shadow: 0 25px 40px -15px rgba(230, 126, 34, 0.2);
-    }
-
-    .timeline-item .year {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: #c0392b;
-      font-family: "Playfair Display", serif;
-      margin-bottom: 8px;
-    }
-
-    .timeline-item .event {
-      font-size: 0.85rem;
-      color: #4a3a2a;
-      font-weight: 500;
-      line-height: 1.5;
+      box-shadow: 0 20px 40px -12px rgba(230, 126, 34, 0.18);
     }
 
     .timeline-item .icon {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
+      font-size: 2rem;
       display: block;
+      margin-bottom: 8px;
+      animation: iconBounce 3s ease-in-out infinite;
+    }
+
+    .timeline-item:nth-child(1) .icon {
+      animation-delay: 0s;
+    }
+
+    .timeline-item:nth-child(2) .icon {
+      animation-delay: 0.5s;
+    }
+
+    .timeline-item:nth-child(3) .icon {
+      animation-delay: 1s;
+    }
+
+    .timeline-item:nth-child(4) .icon {
+      animation-delay: 1.5s;
+    }
+
+    .timeline-item:nth-child(5) .icon {
+      animation-delay: 2s;
+    }
+
+    .timeline-item:nth-child(6) .icon {
+      animation-delay: 2.5s;
+    }
+
+    @keyframes iconBounce {
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(-5px) scale(1.1);
+      }
+    }
+
+    .timeline-item .year {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #c0392b;
+      font-family: "Playfair Display", serif;
+      margin-bottom: 6px;
+    }
+
+    .timeline-item .event {
+      font-size: 0.75rem;
+      color: #4a3a2a;
+      font-weight: 500;
+      line-height: 1.4;
     }
 
     /* Responsive timeline */
     @media (max-width: 992px) {
-      .timeline::before {
-        display: none;
+      .timeline-item {
+        flex: 0 1 140px;
+        min-width: 100px;
+        padding: 16px 12px;
       }
 
-      .timeline-item {
-        flex: 0 0 160px;
+      .timeline-item .year {
+        font-size: 1.3rem;
+      }
+
+      .timeline-item .event {
+        font-size: 0.7rem;
+      }
+
+      .timeline-item .icon {
+        font-size: 1.7rem;
+      }
+
+      .timeline::before {
+        left: 5%;
+        right: 5%;
       }
     }
 
     @media (max-width: 768px) {
       .timeline {
-        gap: 20px;
+        gap: 15px 12px;
+        padding: 15px 5px;
       }
 
       .timeline-item {
-        flex: 0 0 140px;
-        padding: 18px 12px;
-      }
-
-      .timeline-item .year {
-        font-size: 1.4rem;
-      }
-
-      .timeline-item .event {
-        font-size: 0.75rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .timeline-item {
-        flex: 0 0 120px;
+        flex: 0 1 110px;
+        min-width: 85px;
         padding: 14px 10px;
+        border-radius: 18px;
       }
 
       .timeline-item .year {
@@ -534,11 +631,45 @@
       }
 
       .timeline-item .event {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
       }
 
       .timeline-item .icon {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+        margin-bottom: 4px;
+      }
+
+      .timeline::before {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .timeline {
+        gap: 10px 8px;
+        padding: 10px 3px;
+      }
+
+      .timeline-item {
+        flex: 0 1 90px;
+        min-width: 70px;
+        padding: 10px 6px;
+        border-radius: 14px;
+      }
+
+      .timeline-item .year {
+        font-size: 0.95rem;
+        margin-bottom: 3px;
+      }
+
+      .timeline-item .event {
+        font-size: 0.5rem;
+        line-height: 1.2;
+      }
+
+      .timeline-item .icon {
+        font-size: 1.2rem;
+        margin-bottom: 3px;
       }
     }
 
@@ -588,14 +719,6 @@
       height: auto;
       display: block;
       border-radius: 12px;
-    }
-
-    .flow-divider {
-      width: 80%;
-      max-width: 500px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #e67e22, #f39c12, #e67e22, transparent);
-      margin: 15px auto;
     }
 
     /* Team Section - Infinite Scroll */
@@ -859,50 +982,161 @@
       line-height: 1.6;
     }
 
-    /* Values Section */
-    .values-section {
+    /* ============================================================
+                   AREAS OF IMPACT SECTION
+                   ============================================================ */
+    .impact-section {
       padding: 80px 0;
-      background: linear-gradient(145deg, #ffffff, #fff8f0);
+      background: linear-gradient(145deg, #ffffff, #fefaf5);
       text-align: center;
     }
 
-    .values-section h2 {
+    .impact-section .section-heading h2 {
       font-size: 2.8rem;
       font-weight: 800;
       background: linear-gradient(135deg, #c0392b, #e67e22, #f39c12);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
     }
 
-    .value-card {
-      padding: 35px 25px;
+    .impact-section .section-heading .subtitle {
+      font-size: 1.05rem;
+      color: #6a5a4a;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .impact-card {
       background: white;
-      border-radius: 28px;
-      box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.08);
-      transition: all 0.4s ease;
-      border: 1px solid rgba(230, 126, 34, 0.1);
+      border-radius: 20px;
+      padding: 30px 25px;
+      box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(230, 126, 34, 0.06);
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .impact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
       height: 100%;
+      background: linear-gradient(180deg, #f39c12, #e67e22);
+      opacity: 0;
+      transition: opacity 0.4s ease;
     }
 
-    .value-card:hover {
+    .impact-card:hover::before {
+      opacity: 1;
+    }
+
+    .impact-card:hover {
       transform: translateY(-8px);
-      border-color: rgba(230, 126, 34, 0.4);
-      box-shadow: 0 25px 45px -15px rgba(230, 126, 34, 0.2);
+      box-shadow: 0 20px 40px -12px rgba(230, 126, 34, 0.15);
+      border-color: rgba(230, 126, 34, 0.15);
     }
 
-    .value-card h4 {
-      font-size: 1.3rem;
+    .impact-card .icon-wrapper {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(243, 156, 18, 0.1), rgba(230, 126, 34, 0.05));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 1.6rem;
+      color: #e67e22;
+      transition: all 0.3s ease;
+    }
+
+    .impact-card:hover .icon-wrapper {
+      background: linear-gradient(135deg, #f39c12, #e67e22);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .impact-card h4 {
+      font-size: 1.15rem;
       font-weight: 700;
-      color: #c0392b;
-      margin-bottom: 15px;
+      color: #1a1a2e;
+      margin-bottom: 10px;
+      font-family: "Playfair Display", serif;
     }
 
-    .value-card p {
+    .impact-card p {
+      font-size: 0.92rem;
       color: #6a5a4a;
       line-height: 1.6;
-      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    .impact-card .card-number {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: rgba(230, 126, 34, 0.05);
+      font-family: "Playfair Display", serif;
+      pointer-events: none;
+    }
+
+    @media (max-width: 992px) {
+      .impact-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .impact-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .impact-section .section-heading h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .impact-section {
+        padding: 50px 0;
+      }
+
+      .impact-card {
+        padding: 22px 18px;
+      }
+
+      .impact-card .icon-wrapper {
+        width: 48px;
+        height: 48px;
+        font-size: 1.3rem;
+      }
+
+      .impact-card h4 {
+        font-size: 1rem;
+      }
+
+      .impact-card p {
+        font-size: 0.85rem;
+      }
     }
 
     /* Footer */
@@ -1412,10 +1646,10 @@
           a brighter future by providing quality learning opportunities and medical support to underprivileged children.
           With a mission to nurture young minds and ensure their well-being, we believe that every child deserves a
           healthy and educated life. Together, we work towards building a compassionate and self-reliant society.</p>
-        <p><strong>Journey: 2020 - 2025 | Impacting Lives Every Day</strong></p>
+        <p><strong>Impacting Lives Every Day</strong></p>
       </div>
       <div class="col-md-6 text-center" data-aos="fade-left">
-        <img src="assets/about.png" class="about-img" alt="About Us Image" />
+        <img src="assets/About Us Image.png" class="about-img" alt="About Us Image" />
       </div>
     </div>
   </div>
@@ -1423,39 +1657,42 @@
   <!-- ===== TIMELINE SECTION ===== -->
   <section class="timeline-section">
     <div class="container">
-      <h2 data-aos="fade-up">📅 Our Journey</h2>
-      <p class="subtitle" data-aos="fade-up" data-aos-delay="50">A timeline of milestones that have shaped our mission
-      </p>
-      <div class="timeline" data-aos="fade-up" data-aos-delay="100">
-        <div class="timeline-item">
-          <span class="icon">🌟</span>
-          <div class="year">2020</div>
-          <div class="event">Foundation Launched with a vision for change</div>
-        </div>
-        <div class="timeline-item">
-          <span class="icon">📚</span>
-          <div class="year">2021</div>
-          <div class="event">First education & healthcare outreach</div>
-        </div>
-        <div class="timeline-item">
-          <span class="icon">🤝</span>
-          <div class="year">2022</div>
-          <div class="event">Partnered with 10+ NGOs & expanded team</div>
-        </div>
-        <div class="timeline-item">
-          <span class="icon">🏆</span>
-          <div class="year">2023</div>
-          <div class="event">Official registration & recognition</div>
-        </div>
-        <div class="timeline-item">
-          <span class="icon">🌍</span>
-          <div class="year">2024</div>
-          <div class="event">Pan‑India impact & digital presence</div>
-        </div>
-        <div class="timeline-item">
-          <span class="icon">✨</span>
-          <div class="year">2025</div>
-          <div class="event">Empowering 10,000+ lives & beyond</div>
+      <h2 data-aos="fade-up">Our Journey of Impact</h2>
+      <p class="subtitle" data-aos="fade-up" data-aos-delay="50">"From a small initiative in 2020 to a growing movement
+        creating meaningful change across communities."</p>
+
+      <div class="timeline-wrapper">
+        <div class="timeline" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline-item">
+            <span class="icon">🌟</span>
+            <div class="year">2020</div>
+            <div class="event">Foundation Launched with a vision for change</div>
+          </div>
+          <div class="timeline-item">
+            <span class="icon">📚</span>
+            <div class="year">2021</div>
+            <div class="event">100+ Children Reached Through Education & Welfare Programs</div>
+          </div>
+          <div class="timeline-item">
+            <span class="icon">🤝</span>
+            <div class="year">2022</div>
+            <div class="event">Expanded to Multiple Communities & Strengthened NGO Partnerships</div>
+          </div>
+          <div class="timeline-item">
+            <span class="icon">🏆</span>
+            <div class="year">2023</div>
+            <div class="event">Official registration & recognition</div>
+          </div>
+          <div class="timeline-item">
+            <span class="icon">🌍</span>
+            <div class="year">2024</div>
+            <div class="event">20,000+ Lives Impacted Through Education, Welfare & Awareness Initiatives</div>
+          </div>
+          <div class="timeline-item">
+            <span class="icon">✨</span>
+            <div class="year">2025</div>
+            <div class="event">Empowering 10,000+ lives & beyond</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1480,12 +1717,6 @@
       <div class="slider-container" data-aos="fade-up" data-aos-delay="100">
         <div class="team-slider">
           <!-- First Set -->
-          <!-- <div class="team-member">
-            <img src="assets/TeamMembers/founder.png" alt="Ashutosh Sharma"
-              onerror="this.src='https://via.placeholder.com/140x140?text=👤'" />
-            <h5>Ashutosh Sharma</h5>
-            <h6>CEO, FOUNDER</h6>
-          </div> -->
           <div class="team-member">
             <img src="assets/TeamMembers/CharuVerma.jpeg" alt="Charu Verma"
               onerror="this.src='https://via.placeholder.com/140x140?text=CV'" />
@@ -1547,12 +1778,6 @@
             <h6>Technical Operations Head</h6>
           </div>
           <!-- Duplicate Set for Seamless Loop -->
-          <!-- <div class="team-member">
-            <img src="assets/TeamMembers/founder.png" alt="Ashutosh Sharma"
-              onerror="this.src='https://via.placeholder.com/140x140?text=👤'" />
-            <h5>Ashutosh Sharma</h5>
-            <h6>CEO, FOUNDER</h6>
-          </div> -->
           <div class="team-member">
             <img src="assets/TeamMembers/CharuVerma.jpeg" alt="Charu Verma"
               onerror="this.src='https://via.placeholder.com/140x140?text=CV'" />
@@ -1633,7 +1858,15 @@
                 <div class="detail-value">TRUSTS ACT, 1882</div>
               </div>
               <div class="detail-item">
-                <div class="detail-label">DARPAN Unique ID</div>
+                <div class="detail-label">12A Registration No.</div>
+                <div class="detail-value">AABTO0533DE20251</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">80G Registration No.</div>
+                <div class="detail-value">AABTO0533DF20251</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">NGO Darpan ID</div>
                 <div class="detail-value">DL/2024/0407704</div>
               </div>
               <div class="detail-item">
@@ -1678,31 +1911,100 @@
     </div>
   </section>
 
-  <!-- Core Values -->
-  <section class="values-section">
+  <!-- ============================================================
+  AREAS OF IMPACT SECTION
+  ============================================================ -->
+  <section class="impact-section">
     <div class="container">
-      <h2 data-aos="fade-up">💖 Our Core Values 💖</h2>
-      <div class="row g-4">
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="value-card"><i class="fas fa-child"
-              style="font-size: 2.8rem; color: #e67e22; margin-bottom: 18px; display: inline-block;"></i>
-            <h4>Childcare</h4>
-            <p>Safe shelter, care, and opportunities for underprivileged children.</p>
-          </div>
+      <div class="section-heading" data-aos="fade-up">
+        <h2>🌱 Our Areas of Impact</h2>
+        <p class="subtitle">Transforming lives through focused initiatives across multiple domains</p>
+      </div>
+
+      <div class="impact-grid" data-aos="fade-up" data-aos-delay="50">
+        <!-- Card 1: Education -->
+        <div class="impact-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-number">01</div>
+          <div class="icon-wrapper"><i class="fas fa-graduation-cap"></i></div>
+          <h4>Education</h4>
+          <p>Providing quality education, school admissions, learning support, and academic mentorship to children.</p>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="value-card"><i class="fas fa-graduation-cap"
-              style="font-size: 2.8rem; color: #e67e22; margin-bottom: 18px; display: inline-block;"></i>
-            <h4>Education</h4>
-            <p>Educational programs to equip them with knowledge and skills.</p>
-          </div>
+
+        <!-- Card 2: Child Welfare -->
+        <div class="impact-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="card-number">02</div>
+          <div class="icon-wrapper"><i class="fas fa-child"></i></div>
+          <h4>Child Welfare</h4>
+          <p>Ensuring safety, care, protection, and holistic development of underprivileged children.</p>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="value-card"><i class="fas fa-heartbeat"
-              style="font-size: 2.8rem; color: #e67e22; margin-bottom: 18px; display: inline-block;"></i>
-            <h4>Healthcare</h4>
-            <p>Healthcare initiatives to ensure they grow up healthy and strong.</p>
-          </div>
+
+        <!-- Card 3: Healthcare -->
+        <div class="impact-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-number">03</div>
+          <div class="icon-wrapper"><i class="fas fa-heartbeat"></i></div>
+          <h4>Healthcare</h4>
+          <p>Health awareness programs, medical support, hygiene initiatives, and wellness activities.</p>
+        </div>
+
+        <!-- Card 4: Nutrition Support -->
+        <div class="impact-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="card-number">04</div>
+          <div class="icon-wrapper"><i class="fas fa-utensils"></i></div>
+          <h4>Nutrition Support</h4>
+          <p>Providing nutritious food, supplements, and essential resources for healthy growth.</p>
+        </div>
+
+        <!-- Card 5: Career Guidance -->
+        <div class="impact-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="card-number">05</div>
+          <div class="icon-wrapper"><i class="fas fa-compass"></i></div>
+          <h4>Career Guidance</h4>
+          <p>Helping students make informed academic and career decisions through mentorship and counseling.</p>
+        </div>
+
+        <!-- Card 6: Orphanage Support -->
+        <div class="impact-card" data-aos="fade-up" data-aos-delay="350">
+          <div class="card-number">06</div>
+          <div class="icon-wrapper"><i class="fas fa-home"></i></div>
+          <h4>Orphanage Support</h4>
+          <p>Regular visits, celebrations, educational support, and welfare activities for children in orphanages.</p>
+        </div>
+
+        <!-- Card 7: Elderly Care -->
+        <div class="impact-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="card-number">07</div>
+          <div class="icon-wrapper"><i class="fas fa-heart"></i></div>
+          <h4>Elderly Care</h4>
+          <p>Visits to old-age homes, welfare support, companionship activities, and essential aid for senior citizens.
+          </p>
+        </div>
+
+        <!-- Card 8: Festival & Relief Distribution -->
+        <div class="impact-card" data-aos="fade-up" data-aos-delay="450">
+          <div class="card-number">08</div>
+          <div class="icon-wrapper"><i class="fas fa-gift"></i></div>
+          <h4>Festival & Relief Distribution</h4>
+          <p>Distribution of clothes, stationery, food packets, blankets, and essential items during festivals and
+            special drives.</p>
+        </div>
+
+        <!-- Card 9: Community Awareness -->
+        <div class="impact-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="card-number">09</div>
+          <div class="icon-wrapper"><i class="fas fa-bullhorn"></i></div>
+          <h4>Community Awareness</h4>
+          <p>Awareness campaigns on social issues, including cyber fraud prevention, digital safety, health, hygiene,
+            and
+            social responsibility.</p>
+        </div>
+
+        <!-- Card 10: Birthday Celebrations & Happiness Drives -->
+        <div class="impact-card" data-aos="fade-up" data-aos-delay="550">
+          <div class="card-number">10</div>
+          <div class="icon-wrapper"><i class="fas fa-birthday-cake"></i></div>
+          <h4>Birthday Celebrations & Happiness Drives</h4>
+          <p>Celebrating birthdays with underprivileged children through meals, gifts, activities, and memorable
+            experiences.</p>
         </div>
       </div>
     </div>
