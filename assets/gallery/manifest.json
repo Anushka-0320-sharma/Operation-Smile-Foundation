@@ -1,5 +1,24 @@
 {
     "categories": {
+        "News Cover": [
+            "1.jpeg",
+            "2.jpeg",
+            "3.jpeg",
+            "4.jpeg",
+            "5.jpeg",
+            "6.jpeg"
+        ],
+        "Health and Personality Development Awareness Drive": [
+            "1.jpeg",
+            "2.jpeg",
+            "3.jpeg",
+            "4.jpeg",
+            "5.jpeg",
+            "6.jpeg",
+            "7.jpeg",
+            "8.jpeg",
+            "9.jpeg"
+        ],
         "aanandam": [
             "1.png",
             "2.png",
@@ -203,10 +222,10 @@
             "11.png",
             "12.png"
         ],
-        "Muzaffarnagar Jal Sewa": [
-            "1.jpeg",
-            "2.jpeg",
-            "3.jpeg"
+        "muzaffarnagarJalSewa": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
         ],
         "ration distribution": [
             "1.png",
