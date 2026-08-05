@@ -1,0 +1,3671 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Cyber Rakshak - Cyber Safety & Digital Awareness</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      /* ============================================================
+         GLOBAL RESET & BASE
+         ============================================================ */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        background: #ffffff;
+        color: #2c3e2f;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      .logo-text,
+      .section-title h2 {
+        font-family: "Playfair Display", serif;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f0f4f8;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #0b3c6d, #2e8b57);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #f58220, #0b3c6d);
+      }
+
+      .container {
+        width: 92%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      /* ============================================================
+         ANIMATIONS
+         ============================================================ */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes scaleIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes floatY {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+      @keyframes pulseGlow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(11, 60, 109, 0.25);
+        }
+        50% {
+          box-shadow:
+            0 0 45px rgba(11, 60, 109, 0.45),
+            0 0 70px rgba(11, 60, 109, 0.1);
+        }
+      }
+      @keyframes shimmerText {
+        0% {
+          background-position: -200% center;
+        }
+        100% {
+          background-position: 200% center;
+        }
+      }
+      @keyframes rotateSlow {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes pulseBorder {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.7;
+          transform: scale(1.02);
+        }
+      }
+      @keyframes floatParticle {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1) rotate(0deg);
+        }
+        25% {
+          transform: translate(25px, -20px) scale(1.1) rotate(6deg);
+        }
+        50% {
+          transform: translate(-20px, 25px) scale(0.9) rotate(-6deg);
+        }
+        75% {
+          transform: translate(20px, -12px) scale(1.05) rotate(4deg);
+        }
+      }
+      @keyframes floatEmoji {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg) scale(1);
+        }
+        33% {
+          transform: translateY(-18px) rotate(8deg) scale(1.1);
+        }
+        66% {
+          transform: translateY(12px) rotate(-6deg) scale(0.9);
+        }
+      }
+      @keyframes zoomIn {
+        from {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes countUp {
+        from {
+          opacity: 0;
+          transform: scale(0.5) translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      .animate-on-scroll {
+        opacity: 0;
+        transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1);
+      }
+      .animate-on-scroll.visible {
+        opacity: 1;
+      }
+      .animate-on-scroll.fade-up {
+        transform: translateY(40px);
+      }
+      .animate-on-scroll.fade-up.visible {
+        transform: translateY(0);
+      }
+      .animate-on-scroll.fade-left {
+        transform: translateX(-40px);
+      }
+      .animate-on-scroll.fade-left.visible {
+        transform: translateX(0);
+      }
+      .animate-on-scroll.fade-right {
+        transform: translateX(40px);
+      }
+      .animate-on-scroll.fade-right.visible {
+        transform: translateX(0);
+      }
+      .animate-on-scroll.zoom-in {
+        transform: scale(0.9);
+      }
+      .animate-on-scroll.zoom-in.visible {
+        transform: scale(1);
+      }
+
+      /* ============================================================
+         HEADER - Premium Glassmorphism Navbar
+         ============================================================ */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 2px 30px rgba(0, 0, 0, 0.06);
+        z-index: 1000;
+        transition: all 0.4s ease;
+        border-bottom: 1px solid rgba(11, 60, 109, 0.08);
+        padding: 0 20px;
+      }
+
+      @media (min-width: 992px) {
+        header {
+          padding: 0 40px;
+        }
+      }
+
+      header.scrolled {
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+        border-bottom-color: rgba(11, 60, 109, 0.15);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        width: 100%;
+      }
+
+      /* Left side: Logo */
+      .logo-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-shrink: 0;
+        cursor: pointer;
+      }
+
+      .logo-img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2.5px solid #0b3c6d;
+        transition: all 0.4s ease;
+        box-shadow: 0 0 25px rgba(11, 60, 109, 0.15);
+      }
+
+      .logo-img:hover {
+        transform: scale(1.08) rotate(-5deg);
+        border-color: #f58220;
+        box-shadow: 0 0 35px rgba(245, 130, 32, 0.25);
+      }
+
+      .logo-text {
+        font-size: 1.5rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #0b3c6d, #f58220);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        letter-spacing: -0.5px;
+      }
+
+      .logo-text span {
+        background: linear-gradient(135deg, #f58220, #2e8b57);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      /* Right side: Nav + Toggler - pushed to right with margin-left: auto */
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 120px;
+        margin-left: auto;
+      }
+
+      .navbar-toggler {
+        border: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+        background: rgba(11, 60, 109, 0.08);
+        transition: all 0.3s ease;
+        display: none;
+        cursor: pointer;
+        order: 2;
+      }
+
+      .navbar-toggler:hover {
+        background: rgba(11, 60, 109, 0.15);
+      }
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(58, 42, 31, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 6px;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li a {
+        color: #3b2a1f;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 8px 18px;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        position: relative;
+        display: inline-block;
+        white-space: nowrap;
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2.5px;
+        background: linear-gradient(90deg, #0b3c6d, #f58220);
+        border-radius: 3px;
+        transition: width 0.3s ease;
+      }
+
+      nav ul li a:hover::after,
+      nav ul li a.active::after {
+        width: 60%;
+      }
+
+      nav ul li a:hover {
+        color: #0b3c6d;
+        transform: translateY(-2px);
+      }
+
+      nav ul li a.active {
+        color: #0b3c6d;
+        background: rgba(11, 60, 109, 0.06);
+      }
+
+      body {
+        padding-top: 72px;
+      }
+
+      /* ============================================================
+         RESPONSIVE NAVBAR
+         ============================================================ */
+      @media (max-width: 1199px) {
+        nav ul li a {
+          font-size: 0.78rem;
+          padding: 6px 14px;
+        }
+        .nav-right {
+          gap: 40px;
+        }
+      }
+
+      @media (max-width: 991px) {
+        header {
+          padding: 0 15px;
+        }
+        .navbar-toggler {
+          display: block;
+        }
+        .nav-right {
+          gap: 10px;
+        }
+        nav ul {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          gap: 4px;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(20px);
+          padding: 15px 20px;
+          border-radius: 16px;
+          margin-top: 10px;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+          border: 1px solid rgba(11, 60, 109, 0.08);
+          position: absolute;
+          top: 100%;
+          right: 0;
+          left: 0;
+          z-index: 999;
+        }
+        nav ul.show {
+          display: flex;
+        }
+        nav ul li {
+          width: 100%;
+        }
+        nav ul li a {
+          display: block;
+          width: 100%;
+          text-align: center;
+          padding: 10px 18px;
+          font-size: 0.95rem;
+          white-space: normal;
+        }
+        nav ul li a::after {
+          display: none;
+        }
+        .logo-text {
+          font-size: 1.3rem;
+        }
+        .logo-img {
+          width: 40px;
+          height: 40px;
+        }
+        .header-container {
+          position: relative;
+        }
+        .nav-right {
+          gap: 8px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .logo-text {
+          font-size: 1rem;
+        }
+        .logo-img {
+          width: 34px;
+          height: 34px;
+        }
+        .navbar-toggler {
+          padding: 4px 8px;
+        }
+        header {
+          padding: 0 10px;
+        }
+        .nav-right {
+          gap: 6px;
+        }
+      }
+
+      /* ============================================================
+         HERO SECTION - Premium Creative with Smaller Card
+         ============================================================ */
+      .hero-cyber {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 20px 0 40px;
+        background:
+          radial-gradient(
+            ellipse at 10% 30%,
+            rgba(11, 60, 109, 0.08) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse at 90% 70%,
+            rgba(245, 130, 32, 0.06) 0%,
+            transparent 50%
+          ),
+          linear-gradient(160deg, #ffffff 0%, #f0f7ff 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-cyber .hero-particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        overflow: hidden;
+      }
+
+      .hero-cyber .particle {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(11, 60, 109, 0.05),
+          transparent
+        );
+        animation: floatParticle 15s ease-in-out infinite;
+      }
+
+      .hero-cyber .particle:nth-child(1) {
+        width: 300px;
+        height: 300px;
+        top: -120px;
+        right: -80px;
+        animation-delay: 0s;
+        background: radial-gradient(
+          circle,
+          rgba(245, 130, 32, 0.04),
+          transparent
+        );
+      }
+      .hero-cyber .particle:nth-child(2) {
+        width: 220px;
+        height: 220px;
+        bottom: -60px;
+        left: -50px;
+        animation-delay: -3s;
+        background: radial-gradient(
+          circle,
+          rgba(11, 60, 109, 0.04),
+          transparent
+        );
+      }
+      .hero-cyber .particle:nth-child(3) {
+        width: 150px;
+        height: 150px;
+        top: 30%;
+        right: 10%;
+        animation-delay: -6s;
+        background: radial-gradient(
+          circle,
+          rgba(46, 139, 87, 0.03),
+          transparent
+        );
+      }
+      .hero-cyber .particle:nth-child(4) {
+        width: 120px;
+        height: 120px;
+        bottom: 25%;
+        left: 8%;
+        animation-delay: -9s;
+        background: radial-gradient(
+          circle,
+          rgba(245, 130, 32, 0.03),
+          transparent
+        );
+      }
+
+      .hero-cyber .floating-emoji {
+        position: absolute;
+        font-size: 28px;
+        opacity: 0.06;
+        animation: floatEmoji 20s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .hero-cyber .floating-emoji:nth-child(1) {
+        top: 8%;
+        left: 3%;
+        animation-delay: 0s;
+        font-size: 44px;
+      }
+      .hero-cyber .floating-emoji:nth-child(2) {
+        bottom: 10%;
+        right: 4%;
+        animation-delay: -5s;
+        font-size: 38px;
+      }
+      .hero-cyber .floating-emoji:nth-child(3) {
+        top: 45%;
+        left: 45%;
+        animation-delay: -10s;
+        font-size: 30px;
+        opacity: 0.05;
+      }
+
+      .hero-cyber .hero-card {
+        background: rgba(255, 255, 255, 0.78);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border-radius: 32px;
+        padding: 30px 38px;
+        box-shadow:
+          0 25px 70px rgba(0, 0, 0, 0.05),
+          inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        transition: all 0.5s ease;
+        animation: scaleIn 0.8s ease both;
+      }
+
+      .hero-cyber .hero-card:hover {
+        box-shadow:
+          0 35px 90px rgba(11, 60, 109, 0.06),
+          inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        transform: translateY(-3px);
+      }
+
+      .hero-cyber .hero-content {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        width: 100%;
+      }
+
+      .hero-cyber .hero-text {
+        flex: 1.2;
+        padding: 0;
+      }
+
+      .hero-cyber .hero-text .badge-cyber {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(
+          135deg,
+          rgba(11, 60, 109, 0.12),
+          rgba(245, 130, 32, 0.08)
+        );
+        color: #0b3c6d;
+        padding: 5px 18px;
+        border-radius: 50px;
+        font-size: 0.6rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        border: 1px solid rgba(11, 60, 109, 0.08);
+      }
+
+      .hero-cyber .hero-text .badge-cyber i {
+        font-size: 0.7rem;
+        color: #f58220;
+      }
+
+      .hero-cyber .hero-text h1 {
+        font-size: 2.4rem;
+        font-weight: 800;
+        line-height: 1.1;
+        color: #1a1a2e;
+        margin-bottom: 12px;
+      }
+
+      .hero-cyber .hero-text h1 .highlight {
+        background: linear-gradient(135deg, #0b3c6d, #f58220, #2e8b57);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        position: relative;
+        background-size: 200% auto;
+        animation: shimmerText 4s ease-in-out infinite;
+      }
+
+      .hero-cyber .hero-text h1 .highlight::after {
+        content: "";
+        position: absolute;
+        bottom: 4px;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(
+          90deg,
+          rgba(11, 60, 109, 0.15),
+          rgba(245, 130, 32, 0.15)
+        );
+        border-radius: 3px;
+      }
+
+      .hero-cyber .hero-text .subtitle {
+        font-size: 0.9rem;
+        color: #f58220;
+        font-weight: 600;
+        letter-spacing: 1px;
+        max-width: 480px;
+        margin-bottom: 8px;
+      }
+
+      .hero-cyber .hero-text p {
+        font-size: 0.85rem;
+        color: #6a5a4a;
+        max-width: 520px;
+        line-height: 1.7;
+        margin-bottom: 8px;
+      }
+
+      .hero-cyber .hero-quote {
+        font-size: 0.82rem;
+        font-style: italic;
+        color: #5a4a3a;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(8px);
+        padding: 10px 18px;
+        border-radius: 14px;
+        border-left: 4px solid #f58220;
+        max-width: 480px;
+        margin-bottom: 14px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      }
+
+      .hero-cyber .hero-quote i {
+        color: #f58220;
+        margin-right: 8px;
+        font-size: 0.85rem;
+      }
+
+      .hero-cyber .hero-quote .quote-text {
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        color: #2c3e2f;
+      }
+
+      .hero-cyber .hero-buttons {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+      }
+
+      .hero-cyber .btn-primary-cyber {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 28px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.82rem;
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        border: none;
+        cursor: pointer;
+        background: linear-gradient(135deg, #0b3c6d, #1a2a4a);
+        color: white;
+        box-shadow: 0 6px 25px rgba(11, 60, 109, 0.3);
+        text-decoration: none;
+        animation: pulseGlow 2.5s ease-in-out infinite;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-cyber .btn-primary-cyber::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.6s,
+          height 0.6s;
+      }
+
+      .hero-cyber .btn-primary-cyber:hover::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .hero-cyber .btn-primary-cyber:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 10px 35px rgba(11, 60, 109, 0.4);
+        color: white;
+        animation: none;
+      }
+
+      .hero-cyber .btn-primary-cyber i {
+        transition: transform 0.3s ease;
+      }
+
+      .hero-cyber .btn-primary-cyber:hover i {
+        transform: translateX(5px);
+      }
+
+      .hero-cyber .btn-secondary-cyber {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 28px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.82rem;
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        border: 2px solid #0b3c6d;
+        cursor: pointer;
+        color: #0b3c6d;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(5px);
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-cyber .btn-secondary-cyber::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(11, 60, 109, 0.08);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.6s,
+          height 0.6s;
+      }
+
+      .hero-cyber .btn-secondary-cyber:hover::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .hero-cyber .btn-secondary-cyber:hover {
+        background: linear-gradient(135deg, #0b3c6d, #f58220);
+        color: white;
+        transform: translateY(-3px) scale(1.02);
+        border-color: transparent;
+        box-shadow: 0 10px 35px rgba(11, 60, 109, 0.25);
+      }
+
+      /* ============================================================
+         HERO STATS - Row Layout with Animated Numbers
+         ============================================================ */
+      .hero-stats-row {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 4px;
+      }
+
+      .hero-stat {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        opacity: 0;
+        animation: countUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1) forwards;
+        animation-delay: 0.6s;
+      }
+
+      .hero-stat:nth-child(2) {
+        animation-delay: 0.8s;
+      }
+
+      .hero-stat-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          rgba(11, 60, 109, 0.1),
+          rgba(245, 130, 32, 0.05)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        color: #0b3c6d;
+        transition: all 0.4s ease;
+      }
+
+      .hero-stat:hover .hero-stat-icon {
+        background: linear-gradient(135deg, #0b3c6d, #f58220);
+        color: white;
+        transform: scale(1.1) rotate(-10deg);
+      }
+
+      .hero-stat-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero-stat-number {
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: #0b3c6d;
+        font-family: "Playfair Display", serif;
+        line-height: 1;
+        display: inline-block;
+        animation: shimmerText 3s ease-in-out infinite;
+        background: linear-gradient(135deg, #0b3c6d, #f58220);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-size: 200% auto;
+      }
+
+      .hero-stat-label {
+        font-size: 0.55rem;
+        color: #6a5a4a;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .hero-cyber .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .hero-cyber .hero-image-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.08);
+        transition: all 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      }
+
+      .hero-cyber .hero-image-wrapper::before {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: -6px;
+        right: -6px;
+        bottom: -6px;
+        border: 3px solid rgba(11, 60, 109, 0.1);
+        border-radius: 34px;
+        z-index: 0;
+        animation: pulseBorder 3s ease-in-out infinite;
+      }
+
+      .hero-cyber .hero-image-wrapper::after {
+        content: "🛡️";
+        position: absolute;
+        top: -18px;
+        right: -18px;
+        font-size: 26px;
+        color: rgba(11, 60, 109, 0.06);
+        animation: rotateSlow 25s linear infinite;
+        z-index: 2;
+      }
+
+      .hero-cyber .hero-image-wrapper:hover {
+        transform: translateY(-6px) scale(1.01);
+        box-shadow: 0 35px 70px -20px rgba(11, 60, 109, 0.15);
+      }
+
+      .hero-cyber .hero-image-wrapper img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-cyber .hero-image-wrapper:hover img {
+        transform: scale(1.05);
+      }
+
+      .hero-cyber .hero-ring {
+        position: absolute;
+        width: 130%;
+        height: 130%;
+        top: -15%;
+        left: -15%;
+        border: 2px dashed rgba(11, 60, 109, 0.04);
+        border-radius: 50%;
+        animation: rotateRing 45s linear infinite;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      @keyframes rotateRing {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* ============================================================
+         RESPONSIVE HERO
+         ============================================================ */
+      @media (max-width: 1100px) {
+        .hero-cyber .hero-text h1 {
+          font-size: 2rem;
+        }
+        .hero-cyber .hero-content {
+          gap: 25px;
+        }
+        .hero-cyber .hero-image-wrapper {
+          max-width: 350px;
+        }
+        .hero-cyber .hero-card {
+          padding: 25px 28px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .hero-cyber {
+          padding: 15px 0 30px;
+          min-height: auto;
+        }
+        .hero-cyber .hero-card {
+          padding: 22px 20px;
+          border-radius: 24px;
+        }
+        .hero-cyber .hero-content {
+          flex-direction: column;
+          text-align: center;
+          gap: 18px;
+        }
+        .hero-cyber .hero-text p {
+          max-width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .hero-cyber .hero-quote {
+          max-width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .hero-cyber .hero-buttons {
+          justify-content: center;
+        }
+        .hero-stats-row {
+          justify-content: center;
+        }
+        .hero-cyber .hero-image {
+          order: -1;
+          max-width: 380px;
+          margin: 0 auto;
+          width: 100%;
+        }
+        .hero-cyber .hero-image-wrapper {
+          max-width: 100%;
+        }
+        .hero-cyber .hero-text h1 .highlight::after {
+          display: none;
+        }
+        .hero-cyber .hero-text h1 {
+          font-size: 1.7rem;
+        }
+        .hero-cyber .floating-emoji {
+          display: none;
+        }
+        .hero-cyber .hero-ring {
+          display: none;
+        }
+        .hero-stat-number {
+          font-size: 1.1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-cyber .hero-card {
+          padding: 18px 14px;
+          border-radius: 20px;
+        }
+        .hero-cyber .hero-text h1 {
+          font-size: 1.4rem;
+        }
+        .hero-cyber .hero-text .subtitle {
+          font-size: 0.8rem;
+        }
+        .hero-cyber .hero-text p {
+          font-size: 0.78rem;
+        }
+        .hero-cyber .hero-quote {
+          font-size: 0.75rem;
+          padding: 8px 14px;
+        }
+        .hero-stat-number {
+          font-size: 1rem;
+        }
+        .hero-stat-label {
+          font-size: 0.5rem;
+        }
+        .hero-cyber .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+        .hero-cyber .btn-primary-cyber,
+        .hero-cyber .btn-secondary-cyber {
+          width: 100%;
+          justify-content: center;
+          padding: 10px 16px;
+          font-size: 0.75rem;
+        }
+        .hero-stats-row {
+          gap: 16px;
+        }
+        .hero-stat {
+          gap: 6px;
+        }
+        .hero-stat-icon {
+          width: 32px;
+          height: 32px;
+          font-size: 0.8rem;
+        }
+        .hero-cyber .particle {
+          display: none;
+        }
+        .hero-cyber .hero-image {
+          max-width: 100%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-cyber .hero-card {
+          padding: 14px 10px;
+          border-radius: 16px;
+        }
+        .hero-cyber .hero-text h1 {
+          font-size: 1.15rem;
+        }
+        .hero-cyber .hero-text .badge-cyber {
+          font-size: 0.45rem;
+          padding: 3px 12px;
+        }
+        .hero-cyber .hero-quote {
+          font-size: 0.7rem;
+          padding: 6px 10px;
+        }
+        .hero-stat-number {
+          font-size: 0.9rem;
+        }
+        .hero-stat-label {
+          font-size: 0.45rem;
+        }
+        .hero-stats-row {
+          gap: 12px;
+        }
+        .hero-stat-icon {
+          width: 28px;
+          height: 28px;
+          font-size: 0.7rem;
+        }
+        .hero-cyber .hero-image-wrapper {
+          border-radius: 14px;
+        }
+        .hero-cyber .hero-image-wrapper::before {
+          border-radius: 18px;
+        }
+      }
+
+      /* ============================================================
+         SECTION 2 - ABOUT PROJECT
+         ============================================================ */
+      .about-cyber {
+        padding: 60px 0;
+        background: linear-gradient(160deg, #ffffff 0%, #f0f7ff 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .about-cyber::before {
+        content: "🛡️";
+        position: absolute;
+        top: 25px;
+        right: 40px;
+        font-size: 48px;
+        opacity: 0.04;
+        animation: floatY 8s ease-in-out infinite;
+      }
+      .about-cyber::after {
+        content: "🔒";
+        position: absolute;
+        bottom: 25px;
+        left: 40px;
+        font-size: 40px;
+        opacity: 0.04;
+        animation: floatY 10s ease-in-out infinite reverse;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 35px;
+      }
+
+      .section-title .section-tag {
+        display: inline-block;
+        font-size: 0.65rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        color: #0b3c6d;
+        background: rgba(11, 60, 109, 0.08);
+        padding: 5px 20px;
+        border-radius: 50px;
+        margin-bottom: 10px;
+      }
+
+      .section-title h2 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 8px;
+      }
+
+      .section-title h2 .highlight {
+        background: linear-gradient(135deg, #0b3c6d, #f58220, #2e8b57);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-size: 200% auto;
+        animation: shimmerText 4s ease-in-out infinite;
+      }
+
+      .section-title p {
+        color: #6a5a4a;
+        font-size: 0.95rem;
+        max-width: 620px;
+        margin: 0 auto;
+      }
+
+      .section-divider {
+        width: 70px;
+        height: 3px;
+        background: linear-gradient(90deg, #0b3c6d, #f58220, #2e8b57);
+        margin: 12px auto 0;
+        border-radius: 3px;
+        position: relative;
+      }
+
+      .section-divider::after {
+        content: "";
+        position: absolute;
+        top: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 18px;
+        height: 9px;
+        background: #ffffff;
+        border-radius: 50%;
+      }
+
+      .about-cyber-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .about-cyber-text {
+        flex: 1;
+      }
+
+      .about-cyber-text h3 {
+        font-size: 1.6rem;
+        font-family: "Playfair Display", serif;
+        color: #1a1a2e;
+        margin-bottom: 14px;
+      }
+
+      .about-cyber-text h3 .highlight {
+        background: linear-gradient(135deg, #0b3c6d, #f58220);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .about-cyber-text .about-highlight-box {
+        background: rgba(11, 60, 109, 0.04);
+        border-left: 4px solid #f58220;
+        padding: 14px 20px;
+        border-radius: 0 12px 12px 0;
+        margin: 14px 0;
+        transition: all 0.3s ease;
+      }
+
+      .about-cyber-text .about-highlight-box:hover {
+        background: rgba(11, 60, 109, 0.08);
+        transform: translateX(8px);
+      }
+
+      .about-cyber-text .about-highlight-box p {
+        margin-bottom: 0;
+        font-weight: 500;
+        color: #4a3a2a;
+        font-size: 0.92rem;
+      }
+
+      .about-cyber-text p {
+        color: #5a4a3a;
+        line-height: 1.8;
+        margin-bottom: 12px;
+        font-size: 0.92rem;
+      }
+
+      .about-cyber-image {
+        flex: 1;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.06);
+        transition: all 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        position: relative;
+      }
+
+      .about-cyber-image::before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        border: 2px solid rgba(11, 60, 109, 0.12);
+        border-radius: 20px;
+        z-index: 1;
+        pointer-events: none;
+        transition: all 0.4s ease;
+      }
+
+      .about-cyber-image:hover::before {
+        border-color: rgba(245, 130, 32, 0.3);
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+      }
+
+      .about-cyber-image:hover {
+        transform: translateY(-10px) scale(1.01);
+        box-shadow: 0 32px 55px -18px rgba(11, 60, 109, 0.1);
+      }
+
+      .about-cyber-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.8s ease;
+      }
+
+      .about-cyber-image:hover img {
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 992px) {
+        .about-cyber {
+          padding: 45px 0;
+        }
+        .about-cyber-content {
+          flex-direction: column;
+          text-align: center;
+          gap: 30px;
+        }
+        .about-cyber-image {
+          order: -1;
+          max-width: 420px;
+          margin: 0 auto;
+          width: 100%;
+        }
+        .about-cyber-text h3 {
+          text-align: center;
+        }
+        .about-cyber-text p {
+          text-align: left;
+        }
+        .about-cyber::before,
+        .about-cyber::after {
+          display: none;
+        }
+        .section-title h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .about-cyber {
+          padding: 35px 0;
+        }
+        .section-title h2 {
+          font-size: 1.6rem;
+        }
+        .about-cyber-text h3 {
+          font-size: 1.3rem;
+        }
+        .about-cyber-text p {
+          font-size: 0.88rem;
+        }
+        .about-cyber-text .about-highlight-box {
+          padding: 12px 16px;
+        }
+        .about-cyber-text .about-highlight-box p {
+          font-size: 0.88rem;
+        }
+        .about-cyber-image {
+          max-width: 100%;
+        }
+      }
+
+      /* ============================================================
+         SECTION 3 - OUR MISSION (Cards)
+         ============================================================ */
+      .mission-cyber {
+        padding: 70px 0;
+        background: #ffffff;
+        position: relative;
+      }
+
+      .mission-cyber::before {
+        content: "🎯";
+        position: absolute;
+        top: 25px;
+        right: 40px;
+        font-size: 44px;
+        opacity: 0.04;
+        animation: floatY 12s ease-in-out infinite;
+      }
+
+      .mission-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 28px;
+        margin-top: 35px;
+      }
+
+      .mission-card {
+        background: #ffffff;
+        border-radius: 24px;
+        padding: 30px 26px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(11, 60, 109, 0.05);
+        transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        opacity: 0;
+        animation: fadeInUp 0.7s ease forwards;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .mission-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #0b3c6d, #f58220, #2e8b57);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .mission-card:hover::before {
+        opacity: 1;
+      }
+
+      .mission-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(11, 60, 109, 0.08);
+        border-color: rgba(11, 60, 109, 0.12);
+      }
+
+      .mission-card-icon {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          rgba(11, 60, 109, 0.08),
+          rgba(245, 130, 32, 0.04)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        color: #0b3c6d;
+        margin: 0 auto 16px;
+        transition: all 0.5s ease;
+      }
+
+      .mission-card:hover .mission-card-icon {
+        background: linear-gradient(135deg, #0b3c6d, #f58220);
+        color: white;
+        transform: scale(1.08) rotate(-8deg);
+        box-shadow: 0 10px 30px rgba(11, 60, 109, 0.2);
+      }
+
+      .mission-card h4 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 8px;
+      }
+
+      .mission-card p {
+        font-size: 0.85rem;
+        color: #6a5a4a;
+        line-height: 1.7;
+        margin-bottom: 0;
+      }
+
+      @media (max-width: 768px) {
+        .mission-grid {
+          grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+          gap: 20px;
+        }
+        .mission-cyber {
+          padding: 50px 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .mission-grid {
+          grid-template-columns: 1fr;
+        }
+        .mission-card {
+          padding: 22px 18px;
+        }
+      }
+
+      /* ============================================================
+         SECTION 4 - WHO WE WORK WITH
+         ============================================================ */
+      .whowe-cyber {
+        padding: 70px 0;
+        background: linear-gradient(160deg, #f0f7ff 0%, #ffffff 100%);
+        position: relative;
+      }
+
+      .whowe-cyber::before {
+        content: "🤝";
+        position: absolute;
+        top: 25px;
+        right: 40px;
+        font-size: 44px;
+        opacity: 0.04;
+        animation: floatY 12s ease-in-out infinite;
+      }
+
+      .whowe-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 28px;
+        margin-top: 35px;
+      }
+
+      .whowe-card {
+        background: #ffffff;
+        border-radius: 24px;
+        padding: 28px 26px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(11, 60, 109, 0.05);
+        transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        opacity: 0;
+        animation: fadeInUp 0.7s ease forwards;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        gap: 18px;
+        align-items: flex-start;
+      }
+
+      .whowe-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(11, 60, 109, 0.08);
+        border-color: rgba(11, 60, 109, 0.12);
+      }
+
+      .whowe-card-icon {
+        width: 52px;
+        height: 52px;
+        min-width: 52px;
+        border-radius: 14px;
+        background: linear-gradient(
+          135deg,
+          rgba(11, 60, 109, 0.08),
+          rgba(245, 130, 32, 0.04)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: #0b3c6d;
+        transition: all 0.4s ease;
+      }
+
+      .whowe-card:hover .whowe-card-icon {
+        background: linear-gradient(135deg, #0b3c6d, #f58220);
+        color: white;
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(11, 60, 109, 0.15);
+      }
+
+      .whowe-card-content h4 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 4px;
+      }
+
+      .whowe-card-content p {
+        font-size: 0.85rem;
+        color: #6a5a4a;
+        line-height: 1.7;
+        margin-bottom: 0;
+      }
+
+      @media (max-width: 768px) {
+        .whowe-grid {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+        .whowe-cyber {
+          padding: 50px 0;
+        }
+        .whowe-card {
+          padding: 20px 18px;
+        }
+      }
+
+      /* ============================================================
+         SECTION 5 - WHY CYBER AWARENESS MATTERS
+         ============================================================ */
+      .whyaware-cyber {
+        padding: 70px 0;
+        background: linear-gradient(
+          145deg,
+          #0b3c6d 0%,
+          #1a2a4a 50%,
+          #0f3460 100%
+        );
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .whyaware-cyber::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:
+          radial-gradient(
+            ellipse at 20% 50%,
+            rgba(245, 130, 32, 0.06),
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse at 80% 50%,
+            rgba(46, 139, 87, 0.04),
+            transparent 60%
+          );
+        pointer-events: none;
+      }
+
+      .whyaware-cyber .section-title .section-tag {
+        color: #f58220;
+        background: rgba(245, 130, 32, 0.12);
+      }
+
+      .whyaware-cyber .section-title h2 {
+        color: white;
+      }
+
+      .whyaware-cyber .section-title h2 .highlight {
+        background: linear-gradient(135deg, #f58220, #2e8b57);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .whyaware-cyber .section-title p {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .whyaware-cyber .section-divider {
+        background: linear-gradient(90deg, #f58220, #2e8b57);
+      }
+
+      .whyaware-cyber .section-divider::after {
+        background: #1a2a4a;
+      }
+
+      .whyaware-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        margin-top: 25px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .whyaware-left {
+        flex: 1;
+      }
+
+      .whyaware-left .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 16px 22px;
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        margin-bottom: 14px;
+        transition: all 0.4s ease;
+      }
+
+      .whyaware-left .stat-item:hover {
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateX(8px);
+        border-color: rgba(245, 130, 32, 0.2);
+      }
+
+      .whyaware-left .stat-icon {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        border-radius: 50%;
+        background: rgba(245, 130, 32, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: #f58220;
+      }
+
+      .whyaware-left .stat-number {
+        font-size: 1.4rem;
+        font-weight: 800;
+        font-family: "Playfair Display", serif;
+        color: #f58220;
+        display: block;
+        animation: shimmerText 3s ease-in-out infinite;
+        background: linear-gradient(135deg, #f58220, #ffd54f);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-size: 200% auto;
+      }
+
+      .whyaware-left .stat-text {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.4;
+        margin-bottom: 0;
+      }
+
+      .whyaware-right {
+        flex: 1;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+        transition: all 0.6s ease;
+      }
+
+      .whyaware-right:hover {
+        transform: translateY(-8px) scale(1.01);
+        box-shadow: 0 35px 60px -18px rgba(0, 0, 0, 0.4);
+      }
+
+      .whyaware-right img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.8s ease;
+      }
+
+      .whyaware-right:hover img {
+        transform: scale(1.04);
+      }
+
+      @media (max-width: 992px) {
+        .whyaware-content {
+          flex-direction: column;
+        }
+        .whyaware-right {
+          max-width: 480px;
+          margin: 0 auto;
+          width: 100%;
+        }
+        .whyaware-left .stat-item {
+          justify-content: center;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .whyaware-cyber {
+          padding: 50px 0;
+        }
+        .whyaware-left .stat-item {
+          flex-direction: column;
+          text-align: center;
+          gap: 8px;
+          padding: 14px 16px;
+        }
+        .whyaware-left .stat-number {
+          font-size: 1.2rem;
+        }
+        .whyaware-left .stat-text {
+          font-size: 0.8rem;
+        }
+        .whyaware-left .stat-icon {
+          width: 38px;
+          height: 38px;
+          min-width: 38px;
+          font-size: 1rem;
+        }
+      }
+
+      /* ============================================================
+         SECTION 6 - OUR IMPACT
+         ============================================================ */
+      .impact-cyber {
+        padding: 70px 0;
+        background: #ffffff;
+        position: relative;
+      }
+
+      .impact-cyber::before {
+        content: "📊";
+        position: absolute;
+        top: 25px;
+        right: 40px;
+        font-size: 44px;
+        opacity: 0.04;
+        animation: floatY 12s ease-in-out infinite;
+      }
+
+      .impact-grid-cyber {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        margin-top: 35px;
+      }
+
+      .impact-item-cyber {
+        text-align: center;
+        padding: 35px 20px;
+        background: #ffffff;
+        border-radius: 24px;
+        border: 1px solid rgba(11, 60, 109, 0.06);
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.03);
+        transition: all 0.5s ease;
+        opacity: 0;
+        animation: fadeInUp 0.7s ease forwards;
+      }
+
+      .impact-item-cyber:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(11, 60, 109, 0.08);
+        border-color: rgba(11, 60, 109, 0.12);
+      }
+
+      .impact-item-cyber .impact-icon {
+        font-size: 2.5rem;
+        color: #0b3c6d;
+        margin-bottom: 12px;
+        display: block;
+      }
+
+      .impact-item-cyber .impact-number {
+        font-size: 2.8rem;
+        font-weight: 800;
+        font-family: "Playfair Display", serif;
+        color: #0b3c6d;
+        display: block;
+        line-height: 1.2;
+        animation: shimmerText 3s ease-in-out infinite;
+        background: linear-gradient(135deg, #0b3c6d, #f58220);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-size: 200% auto;
+      }
+
+      .impact-item-cyber .impact-label {
+        font-size: 0.9rem;
+        color: #6a5a4a;
+        font-weight: 500;
+        margin-top: 6px;
+        display: block;
+      }
+
+      @media (max-width: 768px) {
+        .impact-grid-cyber {
+          grid-template-columns: 1fr 1fr;
+          gap: 18px;
+        }
+        .impact-cyber {
+          padding: 50px 0;
+        }
+        .impact-item-cyber .impact-number {
+          font-size: 2.2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .impact-grid-cyber {
+          grid-template-columns: 1fr;
+        }
+        .impact-item-cyber .impact-number {
+          font-size: 2rem;
+        }
+        .impact-item-cyber {
+          padding: 25px 16px;
+        }
+      }
+
+      /* ============================================================
+         SECTION 7 - BECOME A CYBER RAKSHAK
+         ============================================================ */
+      .become-cyber {
+        padding: 70px 0;
+        background: linear-gradient(
+          145deg,
+          #0b3c6d 0%,
+          #1a2a4a 50%,
+          #0f3460 100%
+        );
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .become-cyber::before {
+        content: "🛡️";
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        font-size: 140px;
+        opacity: 0.04;
+        pointer-events: none;
+        animation: floatY 15s ease-in-out infinite;
+      }
+
+      .become-cyber::after {
+        content: "🔒";
+        position: absolute;
+        bottom: -40px;
+        left: -40px;
+        font-size: 120px;
+        opacity: 0.04;
+        pointer-events: none;
+        animation: floatY 18s ease-in-out infinite reverse;
+      }
+
+      .become-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .become-text {
+        flex: 1;
+      }
+
+      .become-text .section-tag {
+        display: inline-block;
+        font-size: 0.65rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        color: #f58220;
+        background: rgba(245, 130, 32, 0.12);
+        padding: 5px 20px;
+        border-radius: 50px;
+        margin-bottom: 14px;
+      }
+
+      .become-text h2 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        font-family: "Playfair Display", serif;
+        margin-bottom: 16px;
+      }
+
+      .become-text h2 .highlight {
+        background: linear-gradient(135deg, #f58220, #2e8b57);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .become-text p {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.8;
+        margin-bottom: 16px;
+      }
+
+      .become-text .highlight-text {
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.95);
+      }
+
+      .btn-cyber-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 42px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        background: linear-gradient(135deg, #f58220, #e67e22);
+        color: white;
+        text-decoration: none;
+        box-shadow: 0 8px 30px rgba(245, 130, 32, 0.35);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        animation: pulseGlow 2.5s ease-in-out infinite;
+      }
+
+      .btn-cyber-cta::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.6s,
+          height 0.6s;
+      }
+
+      .btn-cyber-cta:hover::before {
+        width: 350px;
+        height: 350px;
+      }
+
+      .btn-cyber-cta:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 12px 40px rgba(245, 130, 32, 0.5);
+        color: white;
+        animation: none;
+      }
+
+      .become-image {
+        flex: 1;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+        transition: all 0.6s ease;
+      }
+
+      .become-image:hover {
+        transform: translateY(-8px) scale(1.01);
+        box-shadow: 0 35px 60px -18px rgba(0, 0, 0, 0.4);
+      }
+
+      .become-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.8s ease;
+      }
+
+      .become-image:hover img {
+        transform: scale(1.04);
+      }
+
+      @media (max-width: 992px) {
+        .become-content {
+          flex-direction: column;
+          text-align: center;
+        }
+        .become-image {
+          max-width: 480px;
+          margin: 0 auto;
+          width: 100%;
+          order: -1;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .become-cyber {
+          padding: 50px 0;
+        }
+        .become-text h2 {
+          font-size: 1.8rem;
+        }
+        .become-text p {
+          font-size: 0.88rem;
+        }
+        .btn-cyber-cta {
+          width: 100%;
+          justify-content: center;
+          padding: 14px 24px;
+          font-size: 0.88rem;
+        }
+      }
+
+      /* ============================================================
+         SECTION 8 - FINAL CTA
+         ============================================================ */
+      .final-cta-cyber {
+        padding: 70px 0;
+        background: linear-gradient(160deg, #ffffff 0%, #f0f7ff 100%);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .final-cta-cyber::before {
+        content: "🌐";
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        font-size: 140px;
+        opacity: 0.03;
+        pointer-events: none;
+        animation: floatY 15s ease-in-out infinite;
+      }
+
+      .final-cta-cyber::after {
+        content: "🛡️";
+        position: absolute;
+        bottom: -40px;
+        left: -40px;
+        font-size: 120px;
+        opacity: 0.03;
+        pointer-events: none;
+        animation: floatY 18s ease-in-out infinite reverse;
+      }
+
+      .final-cta-cyber .cta-content {
+        max-width: 750px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .final-cta-cyber .cta-icon {
+        font-size: 3.5rem;
+        display: block;
+        margin-bottom: 14px;
+        animation: floatY 3s ease-in-out infinite;
+      }
+
+      .final-cta-cyber h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        font-family: "Playfair Display", serif;
+        color: #1a1a2e;
+        margin-bottom: 14px;
+      }
+
+      .final-cta-cyber h2 .highlight {
+        background: linear-gradient(135deg, #0b3c6d, #f58220, #2e8b57);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-size: 200% auto;
+        animation: shimmerText 4s ease-in-out infinite;
+      }
+
+      .final-cta-cyber p {
+        font-size: 1rem;
+        color: #5a4a3a;
+        line-height: 1.8;
+        margin-bottom: 24px;
+      }
+
+      .final-cta-cyber p strong {
+        color: #0b3c6d;
+      }
+
+      .final-cta-cyber .cta-buttons {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .btn-cta-primary-cyber {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 42px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        background: linear-gradient(135deg, #f58220, #e67e22);
+        color: white;
+        text-decoration: none;
+        box-shadow: 0 8px 30px rgba(245, 130, 32, 0.3);
+        transition: all 0.4s ease;
+      }
+
+      .btn-cta-primary-cyber:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 40px rgba(245, 130, 32, 0.4);
+        color: white;
+      }
+
+      .btn-cta-secondary-cyber {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 42px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        background: transparent;
+        color: #0b3c6d;
+        text-decoration: none;
+        border: 2px solid #0b3c6d;
+        transition: all 0.4s ease;
+      }
+
+      .btn-cta-secondary-cyber:hover {
+        background: linear-gradient(135deg, #0b3c6d, #f58220);
+        color: white;
+        border-color: transparent;
+        transform: translateY(-4px);
+        box-shadow: 0 14px 40px rgba(11, 60, 109, 0.2);
+      }
+
+      @media (max-width: 576px) {
+        .final-cta-cyber {
+          padding: 50px 0;
+        }
+        .final-cta-cyber h2 {
+          font-size: 1.8rem;
+        }
+        .final-cta-cyber p {
+          font-size: 0.9rem;
+        }
+        .final-cta-cyber .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+        .btn-cta-primary-cyber,
+        .btn-cta-secondary-cyber {
+          width: 100%;
+          justify-content: center;
+          padding: 14px 24px;
+          font-size: 0.88rem;
+        }
+      }
+
+      /* ============================================================
+         BACK TO TOP BUTTON
+         ============================================================ */
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 52px;
+        height: 52px;
+        background: linear-gradient(135deg, #0b3c6d, #1a2a4a);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        box-shadow: 0 8px 30px rgba(11, 60, 109, 0.3);
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        animation: pulseGlow 2.5s ease-in-out infinite;
+      }
+
+      .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .back-to-top:hover {
+        transform: translateY(-5px) scale(1.08);
+        box-shadow: 0 12px 40px rgba(11, 60, 109, 0.4);
+        background: linear-gradient(135deg, #f58220, #0b3c6d);
+      }
+
+      .back-to-top:active {
+        transform: scale(0.95);
+      }
+
+      /* ============================================================
+         COMMON CTA - Back to Operation Smile Home
+         ============================================================ */
+      .back-to-home-cta {
+        padding: 45px 0 35px;
+        background: linear-gradient(
+          135deg,
+          rgba(11, 60, 109, 0.04),
+          rgba(245, 130, 32, 0.02)
+        );
+        position: relative;
+        overflow: hidden;
+        border-top: 2px solid rgba(11, 60, 109, 0.06);
+        border-bottom: 2px solid rgba(11, 60, 109, 0.06);
+      }
+
+      .back-to-home-cta::before {
+        content: "🏠";
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        font-size: 140px;
+        opacity: 0.03;
+        pointer-events: none;
+        animation: floatY 15s ease-in-out infinite;
+      }
+
+      .back-to-home-cta::after {
+        content: "🛡️";
+        position: absolute;
+        bottom: -40px;
+        left: -40px;
+        font-size: 120px;
+        opacity: 0.03;
+        pointer-events: none;
+        animation: floatY 18s ease-in-out infinite reverse;
+      }
+
+      .back-to-home-cta .cta-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px 35px;
+      }
+
+      .back-to-home-cta .cta-text {
+        font-size: 1.05rem;
+        color: #5a4a3a;
+      }
+
+      .back-to-home-cta .cta-text strong {
+        background: linear-gradient(135deg, #0b3c6d, #f58220);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 700;
+      }
+
+      .btn-back-home {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 36px;
+        border-radius: 50px;
+        background: linear-gradient(135deg, #0b3c6d, #1a2a4a);
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        box-shadow: 0 6px 25px rgba(11, 60, 109, 0.25);
+        position: relative;
+        overflow: hidden;
+        animation: pulseGlow 2.5s ease-in-out infinite;
+      }
+
+      .btn-back-home::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.6s,
+          height 0.6s;
+      }
+
+      .btn-back-home:hover::before {
+        width: 350px;
+        height: 350px;
+      }
+
+      .btn-back-home:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 10px 35px rgba(11, 60, 109, 0.4);
+        color: white;
+        animation: none;
+      }
+
+      .btn-back-home i {
+        transition: transform 0.3s ease;
+      }
+
+      .btn-back-home:hover i {
+        transform: translateX(-4px);
+      }
+
+      .btn-back-home .home-icon {
+        color: #f58220;
+      }
+
+      @media (max-width: 768px) {
+        .back-to-home-cta .cta-wrapper {
+          flex-direction: column;
+          text-align: center;
+          gap: 16px;
+        }
+        .btn-back-home {
+          width: 100%;
+          justify-content: center;
+          padding: 12px 22px;
+          font-size: 0.88rem;
+        }
+        .back-to-home-cta .cta-text {
+          font-size: 0.95rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .back-to-home-cta {
+          padding: 35px 0 25px;
+        }
+        .btn-back-home {
+          font-size: 0.82rem;
+          padding: 10px 18px;
+        }
+      }
+
+      /* ============================================================
+         FOOTER - Premium Dark with 4 Columns
+         ============================================================ */
+      .footer {
+        background: linear-gradient(
+          145deg,
+          #1a1a2e 0%,
+          #16213e 50%,
+          #0f3460 100%
+        );
+        color: white;
+        padding: 55px 0 28px;
+        position: relative;
+        margin-top: 0;
+      }
+
+      .footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #0b3c6d, #f58220, #2e8b57);
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+        cursor: pointer;
+      }
+
+      .footer-logo-img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 2.5px solid #f58220;
+        object-fit: cover;
+        box-shadow: 0 0 30px rgba(245, 130, 32, 0.08);
+        transition: all 0.4s ease;
+      }
+
+      .footer-logo-img:hover {
+        transform: scale(1.05);
+        border-color: #0b3c6d;
+      }
+
+      .footer-logo-text {
+        font-size: 1.4rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #f58220, #0b3c6d);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-family: "Playfair Display", serif;
+      }
+
+      .footer p {
+        color: #b8b8b8;
+        font-size: 0.85rem;
+        line-height: 1.7;
+      }
+
+      .footer h5 {
+        color: #f58220;
+        font-weight: 700;
+        margin-bottom: 18px;
+        font-size: 1.05rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .footer h5::after {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 38px;
+        height: 3px;
+        background: linear-gradient(90deg, #0b3c6d, #f58220);
+        border-radius: 3px;
+      }
+
+      .footer a {
+        color: #b8b8b8;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .footer a:hover {
+        color: #f58220;
+        padding-left: 6px;
+      }
+
+      .footer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+
+      .footer-contact-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        background: rgba(245, 130, 32, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+      }
+
+      .footer-contact-item:hover .footer-contact-icon {
+        background: linear-gradient(135deg, #0b3c6d, #f58220);
+        transform: scale(1.08);
+        box-shadow: 0 6px 20px rgba(11, 60, 109, 0.2);
+      }
+
+      .footer-contact-icon i {
+        color: #f58220;
+        font-size: 0.9rem;
+        transition: all 0.4s ease;
+      }
+
+      .footer-contact-item:hover .footer-contact-icon i {
+        color: white;
+      }
+
+      .footer-contact-text {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .footer-contact-text span {
+        display: block;
+        font-size: 0.6rem;
+        color: #8a8a8a;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 2px;
+      }
+
+      .footer-contact-text p,
+      .footer-contact-text a {
+        font-size: 0.8rem;
+        color: #ffffff;
+        margin: 0;
+        word-wrap: break-word;
+      }
+
+      .footer-contact-text a:hover {
+        color: #f58220;
+        padding-left: 0;
+      }
+
+      .footer-social-icons {
+        display: flex;
+        gap: 12px;
+        margin-top: 8px;
+        flex-wrap: wrap;
+      }
+
+      .footer-social-icon {
+        width: 38px;
+        height: 38px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        color: white;
+        font-size: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+      }
+
+      .footer-social-icon:hover {
+        background: linear-gradient(135deg, #0b3c6d, #f58220);
+        transform: translateY(-4px) scale(1.08);
+        color: white;
+        border-color: transparent;
+        box-shadow: 0 8px 30px rgba(11, 60, 109, 0.2);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        font-size: 0.8rem;
+        color: #8a8a8a;
+      }
+
+      @media (max-width: 768px) {
+        .footer {
+          padding: 40px 0 20px;
+          text-align: center;
+        }
+        .footer-logo {
+          justify-content: center;
+        }
+        .footer h5::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        .footer-contact-item {
+          justify-content: center;
+          text-align: left;
+        }
+        .footer-social-icons {
+          justify-content: center;
+        }
+        .footer ul {
+          text-align: center;
+        }
+        .footer ul li {
+          text-align: center;
+        }
+        .footer .col-md-4 {
+          margin-bottom: 28px;
+        }
+        .footer .col-md-4:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .footer-logo-text {
+          font-size: 1.2rem;
+        }
+        .footer-contact-text p,
+        .footer-contact-text a {
+          font-size: 0.75rem;
+        }
+        .footer-social-icon {
+          width: 34px;
+          height: 34px;
+          font-size: 0.85rem;
+        }
+        .footer-bottom {
+          font-size: 0.7rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ============================================================
+    HEADER
+    ============================================================ -->
+    <header id="header">
+      <div class="container">
+        <div class="header-container">
+          <!-- Left: Logo -->
+          <div class="logo-wrapper" id="headerLogoLink">
+            <img
+              src="CyberRakshak/Project Cyber Rakshak Logo.png"
+              alt="Cyber Rakshak"
+              class="logo-img"
+            />
+            <div class="logo-text">Cyber <span>Rakshak</span></div>
+          </div>
+
+          <!-- Right: Nav + Toggler -->
+          <div class="nav-right">
+            <nav>
+              <ul id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#whowe">Who We Work With</a></li>
+                <li><a href="#whyaware">Why Awareness Matters</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#become">Become a Cyber Rakshak</a></li>
+              </ul>
+            </nav>
+            <button
+              class="navbar-toggler"
+              type="button"
+              onclick="toggleNav()"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================================
+    SECTION 1 — HERO SECTION
+    ============================================================ -->
+    <section class="hero-cyber" id="home">
+      <div class="hero-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+
+      <div class="floating-emoji">🛡️</div>
+      <div class="floating-emoji">🔒</div>
+      <div class="floating-emoji">🌐</div>
+
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-content">
+            <div class="hero-text">
+              <div class="badge-cyber">
+                <i class="fas fa-shield-alt"></i> Project Cyber Rakshak
+              </div>
+              <h1>
+                Protecting India Against <br /><span class="highlight"
+                  >Cyber Frauds</span
+                >
+                Through Awareness
+              </h1>
+              <p class="subtitle">
+                <i class="fas fa-chevron-right" style="font-size: 0.7rem"></i>
+                Cyber Safety & Digital Awareness Initiative
+              </p>
+              <p>
+                Project Cyber Rakshak is an initiative of Operation Smile
+                Foundation dedicated to creating a cyber-aware society by
+                educating people about cyber security, digital privacy, online
+                scams, financial frauds, and responsible internet usage.
+              </p>
+              <p>
+                We believe that awareness is the strongest defence against cyber
+                crime. Through workshops, awareness campaigns, educational
+                resources, and community engagement, we empower people with the
+                knowledge to stay safe in today's digital world.
+              </p>
+
+              <div class="hero-quote">
+                <i class="fas fa-quote-left"></i>
+                <span class="quote-text"
+                  >“Awareness is the strongest shield against cyber
+                  crime.”</span
+                >
+              </div>
+
+              <div class="hero-buttons">
+                <a href="contact-us.html" class="btn-primary-cyber">
+                  <i class="fas fa-calendar-check"></i> Book our Workshop
+                </a>
+                <a href="#about" class="btn-secondary-cyber">
+                  <i class="fas fa-info-circle"></i> Learn More
+                </a>
+              </div>
+
+              <!-- Hero Stats - Row Layout with Animated Numbers -->
+              <div class="hero-stats-row">
+                <div class="hero-stat">
+                  <div class="hero-stat-icon">
+                    <i class="fas fa-shield-alt"></i>
+                  </div>
+                  <div class="hero-stat-info">
+                    <span class="hero-stat-number" id="stat1">0</span>
+                    <span class="hero-stat-label"
+                      >Cyber Fraud Complaints Daily</span
+                    >
+                  </div>
+                </div>
+                <div class="hero-stat">
+                  <div class="hero-stat-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                  </div>
+                  <div class="hero-stat-info">
+                    <span class="hero-stat-number" id="stat2">0</span>
+                    <span class="hero-stat-label">Digital Payment Users</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-image">
+              <div class="hero-image-wrapper">
+                <div class="hero-ring"></div>
+                <img
+                  src="CyberRakshak/cyber rakshak hero image.png"
+                  alt="Cyber Rakshak - Cyber Safety"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    SECTION 2 — ABOUT PROJECT
+    ============================================================ -->
+    <section id="about" class="about-cyber">
+      <div class="container">
+        <div class="section-title animate-on-scroll fade-up">
+          <span class="section-tag">✦ About</span>
+          <h2>About <span class="highlight">Project Cyber Rakshak</span></h2>
+          <div class="section-divider"></div>
+          <p>Building a cyber-aware nation through education and awareness</p>
+        </div>
+
+        <div class="about-cyber-content">
+          <div class="about-cyber-image animate-on-scroll fade-left">
+            <img
+              src="CyberRakshak/Cyber Rakshak section 2 image.png"
+              alt="About Cyber Rakshak"
+            />
+          </div>
+
+          <div class="about-cyber-text animate-on-scroll fade-right">
+            <h3>Why <span class="highlight">Project Cyber Rakshak</span>?</h3>
+
+            <p>
+              India is rapidly becoming one of the world's largest digital
+              economies. From online banking and UPI payments to social media,
+              online shopping, digital classrooms, and remote work, technology
+              has become a part of our everyday lives.
+            </p>
+
+            <p>
+              Unfortunately, cyber criminals are evolving just as quickly. Every
+              day, thousands of people lose their savings, personal information,
+              and digital identity due to scams such as fake job offers,
+              phishing attacks, QR code frauds, OTP scams, investment frauds, AI
+              voice cloning, fake customer care numbers, and social media
+              hacking.
+            </p>
+
+            <div class="about-highlight-box">
+              <p>
+                🛡️ Many of these incidents happen not because people are
+                careless, but because they are unaware of how these scams work.
+              </p>
+            </div>
+
+            <p>
+              Project Cyber Rakshak was created to bridge this awareness gap.
+              Our mission is to educate, empower, and protect every citizen by
+              making cyber safety simple, practical, and accessible to everyone.
+            </p>
+
+            <a
+              href="#mission"
+              class="btn-cyber-cta"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                padding: 12px 32px;
+                border-radius: 50px;
+                font-weight: 600;
+                font-size: 0.85rem;
+                background: linear-gradient(135deg, #f58220, #e67e22);
+                color: white;
+                text-decoration: none;
+                box-shadow: 0 6px 25px rgba(245, 130, 32, 0.3);
+                transition: all 0.4s ease;
+                margin-top: 10px;
+                animation: none;
+              "
+              onmouseover="
+                this.style.transform = 'translateY(-3px)';
+                this.style.boxShadow = '0 10px 35px rgba(245,130,32,0.4)';
+              "
+              onmouseout="
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 6px 25px rgba(245,130,32,0.3)';
+              "
+            >
+              Learn More About Our Mission <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    SECTION 3 — OUR MISSION
+    ============================================================ -->
+    <section id="mission" class="mission-cyber">
+      <div class="container">
+        <div class="section-title animate-on-scroll fade-up">
+          <span class="section-tag">✦ Our Mission</span>
+          <h2>Our <span class="highlight">Mission</span></h2>
+          <div class="section-divider"></div>
+          <p>Building a cyber-safe India through education and empowerment</p>
+        </div>
+
+        <div class="mission-grid">
+          <div class="mission-card" style="animation-delay: 0.05s">
+            <div class="mission-card-icon"><i class="fas fa-bullhorn"></i></div>
+            <h4>Spread Cyber Awareness</h4>
+            <p>
+              Educating people about online threats through simple and practical
+              learning.
+            </p>
+          </div>
+
+          <div class="mission-card" style="animation-delay: 0.1s">
+            <div class="mission-card-icon">
+              <i class="fas fa-shield-virus"></i>
+            </div>
+            <h4>Prevent Cyber Frauds</h4>
+            <p>
+              Helping individuals recognize scams before they become victims.
+            </p>
+          </div>
+
+          <div class="mission-card" style="animation-delay: 0.15s">
+            <div class="mission-card-icon">
+              <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <h4>Promote Digital Responsibility</h4>
+            <p>
+              Encouraging safe internet practices for people of all age groups.
+            </p>
+          </div>
+
+          <div class="mission-card" style="animation-delay: 0.2s">
+            <div class="mission-card-icon">
+              <i class="fas fa-flag-checkered"></i>
+            </div>
+            <h4>Build a Cyber-Aware India</h4>
+            <p>
+              Creating communities that can confidently identify and report
+              cyber crimes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    SECTION 4 — WHO WE WORK WITH
+    ============================================================ -->
+    <section id="whowe" class="whowe-cyber">
+      <div class="container">
+        <div class="section-title animate-on-scroll fade-up">
+          <span class="section-tag">✦ Who We Work With</span>
+          <h2>Who We <span class="highlight">Work With</span></h2>
+          <div class="section-divider"></div>
+          <p>Empowering every section of society with cyber safety knowledge</p>
+        </div>
+
+        <div class="whowe-grid">
+          <div class="whowe-card" style="animation-delay: 0.05s">
+            <div class="whowe-card-icon">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="whowe-card-content">
+              <h4>👨‍🎓 Students</h4>
+              <p>
+                Interactive sessions on cyber safety, gaming risks, cyber
+                bullying, phishing attacks, digital etiquette, and responsible
+                social media usage.
+              </p>
+            </div>
+          </div>
+
+          <div class="whowe-card" style="animation-delay: 0.1s">
+            <div class="whowe-card-icon"><i class="fas fa-female"></i></div>
+            <div class="whowe-card-content">
+              <h4>👩 Women</h4>
+              <p>
+                Awareness on online harassment, identity theft, social media
+                privacy, financial scams, and digital self-protection.
+              </p>
+            </div>
+          </div>
+
+          <div class="whowe-card" style="animation-delay: 0.15s">
+            <div class="whowe-card-icon"><i class="fas fa-user-tie"></i></div>
+            <div class="whowe-card-content">
+              <h4>👴 Senior Citizens</h4>
+              <p>
+                Helping senior citizens identify fake banking calls, OTP frauds,
+                QR code scams, and emotional manipulation by cyber criminals.
+              </p>
+            </div>
+          </div>
+
+          <div class="whowe-card" style="animation-delay: 0.2s">
+            <div class="whowe-card-icon"><i class="fas fa-briefcase"></i></div>
+            <div class="whowe-card-content">
+              <h4>👨‍💼 Working Professionals</h4>
+              <p>
+                Corporate cyber awareness covering email security, phishing,
+                password hygiene, data protection, and workplace cyber threats.
+              </p>
+            </div>
+          </div>
+
+          <div class="whowe-card" style="animation-delay: 0.25s">
+            <div class="whowe-card-icon"><i class="fas fa-school"></i></div>
+            <div class="whowe-card-content">
+              <h4>🏫 Schools & Colleges</h4>
+              <p>
+                Interactive seminars, workshops, awareness drives, competitions,
+                and practical demonstrations.
+              </p>
+            </div>
+          </div>
+
+          <div class="whowe-card" style="animation-delay: 0.3s">
+            <div class="whowe-card-icon"><i class="fas fa-building"></i></div>
+            <div class="whowe-card-content">
+              <h4>🏢 Corporate Organizations</h4>
+              <p>
+                Customized cyber awareness programs for employees to build safer
+                digital workplaces.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    SECTION 5 — WHY CYBER AWARENESS MATTERS
+    ============================================================ -->
+    <section id="whyaware" class="whyaware-cyber">
+      <div class="container">
+        <div class="section-title animate-on-scroll fade-up">
+          <span class="section-tag">✦ Why It Matters</span>
+          <h2>Why <span class="highlight">Cyber Awareness</span> Matters</h2>
+          <div class="section-divider"></div>
+          <p>
+            Cyber threats are growing every day, but informed citizens are far
+            less likely to become victims.
+          </p>
+        </div>
+
+        <div class="whyaware-content">
+          <div class="whyaware-left">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+              </div>
+              <div>
+                <span class="stat-number">15,000+</span>
+                <p class="stat-text">
+                  Cyber Fraud Complaints Reported across India every day.
+                </p>
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-icon"><i class="fas fa-mobile-alt"></i></div>
+              <div>
+                <span class="stat-number">950M+</span>
+                <p class="stat-text">
+                  Digital Payment Users — Millions of Indians use digital
+                  payment platforms.
+                </p>
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-icon"><i class="fas fa-percentage"></i></div>
+              <div>
+                <span class="stat-number">90%</span>
+                <p class="stat-text">
+                  Frauds Succeed Due to Lack of Awareness — Most cyber frauds
+                  succeed because victims are unaware of common scam techniques.
+                </p>
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+              <div>
+                <span class="stat-number">80%+</span>
+                <p class="stat-text">
+                  Scams Can Be Prevented — Cyber awareness can significantly
+                  reduce the risk of becoming a victim of online fraud.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="whyaware-right animate-on-scroll zoom-in">
+            <img
+              src="CyberRakshak/Cyber Rakshak section 5 image.png"
+              alt="Cyber Awareness Statistics"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    SECTION 6 — OUR IMPACT
+    ============================================================ -->
+    <section id="impact" class="impact-cyber">
+      <div class="container">
+        <div class="section-title animate-on-scroll fade-up">
+          <span class="section-tag">✦ Our Impact</span>
+          <h2>Our <span class="highlight">Impact</span></h2>
+          <div class="section-divider"></div>
+          <p>Making a difference through awareness and education</p>
+        </div>
+
+        <div class="impact-grid-cyber">
+          <div class="impact-item-cyber" style="animation-delay: 0.05s">
+            <span class="impact-icon"><i class="fas fa-school"></i></span>
+            <span class="impact-number" id="impact1">0</span>
+            <span class="impact-label">Schools Reached</span>
+          </div>
+
+          <div class="impact-item-cyber" style="animation-delay: 0.1s">
+            <span class="impact-icon"
+              ><i class="fas fa-user-graduate"></i
+            ></span>
+            <span class="impact-number" id="impact2">0</span>
+            <span class="impact-label">Students Educated</span>
+          </div>
+
+          <div class="impact-item-cyber" style="animation-delay: 0.15s">
+            <span class="impact-icon"
+              ><i class="fas fa-hands-helping"></i
+            ></span>
+            <span class="impact-number" id="impact3">0</span>
+            <span class="impact-label">Volunteers Engaged</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    SECTION 7 — BECOME A CYBER RAKSHAK
+    ============================================================ -->
+    <section id="become" class="become-cyber">
+      <div class="container">
+        <div class="become-content">
+          <div class="become-text animate-on-scroll fade-left">
+            <span class="section-tag">✦ Join the Movement</span>
+            <h2>Become a <span class="highlight">Cyber Rakshak</span></h2>
+            <p>
+              Every citizen can contribute towards building a safer digital
+              India. Whether you are a student, teacher, IT professional,
+              corporate employee, volunteer, or simply someone who wants to make
+              a difference, your participation can help protect countless people
+              from becoming victims of cyber crime.
+            </p>
+            <p class="highlight-text">
+              Together, we can spread awareness before fraud spreads fear.
+            </p>
+            <a href="contact-us.html" class="btn-cyber-cta">
+              <i class="fas fa-shield-alt"></i> Become a Cyber Rakshak
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="become-image animate-on-scroll zoom-in">
+            <img
+              src="CyberRakshak/Cyber Rakshak section 7 image.png"
+              alt="Become a Cyber Rakshak"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    SECTION 8 — FINAL CTA
+    ============================================================ -->
+    <section class="final-cta-cyber">
+      <div class="container">
+        <div class="cta-content animate-on-scroll zoom-in">
+          <span class="cta-icon">🌐</span>
+          <h2>
+            Together, Let's Build A<br /><span class="highlight"
+              >Safer Digital India</span
+            >
+          </h2>
+          <p>
+            Every informed citizen is one less victim of cyber fraud.<br />
+            Awareness is not just knowledge, it is protection for our families,
+            our communities, and our nation.<br />
+            <strong
+              >Join Project Cyber Rakshak in creating a future where technology
+              empowers people instead of exposing them to fraud.</strong
+            >
+          </p>
+
+          <div class="cta-buttons">
+            <a href="contact-us.html" class="btn-cta-primary-cyber">
+              <i class="fas fa-calendar-check"></i> Book Awareness Session
+            </a>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSei2fpCRa2_GZXVfZZdAst9PCeLmhK4gxhIc6ewTaGBo-2vcg/viewform"
+              class="btn-cta-secondary-cyber"
+            >
+              <i class="fas fa-hands-helping"></i> Become a Volunteer
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    COMMON CTA - Back to Operation Smile Home
+    ============================================================ -->
+    <section class="back-to-home-cta">
+      <div class="container">
+        <div class="cta-wrapper">
+          <span class="cta-text">
+            <strong>🏠</strong> Return to the main
+            <strong>Operation Smile</strong> website
+          </span>
+          <a href="index.html" class="btn-back-home">
+            <i class="fas fa-arrow-left"></i>
+            Back to Operation Smile Home
+            <i class="fas fa-home home-icon"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    BACK TO TOP BUTTON
+    ============================================================ -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================================
+    FOOTER - 4 Columns: Logo | Quick Links | Ongoing Projects | Contact Us
+    ============================================================ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Column 1: Logo & Social -->
+          <div class="col-md-3">
+            <div class="footer-logo" id="footerLogoLink">
+              <img
+                src="CyberRakshak/Project Cyber Rakshak Logo.png"
+                alt="Cyber Rakshak"
+                class="footer-logo-img"
+              />
+              <span class="footer-logo-text">Cyber <span>Rakshak</span></span>
+            </div>
+            <p>
+              Protecting India against cyber frauds through awareness,
+              education, and community engagement.
+            </p>
+            <div class="footer-social-icons">
+              <a
+                href="https://www.instagram.com/project.cyber.rakshak"
+                class="footer-social-icon"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://x.com/smilengo23?s=11"
+                class="footer-social-icon"
+                target="_blank"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/operation-smile-foundation-1079993b8"
+                class="footer-social-icon"
+                target="_blank"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/@OperationSmilefoundation23"
+                class="footer-social-icon"
+                target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="col-md-3">
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#mission">Mission</a></li>
+              <li><a href="#whowe">Who We Work With</a></li>
+              <li><a href="#whyaware">Why Awareness Matters</a></li>
+              <li><a href="#impact">Impact</a></li>
+              <li><a href="#become">Become a Cyber Rakshak</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Ongoing Projects -->
+          <div class="col-md-3">
+            <h5>Ongoing Projects</h5>
+            <ul>
+              <li>
+                <a href="project-margdarshan.html"
+                  ><i class="fas fa-chevron-right"></i> Margdarshan</a
+                >
+              </li>
+              <li>
+                <a href="project-umeed-pathshala.html"
+                  ><i class="fas fa-chevron-right"></i> Umeed Pathshala</a
+                >
+              </li>
+              <li>
+                <a href="project-khushiyon-ki-potli.html"
+                  ><i class="fas fa-chevron-right"></i> Khushiyon Ki Potli</a
+                >
+              </li>
+              <li>
+                <a href="project-anandam.html"
+                  ><i class="fas fa-chevron-right"></i> Anandam</a
+                >
+              </li>
+              <li>
+                <a href="project-cyber-rakshak.html"
+                  ><i class="fas fa-chevron-right"></i> Cyber Rakshak</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact Us -->
+          <div class="col-md-3">
+            <h5>Contact Us</h5>
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="footer-contact-text">
+                <span>EMAIL</span>
+                <a href="mailto:operationsmile2303@gmail.com"
+                  >operationsmile2303@gmail.com</a
+                >
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="footer-contact-text">
+                <span>PHONE</span>
+                <a href="tel:+918595588085">+91 85955 88085</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <div class="footer-contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="footer-contact-text">
+                <span>ADDRESS</span>
+                <p>
+                  B-76, F/F, DDA Colony, New Zafrabad, Near Shiv Mandir,
+                  Delhi-110032
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Cyber Rakshak. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============================================================
+    SCRIPTS
+    ============================================================ -->
+    <script>
+      // ============================================================
+      // NAVIGATION
+      // ============================================================
+      function toggleNav() {
+        const nav = document.getElementById("navLinks");
+        nav.classList.toggle("show");
+      }
+
+      document.addEventListener("click", function (event) {
+        const nav = document.getElementById("navLinks");
+        const toggler = document.querySelector(".navbar-toggler");
+        if (
+          nav.classList.contains("show") &&
+          !nav.contains(event.target) &&
+          !toggler.contains(event.target)
+        ) {
+          nav.classList.remove("show");
+        }
+      });
+
+      // Header scroll effect
+      window.addEventListener("scroll", function () {
+        const header = document.getElementById("header");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      // ============================================================
+      // SCROLL ANIMATIONS
+      // ============================================================
+      const animateElements = document.querySelectorAll(".animate-on-scroll");
+
+      const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add("visible");
+            }, index * 100);
+          }
+        });
+      }, observerOptions);
+
+      animateElements.forEach((el) => {
+        observer.observe(el);
+      });
+
+      // ============================================================
+      // ANIMATED COUNTERS
+      // ============================================================
+      function animateCounter(element, target, suffix = "+") {
+        let current = 0;
+        const duration = 1500;
+        const steps = 60;
+        const increment = target / steps;
+        let step = 0;
+
+        const interval = setInterval(() => {
+          step++;
+          current = Math.min(step * increment, target);
+          if (step >= steps) {
+            current = target;
+            clearInterval(interval);
+          }
+          element.textContent = Math.floor(current) + suffix;
+        }, duration / steps);
+      }
+
+      // Hero stats counter
+      const stat1 = document.getElementById("stat1");
+      const stat2 = document.getElementById("stat2");
+
+      // Intersection Observer for hero stats
+      const heroStatsObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCounter(stat1, 15000);
+              animateCounter(stat2, 950);
+              heroStatsObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 },
+      );
+
+      // Observe the parent container of hero stats
+      const heroStatsRow = document.querySelector(".hero-stats-row");
+      if (heroStatsRow) {
+        heroStatsObserver.observe(heroStatsRow);
+      }
+
+      // ============================================================
+      // IMPACT COUNTERS
+      // ============================================================
+      const impact1 = document.getElementById("impact1");
+      const impact2 = document.getElementById("impact2");
+      const impact3 = document.getElementById("impact3");
+
+      const impactObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCounter(impact1, 10);
+              animateCounter(impact2, 7000);
+              animateCounter(impact3, 30);
+              impactObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 },
+      );
+
+      // Observe the impact grid container
+      const impactGrid = document.querySelector(".impact-grid-cyber");
+      if (impactGrid) {
+        impactObserver.observe(impactGrid);
+      }
+
+      // ============================================================
+      // BACK TO TOP BUTTON
+      // ============================================================
+      const backToTopBtn = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.add("show");
+        } else {
+          backToTopBtn.classList.remove("show");
+        }
+      });
+
+      backToTopBtn.addEventListener("click", function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // ============================================================
+      // ACTIVE LINK ON SCROLL
+      // ============================================================
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll("nav ul li a");
+
+      window.addEventListener("scroll", function () {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100;
+          if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      // ============================================================
+      // SMOOTH SCROLL
+      // ============================================================
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+            const nav = document.getElementById("navLinks");
+            if (nav.classList.contains("show")) {
+              nav.classList.remove("show");
+            }
+          }
+        });
+      });
+
+      // ============================================================
+      // CLICKABLE LOGOS (Header + Footer) → project-cyber-rakshak.html
+      // ============================================================
+      const headerLogo = document.getElementById("headerLogoLink");
+      if (headerLogo) {
+        headerLogo.addEventListener("click", function () {
+          window.location.href = "project-cyber-rakshak.html";
+        });
+      }
+
+      const footerLogo = document.getElementById("footerLogoLink");
+      if (footerLogo) {
+        footerLogo.addEventListener("click", function () {
+          window.location.href = "project-cyber-rakshak.html";
+        });
+      }
+    </script>
+  </body>
+</html>

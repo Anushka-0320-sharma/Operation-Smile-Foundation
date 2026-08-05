@@ -1985,7 +1985,7 @@
       }
 
       /* ============================================================
-                   FOOTER - Premium Dark
+                   FOOTER - Premium Dark (with Ongoing Projects)
                    ============================================================ */
       .footer {
         background: linear-gradient(
@@ -2030,7 +2030,6 @@
         font-size: 1.4rem;
         font-weight: 700;
         color: #f39c12 !important;
-        /* Orange color */
         font-family: "Playfair Display", serif;
         text-decoration: none;
         transition: all 0.3s ease;
@@ -2039,7 +2038,6 @@
 
       .footer-logo-text:hover {
         color: #ffffff !important;
-        /* White on hover */
         transform: scale(1.05);
         text-shadow: 0 0 30px rgba(243, 156, 18, 0.3);
       }
@@ -2098,6 +2096,13 @@
 
       .footer ul li {
         margin-bottom: 10px;
+      }
+
+      .footer ul li i {
+        margin-right: 6px;
+        font-size: 0.65rem;
+        color: #f39c12;
+        opacity: 0.6;
       }
 
       .footer-contact-item {
@@ -2198,6 +2203,7 @@
         color: #8a8a8a;
       }
 
+      /* Footer responsive adjustments */
       @media (max-width: 768px) {
         .footer {
           padding: 35px 0 20px;
@@ -2230,11 +2236,11 @@
           text-align: center;
         }
 
-        .footer .col-md-4 {
+        .footer .col-md-3 {
           margin-bottom: 25px;
         }
 
-        .footer .col-md-4:last-child {
+        .footer .col-md-3:last-child {
           margin-bottom: 0;
         }
       }
@@ -2888,12 +2894,13 @@
     </section>
 
     <!-- ============================================================
-    FOOTER
+    FOOTER (with Ongoing Projects)
     ============================================================ -->
     <footer class="footer">
       <div class="container">
         <div class="row g-4">
-          <div class="col-md-4">
+          <!-- Column 1: Logo & Social -->
+          <div class="col-md-3">
             <div class="footer-logo">
               <img
                 src="MargDarshan/margdharshan.png"
@@ -2946,7 +2953,9 @@
               ></a>
             </div>
           </div>
-          <div class="col-md-4">
+
+          <!-- Column 2: Quick Links -->
+          <div class="col-md-3">
             <h5>Quick Links</h5>
             <ul>
               <li><a href="#home">Home</a></li>
@@ -2955,7 +2964,41 @@
               <li><a href="contact-us.html">Contact Us</a></li>
             </ul>
           </div>
-          <div class="col-md-4">
+
+          <!-- Column 3: Ongoing Projects -->
+          <div class="col-md-3">
+            <h5>Ongoing Projects</h5>
+            <ul>
+              <li>
+                <a href="project-margdarshan.html"
+                  ><i class="fas fa-chevron-right"></i> Margdarshan</a
+                >
+              </li>
+              <li>
+                <a href="project-umeed-pathshala.html"
+                  ><i class="fas fa-chevron-right"></i> Umeed Pathshala</a
+                >
+              </li>
+              <li>
+                <a href="project-khushiyon-ki-potli.html"
+                  ><i class="fas fa-chevron-right"></i> Khushiyon Ki Potli</a
+                >
+              </li>
+              <li>
+                <a href="project-anandam.html"
+                  ><i class="fas fa-chevron-right"></i> Anandam</a
+                >
+              </li>
+              <li>
+                <a href="project-cyber-rakshak.html"
+                  ><i class="fas fa-chevron-right"></i> Cyber Rakshak</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact Us -->
+          <div class="col-md-3">
             <h5>Contact Us</h5>
             <div class="footer-contact-item">
               <div class="footer-contact-icon">
