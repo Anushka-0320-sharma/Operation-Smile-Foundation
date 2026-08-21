@@ -2085,7 +2085,7 @@ body {
 }
 
 /* ---------- INITIATIVES SECTION ---------- */
-.initiatives {
+/* .initiatives {
   padding: 80px 0;
   background: linear-gradient(145deg, #fefaf5 0%, #fff5e8 100%);
   position: relative;
@@ -2333,7 +2333,7 @@ body {
 
 .image:hover::before {
   opacity: 0;
-}
+} */
 
 /* ---------- CONTACT SECTION MODERN ---------- */
 .contact-section-modern {
