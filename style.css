@@ -4406,14 +4406,13 @@ button {
 }
 
 /* ============================================================
-   POPUP NOTIFICATION (LETTER TO SOLDIER) - PORTRAIT FRIENDLY
+   POPUP NOTIFICATION (LETTER TO SOLDIER) - FLUID & NO OVERLAP
    ============================================================ */
 .popup-notification {
   position: fixed;
-  bottom: 40px;
-  left: 40px;
-  width: 720px; /* Wider to accommodate portrait image */
-  max-width: calc(100vw - 80px);
+  bottom: 25px;
+  left: 25px;
+  width: min(760px, calc(100vw - 50px));
   background: #ffffff;
   border-radius: 28px;
   border: 1px solid rgba(230, 126, 34, 0.12);
@@ -4423,7 +4422,6 @@ button {
   z-index: 9998;
   overflow: hidden;
   
-  /* Hidden by default */
   opacity: 0;
   transform: translateY(100px) scale(0.9);
   pointer-events: none;
@@ -4432,14 +4430,12 @@ button {
               pointer-events 0.7s;
 }
 
-/* Active State */
 .popup-notification.active {
   opacity: 1;
   transform: translateY(0) scale(1);
   pointer-events: auto;
 }
 
-/* Gold Accent Line on Top */
 .popup-notification::after {
   content: "";
   position: absolute;
@@ -4451,19 +4447,17 @@ button {
   z-index: 5;
 }
 
-/* Layout: Large Image Left, Text Right */
 .popup-body {
   display: flex;
   align-items: stretch;
   gap: 0;
 }
 
-/* Image Section - No Cropping */
 .popup-image-wrapper {
-  flex: 0 0 55%; /* Image takes up 55% width */
+  flex: 0 0 50%;
   position: relative;
-  min-height: 500px; /* Height to fit portrait image */
-  background: linear-gradient(145deg, #fffaf0 0%, #f8f4ee 100%); /* Premium warm background */
+  min-height: 480px; /* Ample height for desktop so image has space */
+  background: linear-gradient(145deg, #fffaf0 0%, #f8f4ee 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4475,17 +4469,16 @@ button {
   max-height: 100%;
   width: auto;
   height: auto;
-  object-fit: contain; /* Ensures the ENTIRE image is always visible */
+  object-fit: contain;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   transition: transform 5s ease;
 }
 
 .popup-notification.active .popup-image-wrapper img {
-  transform: scale(1.02); /* Very subtle zoom */
+  transform: scale(1.02);
 }
 
-/* Close Button */
 .popup-close {
   position: absolute;
   top: 14px;
@@ -4512,7 +4505,6 @@ button {
   transform: rotate(90deg) scale(1.1);
 }
 
-/* Content Area */
 .popup-content {
   flex: 1;
   padding: 40px 30px;
@@ -4533,7 +4525,6 @@ button {
   position: relative;
 }
 
-/* Hand-drawn underline effect */
 .popup-content h4::after {
   content: "";
   position: absolute;
@@ -4558,15 +4549,53 @@ button {
   font-size: 1.1rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* ============================================================
+   TABLET & SMALLER LAPTOP (769px to 1024px) - iPad Mini/Pro
+   ============================================================ */
+@media (max-width: 1024px) and (min-width: 769px) {
   .popup-notification {
-    width: calc(100vw - 30px);
-    bottom: 15px;
-    left: 15px;
-    border-radius: 20px;
+    width: calc(100vw - 60px);
+    max-width: 650px;
   }
 
+  .popup-image-wrapper {
+    flex: 0 0 45%;
+    min-height: 460px; /* Increased to fit the tall portrait image without overlap */
+  }
+
+  .popup-content {
+    padding: 30px 25px;
+  }
+
+  .popup-content h4 {
+    font-size: 1.5rem;
+  }
+
+  .popup-content p {
+    font-size: 0.9rem;
+  }
+
+  .highlight-orange {
+    font-size: 1rem;
+  }
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE (Less than 768px) - iPhone 16 Pro Max
+   ============================================================ */
+@media (max-width: 768px) {
+  .popup-notification {
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-width: none;
+    border-radius: 20px;
+    max-height: 88vh; /* Gives extra breathing room */
+    overflow-y: auto;
+  }
+
+  /* Stack vertically and force full width for the image */
   .popup-body {
     flex-direction: column;
   }
@@ -4574,19 +4603,59 @@ button {
   .popup-image-wrapper {
     flex: none;
     width: 100%;
-    min-height: 300px;
+    min-height: 320px; /* LARGE height so the portrait image NEVER overlaps text */
+    max-height: none; /* Allow it to stretch naturally */
     padding: 10px;
   }
 
+  .popup-image-wrapper img {
+    max-height: 320px; /* Keeps the image constrained but fully visible */
+    width: auto;
+  }
+
   .popup-content {
-    padding: 25px;
+    padding: 20px;
+    margin-top: -10px; /* Pulls text slightly up to prevent any gap overlap */
   }
 
   .popup-content h4 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .popup-content p {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .highlight-orange {
+    font-size: 0.95rem;
+  }
+}
+
+/* ============================================================
+   SMALL PHONE (Less than 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+  .popup-image-wrapper {
+    min-height: 280px; /* Still large enough to prevent overlap */
+  }
+
+  .popup-image-wrapper img {
+    max-height: 280px;
+  }
+
+  .popup-content h4 {
+    font-size: 1.1rem;
+  }
+
+  .popup-content p {
+    font-size: 0.8rem;
+  }
+
+  .popup-close {
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
   }
 }
