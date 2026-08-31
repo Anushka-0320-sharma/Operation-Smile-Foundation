@@ -3072,7 +3072,10 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Margdarshan. All Rights Reserved.</p>
+        <p>
+          &copy; <span id="currentYear"></span> Margdarshan. All Rights
+          Reserved.
+        </p>
       </div>
     </footer>
 
@@ -3260,6 +3263,10 @@
           }
         });
       });
+
+      // Automatically updates the year to the current year
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
     </script>
     <!-- ==================== WHATSAPP FLOATING BUTTON ==================== -->
     <a

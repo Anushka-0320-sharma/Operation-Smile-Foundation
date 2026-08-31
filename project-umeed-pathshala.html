@@ -3551,7 +3551,10 @@
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; 2026 Umeed Pathshala. All Rights Reserved.</p>
+          <p>
+            &copy; <span id="currentYear"></span> Umeed Pathshala. All Rights
+            Reserved.
+          </p>
         </div>
       </div>
     </footer>
@@ -3813,6 +3816,10 @@
           window.location.href = "project-umeed-pathshala.html";
         });
       }
+
+      // Automatically updates the year to the current year
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
     </script>
     <!-- ==================== WHATSAPP FLOATING BUTTON ==================== -->
     <a

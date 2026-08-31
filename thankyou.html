@@ -1588,7 +1588,10 @@
         </div>
 
         <div class="footer-bottom">
-          <p class="mb-0">&copy; 2025 Operation Smile. All Rights Reserved.</p>
+          <p class="mb-0">
+            &copy; <span id="currentYear"></span> Operation Smile. All Rights
+            Reserved.
+          </p>
         </div>
       </div>
     </footer>
@@ -1651,6 +1654,10 @@
           }, 50);
         }
       });
+
+      // Automatically updates the year to the current year
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
     </script>
     <!-- ==================== WHATSAPP FLOATING BUTTON ==================== -->
     <a

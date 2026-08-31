@@ -3738,7 +3738,10 @@
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; 2026 Khushiyon Ki Potli. All Rights Reserved.</p>
+          <p>
+            &copy; <span id="currentYear"></span> Khushiyon Ki Potli. All Rights
+            Reserved.
+          </p>
         </div>
       </div>
     </footer>
@@ -3944,6 +3947,10 @@
           window.location.href = "project-khushiyon-ki-potli.html";
         });
       }
+
+      // Automatically updates the year to the current year
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
     </script>
     <!-- ==================== WHATSAPP FLOATING BUTTON ==================== -->
     <a

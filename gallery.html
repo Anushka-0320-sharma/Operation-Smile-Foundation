@@ -1950,7 +1950,10 @@
         </div>
 
         <div class="footer-bottom">
-          <p class="mb-0">&copy; 2025 Operation Smile. All Rights Reserved.</p>
+          <p class="mb-0">
+            &copy; <span id="currentYear"></span> Operation Smile. All Rights
+            Reserved.
+          </p>
         </div>
       </div>
     </footer>
@@ -1997,14 +2000,14 @@
           color: "#ff6f00",
         },
         {
-          name: "Old Age Home Visit", 
+          name: "Old Age Home Visit",
           folder: "Old age home visit",
           icon: "🏡",
           description: "Spreading love and care to our senior citizens",
           color: "#e67e22",
         },
         {
-          name: "Har Ghar Tiranga Initiative", 
+          name: "Har Ghar Tiranga Initiative",
           folder: "Har Ghar Tiranga Initiative",
           icon: "🇮🇳",
           description: "Celebrating the spirit of patriotism across homes",
@@ -2507,6 +2510,10 @@
       });
 
       renderGallery();
+
+      // Automatically updates the year to the current year
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
     </script>
     <!-- ==================== WHATSAPP FLOATING BUTTON ==================== -->
     <a

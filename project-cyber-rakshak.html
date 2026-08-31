@@ -3533,7 +3533,10 @@
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; 2026 Cyber Rakshak. All Rights Reserved.</p>
+          <p>
+            &copy; <span id="currentYear"></span> Cyber Rakshak. All Rights
+            Reserved.
+          </p>
         </div>
       </div>
     </footer>
@@ -3744,6 +3747,10 @@
           window.location.href = "project-cyber-rakshak.html";
         });
       }
+
+      // Automatically updates the year to the current year
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
     </script>
     <!-- ==================== WHATSAPP FLOATING BUTTON ==================== -->
     <a
