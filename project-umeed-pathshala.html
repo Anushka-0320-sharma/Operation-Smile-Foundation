@@ -2733,34 +2733,74 @@
 
       @media (max-width: 768px) {
         .footer {
-          padding: 35px 0 18px;
-          text-align: center;
+          text-align: left !important;
         }
+
+        .footer .container {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .footer .row {
+          text-align: left !important;
+        }
+
         .footer-logo {
-          justify-content: center;
+          justify-content: flex-start !important;
         }
+
+        .footer-logo-text {
+          text-align: left !important;
+        }
+
+        .footer h5 {
+          text-align: left !important;
+          display: inline-block !important;
+        }
+
         .footer h5::after {
-          left: 50%;
-          transform: translateX(-50%);
+          left: 0 !important;
+          transform: none !important;
         }
-        .footer-contact-item {
-          justify-content: center;
-          text-align: left;
-        }
-        .footer-social-icons {
-          justify-content: center;
-        }
+
         .footer ul {
-          text-align: center;
+          text-align: left !important;
+          padding-left: 0 !important;
         }
+
         .footer ul li {
-          text-align: center;
+          text-align: left !important;
         }
-        .footer .col-md-4 {
-          margin-bottom: 25px;
+
+        .footer ul li a {
+          justify-content: flex-start !important;
+          text-align: left !important;
+          display: flex !important;
+          gap: 8px;
         }
-        .footer .col-md-4:last-child {
-          margin-bottom: 0;
+
+        .footer-contact-item {
+          justify-content: flex-start !important;
+          text-align: left !important;
+        }
+
+        .footer-contact-text {
+          text-align: left !important;
+        }
+
+        .footer-contact-text span,
+        .footer-contact-text p,
+        .footer-contact-text a {
+          text-align: left !important;
+        }
+
+        .footer-social-icons {
+          justify-content: flex-start !important;
+        }
+
+        /* Keep the copyright centered at the bottom */
+        .footer-bottom {
+          text-align: center !important;
         }
       }
 

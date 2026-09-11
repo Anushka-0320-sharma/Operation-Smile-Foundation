@@ -1130,26 +1130,82 @@
           width: 100%;
         }
         .footer {
-          text-align: center;
+          text-align: left !important;
         }
+
+        .footer .container {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .footer .row {
+          text-align: left !important;
+        }
+
         .footer-logo {
-          justify-content: center;
+          justify-content: flex-start !important;
         }
+
+        .footer-brand {
+          text-align: left !important;
+        }
+
+        .footer h5 {
+          text-align: left !important;
+          display: inline-block !important;
+        }
+
         .footer h5::after {
-          left: 50%;
-          transform: translateX(-50%);
+          left: 0 !important;
+          transform: none !important;
         }
+
+        .footer ul {
+          text-align: left !important;
+          padding-left: 0 !important;
+        }
+
+        .footer ul li {
+          text-align: left !important;
+        }
+
+        .footer ul li a {
+          justify-content: flex-start !important;
+          text-align: left !important;
+          display: flex !important;
+          gap: 8px;
+        }
+
         .footer .contact-item {
-          justify-content: center;
+          justify-content: flex-start !important;
+          text-align: left !important;
         }
+
         .footer .contact-text {
-          text-align: left;
+          text-align: left !important;
         }
+
+        .footer .contact-text span,
+        .footer .contact-text p,
+        .footer .contact-text a {
+          text-align: left !important;
+        }
+
+        .footer-social {
+          text-align: left !important;
+        }
+
         .footer-social p {
-          text-align: center;
+          text-align: left !important;
         }
+
         .footer-social-icons {
-          justify-content: center;
+          justify-content: flex-start !important;
+        }
+
+        /* Keep the copyright centered at the bottom */
+        .footer-bottom {
+          text-align: center !important;
         }
       }
 

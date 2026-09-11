@@ -1403,12 +1403,12 @@ body {
 
   .exact-hero {
     background: url('assets/hero section bg mobile.jpeg') no-repeat top center !important;
-
-    /* FIX: Stretch background to fill entire hero height */
     background-size: 100% 100% !important;
-
     padding: 70px 0 0 0 !important;
-    overflow: hidden !important;
+    overflow: visible !important;
+    /* FIX: Allow stats to overflow the hero */
+    display: flex;
+    flex-direction: column;
   }
 
   .exact-container-fluid {
@@ -1471,13 +1471,26 @@ body {
   }
 
   /* ============================================
+     WRAPPER (Keeps Stats + Quote together)
+     ============================================ */
+  .hero-bottom-wrapper {
+    position: relative;
+    z-index: 20;
+    margin-top: 20px;
+    /* FIX: Push down to add gap between buttons & stats */
+    padding: 0 15px;
+    /* FIX: Add side padding */
+  }
+
+  /* ============================================
      STATS BOX
      ============================================ */
   .exact-bottom-bar {
     position: relative;
-    width: 90%;
+    width: 100%;
     max-width: 400px;
-    margin: 30px auto 0 auto !important;
+    margin: 0 auto 15px auto !important;
+    /* FIX: Add space between stats & quote */
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -1485,8 +1498,6 @@ body {
     padding: 20px 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(230, 126, 34, 0.1);
-
-    /* Add decorative glow */
     overflow: hidden;
   }
 
@@ -1504,7 +1515,7 @@ body {
 
   .exact-stats {
     flex-direction: column;
-    gap: 15px;
+    gap: 0;
     align-items: stretch;
     padding-bottom: 0;
     border-bottom: none;
@@ -1514,14 +1525,13 @@ body {
     flex: 0 0 100%;
     justify-content: flex-start;
     border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 12px;
-    margin-bottom: 12px;
+    padding: 12px 5px;
+    margin-bottom: 0;
   }
 
   .exact-stat:last-child {
     border-bottom: none;
     padding-bottom: 0;
-    margin-bottom: 0;
   }
 
   .exact-stat-icon {
@@ -1529,6 +1539,7 @@ body {
     height: 45px;
     font-size: 1.2rem;
     box-shadow: 0 6px 12px -4px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
   }
 
   .exact-stat-info h3 {
@@ -1536,8 +1547,6 @@ body {
     font-size: 1.4rem;
     font-weight: 800;
     margin: 0;
-
-    /* Gradient Text */
     background: linear-gradient(135deg, #00A651 0%, #008a42 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1566,19 +1575,21 @@ body {
      QUOTE SECTION
      ============================================ */
   .exact-quote {
-    width: 90%;
+    width: 100%;
     max-width: 400px;
     background: linear-gradient(135deg, #004d24 0%, #005c2e 50%, #007a3d 100%);
     color: #ffffff;
     border-radius: 20px;
     padding: 25px 20px !important;
-    margin: 20px auto 40px auto !important;
-    margin-bottom: 10px !important;
+    margin: 0 auto 30px auto !important;
+    /* FIX: Proper margin, no colliding */
     flex-direction: column;
     gap: 10px;
     text-align: center;
     border: 1px solid rgba(247, 148, 29, 0.2);
     box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    top: 0;
   }
 
   .exact-quote::before,
@@ -1596,15 +1607,17 @@ body {
     width: 100%;
     white-space: normal;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: none;
   }
 
   .exact-quote span {
     font-size: 0.9rem;
     color: #f7941d;
     font-weight: 700;
-    margin-top: -5px;
+    margin-top: 5px;
     display: block;
     padding-top: 0;
+    transform: none;
   }
 
   .whatsapp-btn {
@@ -1630,7 +1643,7 @@ body {
    ============================================================ */
 @media (max-width: 480px) {
   .exact-hero {
-    padding: 85px 0 0 0;
+    padding: 85px 0 0 0 !important;
   }
 
   .exact-main-title {
@@ -1659,28 +1672,41 @@ body {
     padding: 12px 18px;
   }
 
-  .exact-stat {
-    flex: 0 0 100%;
-    justify-content: flex-start;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    padding-bottom: 10px;
-  }
-
-  .exact-stat:last-child {
-    border-bottom: none;
+  .hero-bottom-wrapper {
+    margin-top: 15px;
+    padding: 0 10px;
   }
 
   .exact-bottom-bar {
-    padding: 12px 15px 10px 15px;
-    margin-top: 20px;
+    padding: 15px 12px;
+    margin-bottom: 12px !important;
+  }
+
+  .exact-stat {
+    padding: 10px 3px;
+  }
+
+  .exact-stat-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .exact-stat-info h3 {
+    font-size: 1.25rem;
+  }
+
+  .exact-stat-info p {
+    font-size: 0.85rem;
   }
 
   .exact-quote {
-    padding: 15px;
+    padding: 20px 15px !important;
+    margin: 0 auto 25px auto !important;
+  }
+
+  .exact-quote p {
     font-size: 0.95rem;
-    border-radius: 20px;
-    padding-top: 15px;
-    margin-top: 10px;
   }
 
   .exact-quote span {
@@ -5384,37 +5410,60 @@ body {
   }
 
   .footer-col {
-    text-align: center;
+    text-align: left !important;
   }
 
   .footer-logo {
-    justify-content: center;
+    justify-content: flex-start !important;
   }
 
   .footer-social {
-    justify-content: center;
+    justify-content: flex-start !important;
+  }
+
+  .footer-col h5 {
+    text-align: left !important;
+    display: inline-block !important;
   }
 
   .footer-col h5::after {
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0 !important;
+    transform: none !important;
   }
 
   .footer-links a {
-    justify-content: center;
+    justify-content: flex-start !important;
   }
 
   .footer-contact li {
-    justify-content: center;
+    justify-content: flex-start !important;
   }
 
+  .footer-contact li div {
+    text-align: left !important;
+  }
+
+  .footer-contact li span {
+    text-align: left !important;
+  }
+
+  .footer-contact li a,
+  .footer-contact li p {
+    text-align: left !important;
+  }
+
+  .footer-description {
+    text-align: left !important;
+  }
+
+  /* Footer bottom stays centered */
   .footer-bottom {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: column !important;
+    text-align: center !important;
   }
 
   .footer-bottom-links {
-    justify-content: center;
+    justify-content: center !important;
   }
 }
 
