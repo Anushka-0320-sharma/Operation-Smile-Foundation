@@ -125,6 +125,8 @@
           </div>
         </div>
 
+        <div class="tablet-spacer"></div>
+
         <!-- Right Image (Badge is removed) -->
         <div class="exact-right">
           <!-- This is intentionally left empty now -->
@@ -206,8 +208,14 @@
     <!-- ==================== RECENT ACTIVITIES SECTION ==================== -->
     <section class="recent-activities">
       <div class="container">
+        <!-- Section Title -->
         <div class="section-title animate__animated animate__fadeInDown">
-          <h2>A Proud Moment for Operation Smile 🏆</h2>
+          <div class="title-wrapper">
+            <h2>
+              A Proud Moment for Operation Smile
+              <span class="title-emoji">🏆</span>
+            </h2>
+          </div>
           <div class="title-decoration"></div>
           <p>
             The founder of Operation Smile was recently honoured for
@@ -217,14 +225,17 @@
             important milestone for Operation Smile and its dedicated team.
           </p>
         </div>
-        <div class="row">
+
+        <div class="row align-items-stretch">
           <!-- Video Column -->
-          <div class="col-lg-6">
+          <div class="col-lg-6 mb-4">
             <div class="video-section animate__animated animate__fadeInLeft">
-              <div class="video-header">
-                <div class="video-icon"><i class="fas fa-play-circle"></i></div>
-                <div class="video-title">
-                  <h3>🎥 Operation Smile in the Spotlight</h3>
+              <div class="section-header">
+                <div class="icon-wrapper video-icon">
+                  <i class="fas fa-play-circle"></i>
+                </div>
+                <div class="header-content">
+                  <h3>Operation Smile in the Spotlight</h3>
                   <p>
                     This video features the Founder of Operation Smile sharing
                     insights about the organisation's ongoing initiatives and
@@ -239,6 +250,7 @@
                   <source src="assets/interview.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+                <div class="video-overlay"></div>
                 <div class="video-controls">
                   <div class="control-buttons">
                     <button class="control-btn" id="playPauseBtn">
@@ -252,21 +264,22 @@
                     </button>
                   </div>
                   <div class="video-status" id="videoStatus">
-                    Playing • Muted
+                    <span class="status-dot"></span> Playing • Muted
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
           <!-- Photos Column -->
-          <div class="col-lg-6">
+          <div class="col-lg-6 mb-4">
             <div class="photos-section animate__animated animate__fadeInRight">
-              <div class="photos-header">
-                <div class="photos-icon">
+              <div class="section-header">
+                <div class="icon-wrapper photos-icon">
                   <i class="fas fa-camera-retro"></i>
                 </div>
-                <div class="photos-title">
-                  <h3>📸 Award Recognition & Press Highlights</h3>
+                <div class="header-content">
+                  <h3>Award Recognition & Press Highlights</h3>
                   <p>
                     The photographs capture moments from the award presentation
                     ceremony and the newspaper publications covering the
@@ -276,39 +289,69 @@
               </div>
               <div class="photo-grid">
                 <div class="photo-item">
-                  <img src="assets/06.jpeg" alt="Community Outreach" />
-                  <div class="photo-overlay">
-                    <h6>Honour by Dainik Jagran</h6>
+                  <div class="photo-frame">
+                    <img src="assets/06.jpeg" alt="Community Outreach" />
+                    <div class="photo-overlay">
+                      <span class="overlay-icon"
+                        ><i class="fas fa-award"></i
+                      ></span>
+                      <h6>Honour by Dainik Jagran</h6>
+                    </div>
                   </div>
                 </div>
                 <div class="photo-item">
-                  <img src="assets/02.jpeg" alt="Education Program" />
-                  <div class="photo-overlay">
-                    <h6>Honour by Dainik Jagran</h6>
+                  <div class="photo-frame">
+                    <img src="assets/02.jpeg" alt="Education Program" />
+                    <div class="photo-overlay">
+                      <span class="overlay-icon"
+                        ><i class="fas fa-award"></i
+                      ></span>
+                      <h6>Honour by Dainik Jagran</h6>
+                    </div>
                   </div>
                 </div>
                 <div class="photo-item">
-                  <img src="assets/01.jpeg" alt="Health Camp" />
-                  <div class="photo-overlay">
-                    <h6>Honour by Dainik Jagran</h6>
+                  <div class="photo-frame">
+                    <img src="assets/01.jpeg" alt="Health Camp" />
+                    <div class="photo-overlay">
+                      <span class="overlay-icon"
+                        ><i class="fas fa-award"></i
+                      ></span>
+                      <h6>Honour by Dainik Jagran</h6>
+                    </div>
                   </div>
                 </div>
                 <div class="photo-item">
-                  <img src="assets/03.jpg" alt="Tree Planting" />
-                  <div class="photo-overlay">
-                    <h6>Jagran City</h6>
+                  <div class="photo-frame">
+                    <img src="assets/03.jpg" alt="Tree Planting" />
+                    <div class="photo-overlay">
+                      <span class="overlay-icon"
+                        ><i class="fas fa-newspaper"></i
+                      ></span>
+                      <h6>Jagran City</h6>
+                    </div>
                   </div>
                 </div>
                 <div class="photo-item">
-                  <img src="assets/04.jpg" alt="Fundraising Event" />
-                  <div class="photo-overlay">
-                    <h6>Gagan Media</h6>
+                  <div class="photo-frame">
+                    <img src="assets/04.jpg" alt="Fundraising Event" />
+                    <div class="photo-overlay">
+                      <span class="overlay-icon"
+                        ><i class="fas fa-newspaper"></i
+                      ></span>
+                      <h6>Gagan Media</h6>
+                    </div>
                   </div>
                 </div>
                 <div class="photo-item">
-                  <img src="assets/05.jpg" alt="Volunteers" />
-                  <div class="photo-overlay">
-                    <h6>Project Arpan</h6>
+                  <div class="photo-frame">
+                    <img src="assets/05.jpg" alt="Volunteers" />
+                    <div class="photo-overlay">
+                      <span class="overlay-icon"
+                        ><i class="fas fa-newspaper"></i
+                      ></span>
+                      <h6>Project Arpan</h6>
+                    </div>
                   </div>
                 </div>
               </div>
