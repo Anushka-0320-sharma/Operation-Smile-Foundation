@@ -1489,85 +1489,265 @@ body {
     background-size: 100% 100% !important;
     padding: 70px 0 0 0 !important;
     overflow: visible !important;
-    /* FIX: Allow stats to overflow the hero */
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   .exact-container-fluid {
     padding: 0 20px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
   }
 
+  /* ============================================
+     AESTHETIC HERO TEXT - CENTERED
+     ============================================ */
   .exact-left {
     max-width: 100%;
+    width: 100%;
     left: 0 !important;
     margin: 0 auto;
     text-align: center;
-    padding-bottom: 0 !important;
+    padding: 0 15px !important;
     position: relative;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .exact-main-title {
     font-size: 2.2rem;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     color: #1a1a2e;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.5px;
+    width: 100%;
   }
 
-  .exact-sub-title {
-    font-size: 1.2rem;
-    white-space: normal !important;
-    margin-top: 5px;
-    font-weight: 800;
+  /* "Every" - Elegant italic serif */
+  .exact-cursive {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.6rem;
     color: #1a1a2e;
+    display: inline-block;
+    letter-spacing: 1px;
     line-height: 1.2;
   }
 
-  .exact-desc {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    max-width: 90%;
-    margin: 0 auto 25px auto;
-    color: #5a4a3a;
+  /* "Smile" - Large cursive orange */
+  .exact-cursive-2 {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 3.2rem;
+    background: linear-gradient(135deg, #e67e22, #f39c12, #e67e22);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    filter: drop-shadow(0 3px 8px rgba(230, 126, 34, 0.25));
   }
 
+  /* Heart Icon */
+  .exact-heart {
+    display: inline-block;
+    color: #e74c3c;
+    font-size: 1.4rem;
+    margin-left: 6px;
+    vertical-align: middle;
+    animation: heartbeat 1.5s ease-in-out infinite;
+    filter: drop-shadow(0 2px 6px rgba(231, 76, 60, 0.35));
+  }
+
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    25% {
+      transform: scale(1.25);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    75% {
+      transform: scale(1.15);
+      opacity: 1;
+    }
+  }
+
+  /* "Creates a Better Tomorrow" - Bold serif */
+  .exact-sub-title {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    white-space: normal !important;
+    margin-top: 4px;
+    display: inline-block;
+    line-height: 1.25;
+    letter-spacing: 0.3px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+    position: relative;
+    padding-bottom: 0;
+  }
+
+  /* Remove decorative line below subtitle */
+  .exact-sub-title::after {
+    display: none;
+  }
+
+  /* Description Text */
+  .exact-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 90%;
+    margin: 14px auto 18px auto;
+    color: #5a4a3a;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    text-align: center;
+    padding: 0 10px;
+    position: relative;
+  }
+
+  /* Remove decorative dots */
+  .exact-desc::before,
+  .exact-desc::after {
+    display: none;
+  }
+
+  /* Button Container */
   .exact-buttons {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 12px;
     width: 100%;
-    max-width: 350px;
+    max-width: 320px;
     margin: 0 auto;
+    padding: 0 5px;
   }
 
   .tablet-spacer {
     height: 60px;
-    /* Smaller gap on mobile */
-  }
-
-  .exact-btn {
-    width: 100%;
-    justify-content: center;
-    border-radius: 50px;
-    padding: 14px 20px;
-    font-size: 0.9rem;
-  }
-
-  .exact-btn-orange {
-    background: #f28c28;
-    box-shadow: 0 4px 10px rgba(242, 140, 40, 0.3);
   }
 
   /* ============================================
-     WRAPPER (Keeps Stats + Quote together)
+     AESTHETIC BUTTON - MOBILE
+     ============================================ */
+  .exact-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 50px;
+    padding: 14px 22px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .exact-btn-orange {
+    background: linear-gradient(135deg, #f39c12, #e67e22, #d35400);
+    background-size: 200% auto;
+    color: white;
+    box-shadow:
+      0 6px 20px -5px rgba(230, 126, 34, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    animation: shimmerBtn 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmerBtn {
+    0%, 100% {
+      background-position: 0% center;
+    }
+    50% {
+      background-position: 100% center;
+    }
+  }
+
+  .exact-btn-orange::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
+
+  .exact-btn-orange:hover::before {
+    left: 100%;
+  }
+
+  .exact-btn-orange:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow:
+      0 12px 30px -8px rgba(230, 126, 34, 0.6),
+      0 0 0 2px rgba(255, 255, 255, 0.2) inset;
+  }
+
+  .exact-btn-orange:active {
+    transform: translateY(-1px) scale(0.99);
+  }
+
+  .exact-btn i {
+    font-size: 0.95rem;
+    animation: heartPulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes heartPulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+
+  /* ============================================
+     WRAPPER (Stats + Quote)
      ============================================ */
   .hero-bottom-wrapper {
     position: relative;
     z-index: 20;
-    margin-top: 20px;
-    /* FIX: Push down to add gap between buttons & stats */
+    margin-top: 10px;
     padding: 0 15px;
-    /* FIX: Add side padding */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   /* ============================================
@@ -1578,7 +1758,6 @@ body {
     width: 100%;
     max-width: 400px;
     margin: 0 auto 15px auto !important;
-    /* FIX: Add space between stats & quote */
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -1615,6 +1794,8 @@ body {
     border-bottom: 1px solid #f0f0f0;
     padding: 12px 5px;
     margin-bottom: 0;
+    display: flex;
+    align-items: center;
   }
 
   .exact-stat:last-child {
@@ -1670,7 +1851,6 @@ body {
     border-radius: 20px;
     padding: 25px 20px !important;
     margin: 0 auto 30px auto !important;
-    /* FIX: Proper margin, no colliding */
     flex-direction: column;
     gap: 10px;
     text-align: center;
@@ -1678,6 +1858,9 @@ body {
     box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.2);
     position: relative;
     top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .exact-quote::before,
@@ -1696,6 +1879,7 @@ body {
     white-space: normal;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transform: none;
+    text-align: center;
   }
 
   .exact-quote span {
@@ -1706,6 +1890,7 @@ body {
     display: block;
     padding-top: 0;
     transform: none;
+    text-align: center;
   }
 
   .whatsapp-btn {
@@ -1734,34 +1919,70 @@ body {
     padding: 85px 0 0 0 !important;
   }
 
+  .exact-left {
+    padding: 0 12px !important;
+  }
+
   .exact-main-title {
     font-size: 1.8rem;
     margin-bottom: 10px;
   }
 
+  .exact-cursive {
+    font-size: 1.4rem;
+  }
+
   .exact-cursive-2 {
-    font-size: 1.5em;
+    font-size: 2.6rem;
+    letter-spacing: 1px;
+  }
+
+  .exact-heart {
+    font-size: 1.2rem;
+    margin-left: 4px;
   }
 
   .exact-sub-title {
-    font-size: 0.85em;
+    font-size: 1.1rem;
+    margin-top: 3px;
+    padding-bottom: 0;
+  }
+
+  .exact-sub-title::after {
+    display: none;
   }
 
   .exact-desc {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    max-width: 100%;
-    margin-bottom: 20px;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    max-width: 95%;
+    margin: 12px auto 15px auto;
+    padding: 0 5px;
+  }
+
+  .exact-desc::before,
+  .exact-desc::after {
+    display: none;
+  }
+
+  .exact-buttons {
+    max-width: 290px;
+    gap: 10px;
   }
 
   .exact-btn {
-    width: 100%;
-    justify-content: center;
-    padding: 12px 18px;
+    padding: 13px 18px;
+    font-size: 0.75rem;
+    letter-spacing: 0.7px;
+    gap: 7px;
+  }
+
+  .exact-btn i {
+    font-size: 0.85rem;
   }
 
   .hero-bottom-wrapper {
-    margin-top: 15px;
+    margin-top: 8px;
     padding: 0 10px;
   }
 

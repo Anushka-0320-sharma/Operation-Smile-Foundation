@@ -1,0 +1,2235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Diwali Campaign - Operation Smile</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="icon" type="image/png" href="assets/fevicon.png" />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(145deg, #fffcf7 0%, #fef5e7 100%);
+        color: #2c3e2f;
+        cursor: default;
+        overflow-x: hidden;
+        padding-top: 80px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      .navbar-brand,
+      .footer-brand {
+        font-family: "Playfair Display", serif;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f3e7d3;
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #e67e22, #f39c12);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #d35400, #e67e22);
+      }
+
+      /* ============================================================
+         NAVBAR (matching donate.html)
+         ============================================================ */
+      .navbar.navbar-custom {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 248, 235, 0.92);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        z-index: 1000;
+        padding: 10px 0;
+        box-shadow: 0 2px 30px rgba(0, 0, 0, 0.06);
+        border-bottom: 1px solid rgba(243, 156, 18, 0.12);
+        transition: all 0.3s ease;
+      }
+
+      .navbar.navbar-custom.scrolled {
+        background: rgba(255, 248, 235, 0.98);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0;
+      }
+
+      .logo img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin: 0 12px 0 0;
+        border: 2.5px solid #f39c12;
+        transition: all 0.4s ease;
+        object-fit: cover;
+        box-shadow: 0 0 20px rgba(243, 156, 18, 0.12);
+      }
+
+      .logo img:hover {
+        transform: scale(1.08) rotate(-5deg);
+        border-color: #e67e22;
+        box-shadow: 0 0 30px rgba(243, 156, 18, 0.25);
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.5rem;
+        background: linear-gradient(135deg, #d35400, #e67e22, #f39c12);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        letter-spacing: -0.5px;
+        white-space: nowrap;
+        font-family: "Playfair Display", "Georgia", serif;
+        text-shadow: 0 0 40px rgba(243, 156, 18, 0.15);
+        animation: shimmer 3s ease-in-out infinite;
+        background-size: 200% auto;
+        padding: 0;
+        margin-right: 20px;
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: 0% center;
+        }
+        50% {
+          background-position: 100% center;
+        }
+        100% {
+          background-position: 0% center;
+        }
+      }
+
+      .nav-item {
+        padding: 0 2px;
+      }
+
+      .navbar-custom .navbar-nav .nav-link {
+        color: #3b2a1f !important;
+        font-weight: 500;
+        font-size: 0.9rem;
+        padding: 8px 16px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .navbar-custom .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2.5px;
+        background: linear-gradient(90deg, #e67e22, #f39c12);
+        border-radius: 3px;
+        transition: width 0.3s ease;
+      }
+
+      .navbar-custom .navbar-nav .nav-link:hover::after,
+      .navbar-custom .navbar-nav .nav-link.active::after {
+        width: 60%;
+      }
+
+      .navbar-custom .navbar-nav .nav-link:hover {
+        color: #e67e22 !important;
+        background: rgba(230, 126, 34, 0.06);
+        transform: translateY(-2px);
+      }
+
+      .navbar-custom .navbar-nav .nav-link.active {
+        color: #e67e22 !important;
+        background: rgba(230, 126, 34, 0.08);
+      }
+
+      .nav-buttons-desktop {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-left: 15px;
+      }
+
+      .nav-buttons-mobile {
+        display: none;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        justify-content: center;
+        gap: 12px;
+        flex-direction: row;
+        width: 100%;
+      }
+
+      .donate,
+      .volunteer {
+        border: none;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        white-space: nowrap;
+        padding: 10px 28px;
+        height: 44px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .donate {
+        background: linear-gradient(135deg, #f39c12, #e67e22);
+        color: white;
+        box-shadow: 0 4px 20px rgba(230, 126, 34, 0.3);
+        animation: buttonGlow 2s ease-in-out infinite;
+      }
+
+      @keyframes buttonGlow {
+        0%,
+        100% {
+          box-shadow: 0 4px 20px rgba(230, 126, 34, 0.3);
+        }
+        50% {
+          box-shadow:
+            0 4px 40px rgba(230, 126, 34, 0.6),
+            0 0 60px rgba(230, 126, 34, 0.2);
+        }
+      }
+
+      .donate::before {
+        content: "🙏";
+        font-size: 1rem;
+        margin-right: 4px;
+        transition: all 0.3s ease;
+      }
+
+      .donate:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 8px 40px rgba(230, 126, 34, 0.5);
+        background: linear-gradient(135deg, #e67e22, #d35400);
+        animation: none;
+      }
+
+      .donate:hover::before {
+        content: "❤️";
+        transform: scale(1.2);
+        animation: heartbeat 0.5s ease-in-out;
+      }
+
+      @keyframes heartbeat {
+        0% {
+          transform: scale(1);
+        }
+        30% {
+          transform: scale(1.3);
+        }
+        60% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .volunteer {
+        background: linear-gradient(135deg, #27ae60, #2ecc71);
+        color: white;
+        box-shadow: 0 4px 20px rgba(39, 174, 96, 0.3);
+        animation: volunteerGlow 2.5s ease-in-out infinite;
+      }
+
+      @keyframes volunteerGlow {
+        0%,
+        100% {
+          box-shadow: 0 4px 20px rgba(39, 174, 96, 0.3);
+        }
+        50% {
+          box-shadow:
+            0 4px 40px rgba(39, 174, 96, 0.6),
+            0 0 60px rgba(39, 174, 96, 0.2);
+        }
+      }
+
+      .volunteer::before {
+        content: "🤝";
+        font-size: 1rem;
+        margin-right: 4px;
+        transition: all 0.3s ease;
+      }
+
+      .volunteer:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 8px 40px rgba(46, 204, 113, 0.5);
+        background: linear-gradient(135deg, #2ecc71, #27ae60);
+        animation: none;
+      }
+
+      .volunteer:hover::before {
+        transform: scale(1.2) rotate(10deg);
+        animation: shake 0.4s ease-in-out;
+      }
+
+      @keyframes shake {
+        0% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(12deg);
+        }
+        50% {
+          transform: rotate(-8deg);
+        }
+        75% {
+          transform: rotate(6deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+
+      .nav-link-donate,
+      .nav-link-volunteer {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 24px;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        margin: 4px 0;
+        white-space: nowrap;
+        min-width: 120px;
+        width: 100%;
+      }
+
+      .nav-link-donate {
+        background: linear-gradient(135deg, #f39c12, #e67e22);
+        color: white;
+        box-shadow: 0 4px 15px rgba(230, 126, 34, 0.25);
+        animation: mobileGlow 2s ease-in-out infinite;
+      }
+
+      .nav-link-donate:hover {
+        background: linear-gradient(135deg, #e67e22, #d35400);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(230, 126, 34, 0.35);
+      }
+
+      .nav-link-donate::before {
+        content: "🙏";
+        margin-right: 6px;
+      }
+
+      .nav-link-volunteer {
+        background: linear-gradient(135deg, #27ae60, #2ecc71);
+        color: white;
+        box-shadow: 0 4px 15px rgba(39, 174, 96, 0.25);
+        animation: mobileVolunteerGlow 2.5s ease-in-out infinite;
+      }
+
+      .nav-link-volunteer:hover {
+        background: linear-gradient(135deg, #2ecc71, #27ae60);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(46, 204, 113, 0.35);
+      }
+
+      .nav-link-volunteer::before {
+        content: "🤝";
+        margin-right: 6px;
+      }
+
+      @keyframes mobileGlow {
+        0%,
+        100% {
+          box-shadow: 0 4px 15px rgba(230, 126, 34, 0.25);
+        }
+        50% {
+          box-shadow: 0 4px 30px rgba(230, 126, 34, 0.5);
+        }
+      }
+
+      @keyframes mobileVolunteerGlow {
+        0%,
+        100% {
+          box-shadow: 0 4px 15px rgba(39, 174, 96, 0.25);
+        }
+        50% {
+          box-shadow: 0 4px 30px rgba(39, 174, 96, 0.5);
+        }
+      }
+
+      .navbar-toggler {
+        border: none;
+        padding: 8px 12px;
+        border-radius: 10px;
+        background: rgba(230, 126, 34, 0.06);
+        transition: all 0.3s ease;
+      }
+
+      .navbar-toggler:hover {
+        background: rgba(230, 126, 34, 0.12);
+        transform: scale(1.05);
+      }
+
+      .navbar-toggler:focus {
+        box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2);
+      }
+
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(58, 42, 31, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        transition: all 0.3s ease;
+      }
+
+      .navbar-toggler:hover .navbar-toggler-icon {
+        transform: rotate(90deg);
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-nav {
+          text-align: center;
+          width: 100%;
+        }
+
+        .nav-item {
+          margin: 2px 0;
+        }
+
+        .nav-buttons-mobile {
+          display: flex !important;
+          justify-content: center;
+          width: 100%;
+        }
+
+        .nav-buttons-desktop {
+          display: none !important;
+        }
+
+        .navbar-collapse {
+          background: rgba(255, 248, 235, 0.98);
+          backdrop-filter: blur(20px);
+          padding: 20px 15px;
+          border-radius: 16px;
+          margin-top: 12px;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+          border: 1px solid rgba(243, 156, 18, 0.08);
+        }
+
+        .navbar-custom .navbar-nav .nav-link {
+          padding: 10px 18px;
+          font-size: 0.95rem;
+        }
+
+        .navbar-custom .navbar-nav .nav-link::after {
+          display: none;
+        }
+
+        .logo img {
+          width: 42px;
+          height: 42px;
+        }
+
+        .navbar-brand {
+          font-size: 1.3rem;
+          margin-right: auto;
+        }
+
+        .navbar-nav .nav-link-donate,
+        .navbar-nav .nav-link-volunteer {
+          display: flex !important;
+          margin: 4px auto;
+          width: 80%;
+          justify-content: center;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .navbar-nav .nav-link-donate,
+        .navbar-nav .nav-link-volunteer {
+          display: none !important;
+        }
+        .nav-buttons-desktop {
+          display: flex !important;
+        }
+      }
+
+      /* ============================================================
+         DIWALI CAMPAIGN – CUSTOM SECTIONS
+         ============================================================ */
+
+      /* ---------- HERO / TOP BANNER ---------- */
+      .diwali-hero {
+        background: linear-gradient(135deg, #1a1a2e 0%, #2d1b0e 50%, #4a2c0a 100%);
+        padding: 60px 0 50px;
+        border-radius: 0 0 40px 40px;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .diwali-hero::before {
+        content: "🪔";
+        position: absolute;
+        top: -40px;
+        left: -40px;
+        font-size: 200px;
+        opacity: 0.06;
+        transform: rotate(-15deg);
+      }
+
+      .diwali-hero::after {
+        content: "✨";
+        position: absolute;
+        bottom: -50px;
+        right: -30px;
+        font-size: 180px;
+        opacity: 0.06;
+        transform: rotate(10deg);
+      }
+
+      .diwali-hero h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        color: #fff;
+        text-shadow: 0 0 40px rgba(243, 156, 18, 0.3);
+        position: relative;
+        z-index: 1;
+      }
+
+      .diwali-hero h1 span {
+        background: linear-gradient(135deg, #f39c12, #e67e22, #ffd700);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .diwali-hero p {
+        color: #d4c5b0;
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 15px auto 0;
+        position: relative;
+        z-index: 1;
+        padding: 0 20px;
+      }
+
+      .diwali-hero .hero-badge {
+        display: inline-block;
+        background: rgba(243, 156, 18, 0.15);
+        border: 1px solid rgba(243, 156, 18, 0.3);
+        color: #f39c12;
+        padding: 6px 18px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ---------- GOAL TRACKER (THERMOMETER) ---------- */
+      .goal-tracker-section {
+        padding: 40px 0 30px;
+      }
+
+      .tracker-card {
+        background: #fff;
+        border-radius: 32px;
+        padding: 35px 30px;
+        box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(230, 126, 34, 0.12);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .tracker-card:hover {
+        box-shadow: 0 30px 60px -20px rgba(230, 126, 34, 0.2);
+        transform: translateY(-4px);
+      }
+
+      .tracker-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(90deg, #e67e22, #f39c12, #ffd700, #f39c12, #e67e22);
+        background-size: 200% auto;
+        animation: shimmerBar 3s linear infinite;
+      }
+
+      @keyframes shimmerBar {
+        0% {
+          background-position: 0% center;
+        }
+        100% {
+          background-position: 200% center;
+        }
+      }
+
+      .tracker-header {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .tracker-header h2 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: #1a1a2e;
+        margin-bottom: 6px;
+      }
+
+      .tracker-header h2 i {
+        color: #e67e22;
+        margin-right: 8px;
+      }
+
+      .tracker-header .tagline {
+        font-size: 0.95rem;
+        color: #8a7a6a;
+        font-style: italic;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      /* Thermometer-style progress bar */
+      .progress-thermometer {
+        background: #f0e8dc;
+        border-radius: 50px;
+        height: 36px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.06);
+        margin: 20px 0 8px;
+      }
+
+      .progress-thermometer .progress-fill {
+        height: 100%;
+        border-radius: 50px;
+        background: linear-gradient(90deg, #e67e22, #f39c12, #ffd700);
+        background-size: 200% auto;
+        animation: shimmerBar 3s linear infinite;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 16px;
+        font-weight: 700;
+        font-size: 0.85rem;
+        color: #fff;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        transition: width 1.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        min-width: 40px;
+        position: relative;
+      }
+
+      .progress-thermometer .progress-fill::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.25),
+          transparent
+        );
+        border-radius: 50px;
+        animation: shine 2.5s ease-in-out infinite;
+      }
+
+      @keyframes shine {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      .progress-labels {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        color: #8a7a6a;
+        font-weight: 500;
+        padding: 0 5px;
+      }
+
+      .goal-stats {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 30px;
+        margin-top: 18px;
+        text-align: center;
+      }
+
+      .goal-stats .stat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .goal-stats .stat-item .label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #8a7a6a;
+        font-weight: 600;
+      }
+
+      .goal-stats .stat-item .value {
+        font-size: 1.6rem;
+        font-weight: 800;
+        font-family: "Playfair Display", serif;
+        line-height: 1.2;
+      }
+
+      .goal-stats .stat-item .value.green {
+        color: #27ae60;
+      }
+
+      .goal-stats .stat-item .value.orange {
+        color: #e67e22;
+      }
+
+      .goal-stats .stat-item .value.red {
+        color: #c0392b;
+      }
+
+      .tracker-message {
+        text-align: center;
+        font-size: 0.95rem;
+        color: #6a5a4a;
+        margin-top: 18px;
+        font-style: italic;
+        padding: 0 10px;
+      }
+
+      /* ---------- IMPACT CALCULATOR ---------- */
+      .impact-section {
+        padding: 40px 0 30px;
+      }
+
+      .impact-section h2 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        text-align: center;
+        color: #1a1a2e;
+        margin-bottom: 8px;
+      }
+
+      .impact-section h2 i {
+        color: #e67e22;
+        margin-right: 8px;
+      }
+
+      .impact-section .sub {
+        text-align: center;
+        color: #8a7a6a;
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+      }
+
+      .impact-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .impact-card {
+        background: #fff;
+        border-radius: 24px;
+        padding: 25px 15px;
+        text-align: center;
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(230, 126, 34, 0.1);
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .impact-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #e67e22, #f39c12);
+        border-radius: 4px 4px 0 0;
+      }
+
+      .impact-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px -12px rgba(230, 126, 34, 0.25);
+        border-color: rgba(230, 126, 34, 0.3);
+      }
+
+      .impact-card .emoji {
+        font-size: 2.2rem;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .impact-card .item-name {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #5a4a3a;
+        margin-bottom: 4px;
+      }
+
+      .impact-card .item-count {
+        font-size: 2rem;
+        font-weight: 800;
+        font-family: "Playfair Display", serif;
+        color: #e67e22;
+        line-height: 1.2;
+      }
+
+      .impact-card .item-count small {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #8a7a6a;
+      }
+
+      .impact-card .item-price {
+        font-size: 0.75rem;
+        color: #8a7a6a;
+        margin-top: 4px;
+      }
+
+      /* ---------- CALL TO ACTION ---------- */
+      .cta-section {
+        padding: 30px 0 40px;
+      }
+
+      .cta-card {
+        background: linear-gradient(135deg, #1a1a2e 0%, #2d1b0e 50%, #4a2c0a 100%);
+        border-radius: 32px;
+        padding: 45px 30px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.3);
+      }
+
+      .cta-card::before {
+        content: "🪔";
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        font-size: 160px;
+        opacity: 0.05;
+        transform: rotate(15deg);
+      }
+
+      .cta-card::after {
+        content: "✨";
+        position: absolute;
+        bottom: -40px;
+        left: -20px;
+        font-size: 140px;
+        opacity: 0.05;
+        transform: rotate(-10deg);
+      }
+
+      .cta-card h2 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 12px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta-card h2 span {
+        background: linear-gradient(135deg, #f39c12, #ffd700);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .cta-card p {
+        color: #d4c5b0;
+        font-size: 1rem;
+        max-width: 550px;
+        margin: 0 auto 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta-card .remaining-highlight {
+        color: #f39c12;
+        font-weight: 700;
+      }
+
+      .btn-donate-cta {
+        background: linear-gradient(135deg, #f39c12, #e67e22, #d35400);
+        background-size: 200% auto;
+        border: none;
+        border-radius: 60px;
+        padding: 16px 50px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        transition: all 0.5s ease;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(230, 126, 34, 0.4);
+        animation: gradientShift 3s ease-in-out infinite;
+        z-index: 1;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      @keyframes gradientShift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      .btn-donate-cta::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.8s,
+          height 0.8s;
+      }
+
+      .btn-donate-cta:hover::before {
+        width: 400px;
+        height: 400px;
+      }
+
+      .btn-donate-cta:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 15px 45px rgba(230, 126, 34, 0.55);
+        color: #fff;
+      }
+
+      .btn-donate-cta i {
+        margin-right: 12px;
+      }
+
+      .upi-note {
+        margin-top: 16px;
+        font-size: 0.8rem;
+        color: #b8a898;
+        position: relative;
+        z-index: 1;
+      }
+
+      .upi-note strong {
+        color: #f39c12;
+      }
+
+      /* ---------- WALL OF SMILE (DONORS) ---------- */
+      .donors-section {
+        padding: 30px 0 50px;
+      }
+
+      .donors-section h2 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        text-align: center;
+        color: #1a1a2e;
+        margin-bottom: 6px;
+      }
+
+      .donors-section h2 i {
+        color: #e67e22;
+        margin-right: 8px;
+      }
+
+      .donors-section .sub {
+        text-align: center;
+        color: #8a7a6a;
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+      }
+
+      .donor-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .donor-card {
+        background: #fff;
+        border-radius: 24px;
+        padding: 25px 18px 20px;
+        text-align: center;
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(230, 126, 34, 0.1);
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .donor-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #f39c12, #ffd700);
+        border-radius: 4px 4px 0 0;
+      }
+
+      .donor-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px -12px rgba(230, 126, 34, 0.25);
+        border-color: rgba(230, 126, 34, 0.3);
+      }
+
+      .donor-card .avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #f39c12;
+        margin: 0 auto 10px;
+        display: block;
+        background: #fef5e7;
+        box-shadow: 0 4px 15px rgba(243, 156, 18, 0.2);
+      }
+
+      .donor-card .donor-name {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 2px;
+        font-family: "Playfair Display", serif;
+      }
+
+      .donor-card .donor-amount {
+        font-size: 0.8rem;
+        color: #e67e22;
+        font-weight: 600;
+        background: rgba(230, 126, 34, 0.08);
+        display: inline-block;
+        padding: 3px 14px;
+        border-radius: 50px;
+        margin-top: 4px;
+      }
+
+      .donor-card .donor-badge {
+        font-size: 0.65rem;
+        color: #8a7a6a;
+        margin-top: 6px;
+        display: block;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* ---------- FOOTER ---------- */
+      .footer {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        color: white;
+        padding: 60px 0 30px;
+        position: relative;
+        margin-top: 30px;
+        overflow: hidden;
+      }
+
+      .footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #e67e22, #f39c12, #e67e22);
+      }
+
+      .footer::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: radial-gradient(
+          ellipse at bottom,
+          rgba(230, 126, 34, 0.08),
+          transparent
+        );
+        pointer-events: none;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .footer-logo-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid #f39c12;
+        object-fit: cover;
+        transition: all 0.3s ease;
+      }
+
+      .footer-logo-img:hover {
+        transform: scale(1.05);
+        border-color: #e67e22;
+      }
+
+      .footer-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #f39c12 !important;
+        font-family: "Playfair Display", serif;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+
+      .footer-brand:hover {
+        color: #ffffff !important;
+        transform: scale(1.02);
+        text-shadow: 0 0 30px rgba(243, 156, 18, 0.3);
+      }
+
+      .footer h5 {
+        color: #f39c12;
+        font-weight: 700;
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .footer h5::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background: linear-gradient(90deg, #e67e22, #f39c12);
+        border-radius: 3px;
+      }
+
+      .footer a {
+        color: #b8b8b8;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .footer a:hover {
+        color: #f39c12;
+        padding-left: 5px;
+      }
+
+      .footer ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer ul li {
+        margin-bottom: 12px;
+      }
+
+      .footer .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 15px;
+      }
+
+      .footer .contact-icon {
+        width: 35px;
+        height: 35px;
+        background: rgba(243, 156, 18, 0.15);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .footer .contact-item:hover .contact-icon {
+        background: linear-gradient(135deg, #e67e22, #f39c12);
+        transform: scale(1.05);
+      }
+
+      .footer .contact-icon i {
+        color: #f39c12;
+        font-size: 1rem;
+      }
+
+      .footer .contact-item:hover .contact-icon i {
+        color: white;
+      }
+
+      .footer .contact-text {
+        flex: 1;
+        text-align: left;
+      }
+
+      .footer .contact-text span {
+        display: block;
+        font-size: 0.7rem;
+        color: #8a8a8a;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 2px;
+      }
+
+      .footer .contact-text p,
+      .footer .contact-text a {
+        font-size: 0.85rem;
+        color: #ffffff;
+        margin: 0;
+      }
+
+      .footer .contact-text a:hover {
+        color: #f39c12;
+        padding-left: 0;
+      }
+
+      .footer-social {
+        margin-top: 20px;
+      }
+
+      .footer-social p {
+        color: #b8b8b8;
+        font-size: 0.8rem;
+        margin-bottom: 12px;
+        text-align: left;
+      }
+
+      .footer-social-icons {
+        display: flex;
+        gap: 12px;
+      }
+
+      .footer-social-icon {
+        width: 38px;
+        height: 38px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        color: white;
+        font-size: 1.1rem;
+      }
+
+      .footer-social-icon:hover {
+        background: linear-gradient(135deg, #e67e22, #f39c12);
+        transform: translateY(-3px);
+        color: white;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.85rem;
+        color: #8a8a8a;
+      }
+
+      /* ============================================================
+         WHATSAPP FLOAT
+         ============================================================ */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 90px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #25d366, #128c7e);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        z-index: 9999;
+        transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        text-decoration: none;
+        animation: whatsappPulse 2s ease-in-out infinite;
+      }
+
+      .whatsapp-float i {
+        color: white;
+        font-size: 32px;
+        transition: transform 0.3s ease;
+      }
+
+      .whatsapp-float:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+      }
+
+      .whatsapp-float:hover i {
+        transform: scale(1.1);
+      }
+
+      .whatsapp-float:active {
+        transform: scale(0.95);
+      }
+
+      @keyframes whatsappPulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+        }
+        70% {
+          box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+
+      /* ============================================================
+         RESPONSIVE
+         ============================================================ */
+      @media (max-width: 992px) {
+        body {
+          padding-top: 70px;
+        }
+
+        .diwali-hero h1 {
+          font-size: 2.2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .diwali-hero {
+          padding: 40px 0 35px;
+          border-radius: 0 0 30px 30px;
+        }
+
+        .diwali-hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .diwali-hero p {
+          font-size: 0.95rem;
+        }
+
+        .tracker-card {
+          padding: 25px 18px;
+          border-radius: 24px;
+        }
+
+        .tracker-header h2 {
+          font-size: 1.5rem;
+        }
+
+        .goal-stats .stat-item .value {
+          font-size: 1.3rem;
+        }
+
+        .progress-thermometer {
+          height: 30px;
+        }
+
+        .progress-thermometer .progress-fill {
+          font-size: 0.75rem;
+          padding-right: 12px;
+        }
+
+        .impact-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 12px;
+        }
+
+        .impact-card {
+          padding: 18px 10px;
+          border-radius: 18px;
+        }
+
+        .impact-card .emoji {
+          font-size: 1.8rem;
+        }
+
+        .impact-card .item-count {
+          font-size: 1.5rem;
+        }
+
+        .impact-card .item-name {
+          font-size: 0.75rem;
+        }
+
+        .impact-card .item-price {
+          font-size: 0.65rem;
+        }
+
+        .cta-card {
+          padding: 35px 20px;
+          border-radius: 24px;
+        }
+
+        .cta-card h2 {
+          font-size: 1.5rem;
+        }
+
+        .btn-donate-cta {
+          padding: 14px 35px;
+          font-size: 0.95rem;
+        }
+
+        .donor-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+
+        .donor-card {
+          padding: 18px 12px 15px;
+          border-radius: 18px;
+        }
+
+        .donor-card .avatar {
+          width: 55px;
+          height: 55px;
+        }
+
+        .donor-card .donor-name {
+          font-size: 0.85rem;
+        }
+
+        .donor-card .donor-amount {
+          font-size: 0.7rem;
+          padding: 2px 10px;
+        }
+
+        .footer .contact-text p,
+        .footer .contact-text a {
+          font-size: 0.75rem;
+        }
+
+        .whatsapp-float {
+          width: 52px;
+          height: 52px;
+          bottom: 80px;
+          right: 20px;
+        }
+
+        .whatsapp-float i {
+          font-size: 28px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .diwali-hero h1 {
+          font-size: 1.5rem;
+        }
+
+        .diwali-hero p {
+          font-size: 0.85rem;
+        }
+
+        .tracker-header h2 {
+          font-size: 1.3rem;
+        }
+
+        .tracker-header .tagline {
+          font-size: 0.85rem;
+        }
+
+        .goal-stats {
+          gap: 8px 16px;
+        }
+
+        .goal-stats .stat-item .value {
+          font-size: 1.1rem;
+        }
+
+        .goal-stats .stat-item .label {
+          font-size: 0.65rem;
+        }
+
+        .progress-thermometer {
+          height: 26px;
+        }
+
+        .progress-thermometer .progress-fill {
+          font-size: 0.65rem;
+          padding-right: 8px;
+        }
+
+        .impact-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 8px;
+        }
+
+        .impact-card {
+          padding: 14px 6px;
+          border-radius: 14px;
+        }
+
+        .impact-card .emoji {
+          font-size: 1.4rem;
+        }
+
+        .impact-card .item-count {
+          font-size: 1.2rem;
+        }
+
+        .impact-card .item-name {
+          font-size: 0.65rem;
+        }
+
+        .impact-card .item-price {
+          font-size: 0.55rem;
+        }
+
+        .cta-card h2 {
+          font-size: 1.2rem;
+        }
+
+        .cta-card p {
+          font-size: 0.85rem;
+        }
+
+        .btn-donate-cta {
+          padding: 12px 25px;
+          font-size: 0.8rem;
+        }
+
+        .donor-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
+
+        .donor-card {
+          padding: 14px 8px 12px;
+          border-radius: 16px;
+        }
+
+        .donor-card .avatar {
+          width: 45px;
+          height: 45px;
+          border-width: 2px;
+        }
+
+        .donor-card .donor-name {
+          font-size: 0.75rem;
+        }
+
+        .donor-card .donor-amount {
+          font-size: 0.6rem;
+          padding: 2px 8px;
+        }
+
+        .donor-card .donor-badge {
+          font-size: 0.55rem;
+        }
+
+        .whatsapp-float {
+          width: 48px;
+          height: 48px;
+          bottom: 75px;
+          right: 15px;
+        }
+
+        .whatsapp-float i {
+          font-size: 24px;
+        }
+
+        .footer-bottom {
+          font-size: 0.7rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ============================================================
+    NAVBAR
+    ============================================================ -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+      <div class="container">
+        <a href="index.html" class="logo-link">
+          <div class="logo">
+            <img src="assets/logo.png" alt="Operation Smile" />
+          </div>
+        </a>
+        <a class="navbar-brand" href="index.html">Operation Smile</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about-us.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="our-partners.html">Our Partners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="our-initiatives.html"
+                >Our Initiatives</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us.html">Contact Us</a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a href="donate.html" class="nav-link-donate">Donate</a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSei2fpCRa2_GZXVfZZdAst9PCeLmhK4gxhIc6ewTaGBo-2vcg/viewform"
+                class="nav-link-volunteer"
+                >Volunteer</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="nav-buttons-desktop">
+          <a href="donate.html"><button class="donate">Donate</button></a>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSei2fpCRa2_GZXVfZZdAst9PCeLmhK4gxhIc6ewTaGBo-2vcg/viewform"
+          >
+            <button class="volunteer">Volunteer</button>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ============================================================
+    DIWALI HERO
+    ============================================================ -->
+    <section class="diwali-hero">
+      <div class="container">
+        <div class="hero-badge" data-aos="fade-down">
+          <i class="fas fa-fire"></i> <span id="campaignYear">Diwali 2026</span> Campaign
+        </div>
+        <h1 data-aos="fade-up">
+          <span id="heroTitle">Light Up a Life</span> This Diwali
+        </h1>
+        <p data-aos="fade-up" data-aos-delay="100" id="heroDescription">
+          Every contribution brings warmth, joy, and a smile to someone's face.
+          Join us in making this festival of lights truly special for everyone.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    GOAL TRACKER
+    ============================================================ -->
+    <section class="goal-tracker-section">
+      <div class="container">
+        <div class="tracker-card" data-aos="fade-up">
+          <div class="tracker-header">
+            <h2><i class="fas fa-bullseye"></i> Our Diwali Goal</h2>
+            <p class="tagline" id="trackerTagline">
+              Your contribution brings us one step closer to lighting up their
+              Diwali.
+            </p>
+          </div>
+
+          <!-- Thermometer progress bar -->
+          <div class="progress-thermometer">
+            <div class="progress-fill" id="progressFill" style="width: 0%">
+              0%
+            </div>
+          </div>
+          <div class="progress-labels">
+            <span>₹0</span>
+            <span id="goalLabel">₹0</span>
+          </div>
+
+          <!-- Live numbers -->
+          <div class="goal-stats">
+            <div class="stat-item">
+              <span class="label">Goal</span>
+              <span class="value" id="goalAmount">₹0</span>
+            </div>
+            <div class="stat-item">
+              <span class="label">Raised So Far</span>
+              <span class="value green" id="raisedAmount">₹0</span>
+            </div>
+            <div class="stat-item">
+              <span class="label">Remaining</span>
+              <span class="value red" id="remainingAmount">₹0</span>
+            </div>
+          </div>
+
+          <p class="tracker-message" id="trackerMessage">
+            <i class="fas fa-quote-left"></i>
+            Your contribution brings us one step closer to lighting up their
+            Diwali.
+            <i class="fas fa-quote-right"></i>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    IMPACT CALCULATOR
+    ============================================================ -->
+    <section class="impact-section">
+      <div class="container">
+        <h2 data-aos="fade-up">
+          <i class="fas fa-gift"></i> What We've Arranged So Far
+        </h2>
+        <p class="sub" data-aos="fade-up" data-aos-delay="50">
+          Here's how your donations are making a difference
+        </p>
+
+        <div class="impact-grid" id="impactGrid">
+          <!-- Dynamically populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    CALL TO ACTION
+    ============================================================ -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card" data-aos="fade-up">
+          <h2>
+            We Still Need
+            <span id="ctaRemaining">₹0</span> to Make Sure No One Is Left
+            Behind
+          </h2>
+          <p id="ctaMessage">
+            Donate your combo today and help us bring light into someone's life
+            this Diwali.
+          </p>
+          <a
+            href="#"
+            id="donateNowBtn"
+            target="_blank"
+            class="btn-donate-cta"
+          >
+            <i class="fas fa-heart"></i> DONATE NOW
+          </a>
+          <p class="upi-note" id="upiNote">
+            <i class="fas fa-lock"></i> Secure payment via Razorpay &nbsp;|&nbsp;
+            <strong>UPI:</strong> <span id="upiId">merchant1524783.augp@aubank</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    WALL OF SMILE (TOP DONORS)
+    ============================================================ -->
+    <section class="donors-section">
+      <div class="container">
+        <h2 data-aos="fade-up">
+          <i class="fas fa-crown"></i> Our Biggest Supporters This Diwali
+        </h2>
+        <p class="sub" data-aos="fade-up" data-aos-delay="50">
+          With heartfelt gratitude to those who lit up lives
+        </p>
+
+        <div class="donor-grid" id="donorGrid">
+          <!-- Dynamically populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- About Section -->
+          <div class="col-md-3 mb-4">
+            <div class="footer-logo">
+              <img src="assets/logo.png" alt="Logo" class="footer-logo-img" />
+              <a class="footer-brand" href="index.html">Operation Smile</a>
+            </div>
+            <p style="color: #b8b8b8; font-size: 0.85rem; line-height: 1.7">
+              We are a non-profit organization dedicated to making a difference
+              in the community through various initiatives.
+            </p>
+            <div class="footer-social">
+              <p style="color: #b8b8b8; font-size: 0.8rem; margin-bottom: 12px">
+                Follow Us
+              </p>
+              <div class="footer-social-icons">
+                <a
+                  href="https://www.instagram.com/operation.smile__/"
+                  class="footer-social-icon"
+                  target="_blank"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  href="https://x.com/smilengo23?s=11"
+                  class="footer-social-icon"
+                  target="_blank"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-twitter-x"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/operation-smile-foundation-1079993b8"
+                  class="footer-social-icon"
+                  target="_blank"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a
+                  href="https://www.youtube.com/@OperationSmilefoundation23"
+                  class="footer-social-icon"
+                  target="_blank"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-3 mb-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="index.html"
+                  ><i class="fas fa-chevron-right"></i> Home</a
+                >
+              </li>
+              <li>
+                <a href="about-us.html"
+                  ><i class="fas fa-chevron-right"></i> About Us</a
+                >
+              </li>
+              <li>
+                <a href="our-initiatives.html"
+                  ><i class="fas fa-chevron-right"></i> Initiatives</a
+                >
+              </li>
+              <li>
+                <a href="donate.html"
+                  ><i class="fas fa-chevron-right"></i> Donate</a
+                >
+              </li>
+              <li>
+                <a href="contact-us.html"
+                  ><i class="fas fa-chevron-right"></i> Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Ongoing Projects -->
+          <div class="col-md-3 mb-4">
+            <h5>Ongoing Projects</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="project-margdarshan.html"
+                  ><i class="fas fa-chevron-right"></i> Margdarshan</a
+                >
+              </li>
+              <li>
+                <a href="project-umeed-pathshala.html"
+                  ><i class="fas fa-chevron-right"></i> Umeed Pathshala</a
+                >
+              </li>
+              <li>
+                <a href="project-khushiyon-ki-potli.html"
+                  ><i class="fas fa-chevron-right"></i> Khushiyon Ki Potli</a
+                >
+              </li>
+              <li>
+                <a href="project-anandam.html"
+                  ><i class="fas fa-chevron-right"></i> Anandam</a
+                >
+              </li>
+              <li>
+                <a href="project-cyber-rakshak.html"
+                  ><i class="fas fa-chevron-right"></i> Cyber Rakshak</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Us -->
+          <div class="col-md-3 mb-4">
+            <h5>Contact Us</h5>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-text">
+                <span>EMAIL</span>
+                <a href="mailto:operationsmile2303@gmail.com"
+                  >operationsmile2303@gmail.com</a
+                >
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+              <div class="contact-text">
+                <span>PHONE</span>
+                <a href="tel:+918595588085">+91 85955 88085</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <span>ADDRESS</span>
+                <p>
+                  B-76, F/F, DDA Colony, New Zafrabad, Near Shiv Mandir,
+                  Delhi-110032
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="mb-0">
+            &copy; <span id="currentYear"></span> Operation Smile. All Rights
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==================== WHATSAPP FLOATING BUTTON ==================== -->
+    <a
+      href="https://wa.me/919643056684?text=Hi%20Operation%20Smile!%20I%20would%20like%20to%20contribute%20to%20the%20Diwali%20Campaign.%20(We%20also%20support%20%2B91%2085955%2088085)"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      // ============================================================
+      //  DYNAMIC CAMPAIGN DATA — Edit everything here
+      // ============================================================
+      const CAMPAIGN_DATA = {
+        // ---- Hero Section ----
+        campaignYear: "Diwali 2026",
+        heroTitle: "Light Up a Life",
+        heroDescription:
+          "Every contribution brings warmth, joy, and a smile to someone's face. Join us in making this festival of lights truly special for everyone.",
+
+        // ---- Goal Tracker ----
+        goal: 200000,
+        raised: 136000,
+        tagline:
+          "Your contribution brings us one step closer to lighting up their Diwali.",
+        trackerMessage:
+          "Your contribution brings us one step closer to lighting up their Diwali.",
+
+        // ---- Call to Action ----
+        ctaMessage:
+          "Donate your combo today and help us bring light into someone's life this Diwali.",
+        donateUrl: "https://rzp.io/rzp/fUnPwsZ",
+        upiId: "merchant1524783.augp@aubank",
+
+        // ---- Impact Calculator ----
+        impactItems: [
+          {
+            emoji: "👦",
+            name: "Kids Combos Ready",
+            count: 120,
+            price: 500,
+          },
+          {
+            emoji: "🧣",
+            name: "Warm Shawls Ready",
+            count: 85,
+            price: 700,
+          },
+          {
+            emoji: "🥻",
+            name: "Saree / Suit Boxes",
+            count: 42,
+            price: 1000,
+          },
+        ],
+
+        // ---- Donors (Wall of Smile) ----
+        donors: [
+          {
+            name: "Rajesh Kumar",
+            amount: 25000,
+            badge: "Platinum Donor",
+            photo: "assets/donor1.jpg",
+            fallbackBg: "f39c12",
+          },
+          {
+            name: "Priya Sharma",
+            amount: 15000,
+            badge: "Gold Donor",
+            photo: "assets/donor2.jpg",
+            fallbackBg: "e67e22",
+          },
+          {
+            name: "Amit Singh",
+            amount: 11000,
+            badge: "Gold Donor",
+            photo: "assets/donor3.jpg",
+            fallbackBg: "27ae60",
+          },
+          {
+            name: "Neha Gupta",
+            amount: 8500,
+            badge: "Silver Donor",
+            photo: "assets/donor4.jpg",
+            fallbackBg: "c0392b",
+          },
+          {
+            name: "Vikram Malhotra",
+            amount: 7000,
+            badge: "Silver Donor",
+            photo: "assets/donor5.jpg",
+            fallbackBg: "8e44ad",
+          },
+          {
+            name: "Ananya Reddy",
+            amount: 5000,
+            badge: "Silver Donor",
+            photo: "assets/donor6.jpg",
+            fallbackBg: "2980b9",
+          },
+        ],
+      };
+
+      // ============================================================
+      //  RENDER FUNCTIONS
+      // ============================================================
+
+      // ---- Currency formatting (Indian style) ----
+      function formatINR(amount) {
+        return "₹" + amount.toLocaleString("en-IN");
+      }
+
+      // ---- Hero ----
+      function renderHero() {
+        document.getElementById("campaignYear").textContent =
+          CAMPAIGN_DATA.campaignYear;
+        document.getElementById("heroTitle").textContent =
+          CAMPAIGN_DATA.heroTitle;
+        document.getElementById("heroDescription").textContent =
+          CAMPAIGN_DATA.heroDescription;
+      }
+
+      // ---- Goal Tracker ----
+      function renderGoalTracker() {
+        const goal = CAMPAIGN_DATA.goal;
+        const raised = CAMPAIGN_DATA.raised;
+        const remaining = Math.max(goal - raised, 0);
+        const percentage = Math.min((raised / goal) * 100, 100);
+
+        document.getElementById("goalLabel").textContent = formatINR(goal);
+        document.getElementById("goalAmount").textContent = formatINR(goal);
+        document.getElementById("raisedAmount").textContent = formatINR(raised);
+        document.getElementById("remainingAmount").textContent =
+          formatINR(remaining);
+        document.getElementById("ctaRemaining").textContent =
+          formatINR(remaining);
+        document.getElementById("trackerTagline").textContent =
+          CAMPAIGN_DATA.tagline;
+        document.getElementById("trackerMessage").innerHTML =
+          '<i class="fas fa-quote-left"></i> ' +
+          CAMPAIGN_DATA.trackerMessage +
+          ' <i class="fas fa-quote-right"></i>';
+
+        const progressFill = document.getElementById("progressFill");
+        progressFill.style.width = percentage + "%";
+        progressFill.textContent = Math.round(percentage) + "%";
+      }
+
+      // ---- Impact Calculator ----
+      function renderImpact() {
+        const grid = document.getElementById("impactGrid");
+        grid.innerHTML = CAMPAIGN_DATA.impactItems
+          .map(
+            (item, i) => `
+          <div class="impact-card" data-aos="zoom-in" data-aos-delay="${100 + i * 100}">
+            <span class="emoji">${item.emoji}</span>
+            <div class="item-name">${item.name}</div>
+            <div class="item-count">${item.count}</div>
+            <div class="item-price">₹${item.price} each</div>
+          </div>
+        `
+          )
+          .join("");
+      }
+
+      // ---- Call to Action ----
+      function renderCTA() {
+        document.getElementById("ctaMessage").textContent =
+          CAMPAIGN_DATA.ctaMessage;
+        document.getElementById("donateNowBtn").href =
+          CAMPAIGN_DATA.donateUrl;
+        document.getElementById("upiId").textContent =
+          CAMPAIGN_DATA.upiId;
+      }
+
+      // ---- Donors ----
+      function renderDonors() {
+        const grid = document.getElementById("donorGrid");
+        grid.innerHTML = CAMPAIGN_DATA.donors
+          .map(
+            (donor, i) => `
+          <div class="donor-card" data-aos="fade-up" data-aos-delay="${100 + i * 50}">
+            <img
+              src="${donor.photo}"
+              alt="${donor.name}"
+              class="avatar"
+              onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(
+                donor.name
+              )}&background=${donor.fallbackBg}&color=fff&size=70'"
+            />
+            <div class="donor-name">${donor.name}</div>
+            <div class="donor-amount">${formatINR(donor.amount)}</div>
+            <span class="donor-badge">${donor.badge}</span>
+          </div>
+        `
+          )
+          .join("");
+      }
+
+      // ============================================================
+      //  INIT
+      // ============================================================
+      document.addEventListener("DOMContentLoaded", function () {
+        renderHero();
+        renderGoalTracker();
+        renderImpact();
+        renderCTA();
+        renderDonors();
+
+        // Initialize AOS after content is rendered
+        AOS.init({
+          duration: 800,
+          once: true,
+          offset: 100,
+          easing: "ease-in-out",
+        });
+
+        // Navbar scroll effect
+        window.addEventListener("scroll", function () {
+          const header = document.querySelector(".navbar-custom");
+          if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+
+        // Automatically update the year in footer
+        document.getElementById("currentYear").textContent =
+          new Date().getFullYear();
+      });
+    </script>
+  </body>
+</html>
