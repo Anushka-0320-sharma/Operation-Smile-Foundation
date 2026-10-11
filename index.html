@@ -1614,60 +1614,66 @@
     <!-- ============================================================
      DIWALI CAMPAIGN POPUP
      ============================================================ -->
-<div class="popup-notification" id="diwaliPopup">
-  <button
-    class="popup-close"
-    onclick="permanentlyCloseDiwaliPopup()"
-    aria-label="Close popup"
-  >
-    ×
-  </button>
+    <div class="popup-notification" id="diwaliPopup">
+      <button
+        class="popup-close"
+        onclick="permanentlyCloseDiwaliPopup()"
+        aria-label="Close popup"
+      >
+        ×
+      </button>
 
-  <div class="popup-body">
-    <!-- Image on Left -->
-    <div class="popup-image-wrapper">
-      <img
-        src="assets/DiwaliCampaignPopup.jpg"
-        alt="Diwali Campaign - Light Up a Life"
-        onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:6rem; text-align:center;\'>🪔</div>';"
-      />
-    </div>
+      <div class="popup-body">
+        <!-- Image on Left -->
+        <div class="popup-image-wrapper">
+          <img
+            src="assets/DiwaliCampaignPopup.jpg"
+            alt="Diwali Campaign - Light Up a Life"
+            onerror="
+              this.style.display = 'none';
+              this.parentElement.innerHTML =
+                '<div style=\'font-size:6rem; text-align:center;\'>🪔</div>';
+            "
+          />
+        </div>
 
-    <!-- Content on Right -->
-    <div class="popup-content">
-      <h4>Light Up a Child's Diwali 🪔</h4>
-      <p>
-        While we celebrate with lights and sweets,
-        <strong class="highlight-orange">thousands of children</strong>
-        will spend Diwali in darkness.
-        <br /><br />
-        Your <strong class="highlight-orange">₹500</strong> can gift a child
-        a combo they'll remember forever. Every contribution brings us one
-        step closer to lighting up their Diwali.
-      </p>
+        <!-- Content on Right -->
+        <div class="popup-content">
+          <h4>Light Up a Child's Diwali 🪔</h4>
+          <p>
+            Pick a combo, gift a smile:
+            <br />
+            👨‍🎓 Student Combo — <strong>₹750</strong>
+            <br />
+            🧣 Warm Shawl / Saree — <strong>₹800</strong>
+            <br />
+            🎁 Gift & Sweet — <strong>₹500</strong>
+            <br /><br />
+            Every contribution lights up a life.
+          </p>
 
-      <!-- CTA Buttons -->
-      <div class="popup-cta-buttons">
-        <a
-          href="diwali-campaign.html"
-          class="popup-cta-btn popup-cta-primary"
-        >
-          <i class="fas fa-heart"></i> Donate Now
-        </a>
-        <a
-          href="https://www.instagram.com/operation.smile__/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="popup-cta-btn popup-cta-outline"
-        >
-          <i class="fab fa-instagram"></i> Follow the Journey
-        </a>
+          <!-- CTA Buttons -->
+          <div class="popup-cta-buttons">
+            <a
+              href="diwali-campaign.html"
+              class="popup-cta-btn popup-cta-primary"
+            >
+              <i class="fas fa-heart"></i> Donate Now
+            </a>
+            <a
+              href="https://www.instagram.com/operation.smile__/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="popup-cta-btn popup-cta-outline"
+            >
+              <i class="fab fa-instagram"></i> Follow the Journey
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-       <!-- ==================== SCRIPTS ==================== -->
+    <!-- ==================== SCRIPTS ==================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       // Video Controls

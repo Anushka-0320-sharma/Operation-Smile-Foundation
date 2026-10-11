@@ -1353,7 +1353,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-        <script>
+    <script>
       // ============================================================
       //  🚀 LIVE DATA SOURCE
       // ============================================================
@@ -1362,25 +1362,38 @@
       // Cache duration: don't refetch if data is fresh (< 2 min old)
       const CACHE_DURATION_MS = 2 * 60 * 1000;
 
+      // ============================================================
+      //  FALLBACK DATA — Matches your live Google Sheet exactly
+      //  So the page shows real numbers instantly on load
+      // ============================================================
       const FALLBACK_DATA = {
         campaign: {
           campaignYear: "Diwali 2026",
           heroTitle: "Light Up a Life",
-          heroDescription: "Every contribution brings warmth, joy, and a smile to someone's face.",
+          heroDescription:
+            "Every contribution brings warmth, joy, and a smile to someone's face. Join us in making this festival of lights truly special for everyone.",
           goal: 200000,
-          raised: 0,
-          tagline: "Your contribution brings us one step closer.",
-          trackerMessage: "Your contribution brings us one step closer.",
-          ctaMessage: "Donate your combo today and help us bring light.",
+          raised: 3000,
+          tagline:
+            "Your contribution brings us one step closer to lighting up their Diwali.",
+          trackerMessage:
+            "Your contribution brings us one step closer to lighting up their Diwali.",
+          ctaMessage:
+            "Donate your combo today and help us bring light into someone's life this Diwali.",
           donateUrl: "https://rzp.io/rzp/fUnPwsZ",
           upiId: "merchant1524783.augp@aubank",
         },
         impact: [
-          { emoji: "👦", name: "Kids Combos Ready", count: 0, price: 500 },
-          { emoji: "🧣", name: "Warm Shawls Ready", count: 0, price: 700 },
-          { emoji: "🥻", name: "Saree / Suit Boxes", count: 0, price: 1000 },
+          { emoji: "👨‍🎓", name: "Student Combo", count: 2, price: 750 },
+          { emoji: "🧣", name: "Warm Shawl / Saree", count: 1, price: 800 },
+          { emoji: "🎁", name: "Gift & Sweet", count: 1, price: 500 },
         ],
-        donors: [],
+        donors: [
+          { name: "Ashutosh Sharma", amount: 1000, badge: "Supporter", photo: "" },
+          { name: "Jagriti Singh", amount: 750, badge: "Supporter", photo: "" },
+          { name: "Ranvidra", amount: 750, badge: "Supporter", photo: "" },
+          { name: "Sumit Kumar", amount: 500, badge: "Supporter", photo: "" },
+        ],
       };
 
       // ============================================================
