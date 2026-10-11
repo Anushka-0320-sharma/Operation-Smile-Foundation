@@ -6910,7 +6910,7 @@ button {
 }
 
 /* ============================================================
-   POPUP NOTIFICATION 
+   DIWALI CAMPAIGN POPUP NOTIFICATION
    ============================================================ */
 .popup-notification {
   position: fixed;
@@ -6919,17 +6919,17 @@ button {
   width: min(760px, calc(100vw - 50px));
   background: #ffffff;
   border-radius: 28px;
-  border: 1px solid rgba(230, 126, 34, 0.12);
+  border: 1px solid rgba(230, 126, 34, 0.18);
   box-shadow:
     0 40px 80px rgba(0, 0, 0, 0.25),
-    0 10px 30px rgba(230, 126, 34, 0.1);
+    0 10px 30px rgba(230, 126, 34, 0.15);
   z-index: 9998;
   overflow: hidden;
-
   opacity: 0;
   transform: translateY(100px) scale(0.9);
   pointer-events: none;
-  transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.2),
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.2),
     transform 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.2),
     pointer-events 0.7s;
 }
@@ -6947,8 +6947,19 @@ button {
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, #f39c12, #e67e22, #d35400);
+  background: linear-gradient(90deg, #f39c12, #e67e22, #d35400, #e67e22, #f39c12);
+  background-size: 200% auto;
+  animation: popupShimmer 3s linear infinite;
   z-index: 5;
+}
+
+@keyframes popupShimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 
 .popup-body {
@@ -6961,8 +6972,7 @@ button {
   flex: 0 0 50%;
   position: relative;
   min-height: 480px;
-  /* Ample height for desktop so image has space */
-  background: linear-gradient(145deg, #fffaf0 0%, #f8f4ee 100%);
+  background: linear-gradient(145deg, #fff5e6 0%, #ffe0b2 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7048,9 +7058,7 @@ button {
   margin: 0;
 }
 
-/* ============================================================
-   POPUP CTA BUTTONS
-   ============================================================ */
+/* ---------- CTA BUTTONS ---------- */
 .popup-cta-buttons {
   display: flex;
   flex-direction: column;
@@ -7076,20 +7084,34 @@ button {
   box-sizing: border-box;
 }
 
-/* Primary Button (Call) */
 .popup-cta-primary {
-  background: linear-gradient(135deg, #e67e22, #f39c12);
+  background: linear-gradient(135deg, #e67e22, #f39c12, #d35400);
+  background-size: 200% auto;
   color: #ffffff;
   border: none;
-  box-shadow: 0 8px 20px rgba(230, 126, 34, 0.25);
+  box-shadow: 0 8px 20px rgba(230, 126, 34, 0.35);
+  animation: gradientShiftPopup 3s ease-in-out infinite;
+}
+
+@keyframes gradientShiftPopup {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .popup-cta-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(230, 126, 34, 0.35);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(230, 126, 34, 0.5);
+  color: #ffffff;
 }
 
-/* Outline Button (Instagram) */
+.popup-cta-primary i {
+  font-size: 1.05rem;
+}
+
 .popup-cta-outline {
   background: #ffffff;
   color: #e67e22;
@@ -7102,22 +7124,14 @@ button {
   transform: translateY(-3px);
 }
 
-/* Mobile adjustment: Make buttons stack nicely on smaller screens */
-@media (max-width: 480px) {
-  .popup-cta-btn {
-    font-size: 0.85rem;
-    padding: 12px 16px;
-  }
-}
-
 .highlight-orange {
   color: #e67e22;
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 /* ============================================================
-   TABLET & SMALLER LAPTOP (769px to 1024px) - iPad Mini/Pro
+   TABLET (769px - 1024px)
    ============================================================ */
 @media (max-width: 1024px) and (min-width: 769px) {
   .popup-notification {
@@ -7128,7 +7142,6 @@ button {
   .popup-image-wrapper {
     flex: 0 0 45%;
     min-height: 460px;
-    /* Increased to fit the tall portrait image without overlap */
   }
 
   .popup-content {
@@ -7149,7 +7162,7 @@ button {
 }
 
 /* ============================================================
-   MOBILE RESPONSIVE (Less than 768px) - iPhone 16 Pro Max
+   MOBILE (<= 768px)
    ============================================================ */
 @media (max-width: 768px) {
   .popup-notification {
@@ -7160,11 +7173,9 @@ button {
     max-width: none;
     border-radius: 20px;
     max-height: 88vh;
-    /* Gives extra breathing room */
     overflow-y: auto;
   }
 
-  /* Stack vertically and force full width for the image */
   .popup-body {
     flex-direction: column;
   }
@@ -7172,58 +7183,78 @@ button {
   .popup-image-wrapper {
     flex: none;
     width: 100%;
-    min-height: 320px;
-    /* LARGE height so the portrait image NEVER overlaps text */
-    max-height: none;
-    /* Allow it to stretch naturally */
-    padding: 10px;
-  }
-
-  .popup-image-wrapper img {
+    min-height: 240px;
     max-height: 320px;
-    /* Keeps the image constrained but fully visible */
-    width: auto;
-  }
-
-  .popup-content {
-    padding: 20px;
-    margin-top: -10px;
-    /* Pulls text slightly up to prevent any gap overlap */
-  }
-
-  .popup-content h4 {
-    font-size: 1.3rem;
-  }
-
-  .popup-content p {
-    font-size: 0.85rem;
-    line-height: 1.6;
-  }
-
-  .highlight-orange {
-    font-size: 0.95rem;
-  }
-}
-
-/* ============================================================
-   SMALL PHONE (Less than 480px)
-   ============================================================ */
-@media (max-width: 480px) {
-  .popup-image-wrapper {
-    min-height: 280px;
-    /* Still large enough to prevent overlap */
+    padding: 12px;
   }
 
   .popup-image-wrapper img {
     max-height: 280px;
+    width: auto;
+  }
+
+  .popup-content {
+    padding: 22px 20px 26px;
   }
 
   .popup-content h4 {
-    font-size: 1.1rem;
+    font-size: 1.35rem;
+    margin-bottom: 14px;
   }
 
   .popup-content p {
-    font-size: 0.8rem;
+    font-size: 0.88rem;
+    line-height: 1.65;
+  }
+
+  .highlight-orange {
+    font-size: 0.98rem;
+  }
+
+  .popup-cta-buttons {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .popup-cta-btn {
+    font-size: 0.88rem;
+    padding: 13px 18px;
+  }
+}
+
+/* ============================================================
+   SMALL PHONE (<= 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+  .popup-notification {
+    border-radius: 18px;
+    max-height: 90vh;
+  }
+
+  .popup-image-wrapper {
+    min-height: 200px;
+    max-height: 240px;
+  }
+
+  .popup-image-wrapper img {
+    max-height: 210px;
+  }
+
+  .popup-content h4 {
+    font-size: 1.15rem;
+  }
+
+  .popup-content p {
+    font-size: 0.82rem;
+  }
+
+  .highlight-orange {
+    font-size: 0.92rem;
+  }
+
+  .popup-cta-btn {
+    font-size: 0.82rem;
+    padding: 12px 16px;
   }
 
   .popup-close {
@@ -7231,5 +7262,6 @@ button {
     right: 10px;
     width: 30px;
     height: 30px;
+    font-size: 1.2rem;
   }
 }

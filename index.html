@@ -11,6 +11,7 @@
     />
     <!-- Font Awesome -->
     <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
@@ -1554,7 +1555,7 @@
                   >
                 </li>
                 <li>
-                  <a href="project-khushiyon-ki-potli.html"
+                  <a href="project-cyber-rakshak.html"
                     ><i class="fas fa-chevron-right"></i> Cyber Rakshak</a
                   >
                 </li>
@@ -1610,52 +1611,63 @@
       </div>
     </footer>
 
-    <!-- ==================== POPUP NOTIFICATION (LETTER TO SOLDIER) ==================== -->
-    <!-- <div class="popup-notification" id="soldierPopup">
-      <button class="popup-close" onclick="permanentlyCloseSoldierPopup()">
-        ×
-      </button>
+    <!-- ============================================================
+     DIWALI CAMPAIGN POPUP
+     ============================================================ -->
+<div class="popup-notification" id="diwaliPopup">
+  <button
+    class="popup-close"
+    onclick="permanentlyCloseDiwaliPopup()"
+    aria-label="Close popup"
+  >
+    ×
+  </button>
 
-      <div class="popup-body"> -->
-    <!-- Large Image on Left -->
-    <!-- <div class="popup-image-wrapper">
-          <img
-            src="assets/LetterToSoldier.jpg"
-            alt="Letter to Soldier Initiative"
-          />
-        </div> -->
+  <div class="popup-body">
+    <!-- Image on Left -->
+    <div class="popup-image-wrapper">
+      <img
+        src="assets/DiwaliCampaignPopup.jpg"
+        alt="Diwali Campaign - Light Up a Life"
+        onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:6rem; text-align:center;\'>🪔</div>';"
+      />
+    </div>
 
-    <!-- Elegant Content on Right -->
-    <!-- <div class="popup-content">
-          <h4>400+ Rakhis, One Thread of Love!</h4>
-          <br />
-          <p>
-            Through our
-            <strong class="highlight-orange">Letter to Soldier</strong>
-            Initiative, hearts came together to honour our soldiers with love,
-            gratitude and hope, from across India. <br /><br />
-            Together, we’re sending a thread of love to our real-life heroes.
-          </p> -->
+    <!-- Content on Right -->
+    <div class="popup-content">
+      <h4>Light Up a Child's Diwali 🪔</h4>
+      <p>
+        While we celebrate with lights and sweets,
+        <strong class="highlight-orange">thousands of children</strong>
+        will spend Diwali in darkness.
+        <br /><br />
+        Your <strong class="highlight-orange">₹500</strong> can gift a child
+        a combo they'll remember forever. Every contribution brings us one
+        step closer to lighting up their Diwali.
+      </p>
 
-    <!-- ✅ ADDED CTA BUTTONS -->
-    <!-- <div class="popup-cta-buttons">
-            <a href="tel:+919643056684" class="popup-cta-btn popup-cta-primary">
-              <i class="fas fa-phone-alt"></i> Send Us your Rakhi
-            </a>
-            <a
-              href="https://www.instagram.com/operation.smile__/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="popup-cta-btn popup-cta-outline"
-            >
-              <i class="fab fa-instagram"></i> Join this Event
-            </a>
-          </div>
-        </div>
+      <!-- CTA Buttons -->
+      <div class="popup-cta-buttons">
+        <a
+          href="diwali-campaign.html"
+          class="popup-cta-btn popup-cta-primary"
+        >
+          <i class="fas fa-heart"></i> Donate Now
+        </a>
+        <a
+          href="https://www.instagram.com/operation.smile__/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="popup-cta-btn popup-cta-outline"
+        >
+          <i class="fab fa-instagram"></i> Follow the Journey
+        </a>
       </div>
-    </div> -->
+    </div>
+  </div>
+</div>
 
-    <!-- ==================== SCRIPTS ==================== -->
+       <!-- ==================== SCRIPTS ==================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       // Video Controls
@@ -1753,68 +1765,91 @@
       });
 
       // ============================================================
-      // POPUP NOTIFICATION (LETTER TO SOLDIER) - PERMANENT CLOSE FIX
+      // DIWALI CAMPAIGN POPUP LOGIC
+      // - Shows on page load (after 2 sec)
+      // - Hides when user scrolls down
+      // - Re-shows when user scrolls back to top
+      // - Stays closed if user clicks X (for this page load only)
+      // - On page refresh, shows again
       // ============================================================
-      const soldierPopup = document.getElementById("soldierPopup");
-      let popupTimers = [];
-      let hasBeenClosed = false; // <--- New flag to prevent re-opening
+      (function () {
+        const popup = document.getElementById("diwaliPopup");
+        if (!popup) return;
 
-      function showSoldierPopup() {
-        // If user manually closed it, stop showing it forever
-        if (hasBeenClosed) return;
+        let isDismissedByUser = false; // Only true if user clicks X in this session
+        let autoHideTimer = null;
 
-        // Clear any existing timers
-        popupTimers.forEach((timer) => clearTimeout(timer));
-        popupTimers = [];
+        // Show the popup (with an auto-hide after 10 sec)
+        function showPopup() {
+          if (isDismissedByUser) return;
+          if (popup.classList.contains("active")) return;
 
-        // Add active class to show
-        soldierPopup.classList.add("active");
+          popup.classList.add("active");
 
-        // Auto-hide after 10 seconds if the user stays at the top
-        let hideTimer = setTimeout(() => {
-          closeSoldierPopup();
-        }, 10000);
-        popupTimers.push(hideTimer);
-      }
-
-      function closeSoldierPopup() {
-        soldierPopup.classList.remove("active");
-        // Clear any pending timers
-        popupTimers.forEach((timer) => clearTimeout(timer));
-        popupTimers = [];
-      }
-
-      // New Function: This runs ONLY when the user clicks the Cross (X)
-      function permanentlyCloseSoldierPopup() {
-        hasBeenClosed = true; // Set flag so it NEVER pops again
-        closeSoldierPopup();
-      }
-
-      function checkHeroSectionAndShowPopup() {
-        // If user manually closed it, stop checking
-        if (hasBeenClosed) return;
-
-        // If page is scrolled within the top 120px (Hero section)
-        if (window.scrollY < 120) {
-          // Only trigger if not already visible
-          if (!soldierPopup.classList.contains("active")) {
-            showSoldierPopup();
-          }
-        } else {
-          // If user scrolls away, immediately hide it
-          closeSoldierPopup();
+          // Auto-hide after 10 seconds if user stays at top
+          clearTimeout(autoHideTimer);
+          autoHideTimer = setTimeout(function () {
+            popup.classList.remove("active");
+          }, 10000);
         }
-      }
 
-      // Trigger check after 3 seconds initially
-      setTimeout(() => {
-        checkHeroSectionAndShowPopup();
-      }, 3000);
+        // Hide the popup (without dismissing permanently)
+        function hidePopup() {
+          popup.classList.remove("active");
+          clearTimeout(autoHideTimer);
+        }
 
-      // Re-check every 500ms to catch when the user scrolls back to top
-      setInterval(() => {
-        checkHeroSectionAndShowPopup();
-      }, 500);
+        // Called from the X button — permanently dismisses for this page load
+        window.permanentlyCloseDiwaliPopup = function () {
+          isDismissedByUser = true;
+          hidePopup();
+        };
+
+        // Check scroll position and decide whether to show/hide
+        function checkScrollAndShowPopup() {
+          if (isDismissedByUser) return;
+
+          // If user is in the hero section (top 120px), show popup
+          if (window.scrollY < 120) {
+            showPopup();
+          } else {
+            // User scrolled down → hide popup
+            hidePopup();
+          }
+        }
+
+        // Initial show after 2 seconds
+        setTimeout(function () {
+          checkScrollAndShowPopup();
+        }, 2000);
+
+        // Check on every scroll (throttled for performance)
+        let scrollTimeout = null;
+        window.addEventListener("scroll", function () {
+          if (scrollTimeout) return;
+          scrollTimeout = setTimeout(function () {
+            checkScrollAndShowPopup();
+            scrollTimeout = null;
+          }, 150);
+        });
+
+        // Close popup on Escape key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") {
+            if (popup.classList.contains("active")) {
+              window.permanentlyCloseDiwaliPopup();
+            }
+          }
+        });
+
+        // Close popup when clicking outside it
+        document.addEventListener("click", function (e) {
+          if (!popup.classList.contains("active")) return;
+          if (!popup.contains(e.target)) {
+            window.permanentlyCloseDiwaliPopup();
+          }
+        });
+      })();
 
       // ============================================================
       // COUNTER ANIMATION FOR HERO STATS (Counts from 0)
