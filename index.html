@@ -1627,7 +1627,7 @@
         <!-- Image on Left -->
         <div class="popup-image-wrapper">
           <img
-            src="assets/DiwaliCampaignPopup.jpg"
+            src="assets\DiwaliCampaign_26\Diwali Pop-up.png"
             alt="Diwali Campaign - Light Up a Life"
             onerror="
               this.style.display = 'none';
@@ -1785,18 +1785,18 @@
         let isDismissedByUser = false; // Only true if user clicks X in this session
         let autoHideTimer = null;
 
-        // Show the popup (with an auto-hide after 10 sec)
+        // Show the popup (with an auto-hide after 15 sec)
         function showPopup() {
           if (isDismissedByUser) return;
           if (popup.classList.contains("active")) return;
 
           popup.classList.add("active");
 
-          // Auto-hide after 10 seconds if user stays at top
+          // Auto-hide after 15 seconds if user stays at top
           clearTimeout(autoHideTimer);
           autoHideTimer = setTimeout(function () {
             popup.classList.remove("active");
-          }, 10000);
+          }, 15000);
         }
 
         // Hide the popup (without dismissing permanently)
