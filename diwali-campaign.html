@@ -439,7 +439,7 @@
       }
 
       /* ============================================================
-         LEFT: Goal tracker card — AESTHETIC UPGRADE
+         LEFT: Goal tracker card
          ============================================================ */
       .tracker-card {
         position: relative;
@@ -1150,27 +1150,107 @@
 
       /* ============================================================
          SECTION 3 — Impact cards
+         ✨ NEW: Plain color aesthetic background (no image) ✨
+         ✨ NEW: Direct payment link button on each card ✨
          ============================================================ */
       .impact-section {
-        padding: 60px 0 40px;
-        background-image: url("assets/DiwaliCampaign_26/OS Diwali second section bg.png");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        padding: 70px 0 60px;
         position: relative;
+        overflow: hidden;
+        /* Pure CSS aesthetic background — soft warm cream gradient */
+        background: linear-gradient(
+          160deg,
+          #fffdf8 0%,
+          #fff8ec 30%,
+          #fef3e0 60%,
+          #fdeeda 100%
+        );
       }
 
+      /* Layered decorative glows + mandala-style concentric rings (pure CSS) */
       .impact-section::before {
         content: "";
         position: absolute;
         inset: 0;
-        background: rgba(255, 252, 245, 0.55);
         pointer-events: none;
+        z-index: 1;
+        background-image:
+          radial-gradient(
+            circle at 10% 10%,
+            rgba(255, 190, 80, 0.14) 0%,
+            transparent 22%
+          ),
+          radial-gradient(
+            circle at 90% 90%,
+            rgba(230, 126, 34, 0.12) 0%,
+            transparent 22%
+          ),
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(255, 215, 0, 0.07) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 85% 15%,
+            rgba(255, 160, 60, 0.09) 0%,
+            transparent 18%
+          ),
+          radial-gradient(
+            circle at 15% 85%,
+            rgba(255, 140, 90, 0.09) 0%,
+            transparent 18%
+          );
+      }
+
+      /* Decorative concentric mandala rings in the background (using SVG, subtle) */
+      .impact-section::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cg fill='none' stroke='%23e67e22' stroke-width='0.8' opacity='0.55'%3E%3Ccircle cx='300' cy='300' r='280'/%3E%3Ccircle cx='300' cy='300' r='220'/%3E%3Ccircle cx='300' cy='300' r='160'/%3E%3Ccircle cx='300' cy='300' r='100'/%3E%3Ccircle cx='300' cy='300' r='40'/%3E%3Cpath d='M300 20 L300 580 M20 300 L580 300 M100 100 L500 500 M500 100 L100 500'/%3E%3C/g%3E%3C/svg%3E");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 900px;
+        opacity: 0.045;
+      }
+
+      /* Thin golden separator at the very top */
+      .impact-section .top-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(243, 156, 18, 0.35),
+          transparent
+        );
+        z-index: 2;
+      }
+
+      /* Thin golden separator at the bottom */
+      .impact-section .bottom-line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(243, 156, 18, 0.35),
+          transparent
+        );
+        z-index: 2;
       }
 
       .impact-section .container {
         position: relative;
-        z-index: 1;
+        z-index: 3;
       }
 
       .impact-section h2 {
@@ -1347,7 +1427,73 @@
         font-size: 0.88rem;
         color: #6a5a4a;
         line-height: 1.6;
-        margin: 0;
+        margin: 0 0 18px 0;
+      }
+
+      /* ✨ NEW: Direct Donate button on each impact card ✨ */
+      .impact-donate-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        padding: 11px 26px;
+        border-radius: 50px;
+        background: linear-gradient(135deg, #f39c12 0%, #e67e22 55%, #d35400 100%);
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.85rem;
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        box-shadow:
+          0 6px 18px rgba(230, 126, 34, 0.35),
+          0 1px 0 rgba(255, 255, 255, 0.35) inset;
+        width: 100%;
+        max-width: 170px;
+        margin: 0 auto;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+        position: relative;
+        overflow: hidden;
+        z-index: 4;
+        font-family: "Inter", sans-serif;
+      }
+
+      .impact-donate-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.45),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .impact-donate-btn:hover::before {
+        left: 100%;
+      }
+
+      .impact-donate-btn:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow:
+          0 12px 28px rgba(230, 126, 34, 0.55),
+          0 1px 0 rgba(255, 255, 255, 0.45) inset;
+        color: #fff;
+        background: linear-gradient(135deg, #ffc93c 0%, #e67e22 55%, #d35400 100%);
+      }
+
+      .impact-donate-btn i {
+        font-size: 0.8rem;
+        transition: transform 0.35s ease;
+      }
+
+      .impact-donate-btn:hover i {
+        transform: translateX(4px);
       }
 
       .impact-card .sparkle-dot {
@@ -1393,7 +1539,7 @@
       .donors-section {
         padding: 70px 0 80px;
         background-image: url("assets/DiwaliCampaign_26/OS Diwali Fourth section bg.png");
-        background-size: cover;
+        background-size: 100% 100%;
         background-position: center;
         background-repeat: no-repeat;
         position: relative;
@@ -1540,7 +1686,6 @@
         border-color: rgba(230, 126, 34, 0.3);
       }
 
-      /* Avatar with glow ring */
       .donor-card .avatar-wrap {
         position: relative;
         width: 92px;
@@ -1586,7 +1731,6 @@
         }
       }
 
-      /* Tier-specific avatar rings */
       .donor-card.tier-platinum .avatar-wrap::before {
         background: conic-gradient(
           from 0deg,
@@ -1662,7 +1806,6 @@
         box-shadow: 0 2px 8px rgba(230, 126, 34, 0.12);
       }
 
-      /* Tier-specific amount pills */
       .donor-card.tier-platinum .donor-amount {
         background: linear-gradient(
           135deg,
@@ -1713,7 +1856,6 @@
         font-size: 0.8rem;
       }
 
-      /* Tier-specific badge text colors */
       .donor-card .donor-badge.tier-platinum {
         color: #6a7a8a;
       }
@@ -1742,7 +1884,6 @@
         content: "❤";
       }
 
-      /* Crown ribbon (tier badge at top) */
       .donor-card .crown-ribbon {
         position: absolute;
         top: -1px;
@@ -1766,7 +1907,6 @@
         font-size: 0.65rem;
       }
 
-      /* Tier-specific ribbon colors */
       .donor-card .crown-ribbon.tier-platinum {
         background: linear-gradient(
           135deg,
@@ -1822,7 +1962,6 @@
           0 0 18px rgba(46, 204, 113, 0.35);
       }
 
-      /* Tier-specific top bar colors */
       .donor-card.tier-platinum::before {
         background: linear-gradient(
           90deg,
@@ -1853,7 +1992,6 @@
         background: linear-gradient(90deg, #27ae60, #2ecc71, #27ae60);
       }
 
-      /* Tier-specific card glow accents */
       .donor-card.tier-platinum {
         background:
           radial-gradient(
@@ -2352,6 +2490,11 @@
         .impact-card .item-price {
           font-size: 1.7rem;
         }
+        .impact-donate-btn {
+          font-size: 0.8rem;
+          padding: 10px 20px;
+          max-width: 150px;
+        }
 
         .donor-card {
           padding: 26px 16px 22px;
@@ -2511,6 +2654,9 @@
           font-size: 0.66rem;
         }
 
+        .impact-section {
+          padding: 40px 0 30px;
+        }
         .impact-grid {
           grid-template-columns: 1fr;
           gap: 18px;
@@ -2658,6 +2804,10 @@
         .impact-section h2 {
           font-size: 1.4rem;
         }
+        .impact-section .sub {
+          font-size: 0.85rem;
+          margin-bottom: 25px;
+        }
         .impact-card {
           padding: 26px 18px 22px;
           border-radius: 22px;
@@ -2676,6 +2826,11 @@
         }
         .impact-card .item-desc {
           font-size: 0.82rem;
+        }
+        .impact-donate-btn {
+          font-size: 0.76rem;
+          padding: 10px 20px;
+          max-width: 150px;
         }
 
         .donors-section h2 {
@@ -2903,8 +3058,10 @@
       </div>
     </section>
 
-    <!-- SECTION 3 — Impact -->
+    <!-- SECTION 3 — Impact (NEW plain aesthetic background + donate buttons) -->
     <section class="impact-section">
+      <span class="top-line"></span>
+      <span class="bottom-line"></span>
       <div class="container">
         <h2 data-aos="fade-up">
           <i class="fas fa-gift"></i> What Your Donation Provides
@@ -2913,9 +3070,9 @@
           Choose a combo — every contribution makes a difference
         </p>
         <div class="impact-grid" id="impactGrid">
-          <div class="impact-card skeleton" style="height: 260px"></div>
-          <div class="impact-card skeleton" style="height: 260px"></div>
-          <div class="impact-card skeleton" style="height: 260px"></div>
+          <div class="impact-card skeleton" style="height: 300px"></div>
+          <div class="impact-card skeleton" style="height: 300px"></div>
+          <div class="impact-card skeleton" style="height: 300px"></div>
         </div>
       </div>
     </section>
@@ -3109,6 +3266,7 @@
       const SHEET_API_URL =
         "https://script.google.com/macros/s/AKfycbzU3H5JvLuXDYdKwrAIN2V3KClvf5HDC8JD8I6o-RG6GyNVuDuohm4ibgmOjUWiylDTFA/exec";
       const CACHE_DURATION_MS = 2 * 60 * 1000;
+      const DEFAULT_DONATE_URL = "https://rzp.io/rzp/fUnPwsZ";
 
       const FALLBACK_DATA = {
         campaign: {
@@ -3124,27 +3282,30 @@
             "Your contribution brings us one step closer to lighting up their Diwali.",
           ctaMessage:
             "Donate your combo today and help us bring light into someone's life this Diwali.",
-          donateUrl: "https://rzp.io/rzp/fUnPwsZ",
+          donateUrl: DEFAULT_DONATE_URL,
           upiId: "merchant1524783.augp@aubank",
         },
         impact: [
+          {
+            emoji: "🎁",
+            name: "Gift & Sweet",
+            price: 500,
+            desc: "Help us provide festive gifts and sweets to bring smiles to children this Diwali.",
+            donateUrl: DEFAULT_DONATE_URL,
+          },
           {
             emoji: "👨‍🎓",
             name: "Student Combo",
             price: 750,
             desc: "Support education with a useful student combo for their brighter future.",
+            donateUrl: DEFAULT_DONATE_URL,
           },
           {
             emoji: "🧣",
             name: "Warm Shawl / Saree",
             price: 800,
             desc: "Keep families warm this Diwali with shawls and sarees for those in need.",
-          },
-          {
-            emoji: "🎁",
-            name: "Gift & Sweet",
-            price: 500,
-            desc: "Help us provide festive gifts and sweets to bring smiles to children this Diwali.",
+            donateUrl: DEFAULT_DONATE_URL,
           },
         ],
         donors: [
@@ -3240,11 +3401,6 @@
 
       /* ============================================================
          DONOR TIER SYSTEM
-         ============================================================
-         ₹1      – ₹4,999   → Supporter
-         ₹5,000  – ₹9,999   → Silver Donor
-         ₹10,000 – ₹19,999  → Gold Donor
-         ₹20,000+           → Platinum Donor
          ============================================================ */
       function getDonorTier(amount) {
         const amt = Number(amount) || 0;
@@ -3419,6 +3575,7 @@
               item.desc ||
               descMap[item.name] ||
               "Every contribution makes a difference.";
+            const donateUrl = item.donateUrl || DEFAULT_DONATE_URL;
             return `
           <div class="impact-card" data-aos="zoom-in" data-aos-delay="${100 + i * 100}">
             <span class="shine"></span>
@@ -3428,6 +3585,9 @@
             <div class="item-name">${item.name || ""}</div>
             <div class="item-price num-font" data-price="${item.price || 0}">${formatINR(item.price || 0)}<small>each</small></div>
             <p class="item-desc">${desc}</p>
+            <a href="${donateUrl}" target="_blank" rel="noopener noreferrer" class="impact-donate-btn" aria-label="Donate ${item.name || 'combo'}">
+              <i class="fas fa-heart"></i> Donate Now
+            </a>
           </div>`;
           })
           .join("");
@@ -3444,7 +3604,7 @@
 
       function renderCTA(campaign) {
         document.getElementById("donateNowBtn").href =
-          campaign.donateUrl || "#";
+          campaign.donateUrl || DEFAULT_DONATE_URL;
       }
 
       function renderDonors(donors) {
@@ -3464,7 +3624,6 @@
           "2980b9",
         ];
 
-        // Sort donors by amount desc, so highest tier donors appear first
         const sortedList = [...list].sort(
           (a, b) => (Number(b.amount) || 0) - (Number(a.amount) || 0),
         );
