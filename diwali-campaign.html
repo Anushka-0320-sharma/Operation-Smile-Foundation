@@ -1416,6 +1416,38 @@
         -webkit-text-fill-color: #8a7a6a;
       }
 
+      /* ✨ NEW: Item Count Badge ✨ */
+      .impact-card .item-count-wrap {
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .impact-card .item-count-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+        color: #1e8449;
+        padding: 4px 16px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        border: 1px solid rgba(30, 132, 73, 0.2);
+        box-shadow: 0 2px 8px rgba(30, 132, 73, 0.1);
+      }
+
+      .impact-card .item-count-badge i {
+        font-size: 0.85rem;
+        color: #27ae60;
+      }
+
+      .impact-card .item-count-badge strong {
+        font-size: 0.95rem;
+        font-weight: 800;
+        font-family: "Times New Roman", Times, serif !important;
+      }
+
       .impact-card .item-desc {
         font-size: 0.88rem;
         color: #6a5a4a;
@@ -3268,7 +3300,7 @@
           heroDescription:
             "Every contribution brings warmth, joy, and a smile to someone's face. Join us in making this festival of lights truly special for everyone.",
           goal: 200000,
-          raised: 3000,
+          raised: 5400, // Sum of donations in screenshot
           tagline:
             "Your contribution brings us one step closer to lighting up their Diwali.",
           trackerMessage:
@@ -3283,6 +3315,7 @@
             emoji: "🎁",
             name: "Gift & Sweet",
             price: 500,
+            count: 3, // From screenshot
             desc: "Help us provide festive gifts and sweets to bring smiles to children this Diwali.",
             donateUrl: DEFAULT_DONATE_URL,
           },
@@ -3290,6 +3323,7 @@
             emoji: "👨‍🎓",
             name: "Student Combo",
             price: 750,
+            count: 2, // From screenshot
             desc: "Support education with a useful student combo for their brighter future.",
             donateUrl: DEFAULT_DONATE_URL,
           },
@@ -3297,15 +3331,19 @@
             emoji: "🧣",
             name: "Warm Shawl / Saree",
             price: 800,
+            count: 3, // From screenshot
             desc: "Keep families warm this Diwali with shawls and sarees for those in need.",
             donateUrl: DEFAULT_DONATE_URL,
           },
         ],
         donors: [
+          { name: "Shivam Ghai", amount: 2000, badge: "Supporter", photo: "" },
           { name: "Ashutosh Sharma", amount: 1000, badge: "Supporter", photo: "" },
           { name: "Jagriti Singh", amount: 750, badge: "Supporter", photo: "" },
           { name: "Ranvidra", amount: 750, badge: "Supporter", photo: "" },
           { name: "Sumit Kumar", amount: 500, badge: "Supporter", photo: "" },
+          { name: "Sonal Singh Rathore", amount: 300, badge: "Supporter", photo: "" },
+          { name: "Aarti Yadav", amount: 100, badge: "Supporter", photo: "" },
         ],
       };
 
@@ -3431,7 +3469,7 @@
       let _dataCacheTime = 0;
       let _fetchPromise = null;
 
-      async function fetchCampaignData(forceRefresh = false) {
+      async function fetchCampaignData(forceRefresh = false, retryAttempt = 0) {
         const now = Date.now();
         if (
           !forceRefresh &&
@@ -3441,16 +3479,16 @@
           return _dataCache;
         if (_fetchPromise) return _fetchPromise;
 
-        setDataSourceStatus("loading", "Connecting to live data…");
+        setDataSourceStatus("loading", retryAttempt > 0 ? "Retrying connection…" : "Connecting to live data…");
 
         _fetchPromise = (async () => {
           try {
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 8000);
+            const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 seconds
             const response = await fetch(SHEET_API_URL, {
               method: "GET",
               mode: "cors",
-              cache: "default",
+              cache: "no-store",
               signal: controller.signal,
             });
             clearTimeout(timeoutId);
@@ -3465,13 +3503,24 @@
             );
             return data;
           } catch (err) {
-            console.warn("⚠️ Sheets fetch failed:", err.message);
+            if (err.name === 'AbortError') {
+              console.warn("⚠️ Sheets fetch timed out.");
+              if (retryAttempt < 1) {
+                _fetchPromise = null; // Reset promise so we can retry
+                return fetchCampaignData(forceRefresh, retryAttempt + 1);
+              }
+            } else {
+              console.warn("⚠️ Sheets fetch failed:", err.message);
+            }
+            
             setDataSourceStatus("stale", "Offline data in use");
             _dataCache = FALLBACK_DATA;
             _dataCacheTime = Date.now();
             return FALLBACK_DATA;
           } finally {
-            _fetchPromise = null;
+            if (retryAttempt >= 1) {
+               _fetchPromise = null;
+            }
           }
         })();
 
@@ -3566,6 +3615,8 @@
               descMap[item.name] ||
               "Every contribution makes a difference.";
             const donateUrl = item.donateUrl || DEFAULT_DONATE_URL;
+            const count = Number(item.count) || 0; // Get the count from sheet
+
             return `
           <div class="impact-card" data-aos="zoom-in" data-aos-delay="${100 + i * 100}">
             <span class="shine"></span>
@@ -3574,6 +3625,13 @@
             <span class="emoji">${item.emoji || "🎁"}</span>
             <div class="item-name">${item.name || ""}</div>
             <div class="item-price num-font" data-price="${item.price || 0}">${formatINR(item.price || 0)}<small>each</small></div>
+            
+            <div class="item-count-wrap">
+              <span class="item-count-badge">
+                <i class="fas fa-hands-helping"></i> <strong>${count}</strong> Provided
+              </span>
+            </div>
+
             <p class="item-desc">${desc}</p>
             <a href="${donateUrl}" target="_blank" rel="noopener noreferrer" class="impact-donate-btn" aria-label="Donate ${item.name || 'combo'}">
               <i class="fas fa-heart"></i> Donate Now
@@ -3597,9 +3655,19 @@
           campaign.donateUrl || DEFAULT_DONATE_URL;
       }
 
+      // ✨ FIXED: Clean data, sort properly, and avoid NaN/₹0 issues
       function renderDonors(donors) {
         const grid = document.getElementById("donorGrid");
-        const list = Array.isArray(donors) ? donors : [];
+        
+        // 1. CLEAN THE DATA: Strip out "₹" and "," so we can do math on the numbers
+        let list = Array.isArray(donors) ? donors.map(d => {
+            const rawAmount = String(d.amount || "0").replace(/[^0-9.-]+/g, "");
+            return {
+                ...d,
+                amount: Number(rawAmount) || 0
+            };
+        }) : [];
+
         if (list.length === 0) {
           grid.innerHTML = `<div class="empty-state"><i class="fas fa-heart"></i>Be the first donor to light up a life this Diwali!</div>`;
           return;
@@ -3614,13 +3682,15 @@
           "2980b9",
         ];
 
+        // 2. SORT: Now that amounts are clean numbers, sort from highest to lowest
         const sortedList = [...list].sort(
-          (a, b) => (Number(b.amount) || 0) - (Number(a.amount) || 0),
+          (a, b) => b.amount - a.amount
         );
 
+        // 3. RENDER: Draw the cards
         grid.innerHTML = sortedList
           .map((donor, i) => {
-            const amount = Number(donor.amount) || 0;
+            const amount = donor.amount;
             const tier = getDonorTier(amount);
 
             const bg = palette[i % palette.length];
