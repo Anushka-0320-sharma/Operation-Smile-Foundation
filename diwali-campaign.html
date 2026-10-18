@@ -1150,14 +1150,11 @@
 
       /* ============================================================
          SECTION 3 — Impact cards
-         ✨ NEW: Plain color aesthetic background (no image) ✨
-         ✨ NEW: Direct payment link button on each card ✨
          ============================================================ */
       .impact-section {
         padding: 70px 0 60px;
         position: relative;
         overflow: hidden;
-        /* Pure CSS aesthetic background — soft warm cream gradient */
         background: linear-gradient(
           160deg,
           #fffdf8 0%,
@@ -1167,7 +1164,6 @@
         );
       }
 
-      /* Layered decorative glows + mandala-style concentric rings (pure CSS) */
       .impact-section::before {
         content: "";
         position: absolute;
@@ -1202,7 +1198,6 @@
           );
       }
 
-      /* Decorative concentric mandala rings in the background (using SVG, subtle) */
       .impact-section::after {
         content: "";
         position: absolute;
@@ -1216,7 +1211,6 @@
         opacity: 0.045;
       }
 
-      /* Thin golden separator at the very top */
       .impact-section .top-line {
         position: absolute;
         top: 0;
@@ -1232,7 +1226,6 @@
         z-index: 2;
       }
 
-      /* Thin golden separator at the bottom */
       .impact-section .bottom-line {
         position: absolute;
         bottom: 0;
@@ -1430,7 +1423,6 @@
         margin: 0 0 18px 0;
       }
 
-      /* ✨ NEW: Direct Donate button on each impact card ✨ */
       .impact-donate-btn {
         display: inline-flex;
         align-items: center;
@@ -3058,7 +3050,7 @@
       </div>
     </section>
 
-    <!-- SECTION 3 — Impact (NEW plain aesthetic background + donate buttons) -->
+    <!-- SECTION 3 — Impact -->
     <section class="impact-section">
       <span class="top-line"></span>
       <span class="bottom-line"></span>
@@ -3268,6 +3260,7 @@
       const CACHE_DURATION_MS = 2 * 60 * 1000;
       const DEFAULT_DONATE_URL = "https://rzp.io/rzp/fUnPwsZ";
 
+      // FALLBACK DATA IS ONLY USED IF THE LIVE API FAILS
       const FALLBACK_DATA = {
         campaign: {
           campaignYear: "Diwali 2026",
@@ -3309,12 +3302,7 @@
           },
         ],
         donors: [
-          {
-            name: "Ashutosh Sharma",
-            amount: 1000,
-            badge: "Supporter",
-            photo: "",
-          },
+          { name: "Ashutosh Sharma", amount: 1000, badge: "Supporter", photo: "" },
           { name: "Jagriti Singh", amount: 750, badge: "Supporter", photo: "" },
           { name: "Ranvidra", amount: 750, badge: "Supporter", photo: "" },
           { name: "Sumit Kumar", amount: 500, badge: "Supporter", photo: "" },
@@ -3540,6 +3528,8 @@
         animatePercent(progressBadge, percentage, 1800);
 
         if (progressBarFill) {
+          // Using double requestAnimationFrame ensures the browser registers the 0% state
+          // before applying the new percentage, ensuring smooth animation
           progressBarFill.style.width = "0%";
           requestAnimationFrame(() => {
             requestAnimationFrame(() => {
@@ -3672,12 +3662,7 @@
       }
 
       document.addEventListener("DOMContentLoaded", function () {
-        renderHero(FALLBACK_DATA.campaign);
-        renderGoalTracker(FALLBACK_DATA.campaign);
-        renderImpact(FALLBACK_DATA.impact);
-        renderCTA(FALLBACK_DATA.campaign);
-        renderDonors(FALLBACK_DATA.donors);
-
+        // 1. Initialize AOS and UI elements
         AOS.init({
           duration: 800,
           once: true,
@@ -3693,7 +3678,14 @@
 
         document.getElementById("currentYear").textContent =
           new Date().getFullYear();
+
+        // 2. Fetch Data
+        // REMOVED: Initial rendering of FALLBACK_DATA.
+        // This prevents the amount getting stuck at 3000 and then jumping.
+        // The skeleton loaders will stay visible until the fetch is complete.
         refreshAll(false);
+
+        // 3. Set up auto-refresh
         setInterval(() => refreshAll(true), 2 * 60 * 1000);
         document.addEventListener("visibilitychange", function () {
           if (!document.hidden) refreshAll(false);
