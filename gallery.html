@@ -820,7 +820,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2.2rem;
+        font-size: 2rem;
         color: white;
         box-shadow:
           0 10px 22px -6px rgba(230, 126, 34, 0.45),
@@ -829,6 +829,10 @@
         transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         position: relative;
         overflow: hidden;
+      }
+
+      .category-icon i {
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
       }
 
       .category-icon::before {
@@ -1992,28 +1996,35 @@
       });
 
       // ============================================================
-      // GALLERY CATEGORIES
+      // GALLERY CATEGORIES (Replaced Emojis with Aesthetic FontAwesome Icons)
       // ============================================================
       const categories = [
         {
+          name: "Kanya Pujan 2026",
+          folder: "Kanya Pujan 2026",
+          icon: '<i class="fas fa-hands-holding-child"></i>',
+          description: "Celebrating the divine spirit of young girls",
+          color: "#9b59b6", // Elegant Purple
+        },
+        {
+          name: "News Cover",
+          folder: "News Cover",
+          icon: '<i class="fas fa-newspaper"></i>',
+          description: "Media coverage and news highlights",
+          color: "#e74c3c",
+        },
+        {
           name: "2 October Education Drive",
           folder: "2 October Education Drive",
-          icon: "📚",
+          icon: '<i class="fas fa-book-open"></i>',
           description:
             "Empowering young minds with knowledge, books, and learning opportunities on Gandhi Jayanti",
           color: "#f39c12",
         },
         {
-          name: "News Cover",
-          folder: "News Cover",
-          icon: "📰",
-          description: "Media coverage and news highlights",
-          color: "#e74c3c",
-        },
-        {
           name: "Cyber Awareness Session",
           folder: "cyber awareness session",
-          icon: "🛡️",
+          icon: '<i class="fas fa-shield-halved"></i>',
           description:
             "Educating communities about cyber safety, online frauds, and digital awareness",
           color: "#0b3c6d",
@@ -2021,7 +2032,7 @@
         {
           name: "Self Defence Session",
           folder: "self defence session",
-          icon: "🥋",
+          icon: '<i class="fas fa-user-ninja"></i>',
           description:
             "Empowering individuals with self-defence techniques, safety awareness, and confidence",
           color: "#c0392b",
@@ -2029,7 +2040,7 @@
         {
           name: "Janmashtami Celebration",
           folder: "janmashtami celebration",
-          icon: "🪈",
+          icon: '<i class="fas fa-hands-praying"></i>',
           description:
             "Celebrating the birth of Lord Krishna with joy and devotion",
           color: "#8e44ad",
@@ -2037,7 +2048,7 @@
         {
           name: "Education Drive",
           folder: "education drive",
-          icon: "📖",
+          icon: '<i class="fas fa-graduation-cap"></i>',
           description:
             "Empowering minds through education and learning opportunities",
           color: "#3498db",
@@ -2045,133 +2056,133 @@
         {
           name: "15 August - Independence Day",
           folder: "15 August pic",
-          icon: "🇮🇳",
+          icon: '<i class="fas fa-flag"></i>',
           description: "Celebrating Independence Day with pride and patriotism",
           color: "#ff6f00",
         },
         {
           name: "Old Age Home Visit",
           folder: "Old age home visit",
-          icon: "🏡",
+          icon: '<i class="fas fa-house-chimney-user"></i>',
           description: "Spreading love and care to our senior citizens",
           color: "#e67e22",
         },
         {
           name: "Har Ghar Tiranga Initiative",
           folder: "Har Ghar Tiranga Initiative",
-          icon: "🇮🇳",
+          icon: '<i class="fas fa-flag-checkered"></i>',
           description: "Celebrating the spirit of patriotism across homes",
           color: "#ff6f00",
         },
         {
           name: "Letter to Heroes",
           folder: "Letter to Heroes",
-          icon: "✉️",
+          icon: '<i class="fas fa-envelope-open-text"></i>',
           description: "Expressing gratitude to our real-life heroes",
           color: "#e74c3c",
         },
         {
           name: "Health and Personality Development Awareness Drive",
           folder: "Health and Personality Development Awareness Drive",
-          icon: "🧠",
+          icon: '<i class="fas fa-brain"></i>',
           description: "Health awareness and personality development sessions",
           color: "#2ecc71",
         },
         {
           name: "Aanandam",
           folder: "aanandam",
-          icon: "🧘",
+          icon: '<i class="fas fa-spa"></i>',
           description: "Wellness & mindfulness sessions",
           color: "#8e44ad",
         },
         {
           name: "Birthday Celebrations",
           folder: "birthday celebrations",
-          icon: "🎂",
+          icon: '<i class="fas fa-cake-candles"></i>',
           description: "Spreading joy on special days",
           color: "#e74c3c",
         },
         {
           name: "Buttermilk Distribution",
           folder: "buttermilk distribution",
-          icon: "🥛",
+          icon: '<i class="fas fa-glass-water"></i>',
           description: "Refreshing communities with buttermilk",
           color: "#3498db",
         },
         {
           name: "Dental Camp",
           folder: "dental camp",
-          icon: "🦷",
+          icon: '<i class="fas fa-tooth"></i>',
           description: "Oral health awareness & care",
           color: "#1abc9c",
         },
         {
           name: "Margdarshan",
           folder: "margdarshan",
-          icon: "🗺️",
+          icon: '<i class="fas fa-map-location-dot"></i>',
           description: "Guiding towards a better future",
           color: "#2ecc71",
         },
         {
           name: "Muzaffarnagar - Jal Sewa",
           folder: "muzaffarnagarJalSewa",
-          icon: "💧",
+          icon: '<i class="fas fa-droplet"></i>',
           description: "Water service in Muzaffarnagar",
           color: "#2980b9",
         },
         {
           name: "Ration Distribution",
           folder: "ration distribution",
-          icon: "🍞",
+          icon: '<i class="fas fa-bowl-food"></i>',
           description: "Providing essential food supplies",
           color: "#f39c12",
         },
         {
           name: "Sharbat Drive",
           folder: "Sharbat drive",
-          icon: "🥤",
+          icon: '<i class="fas fa-glass-water-droplet"></i>',
           description: "Refreshing drinks for the community",
           color: "#e67e22",
         },
         {
           name: "Yamuna Ghat Cleaning Drive",
           folder: "Yamuna Ghat Cleaning Drive",
-          icon: "🧹",
+          icon: '<i class="fas fa-broom"></i>',
           description: "Cleaning the sacred Yamuna ghats",
           color: "#27ae60",
         },
         {
           name: "Book Distribution Drive",
           folder: "Book distribution drive",
-          icon: "📕",
+          icon: '<i class="fas fa-book"></i>',
           description: "Spreading knowledge through books",
           color: "#8e44ad",
         },
         {
           name: "Donation for Awareness",
           folder: "Donation for Awareness",
-          icon: "🎗️",
+          icon: '<i class="fas fa-ribbon"></i>',
           description: "Raising funds for awareness campaigns",
           color: "#e91e63",
         },
         {
           name: "Kargil Vijay Diwas",
           folder: "Kargil Vijay Diwas",
-          icon: "🎖️",
+          icon: '<i class="fas fa-medal"></i>',
           description: "Honoring our brave soldiers on Kargil Vijay Diwas",
           color: "#ff6f00",
         },
         {
           name: "POCSO Awareness",
           folder: "POCSO Awareness",
-          icon: "🛡️",
+          icon: '<i class="fas fa-user-shield"></i>',
           description: "Protecting children through POCSO awareness",
           color: "#c0392b",
         },
         {
           name: "Rath Yatra",
           folder: "Rath yatra",
-          icon: "🚩",
+          icon: '<i class="fas fa-om"></i>',
           description: "Sacred Rath Yatra celebrations",
           color: "#d35400",
         },
