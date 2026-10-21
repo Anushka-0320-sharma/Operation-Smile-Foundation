@@ -42,13 +42,7 @@
         padding-top: 80px;
       }
 
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      .navbar-brand,
-      .footer-brand {
+      h1, h2, h3, h4, h5, .navbar-brand, .footer-brand {
         font-family: "Playfair Display", serif;
       }
 
@@ -57,13 +51,8 @@
         font-family: "Times New Roman", Times, serif !important;
       }
 
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #f3e7d3;
-        border-radius: 10px;
-      }
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #f3e7d3; border-radius: 10px; }
       ::-webkit-scrollbar-thumb {
         background: linear-gradient(135deg, #e67e22, #f39c12);
         border-radius: 10px;
@@ -77,8 +66,7 @@
          ============================================================ */
       .navbar.navbar-custom {
         position: fixed;
-        top: 0;
-        left: 0;
+        top: 0; left: 0;
         width: 100%;
         background: rgba(255, 248, 235, 0.92);
         backdrop-filter: blur(20px);
@@ -95,15 +83,10 @@
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
       }
 
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 0;
-      }
+      .logo { display: flex; align-items: center; gap: 0; }
 
       .logo img {
-        width: 50px;
-        height: 50px;
+        width: 50px; height: 50px;
         border-radius: 50%;
         margin: 0 12px 0 0;
         border: 2.5px solid #f39c12;
@@ -136,20 +119,12 @@
       }
 
       @keyframes shimmer {
-        0% {
-          background-position: 0% center;
-        }
-        50% {
-          background-position: 100% center;
-        }
-        100% {
-          background-position: 0% center;
-        }
+        0% { background-position: 0% center; }
+        50% { background-position: 100% center; }
+        100% { background-position: 0% center; }
       }
 
-      .nav-item {
-        padding: 0 2px;
-      }
+      .nav-item { padding: 0 2px; }
 
       .navbar-custom .navbar-nav .nav-link {
         color: #3b2a1f !important;
@@ -164,11 +139,9 @@
       .navbar-custom .navbar-nav .nav-link::after {
         content: "";
         position: absolute;
-        bottom: 4px;
-        left: 50%;
+        bottom: 4px; left: 50%;
         transform: translateX(-50%);
-        width: 0;
-        height: 2.5px;
+        width: 0; height: 2.5px;
         background: linear-gradient(90deg, #e67e22, #f39c12);
         border-radius: 3px;
         transition: width 0.3s ease;
@@ -192,8 +165,7 @@
         margin-left: 15px;
       }
 
-      .donate,
-      .volunteer {
+      .donate, .volunteer {
         border: none;
         border-radius: 50px;
         font-size: 0.85rem;
@@ -257,28 +229,17 @@
         transition: all 0.3s ease;
       }
 
-      .navbar-toggler:hover {
-        background: rgba(230, 126, 34, 0.12);
-      }
-      .navbar-toggler:focus {
-        box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2);
-      }
+      .navbar-toggler:hover { background: rgba(230, 126, 34, 0.12); }
+      .navbar-toggler:focus { box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2); }
 
       .navbar-toggler-icon {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(58, 42, 31, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
       }
 
       @media (max-width: 991.98px) {
-        .navbar-nav {
-          text-align: center;
-          width: 100%;
-        }
-        .nav-item {
-          margin: 2px 0;
-        }
-        .nav-buttons-desktop {
-          display: none !important;
-        }
+        .navbar-nav { text-align: center; width: 100%; }
+        .nav-item { margin: 2px 0; }
+        .nav-buttons-desktop { display: none !important; }
         .navbar-collapse {
           background: rgba(255, 248, 235, 0.98);
           backdrop-filter: blur(20px);
@@ -287,29 +248,16 @@
           margin-top: 12px;
           box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
         }
-        .navbar-custom .navbar-nav .nav-link {
-          padding: 10px 18px;
-        }
-        .logo img {
-          width: 42px;
-          height: 42px;
-        }
-        .navbar-brand {
-          font-size: 1.3rem;
-          margin-right: auto;
-        }
+        .navbar-custom .navbar-nav .nav-link { padding: 10px 18px; }
+        .logo img { width: 42px; height: 42px; }
+        .navbar-brand { font-size: 1.3rem; margin-right: auto; }
       }
 
       /* ============================================================
          HERO
          ============================================================ */
       .diwali-hero {
-        background: linear-gradient(
-          135deg,
-          #1a1a2e 0%,
-          #2d1b0e 50%,
-          #4a2c0a 100%
-        );
+        background: linear-gradient(135deg, #1a1a2e 0%, #2d1b0e 50%, #4a2c0a 100%);
         background-image: url("assets/DiwaliCampaign_26/OS Diwali hero section bg.png");
         background-size: cover;
         background-position: center right;
@@ -383,12 +331,7 @@
       }
 
       .skeleton {
-        background: linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.1) 25%,
-          rgba(255, 255, 255, 0.2) 50%,
-          rgba(255, 255, 255, 0.1) 75%
-        );
+        background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 75%);
         background-size: 200% 100%;
         animation: skeleton-load 1.5s ease-in-out infinite;
         color: transparent !important;
@@ -398,12 +341,8 @@
       }
 
       @keyframes skeleton-load {
-        0% {
-          background-position: 200% 0;
-        }
-        100% {
-          background-position: -200% 0;
-        }
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
       }
 
       /* ============================================================
@@ -452,26 +391,10 @@
         justify-content: center;
         overflow: hidden;
         background:
-          radial-gradient(
-            circle at 4% 6%,
-            rgba(255, 200, 100, 0.2) 0%,
-            transparent 26%
-          ),
-          radial-gradient(
-            circle at 96% 94%,
-            rgba(255, 140, 90, 0.14) 0%,
-            transparent 26%
-          ),
-          radial-gradient(
-            circle at 94% 6%,
-            rgba(255, 179, 0, 0.09) 0%,
-            transparent 22%
-          ),
-          radial-gradient(
-            circle at 6% 94%,
-            rgba(233, 30, 99, 0.07) 0%,
-            transparent 22%
-          ),
+          radial-gradient(circle at 4% 6%, rgba(255, 200, 100, 0.20) 0%, transparent 26%),
+          radial-gradient(circle at 96% 94%, rgba(255, 140, 90, 0.14) 0%, transparent 26%),
+          radial-gradient(circle at 94% 6%, rgba(255, 179, 0, 0.09) 0%, transparent 22%),
+          radial-gradient(circle at 6% 94%, rgba(233, 30, 99, 0.07) 0%, transparent 22%),
           linear-gradient(180deg, #fffefb 0%, #fffcf5 100%);
         box-shadow:
           0 1px 0 rgba(255, 255, 255, 0.9) inset,
@@ -505,12 +428,8 @@
       }
 
       @keyframes borderFlow {
-        0% {
-          background-position: 0% 50%;
-        }
-        100% {
-          background-position: 300% 50%;
-        }
+        0% { background-position: 0% 50%; }
+        100% { background-position: 300% 50%; }
       }
 
       .tracker-card::before {
@@ -521,9 +440,7 @@
         background-image:
           url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23e67e22' stroke-width='1' opacity='0.9'%3E%3Ccircle cx='60' cy='60' r='28'/%3E%3Ccircle cx='60' cy='60' r='20'/%3E%3Ccircle cx='60' cy='60' r='12'/%3E%3Cpath d='M60 32 L60 88 M32 60 L88 60 M40 40 L80 80 M40 80 L80 40'/%3E%3C/g%3E%3C/svg%3E"),
           url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23e91e63' stroke-width='1'%3E%3Ccircle cx='40' cy='40' r='18'/%3E%3Ccircle cx='40' cy='40' r='10'/%3E%3Cpath d='M40 22 L40 58 M22 40 L58 40'/%3E%3C/g%3E%3C/svg%3E");
-        background-position:
-          -20px -20px,
-          calc(100% + 20px) calc(100% + 20px);
+        background-position: -20px -20px, calc(100% + 20px) calc(100% + 20px);
         background-repeat: no-repeat, no-repeat;
         opacity: 0.05;
         z-index: 0;
@@ -589,12 +506,7 @@
         min-width: 48px;
         height: 26px;
         border-radius: 50px;
-        background: linear-gradient(
-          135deg,
-          #f5a623 0%,
-          #e67e22 60%,
-          #d35400 100%
-        );
+        background: linear-gradient(135deg, #f5a623 0%, #e67e22 60%, #d35400 100%);
         color: #fff;
         font-weight: 700;
         font-size: 0.74rem;
@@ -632,12 +544,8 @@
       }
 
       @keyframes shimmerBar {
-        0% {
-          background-position: 0% center;
-        }
-        100% {
-          background-position: 200% center;
-        }
+        0% { background-position: 0% center; }
+        100% { background-position: 200% center; }
       }
 
       .progress-knob {
@@ -648,25 +556,15 @@
         width: 16px;
         height: 16px;
         border-radius: 50%;
-        background: radial-gradient(
-          circle at 32% 30%,
-          #ffd06a,
-          #f39c12 55%,
-          #e67e22 100%
-        );
+        background: radial-gradient(circle at 32% 30%, #ffd06a, #f39c12 55%, #e67e22 100%);
         border: 2.5px solid #fff;
         box-shadow: 0 2px 8px rgba(230, 126, 34, 0.55);
         animation: knobPulse 2s ease-in-out infinite;
       }
 
       @keyframes knobPulse {
-        0%,
-        100% {
-          box-shadow: 0 2px 8px rgba(230, 126, 34, 0.55);
-        }
-        50% {
-          box-shadow: 0 2px 14px rgba(243, 156, 18, 0.9);
-        }
+        0%, 100% { box-shadow: 0 2px 8px rgba(230, 126, 34, 0.55); }
+        50% { box-shadow: 0 2px 14px rgba(243, 156, 18, 0.9); }
       }
 
       .progress-labels {
@@ -711,9 +609,7 @@
         justify-content: center;
         font-size: 1.12rem;
         flex-shrink: 0;
-        transition:
-          transform 0.35s ease,
-          box-shadow 0.35s ease;
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
         position: relative;
       }
 
@@ -771,15 +667,9 @@
         white-space: nowrap;
       }
 
-      .goal-stats .stat-item .value.green {
-        color: #1e8449;
-      }
-      .goal-stats .stat-item .value.red {
-        color: #c0392b;
-      }
-      .goal-stats .stat-item .value.dark {
-        color: #1a1a2e;
-      }
+      .goal-stats .stat-item .value.green { color: #1e8449; }
+      .goal-stats .stat-item .value.red { color: #c0392b; }
+      .goal-stats .stat-item .value.dark { color: #1a1a2e; }
 
       .stat-divider {
         width: 1px;
@@ -809,22 +699,9 @@
         justify-content: center;
         align-items: center;
         background:
-          radial-gradient(
-            ellipse 75% 42% at 50% 0%,
-            rgba(255, 190, 70, 0.36) 0%,
-            transparent 72%
-          ),
-          radial-gradient(
-            ellipse 60% 50% at 50% 50%,
-            rgba(200, 100, 35, 0.4) 0%,
-            transparent 70%
-          ),
-          radial-gradient(
-            ellipse 90% 80% at 50% 50%,
-            #7a4420 0%,
-            #4a2511 55%,
-            #2a1206 100%
-          );
+          radial-gradient(ellipse 75% 42% at 50% 0%, rgba(255, 190, 70, 0.36) 0%, transparent 72%),
+          radial-gradient(ellipse 60% 50% at 50% 50%, rgba(200, 100, 35, 0.4) 0%, transparent 70%),
+          radial-gradient(ellipse 90% 80% at 50% 50%, #7a4420 0%, #4a2511 55%, #2a1206 100%);
         box-shadow:
           0 1px 0 rgba(255, 220, 150, 0.18) inset,
           0 22px 55px -18px rgba(0, 0, 0, 0.65),
@@ -850,26 +727,10 @@
         inset: 0;
         pointer-events: none;
         background-image:
-          radial-gradient(
-            circle at 20% 20%,
-            rgba(255, 210, 110, 0.09) 0%,
-            transparent 25%
-          ),
-          radial-gradient(
-            circle at 80% 80%,
-            rgba(255, 170, 70, 0.08) 0%,
-            transparent 25%
-          ),
-          radial-gradient(
-            circle at 80% 20%,
-            rgba(255, 190, 90, 0.06) 0%,
-            transparent 20%
-          ),
-          radial-gradient(
-            circle at 20% 80%,
-            rgba(255, 150, 60, 0.06) 0%,
-            transparent 20%
-          );
+          radial-gradient(circle at 20% 20%, rgba(255, 210, 110, 0.09) 0%, transparent 25%),
+          radial-gradient(circle at 80% 80%, rgba(255, 170, 70, 0.08) 0%, transparent 25%),
+          radial-gradient(circle at 80% 20%, rgba(255, 190, 90, 0.06) 0%, transparent 20%),
+          radial-gradient(circle at 20% 80%, rgba(255, 150, 60, 0.06) 0%, transparent 20%);
         z-index: 0;
       }
 
@@ -899,12 +760,8 @@
       }
 
       @keyframes goldBorderFlow {
-        0% {
-          background-position: 0% 50%;
-        }
-        100% {
-          background-position: 300% 50%;
-        }
+        0% { background-position: 0% 50%; }
+        100% { background-position: 300% 50%; }
       }
 
       .qr-donation-panel .diya-deco {
@@ -933,28 +790,15 @@
       }
 
       @keyframes diyaFlicker {
-        0%,
-        100% {
-          filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.55))
-            drop-shadow(0 0 8px rgba(255, 180, 60, 0.5));
-        }
-        50% {
-          filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.55))
-            drop-shadow(0 0 18px rgba(255, 200, 80, 0.9));
-        }
+        0%, 100% { filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 8px rgba(255, 180, 60, 0.5)); }
+        50% { filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 18px rgba(255, 200, 80, 0.9)); }
       }
 
       .qr-panel-glow {
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
+        top: 0; left: 0; right: 0;
         height: 50%;
-        background: radial-gradient(
-          ellipse at top,
-          rgba(255, 190, 80, 0.22),
-          transparent 70%
-        );
+        background: radial-gradient(ellipse at top, rgba(255, 190, 80, 0.22), transparent 70%);
         pointer-events: none;
         z-index: 0;
       }
@@ -980,19 +824,13 @@
         font-family: "Times New Roman", Times, serif !important;
         font-size: 1.95rem;
         font-weight: 800;
-        background: linear-gradient(
-          180deg,
-          #ffd873 0%,
-          #f7b733 45%,
-          #e67e22 100%
-        );
+        background: linear-gradient(180deg, #ffd873 0%, #f7b733 45%, #e67e22 100%);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
         line-height: 1.05;
         margin-bottom: 8px;
-        filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.55))
-          drop-shadow(0 0 12px rgba(255, 200, 80, 0.4));
+        filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 12px rgba(255, 200, 80, 0.4));
         letter-spacing: 0.5px;
       }
 
@@ -1036,12 +874,8 @@
       }
 
       @keyframes qrRingSpin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
       }
 
       .qr-donation-panel:hover .qr-image-wrap {
@@ -1076,12 +910,7 @@
         gap: 10px;
         padding: 13px 24px;
         border-radius: 50px;
-        background: linear-gradient(
-          135deg,
-          #f7a71b 0%,
-          #e67e22 55%,
-          #d35400 100%
-        );
+        background: linear-gradient(135deg, #f7a71b 0%, #e67e22 55%, #d35400 100%);
         color: #fff;
         font-weight: 700;
         font-size: 0.8rem;
@@ -1104,22 +933,13 @@
       .btn-donate-qr::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.45),
-          transparent
-        );
+        top: 0; left: -100%;
+        width: 100%; height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
         transition: left 0.6s ease;
       }
 
-      .btn-donate-qr:hover::before {
-        left: 100%;
-      }
+      .btn-donate-qr:hover::before { left: 100%; }
 
       .btn-donate-qr:hover {
         transform: translateY(-3px) scale(1.03);
@@ -1131,9 +951,7 @@
         background: linear-gradient(135deg, #ffc93c, #e67e22 60%, #d35400);
       }
 
-      .btn-donate-qr i {
-        font-size: 0.85rem;
-      }
+      .btn-donate-qr i { font-size: 0.85rem; }
 
       .qr-secure {
         font-size: 0.67rem;
@@ -1149,19 +967,13 @@
       }
 
       /* ============================================================
-         SECTION 3 — Impact cards
+         SECTION 3 — Impact cards (UPDATED FOR 2 COLUMNS)
          ============================================================ */
       .impact-section {
         padding: 70px 0 60px;
         position: relative;
         overflow: hidden;
-        background: linear-gradient(
-          160deg,
-          #fffdf8 0%,
-          #fff8ec 30%,
-          #fef3e0 60%,
-          #fdeeda 100%
-        );
+        background: linear-gradient(160deg, #fffdf8 0%, #fff8ec 30%, #fef3e0 60%, #fdeeda 100%);
       }
 
       .impact-section::before {
@@ -1171,31 +983,11 @@
         pointer-events: none;
         z-index: 1;
         background-image:
-          radial-gradient(
-            circle at 10% 10%,
-            rgba(255, 190, 80, 0.14) 0%,
-            transparent 22%
-          ),
-          radial-gradient(
-            circle at 90% 90%,
-            rgba(230, 126, 34, 0.12) 0%,
-            transparent 22%
-          ),
-          radial-gradient(
-            circle at 50% 50%,
-            rgba(255, 215, 0, 0.07) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            circle at 85% 15%,
-            rgba(255, 160, 60, 0.09) 0%,
-            transparent 18%
-          ),
-          radial-gradient(
-            circle at 15% 85%,
-            rgba(255, 140, 90, 0.09) 0%,
-            transparent 18%
-          );
+          radial-gradient(circle at 10% 10%, rgba(255, 190, 80, 0.14) 0%, transparent 22%),
+          radial-gradient(circle at 90% 90%, rgba(230, 126, 34, 0.12) 0%, transparent 22%),
+          radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.07) 0%, transparent 50%),
+          radial-gradient(circle at 85% 15%, rgba(255, 160, 60, 0.09) 0%, transparent 18%),
+          radial-gradient(circle at 15% 85%, rgba(255, 140, 90, 0.09) 0%, transparent 18%);
       }
 
       .impact-section::after {
@@ -1213,31 +1005,17 @@
 
       .impact-section .top-line {
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
+        top: 0; left: 0; right: 0;
         height: 1px;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(243, 156, 18, 0.35),
-          transparent
-        );
+        background: linear-gradient(90deg, transparent, rgba(243, 156, 18, 0.35), transparent);
         z-index: 2;
       }
 
       .impact-section .bottom-line {
         position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        bottom: 0; left: 0; right: 0;
         height: 1px;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(243, 156, 18, 0.35),
-          transparent
-        );
+        background: linear-gradient(90deg, transparent, rgba(243, 156, 18, 0.35), transparent);
         z-index: 2;
       }
 
@@ -1266,10 +1044,13 @@
         margin-bottom: 40px;
       }
 
+      /* Changed to 2 columns and centered */
       .impact-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 900px;
+        margin: 0 auto;
       }
 
       .impact-card {
@@ -1280,16 +1061,8 @@
         transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         overflow: hidden;
         background:
-          radial-gradient(
-            circle at 100% 0%,
-            rgba(255, 200, 100, 0.14) 0%,
-            transparent 40%
-          ),
-          radial-gradient(
-            circle at 0% 100%,
-            rgba(255, 140, 90, 0.1) 0%,
-            transparent 40%
-          ),
+          radial-gradient(circle at 100% 0%, rgba(255, 200, 100, 0.14) 0%, transparent 40%),
+          radial-gradient(circle at 0% 100%, rgba(255, 140, 90, 0.1) 0%, transparent 40%),
           linear-gradient(180deg, #ffffff 0%, #fffdf8 100%);
         box-shadow:
           0 1px 0 rgba(255, 255, 255, 0.9) inset,
@@ -1325,16 +1098,12 @@
         transition: opacity 0.4s ease;
       }
 
-      .impact-card:hover::after {
-        opacity: 1;
-      }
+      .impact-card:hover::after { opacity: 1; }
 
       .impact-card::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
+        top: 0; left: 0; right: 0;
         height: 4px;
         background: linear-gradient(90deg, #e67e22, #f39c12, #ffd700);
         border-radius: 4px 4px 0 0;
@@ -1361,9 +1130,7 @@
         z-index: 3;
       }
 
-      .impact-card:hover .shine {
-        left: 130%;
-      }
+      .impact-card:hover .shine { left: 130%; }
 
       .impact-card:hover {
         transform: translateY(-10px);
@@ -1393,6 +1160,7 @@
         font-family: "Playfair Display", serif;
         margin-bottom: 8px;
         letter-spacing: -0.2px;
+        line-height: 1.4;
       }
 
       .impact-card .item-price {
@@ -1416,7 +1184,6 @@
         -webkit-text-fill-color: #8a7a6a;
       }
 
-      /* ✨ NEW: Item Count Badge ✨ */
       .impact-card .item-count-wrap {
         margin-bottom: 16px;
         display: flex;
@@ -1485,22 +1252,13 @@
       .impact-donate-btn::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.45),
-          transparent
-        );
+        top: 0; left: -100%;
+        width: 100%; height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
         transition: left 0.6s ease;
       }
 
-      .impact-donate-btn:hover::before {
-        left: 100%;
-      }
+      .impact-donate-btn:hover::before { left: 100%; }
 
       .impact-donate-btn:hover {
         transform: translateY(-3px) scale(1.03);
@@ -1516,9 +1274,7 @@
         transition: transform 0.35s ease;
       }
 
-      .impact-donate-btn:hover i {
-        transform: translateX(4px);
-      }
+      .impact-donate-btn:hover i { transform: translateX(4px); }
 
       .impact-card .sparkle-dot {
         position: absolute;
@@ -1533,28 +1289,15 @@
       }
 
       .impact-card .sparkle-dot.s1 {
-        top: 18px;
-        right: 22px;
-        animation-delay: 0s;
+        top: 18px; right: 22px; animation-delay: 0s;
       }
       .impact-card .sparkle-dot.s2 {
-        bottom: 24px;
-        left: 18px;
-        animation-delay: 1.2s;
-        width: 4px;
-        height: 4px;
+        bottom: 24px; left: 18px; animation-delay: 1.2s; width: 4px; height: 4px;
       }
 
       @keyframes sparkleFloat {
-        0%,
-        100% {
-          transform: translateY(0) scale(1);
-          opacity: 0.7;
-        }
-        50% {
-          transform: translateY(-6px) scale(1.3);
-          opacity: 1;
-        }
+        0%, 100% { transform: translateY(0) scale(1); opacity: 0.7; }
+        50% { transform: translateY(-6px) scale(1.3); opacity: 1; }
       }
 
       /* ============================================================
@@ -1616,16 +1359,8 @@
         transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         overflow: hidden;
         background:
-          radial-gradient(
-            circle at 50% 0%,
-            rgba(255, 215, 100, 0.18) 0%,
-            transparent 45%
-          ),
-          radial-gradient(
-            circle at 0% 100%,
-            rgba(255, 140, 90, 0.08) 0%,
-            transparent 40%
-          ),
+          radial-gradient(circle at 50% 0%, rgba(255, 215, 100, 0.18) 0%, transparent 45%),
+          radial-gradient(circle at 0% 100%, rgba(255, 140, 90, 0.08) 0%, transparent 40%),
           linear-gradient(180deg, #ffffff 0%, #fffdf8 100%);
         box-shadow:
           0 1px 0 rgba(255, 255, 255, 0.9) inset,
@@ -1661,16 +1396,12 @@
         transition: opacity 0.4s ease;
       }
 
-      .donor-card:hover::after {
-        opacity: 1;
-      }
+      .donor-card:hover::after { opacity: 1; }
 
       .donor-card::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
+        top: 0; left: 0; right: 0;
         height: 4px;
         background: linear-gradient(90deg, #f39c12, #ffd700, #f39c12);
         border-radius: 4px 4px 0 0;
@@ -1697,9 +1428,7 @@
         z-index: 3;
       }
 
-      .donor-card:hover .shine {
-        left: 130%;
-      }
+      .donor-card:hover .shine { left: 130%; }
 
       .donor-card:hover {
         transform: translateY(-10px);
@@ -1712,8 +1441,7 @@
 
       .donor-card .avatar-wrap {
         position: relative;
-        width: 92px;
-        height: 92px;
+        width: 92px; height: 92px;
         margin: 0 auto 16px;
         display: flex;
         align-items: center;
@@ -1725,14 +1453,7 @@
         position: absolute;
         inset: -6px;
         border-radius: 50%;
-        background: conic-gradient(
-          from 0deg,
-          #f39c12,
-          #ffd700,
-          #e67e22,
-          #ffd700,
-          #f39c12
-        );
+        background: conic-gradient(from 0deg, #f39c12, #ffd700, #e67e22, #ffd700, #f39c12);
         animation: avatarRingSpin 6s linear infinite;
         filter: blur(0.5px);
         opacity: 0.85;
@@ -1747,55 +1468,29 @@
       }
 
       @keyframes avatarRingSpin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
       }
 
       .donor-card.tier-platinum .avatar-wrap::before {
-        background: conic-gradient(
-          from 0deg,
-          #e8e8e8,
-          #ffffff,
-          #b8b8b8,
-          #f5f5f5,
-          #e8e8e8
-        );
+        background: conic-gradient(from 0deg, #e8e8e8, #ffffff, #b8b8b8, #f5f5f5, #e8e8e8);
         opacity: 1;
         filter: blur(0.8px);
       }
 
       .donor-card.tier-gold .avatar-wrap::before {
-        background: conic-gradient(
-          from 0deg,
-          #ffd700,
-          #fff4b0,
-          #e67e22,
-          #ffd700,
-          #ffd700
-        );
+        background: conic-gradient(from 0deg, #ffd700, #fff4b0, #e67e22, #ffd700, #ffd700);
         opacity: 1;
       }
 
       .donor-card.tier-silver .avatar-wrap::before {
-        background: conic-gradient(
-          from 0deg,
-          #c0c0c0,
-          #f0f0f0,
-          #a8a8a8,
-          #e8e8e8,
-          #c0c0c0
-        );
+        background: conic-gradient(from 0deg, #c0c0c0, #f0f0f0, #a8a8a8, #e8e8e8, #c0c0c0);
         opacity: 1;
       }
 
       .donor-card .avatar {
         position: relative;
-        width: 84px;
-        height: 84px;
+        width: 84px; height: 84px;
         border-radius: 50%;
         object-fit: cover;
         background: #fef5e7;
@@ -1816,11 +1511,7 @@
         font-size: 1rem;
         color: #e67e22;
         font-weight: 700;
-        background: linear-gradient(
-          135deg,
-          rgba(255, 234, 203, 0.9),
-          rgba(255, 214, 153, 0.9)
-        );
+        background: linear-gradient(135deg, rgba(255, 234, 203, 0.9), rgba(255, 214, 153, 0.9));
         display: inline-block;
         padding: 5px 20px;
         border-radius: 50px;
@@ -1831,32 +1522,20 @@
       }
 
       .donor-card.tier-platinum .donor-amount {
-        background: linear-gradient(
-          135deg,
-          rgba(240, 240, 245, 0.95),
-          rgba(215, 220, 228, 0.95)
-        );
+        background: linear-gradient(135deg, rgba(240, 240, 245, 0.95), rgba(215, 220, 228, 0.95));
         color: #3a4a5a;
         border-color: rgba(180, 190, 200, 0.4);
         box-shadow: 0 2px 8px rgba(160, 170, 180, 0.2);
       }
 
       .donor-card.tier-gold .donor-amount {
-        background: linear-gradient(
-          135deg,
-          rgba(255, 236, 180, 0.95),
-          rgba(255, 210, 110, 0.95)
-        );
+        background: linear-gradient(135deg, rgba(255, 236, 180, 0.95), rgba(255, 210, 110, 0.95));
         color: #8a5a00;
         border-color: rgba(230, 170, 40, 0.4);
       }
 
       .donor-card.tier-silver .donor-amount {
-        background: linear-gradient(
-          135deg,
-          rgba(235, 238, 242, 0.95),
-          rgba(205, 212, 220, 0.95)
-        );
+        background: linear-gradient(135deg, rgba(235, 238, 242, 0.95), rgba(205, 212, 220, 0.95));
         color: #4a5560;
         border-color: rgba(170, 180, 190, 0.4);
       }
@@ -1880,38 +1559,18 @@
         font-size: 0.8rem;
       }
 
-      .donor-card .donor-badge.tier-platinum {
-        color: #6a7a8a;
-      }
-      .donor-card .donor-badge.tier-platinum::before {
-        content: "💎";
-      }
-
-      .donor-card .donor-badge.tier-gold {
-        color: #b8860b;
-      }
-      .donor-card .donor-badge.tier-gold::before {
-        content: "👑";
-      }
-
-      .donor-card .donor-badge.tier-silver {
-        color: #7a8590;
-      }
-      .donor-card .donor-badge.tier-silver::before {
-        content: "🥈";
-      }
-
-      .donor-card .donor-badge.tier-supporter {
-        color: #1e8449;
-      }
-      .donor-card .donor-badge.tier-supporter::before {
-        content: "❤";
-      }
+      .donor-card .donor-badge.tier-platinum { color: #6a7a8a; }
+      .donor-card .donor-badge.tier-platinum::before { content: "💎"; }
+      .donor-card .donor-badge.tier-gold { color: #b8860b; }
+      .donor-card .donor-badge.tier-gold::before { content: "👑"; }
+      .donor-card .donor-badge.tier-silver { color: #7a8590; }
+      .donor-card .donor-badge.tier-silver::before { content: "🥈"; }
+      .donor-card .donor-badge.tier-supporter { color: #1e8449; }
+      .donor-card .donor-badge.tier-supporter::before { content: "❤"; }
 
       .donor-card .crown-ribbon {
         position: absolute;
-        top: -1px;
-        right: 18px;
+        top: -1px; right: 18px;
         background: linear-gradient(135deg, #f39c12, #e67e22);
         color: #fff;
         font-size: 0.6rem;
@@ -1927,152 +1586,65 @@
         gap: 4px;
       }
 
-      .donor-card .crown-ribbon i {
-        font-size: 0.65rem;
-      }
+      .donor-card .crown-ribbon i { font-size: 0.65rem; }
 
       .donor-card .crown-ribbon.tier-platinum {
-        background: linear-gradient(
-          135deg,
-          #f5f5f7 0%,
-          #d8dce2 50%,
-          #b8bfc8 100%
-        );
+        background: linear-gradient(135deg, #f5f5f7 0%, #d8dce2 50%, #b8bfc8 100%);
         color: #2c3540;
         text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
-        box-shadow:
-          0 4px 14px rgba(150, 160, 175, 0.45),
-          0 0 20px rgba(230, 235, 245, 0.5);
+        box-shadow: 0 4px 14px rgba(150, 160, 175, 0.45), 0 0 20px rgba(230, 235, 245, 0.5);
       }
 
       .donor-card .crown-ribbon.tier-gold {
-        background: linear-gradient(
-          135deg,
-          #ffe066 0%,
-          #f5b700 45%,
-          #d89000 100%
-        );
+        background: linear-gradient(135deg, #ffe066 0%, #f5b700 45%, #d89000 100%);
         color: #4a2c00;
         text-shadow: 0 1px 0 rgba(255, 240, 180, 0.6);
-        box-shadow:
-          0 4px 14px rgba(245, 183, 0, 0.55),
-          0 0 22px rgba(255, 210, 60, 0.55);
+        box-shadow: 0 4px 14px rgba(245, 183, 0, 0.55), 0 0 22px rgba(255, 210, 60, 0.55);
       }
 
       .donor-card .crown-ribbon.tier-silver {
-        background: linear-gradient(
-          135deg,
-          #e2e6eb 0%,
-          #b8c0ca 50%,
-          #97a1ad 100%
-        );
+        background: linear-gradient(135deg, #e2e6eb 0%, #b8c0ca 50%, #97a1ad 100%);
         color: #2c3540;
         text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
-        box-shadow:
-          0 4px 14px rgba(150, 160, 175, 0.45),
-          0 0 18px rgba(210, 218, 228, 0.5);
+        box-shadow: 0 4px 14px rgba(150, 160, 175, 0.45), 0 0 18px rgba(210, 218, 228, 0.5);
       }
 
       .donor-card .crown-ribbon.tier-supporter {
-        background: linear-gradient(
-          135deg,
-          #2ecc71 0%,
-          #27ae60 55%,
-          #1e8449 100%
-        );
+        background: linear-gradient(135deg, #2ecc71 0%, #27ae60 55%, #1e8449 100%);
         color: #fff;
-        box-shadow:
-          0 4px 14px rgba(39, 174, 96, 0.5),
-          0 0 18px rgba(46, 204, 113, 0.35);
+        box-shadow: 0 4px 14px rgba(39, 174, 96, 0.5), 0 0 18px rgba(46, 204, 113, 0.35);
       }
 
-      .donor-card.tier-platinum::before {
-        background: linear-gradient(
-          90deg,
-          #d8dce2,
-          #f5f5f7,
-          #b8bfc8,
-          #f5f5f7,
-          #d8dce2
-        );
-      }
-
-      .donor-card.tier-gold::before {
-        background: linear-gradient(90deg, #e67e22, #ffd700, #e67e22);
-      }
-
-      .donor-card.tier-silver::before {
-        background: linear-gradient(
-          90deg,
-          #b8c0ca,
-          #e8ecf0,
-          #97a1ad,
-          #e8ecf0,
-          #b8c0ca
-        );
-      }
-
-      .donor-card.tier-supporter::before {
-        background: linear-gradient(90deg, #27ae60, #2ecc71, #27ae60);
-      }
+      .donor-card.tier-platinum::before { background: linear-gradient(90deg, #d8dce2, #f5f5f7, #b8bfc8, #f5f5f7, #d8dce2); }
+      .donor-card.tier-gold::before { background: linear-gradient(90deg, #e67e22, #ffd700, #e67e22); }
+      .donor-card.tier-silver::before { background: linear-gradient(90deg, #b8c0ca, #e8ecf0, #97a1ad, #e8ecf0, #b8c0ca); }
+      .donor-card.tier-supporter::before { background: linear-gradient(90deg, #27ae60, #2ecc71, #27ae60); }
 
       .donor-card.tier-platinum {
         background:
-          radial-gradient(
-            circle at 50% 0%,
-            rgba(230, 235, 245, 0.35) 0%,
-            transparent 48%
-          ),
-          radial-gradient(
-            circle at 0% 100%,
-            rgba(200, 210, 225, 0.12) 0%,
-            transparent 42%
-          ),
+          radial-gradient(circle at 50% 0%, rgba(230, 235, 245, 0.35) 0%, transparent 48%),
+          radial-gradient(circle at 0% 100%, rgba(200, 210, 225, 0.12) 0%, transparent 42%),
           linear-gradient(180deg, #ffffff 0%, #fafbfd 100%);
       }
 
       .donor-card.tier-gold {
         background:
-          radial-gradient(
-            circle at 50% 0%,
-            rgba(255, 225, 130, 0.28) 0%,
-            transparent 48%
-          ),
-          radial-gradient(
-            circle at 0% 100%,
-            rgba(255, 200, 90, 0.12) 0%,
-            transparent 42%
-          ),
+          radial-gradient(circle at 50% 0%, rgba(255, 225, 130, 0.28) 0%, transparent 48%),
+          radial-gradient(circle at 0% 100%, rgba(255, 200, 90, 0.12) 0%, transparent 42%),
           linear-gradient(180deg, #ffffff 0%, #fffdf6 100%);
       }
 
       .donor-card.tier-silver {
         background:
-          radial-gradient(
-            circle at 50% 0%,
-            rgba(220, 228, 238, 0.32) 0%,
-            transparent 48%
-          ),
-          radial-gradient(
-            circle at 0% 100%,
-            rgba(200, 210, 222, 0.12) 0%,
-            transparent 42%
-          ),
+          radial-gradient(circle at 50% 0%, rgba(220, 228, 238, 0.32) 0%, transparent 48%),
+          radial-gradient(circle at 0% 100%, rgba(200, 210, 222, 0.12) 0%, transparent 42%),
           linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
       }
 
       .donor-card.tier-supporter {
         background:
-          radial-gradient(
-            circle at 50% 0%,
-            rgba(180, 240, 200, 0.28) 0%,
-            transparent 48%
-          ),
-          radial-gradient(
-            circle at 0% 100%,
-            rgba(140, 220, 170, 0.12) 0%,
-            transparent 42%
-          ),
+          radial-gradient(circle at 50% 0%, rgba(180, 240, 200, 0.28) 0%, transparent 48%),
+          radial-gradient(circle at 0% 100%, rgba(140, 220, 170, 0.12) 0%, transparent 42%),
           linear-gradient(180deg, #ffffff 0%, #fbfffc 100%);
       }
 
@@ -2105,14 +1677,8 @@
         font-weight: 600;
       }
 
-      .data-source i {
-        color: #27ae60;
-        margin-right: 4px;
-      }
-
-      .data-source.stale i {
-        color: #c0392b;
-      }
+      .data-source i { color: #27ae60; margin-right: 4px; }
+      .data-source.stale i { color: #c0392b; }
 
       .data-source-wrap {
         text-align: center;
@@ -2123,12 +1689,7 @@
          FOOTER
          ============================================================ */
       .footer {
-        background: linear-gradient(
-          135deg,
-          #1a1a2e 0%,
-          #16213e 50%,
-          #0f3460 100%
-        );
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
         color: white;
         padding: 60px 0 30px;
         position: relative;
@@ -2139,9 +1700,7 @@
       .footer::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
+        top: 0; left: 0; right: 0;
         height: 4px;
         background: linear-gradient(90deg, #e67e22, #f39c12, #e67e22);
       }
@@ -2154,8 +1713,7 @@
       }
 
       .footer-logo-img {
-        width: 50px;
-        height: 50px;
+        width: 50px; height: 50px;
         border-radius: 50%;
         border: 2px solid #f39c12;
         object-fit: cover;
@@ -2177,9 +1735,7 @@
         display: inline-block;
       }
 
-      .footer-brand:hover {
-        color: #ffffff !important;
-      }
+      .footer-brand:hover { color: #ffffff !important; }
 
       .footer h5 {
         color: #f39c12;
@@ -2193,10 +1749,8 @@
       .footer h5::after {
         content: "";
         position: absolute;
-        bottom: -8px;
-        left: 0;
-        width: 40px;
-        height: 3px;
+        bottom: -8px; left: 0;
+        width: 40px; height: 3px;
         background: linear-gradient(90deg, #e67e22, #f39c12);
         border-radius: 3px;
       }
@@ -2207,18 +1761,10 @@
         transition: all 0.3s ease;
       }
 
-      .footer a:hover {
-        color: #f39c12;
-        padding-left: 5px;
-      }
+      .footer a:hover { color: #f39c12; padding-left: 5px; }
 
-      .footer ul {
-        list-style: none;
-        padding: 0;
-      }
-      .footer ul li {
-        margin-bottom: 12px;
-      }
+      .footer ul { list-style: none; padding: 0; }
+      .footer ul li { margin-bottom: 12px; }
 
       .footer .contact-item {
         display: flex;
@@ -2228,8 +1774,7 @@
       }
 
       .footer .contact-icon {
-        width: 35px;
-        height: 35px;
+        width: 35px; height: 35px;
         background: rgba(243, 156, 18, 0.15);
         border-radius: 50%;
         display: flex;
@@ -2248,14 +1793,9 @@
         font-size: 1rem;
       }
 
-      .footer .contact-item:hover .contact-icon i {
-        color: white;
-      }
+      .footer .contact-item:hover .contact-icon i { color: white; }
 
-      .footer .contact-text {
-        flex: 1;
-        text-align: left;
-      }
+      .footer .contact-text { flex: 1; text-align: left; }
 
       .footer .contact-text span {
         display: block;
@@ -2273,19 +1813,12 @@
         margin: 0;
       }
 
-      .footer .contact-text a:hover {
-        color: #f39c12;
-        padding-left: 0;
-      }
+      .footer .contact-text a:hover { color: #f39c12; padding-left: 0; }
 
-      .footer-social-icons {
-        display: flex;
-        gap: 12px;
-      }
+      .footer-social-icons { display: flex; gap: 12px; }
 
       .footer-social-icon {
-        width: 38px;
-        height: 38px;
+        width: 38px; height: 38px;
         background: rgba(255, 255, 255, 0.1);
         border-radius: 50%;
         display: flex;
@@ -2312,10 +1845,8 @@
 
       .whatsapp-float {
         position: fixed;
-        bottom: 90px;
-        right: 30px;
-        width: 60px;
-        height: 60px;
+        bottom: 90px; right: 30px;
+        width: 60px; height: 60px;
         background: linear-gradient(135deg, #25d366, #128c7e);
         border-radius: 50%;
         display: flex;
@@ -2340,15 +1871,9 @@
       }
 
       @keyframes whatsappPulse {
-        0% {
-          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
-        }
-        70% {
-          box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-        }
+        0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+        70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
       }
 
       /* ============================================================
@@ -2356,193 +1881,67 @@
          ============================================================ */
 
       @media (max-width: 1200px) {
-        .tracker-card {
-          padding: 24px 26px 20px;
-        }
-        .tracker-header h2 {
-          font-size: 1.5rem;
-        }
-        .goal-stats .stat-item .value {
-          font-size: 1.25rem;
-        }
-        .goal-stats .stat-icon {
-          width: 42px;
-          height: 42px;
-          font-size: 1rem;
-        }
-        .qr-panel-amount {
-          font-size: 1.7rem;
-        }
-        .qr-image-wrap {
-          width: 128px;
-          height: 128px;
-        }
-        .impact-card .item-price {
-          font-size: 1.9rem;
-        }
+        .tracker-card { padding: 24px 26px 20px; }
+        .tracker-header h2 { font-size: 1.5rem; }
+        .goal-stats .stat-item .value { font-size: 1.25rem; }
+        .goal-stats .stat-icon { width: 42px; height: 42px; font-size: 1rem; }
+        .qr-panel-amount { font-size: 1.7rem; }
+        .qr-image-wrap { width: 128px; height: 128px; }
+        .impact-card .item-price { font-size: 1.9rem; }
       }
 
       @media (max-width: 992px) {
-        body {
-          padding-top: 70px;
-        }
-        .diwali-hero h1 {
-          font-size: 2.5rem;
-        }
+        body { padding-top: 70px; }
+        .diwali-hero h1 { font-size: 2.5rem; }
 
         .section2-grid {
           grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
           gap: 14px;
         }
-        .tracker-card {
-          padding: 20px 18px 16px;
-          border-radius: 20px;
-        }
-        .tracker-card::after {
-          border-radius: 20px;
-        }
-        .tracker-header {
-          margin-bottom: 10px;
-        }
-        .tracker-header h2 {
-          font-size: 1.22rem;
-          gap: 8px;
-        }
-        .tracker-header h2 i {
-          font-size: 1.1rem;
-        }
-        .tracker-header .tagline {
-          font-size: 0.72rem;
-        }
+        .tracker-card { padding: 20px 18px 16px; border-radius: 20px; }
+        .tracker-card::after { border-radius: 20px; }
+        .tracker-header { margin-bottom: 10px; }
+        .tracker-header h2 { font-size: 1.22rem; gap: 8px; }
+        .tracker-header h2 i { font-size: 1.1rem; }
+        .tracker-header .tagline { font-size: 0.72rem; }
 
-        .progress-badge {
-          min-width: 44px;
-          height: 24px;
-          font-size: 0.7rem;
-        }
-        .progress-track {
-          height: 9px;
-        }
-        .progress-knob {
-          width: 14px;
-          height: 14px;
-          border-width: 2px;
-        }
-        .progress-labels {
-          font-size: 0.7rem;
-        }
+        .progress-badge { min-width: 44px; height: 24px; font-size: 0.7rem; }
+        .progress-track { height: 9px; }
+        .progress-knob { width: 14px; height: 14px; border-width: 2px; }
+        .progress-labels { font-size: 0.7rem; }
 
-        .goal-stats {
-          gap: 4px;
-          margin-top: 14px;
-        }
-        .goal-stats .stat-item {
-          gap: 8px;
-          flex-direction: column;
-          text-align: center;
-          padding: 4px 2px;
-        }
-        .goal-stats .stat-icon {
-          width: 38px;
-          height: 38px;
-          font-size: 0.95rem;
-        }
-        .goal-stats .stat-item .value {
-          font-size: 1.02rem;
-        }
-        .goal-stats .stat-item .label {
-          font-size: 0.56rem;
-          letter-spacing: 0.5px;
-        }
-        .stat-divider {
-          height: 50px;
-        }
+        .goal-stats { gap: 4px; margin-top: 14px; }
+        .goal-stats .stat-item { gap: 8px; flex-direction: column; text-align: center; padding: 4px 2px; }
+        .goal-stats .stat-icon { width: 38px; height: 38px; font-size: 0.95rem; }
+        .goal-stats .stat-item .value { font-size: 1.02rem; }
+        .goal-stats .stat-item .label { font-size: 0.56rem; letter-spacing: 0.5px; }
+        .stat-divider { height: 50px; }
 
-        .qr-donation-panel {
-          padding: 20px 12px 16px;
-          border-radius: 20px;
-        }
-        .qr-donation-panel::after {
-          border-radius: 20px;
-        }
-        .qr-donation-panel .diya-deco {
-          font-size: 30px;
-        }
-        .qr-panel-title {
-          font-size: 1rem;
-        }
-        .qr-panel-amount {
-          font-size: 1.45rem;
-        }
-        .qr-panel-text {
-          font-size: 0.68rem;
-          margin-bottom: 10px;
-        }
-        .qr-image-wrap {
-          width: 106px;
-          height: 106px;
-        }
-        .qr-image-wrap::after {
-          inset: -6px;
-          border-radius: 16px;
-        }
-        .qr-scan-label {
-          font-size: 0.58rem;
-          letter-spacing: 2px;
-          margin-bottom: 9px;
-        }
-        .btn-donate-qr {
-          font-size: 0.7rem;
-          padding: 10px 16px;
-          gap: 6px;
-          max-width: 180px;
-        }
-        .qr-secure {
-          font-size: 0.6rem;
-        }
+        .qr-donation-panel { padding: 20px 12px 16px; border-radius: 20px; }
+        .qr-donation-panel::after { border-radius: 20px; }
+        .qr-donation-panel .diya-deco { font-size: 30px; }
+        .qr-panel-title { font-size: 1rem; }
+        .qr-panel-amount { font-size: 1.45rem; }
+        .qr-panel-text { font-size: 0.68rem; margin-bottom: 10px; }
+        .qr-image-wrap { width: 106px; height: 106px; }
+        .qr-image-wrap::after { inset: -6px; border-radius: 16px; }
+        .qr-scan-label { font-size: 0.58rem; letter-spacing: 2px; margin-bottom: 9px; }
+        .btn-donate-qr { font-size: 0.7rem; padding: 10px 16px; gap: 6px; max-width: 180px; }
+        .qr-secure { font-size: 0.6rem; }
 
-        .impact-card {
-          padding: 30px 20px 24px;
-          border-radius: 22px;
-        }
-        .impact-card::after {
-          border-radius: 22px;
-        }
-        .impact-card .emoji {
-          font-size: 2.8rem;
-        }
-        .impact-card .item-price {
-          font-size: 1.7rem;
-        }
-        .impact-donate-btn {
-          font-size: 0.8rem;
-          padding: 10px 20px;
-          max-width: 150px;
-        }
+        .impact-card { padding: 30px 20px 24px; border-radius: 22px; }
+        .impact-card::after { border-radius: 22px; }
+        .impact-card .emoji { font-size: 2.8rem; }
+        .impact-card .item-price { font-size: 1.7rem; }
+        .impact-donate-btn { font-size: 0.8rem; padding: 10px 20px; max-width: 150px; }
 
-        .donor-card {
-          padding: 26px 16px 22px;
-          border-radius: 22px;
-        }
-        .donor-card::after {
-          border-radius: 22px;
-        }
-        .donor-card .avatar-wrap {
-          width: 82px;
-          height: 82px;
-        }
-        .donor-card .avatar {
-          width: 74px;
-          height: 74px;
-        }
-        .donor-card .donor-name {
-          font-size: 1rem;
-        }
+        .donor-card { padding: 26px 16px 22px; border-radius: 22px; }
+        .donor-card::after { border-radius: 22px; }
+        .donor-card .avatar-wrap { width: 82px; height: 82px; }
+        .donor-card .avatar { width: 74px; height: 74px; }
+        .donor-card .donor-name { font-size: 1rem; }
 
-        .donor-grid {
-          grid-template-columns: repeat(3, 1fr);
-          gap: 16px;
-        }
+        .donor-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
       }
 
       @media (max-width: 768px) {
@@ -2552,356 +1951,125 @@
           min-height: auto;
           background-position: center;
         }
-        .diwali-hero h1 {
-          font-size: 2rem;
-        }
-        .diwali-hero p {
-          font-size: 1rem;
-        }
+        .diwali-hero h1 { font-size: 2rem; }
+        .diwali-hero p { font-size: 1rem; }
         .diwali-hero::before {
-          background: linear-gradient(
-            180deg,
-            rgba(15, 10, 30, 0.85) 0%,
-            rgba(30, 15, 8, 0.75) 100%
-          );
+          background: linear-gradient(180deg, rgba(15, 10, 30, 0.85) 0%, rgba(30, 15, 8, 0.75) 100%);
         }
 
-        .goal-tracker-section {
-          padding: 36px 0 26px;
-        }
-        .section2-grid {
-          grid-template-columns: 1fr;
-          gap: 16px;
-        }
+        .goal-tracker-section { padding: 36px 0 26px; }
+        .section2-grid { grid-template-columns: 1fr; gap: 16px; }
 
-        .tracker-card {
-          padding: 24px 20px 20px;
-          border-radius: 22px;
-        }
-        .tracker-card::after {
-          border-radius: 22px;
-        }
-        .tracker-header {
-          margin-bottom: 14px;
-        }
-        .tracker-header h2 {
-          font-size: 1.4rem;
-          gap: 8px;
-        }
-        .tracker-header h2 i {
-          font-size: 1.3rem;
-        }
-        .tracker-header .tagline {
-          font-size: 0.82rem;
-        }
+        .tracker-card { padding: 24px 20px 20px; border-radius: 22px; }
+        .tracker-card::after { border-radius: 22px; }
+        .tracker-header { margin-bottom: 14px; }
+        .tracker-header h2 { font-size: 1.4rem; gap: 8px; }
+        .tracker-header h2 i { font-size: 1.3rem; }
+        .tracker-header .tagline { font-size: 0.82rem; }
 
-        .progress-wrap {
-          margin: 14px 0 6px;
-        }
-        .progress-badge {
-          min-width: 46px;
-          height: 26px;
-          font-size: 0.74rem;
-        }
-        .progress-track {
-          height: 11px;
-        }
-        .progress-knob {
-          width: 15px;
-          height: 15px;
-        }
-        .progress-labels {
-          font-size: 0.78rem;
-        }
+        .progress-wrap { margin: 14px 0 6px; }
+        .progress-badge { min-width: 46px; height: 26px; font-size: 0.74rem; }
+        .progress-track { height: 11px; }
+        .progress-knob { width: 15px; height: 15px; }
+        .progress-labels { font-size: 0.78rem; }
 
-        .goal-stats {
-          grid-template-columns: 1fr auto 1fr auto 1fr;
-          gap: 6px;
-          margin-top: 20px;
-        }
-        .goal-stats .stat-item {
-          gap: 8px;
-        }
-        .goal-stats .stat-icon {
-          width: 40px;
-          height: 40px;
-          font-size: 1rem;
-        }
-        .goal-stats .stat-item .value {
-          font-size: 1.12rem;
-        }
-        .goal-stats .stat-item .label {
-          font-size: 0.58rem;
-          letter-spacing: 0.5px;
-        }
-        .stat-divider {
-          height: 42px;
-        }
+        .goal-stats { grid-template-columns: 1fr auto 1fr auto 1fr; gap: 6px; margin-top: 20px; }
+        .goal-stats .stat-item { gap: 8px; }
+        .goal-stats .stat-icon { width: 40px; height: 40px; font-size: 1rem; }
+        .goal-stats .stat-item .value { font-size: 1.12rem; }
+        .goal-stats .stat-item .label { font-size: 0.58rem; letter-spacing: 0.5px; }
+        .stat-divider { height: 42px; }
 
-        .qr-donation-panel {
-          padding: 26px 20px 22px;
-          border-radius: 22px;
-        }
-        .qr-donation-panel::after {
-          border-radius: 22px;
-        }
-        .qr-donation-panel .diya-deco {
-          font-size: 34px;
-          top: 6px;
-        }
-        .qr-panel-title {
-          font-size: 1.15rem;
-        }
-        .qr-panel-amount {
-          font-size: 1.7rem;
-        }
-        .qr-panel-text {
-          font-size: 0.78rem;
-          margin-bottom: 14px;
-          max-width: 260px;
-        }
-        .qr-image-wrap {
-          width: 142px;
-          height: 142px;
-        }
-        .qr-scan-label {
-          font-size: 0.65rem;
-          letter-spacing: 2px;
-          margin-bottom: 12px;
-        }
-        .btn-donate-qr {
-          font-size: 0.78rem;
-          padding: 12px 22px;
-          max-width: 215px;
-        }
-        .qr-secure {
-          font-size: 0.66rem;
-        }
+        .qr-donation-panel { padding: 26px 20px 22px; border-radius: 22px; }
+        .qr-donation-panel::after { border-radius: 22px; }
+        .qr-donation-panel .diya-deco { font-size: 34px; top: 6px; }
+        .qr-panel-title { font-size: 1.15rem; }
+        .qr-panel-amount { font-size: 1.7rem; }
+        .qr-panel-text { font-size: 0.78rem; margin-bottom: 14px; max-width: 260px; }
+        .qr-image-wrap { width: 142px; height: 142px; }
+        .qr-scan-label { font-size: 0.65rem; letter-spacing: 2px; margin-bottom: 12px; }
+        .btn-donate-qr { font-size: 0.78rem; padding: 12px 22px; max-width: 215px; }
+        .qr-secure { font-size: 0.66rem; }
 
-        .impact-section {
-          padding: 40px 0 30px;
-        }
+        .impact-section { padding: 40px 0 30px; }
+        
+        /* Stack impact cards for mobile */
         .impact-grid {
           grid-template-columns: 1fr;
           gap: 18px;
         }
-        .impact-card {
-          padding: 32px 22px 26px;
-        }
-        .impact-card .item-price {
-          font-size: 1.9rem;
-        }
+        
+        .impact-card { padding: 32px 22px 26px; }
+        .impact-card .item-price { font-size: 1.9rem; }
 
-        .donor-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 14px;
-        }
-        .donor-card {
-          padding: 26px 14px 22px;
-          border-radius: 22px;
-        }
-        .donor-card::after {
-          border-radius: 22px;
-        }
+        .donor-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+        .donor-card { padding: 26px 14px 22px; border-radius: 22px; }
+        .donor-card::after { border-radius: 22px; }
       }
 
       @media (max-width: 480px) {
-        .diwali-hero {
-          padding: 45px 0 50px;
-        }
-        .diwali-hero h1 {
-          font-size: 1.6rem;
-        }
-        .diwali-hero p {
-          font-size: 0.9rem;
-        }
-        .diwali-hero .hero-badge {
-          font-size: 0.7rem;
-          padding: 6px 16px;
-        }
+        .diwali-hero { padding: 45px 0 50px; }
+        .diwali-hero h1 { font-size: 1.6rem; }
+        .diwali-hero p { font-size: 0.9rem; }
+        .diwali-hero .hero-badge { font-size: 0.7rem; padding: 6px 16px; }
 
-        .tracker-card {
-          padding: 20px 15px 18px;
-          border-radius: 20px;
-        }
-        .tracker-card::after {
-          border-radius: 20px;
-        }
-        .tracker-header h2 {
-          font-size: 1.15rem;
-          gap: 6px;
-        }
-        .tracker-header h2 i {
-          font-size: 1.05rem;
-        }
-        .tracker-header .tagline {
-          font-size: 0.74rem;
-        }
+        .tracker-card { padding: 20px 15px 18px; border-radius: 20px; }
+        .tracker-card::after { border-radius: 20px; }
+        .tracker-header h2 { font-size: 1.15rem; gap: 6px; }
+        .tracker-header h2 i { font-size: 1.05rem; }
+        .tracker-header .tagline { font-size: 0.74rem; }
 
-        .progress-badge {
-          min-width: 40px;
-          height: 22px;
-          font-size: 0.66rem;
-          padding: 0 9px;
-        }
-        .progress-track {
-          height: 9px;
-        }
-        .progress-knob {
-          width: 13px;
-          height: 13px;
-          border-width: 2px;
-        }
-        .progress-labels {
-          font-size: 0.7rem;
-        }
+        .progress-badge { min-width: 40px; height: 22px; font-size: 0.66rem; padding: 0 9px; }
+        .progress-track { height: 9px; }
+        .progress-knob { width: 13px; height: 13px; border-width: 2px; }
+        .progress-labels { font-size: 0.7rem; }
 
-        .goal-stats {
-          grid-template-columns: 1fr auto 1fr auto 1fr;
-          gap: 4px;
-          margin-top: 16px;
-        }
-        .goal-stats .stat-item {
-          flex-direction: column;
-          gap: 5px;
-          text-align: center;
-          padding: 2px 0;
-        }
-        .goal-stats .stat-icon {
-          width: 34px;
-          height: 34px;
-          font-size: 0.84rem;
-        }
-        .goal-stats .stat-item .value {
-          font-size: 0.94rem;
-        }
-        .goal-stats .stat-item .label {
-          font-size: 0.5rem;
-          letter-spacing: 0.3px;
-        }
-        .stat-divider {
-          height: 46px;
-        }
+        .goal-stats { grid-template-columns: 1fr auto 1fr auto 1fr; gap: 4px; margin-top: 16px; }
+        .goal-stats .stat-item { flex-direction: column; gap: 5px; text-align: center; padding: 2px 0; }
+        .goal-stats .stat-icon { width: 34px; height: 34px; font-size: 0.84rem; }
+        .goal-stats .stat-item .value { font-size: 0.94rem; }
+        .goal-stats .stat-item .label { font-size: 0.5rem; letter-spacing: 0.3px; }
+        .stat-divider { height: 46px; }
 
-        .qr-donation-panel {
-          padding: 22px 15px 18px;
-          border-radius: 20px;
-        }
-        .qr-donation-panel::after {
-          border-radius: 20px;
-        }
-        .qr-donation-panel .diya-deco {
-          font-size: 28px;
-        }
-        .qr-panel-title {
-          font-size: 1.05rem;
-        }
-        .qr-panel-amount {
-          font-size: 1.45rem;
-        }
-        .qr-panel-text {
-          font-size: 0.72rem;
-        }
-        .qr-image-wrap {
-          width: 124px;
-          height: 124px;
-          padding: 6px;
-        }
-        .qr-image-wrap::after {
-          inset: -6px;
-          border-radius: 14px;
-        }
-        .qr-scan-label {
-          font-size: 0.6rem;
-          letter-spacing: 1.8px;
-        }
+        .qr-donation-panel { padding: 22px 15px 18px; border-radius: 20px; }
+        .qr-donation-panel::after { border-radius: 20px; }
+        .qr-donation-panel .diya-deco { font-size: 28px; }
+        .qr-panel-title { font-size: 1.05rem; }
+        .qr-panel-amount { font-size: 1.45rem; }
+        .qr-panel-text { font-size: 0.72rem; }
+        .qr-image-wrap { width: 124px; height: 124px; padding: 6px; }
+        .qr-image-wrap::after { inset: -6px; border-radius: 14px; }
+        .qr-scan-label { font-size: 0.6rem; letter-spacing: 1.8px; }
         .btn-donate-qr {
           font-size: 0.73rem;
           padding: 11px 18px;
           gap: 6px;
           max-width: 198px;
         }
-        .qr-secure {
-          font-size: 0.6rem;
-        }
+        .qr-secure { font-size: 0.6rem; }
 
-        .impact-section h2 {
-          font-size: 1.4rem;
-        }
-        .impact-section .sub {
-          font-size: 0.85rem;
-          margin-bottom: 25px;
-        }
-        .impact-card {
-          padding: 26px 18px 22px;
-          border-radius: 22px;
-        }
-        .impact-card::after {
-          border-radius: 22px;
-        }
-        .impact-card .emoji {
-          font-size: 2.6rem;
-        }
-        .impact-card .item-price {
-          font-size: 1.6rem;
-        }
-        .impact-card .item-name {
-          font-size: 1rem;
-        }
-        .impact-card .item-desc {
-          font-size: 0.82rem;
-        }
-        .impact-donate-btn {
-          font-size: 0.76rem;
-          padding: 10px 20px;
-          max-width: 150px;
-        }
+        .impact-section h2 { font-size: 1.4rem; }
+        .impact-section .sub { font-size: 0.85rem; margin-bottom: 25px; }
+        .impact-card { padding: 26px 18px 22px; border-radius: 22px; }
+        .impact-card::after { border-radius: 22px; }
+        .impact-card .emoji { font-size: 2.6rem; }
+        .impact-card .item-price { font-size: 1.6rem; }
+        .impact-card .item-name { font-size: 1rem; }
+        .impact-card .item-desc { font-size: 0.82rem; }
+        .impact-donate-btn { font-size: 0.76rem; padding: 10px 20px; max-width: 150px; }
 
-        .donors-section h2 {
-          font-size: 1.4rem;
-        }
-        .donor-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 10px;
-        }
-        .donor-card {
-          padding: 24px 12px 20px;
-          border-radius: 20px;
-        }
-        .donor-card::after {
-          border-radius: 20px;
-        }
-        .donor-card .avatar-wrap {
-          width: 68px;
-          height: 68px;
-          margin-bottom: 12px;
-        }
-        .donor-card .avatar {
-          width: 62px;
-          height: 62px;
-        }
-        .donor-card .donor-name {
-          font-size: 0.92rem;
-        }
-        .donor-card .donor-amount {
-          font-size: 0.82rem;
-          padding: 4px 14px;
-        }
-        .donor-card .donor-badge {
-          font-size: 0.6rem;
-        }
-        .donor-card .crown-ribbon {
-          font-size: 0.55rem;
-          padding: 3px 8px 4px;
-          right: 12px;
-        }
+        .donors-section h2 { font-size: 1.4rem; }
+        .donor-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .donor-card { padding: 24px 12px 20px; border-radius: 20px; }
+        .donor-card::after { border-radius: 20px; }
+        .donor-card .avatar-wrap { width: 68px; height: 68px; margin-bottom: 12px; }
+        .donor-card .avatar { width: 62px; height: 62px; }
+        .donor-card .donor-name { font-size: 0.92rem; }
+        .donor-card .donor-amount { font-size: 0.82rem; padding: 4px 14px; }
+        .donor-card .donor-badge { font-size: 0.6rem; }
+        .donor-card .crown-ribbon { font-size: 0.55rem; padding: 3px 8px 4px; right: 12px; }
 
-        .whatsapp-float {
-          width: 48px;
-          height: 48px;
-          bottom: 75px;
-          right: 15px;
-        }
+        .whatsapp-float { width: 48px; height: 48px; bottom: 75px; right: 15px; }
       }
     </style>
   </head>
@@ -2916,43 +2084,22 @@
           </div>
         </a>
         <a class="navbar-brand" href="index.html">Operation Smile</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about-us.html">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="our-partners.html">Our Partners</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="our-initiatives.html"
-                >Our Initiatives</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="gallery.html">Gallery</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact-us.html">Contact Us</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="our-partners.html">Our Partners</a></li>
+            <li class="nav-item"><a class="nav-link" href="our-initiatives.html">Our Initiatives</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
           </ul>
         </div>
         <div class="nav-buttons-desktop">
           <a href="donate.html"><button class="donate">Donate</button></a>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSei2fpCRa2_GZXVfZZdAst9PCeLmhK4gxhIc6ewTaGBo-2vcg/viewform"
-          >
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSei2fpCRa2_GZXVfZZdAst9PCeLmhK4gxhIc6ewTaGBo-2vcg/viewform">
             <button class="volunteer">Volunteer</button>
           </a>
         </div>
@@ -2989,11 +2136,7 @@
             <div class="progress-wrap">
               <span class="progress-badge" id="progressFill">0%</span>
               <div class="progress-track">
-                <div
-                  class="progress-bar-fill"
-                  id="progressBarFill"
-                  style="width: 0%"
-                >
+                <div class="progress-bar-fill" id="progressBarFill" style="width: 0%">
                   <span class="progress-knob"></span>
                 </div>
               </div>
@@ -3015,9 +2158,7 @@
               <div class="stat-divider"></div>
 
               <div class="stat-item">
-                <div class="stat-icon pink-bg">
-                  <i class="fas fa-hand-holding-heart"></i>
-                </div>
+                <div class="stat-icon pink-bg"><i class="fas fa-hand-holding-heart"></i></div>
                 <div class="stat-info">
                   <span class="label">Raised So Far</span>
                   <span class="value green num-font" id="raisedAmount">₹0</span>
@@ -3027,22 +2168,17 @@
               <div class="stat-divider"></div>
 
               <div class="stat-item">
-                <div class="stat-icon green-bg">
-                  <i class="fas fa-coins"></i>
-                </div>
+                <div class="stat-icon green-bg"><i class="fas fa-coins"></i></div>
                 <div class="stat-info">
                   <span class="label">Remaining</span>
-                  <span class="value red num-font" id="remainingAmount"
-                    >₹0</span
-                  >
+                  <span class="value red num-font" id="remainingAmount">₹0</span>
                 </div>
               </div>
             </div>
 
             <div class="data-source-wrap">
               <span class="data-source" id="dataSource">
-                <i class="fas fa-circle-notch fa-spin"></i> Connecting to live
-                data…
+                <i class="fas fa-circle-notch fa-spin"></i> Connecting to live data…
               </span>
             </div>
           </div>
@@ -3062,11 +2198,7 @@
               <img
                 src="assets/DiwaliCampaign_26/QrCode.jpeg"
                 alt="Scan to Donate"
-                onerror="
-                  this.style.display = 'none';
-                  this.parentElement.innerHTML =
-                    '<div style=\'font-size:3rem; text-align:center;\'>📱</div>';
-                "
+                onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:3rem; text-align:center;\'>📱</div>';"
               />
             </div>
             <div class="qr-scan-label">Scan to Donate</div>
@@ -3076,27 +2208,28 @@
               <i class="fas fa-arrow-right"></i>
             </a>
 
-            <p class="qr-secure"><i class="fas fa-lock"></i> Secure payment</p>
+            <p class="qr-secure">
+              <i class="fas fa-lock"></i> Secure payment
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 3 — Impact -->
+    <!-- SECTION 3 — Impact (UPDATED FOR 2 CARDS) -->
     <section class="impact-section">
       <span class="top-line"></span>
       <span class="bottom-line"></span>
       <div class="container">
-        <h2 data-aos="fade-up">
-          <i class="fas fa-gift"></i> What Your Donation Provides
-        </h2>
+        <h2 data-aos="fade-up"><i class="fas fa-gift"></i> What Your Donation Provides</h2>
         <p class="sub" data-aos="fade-up" data-aos-delay="50">
           Choose a combo — every contribution makes a difference
         </p>
+        
         <div class="impact-grid" id="impactGrid">
-          <div class="impact-card skeleton" style="height: 300px"></div>
-          <div class="impact-card skeleton" style="height: 300px"></div>
-          <div class="impact-card skeleton" style="height: 300px"></div>
+          <!-- Only 2 Skeleton loaders now -->
+          <div class="impact-card skeleton" style="height: 320px;"></div>
+          <div class="impact-card skeleton" style="height: 320px;"></div>
         </div>
       </div>
     </section>
@@ -3104,16 +2237,14 @@
     <!-- SECTION 4 — Donors -->
     <section class="donors-section">
       <div class="container">
-        <h2 data-aos="fade-up">
-          <i class="fas fa-crown"></i> Our Biggest Supporters This Diwali
-        </h2>
+        <h2 data-aos="fade-up"><i class="fas fa-crown"></i> Our Biggest Supporters This Diwali</h2>
         <p class="sub" data-aos="fade-up" data-aos-delay="50">
           With heartfelt gratitude to those who lit up lives
         </p>
         <div class="donor-grid" id="donorGrid">
-          <div class="donor-card skeleton" style="height: 220px"></div>
-          <div class="donor-card skeleton" style="height: 220px"></div>
-          <div class="donor-card skeleton" style="height: 220px"></div>
+          <div class="donor-card skeleton" style="height: 220px;"></div>
+          <div class="donor-card skeleton" style="height: 220px;"></div>
+          <div class="donor-card skeleton" style="height: 220px;"></div>
         </div>
       </div>
     </section>
@@ -3132,103 +2263,36 @@
               in the community through various initiatives.
             </p>
             <div class="footer-social-icons">
-              <a
-                href="https://www.instagram.com/operation.smile__/"
-                class="footer-social-icon"
-                target="_blank"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a
-                href="https://x.com/smilengo23?s=11"
-                class="footer-social-icon"
-                target="_blank"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
-                  />
+              <a href="https://www.instagram.com/operation.smile__/" class="footer-social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://x.com/smilengo23?s=11" class="footer-social-icon" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
                 </svg>
               </a>
-              <a
-                href="https://www.linkedin.com/in/operation-smile-foundation-1079993b8"
-                class="footer-social-icon"
-                target="_blank"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-              <a
-                href="https://www.youtube.com/@OperationSmilefoundation23"
-                class="footer-social-icon"
-                target="_blank"
-                ><i class="fab fa-youtube"></i
-              ></a>
+              <a href="https://www.linkedin.com/in/operation-smile-foundation-1079993b8" class="footer-social-icon" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.youtube.com/@OperationSmilefoundation23" class="footer-social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
           </div>
 
           <div class="col-md-3 mb-4">
             <h5>Quick Links</h5>
             <ul class="list-unstyled">
-              <li>
-                <a href="index.html"
-                  ><i class="fas fa-chevron-right"></i> Home</a
-                >
-              </li>
-              <li>
-                <a href="about-us.html"
-                  ><i class="fas fa-chevron-right"></i> About Us</a
-                >
-              </li>
-              <li>
-                <a href="our-initiatives.html"
-                  ><i class="fas fa-chevron-right"></i> Initiatives</a
-                >
-              </li>
-              <li>
-                <a href="donate.html"
-                  ><i class="fas fa-chevron-right"></i> Donate</a
-                >
-              </li>
-              <li>
-                <a href="contact-us.html"
-                  ><i class="fas fa-chevron-right"></i> Contact Us</a
-                >
-              </li>
+              <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+              <li><a href="about-us.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+              <li><a href="our-initiatives.html"><i class="fas fa-chevron-right"></i> Initiatives</a></li>
+              <li><a href="donate.html"><i class="fas fa-chevron-right"></i> Donate</a></li>
+              <li><a href="contact-us.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
             </ul>
           </div>
 
           <div class="col-md-3 mb-4">
             <h5>Ongoing Projects</h5>
             <ul class="list-unstyled">
-              <li>
-                <a href="project-margdarshan.html"
-                  ><i class="fas fa-chevron-right"></i> Margdarshan</a
-                >
-              </li>
-              <li>
-                <a href="project-umeed-pathshala.html"
-                  ><i class="fas fa-chevron-right"></i> Umeed Pathshala</a
-                >
-              </li>
-              <li>
-                <a href="project-khushiyon-ki-potli.html"
-                  ><i class="fas fa-chevron-right"></i> Khushiyon Ki Potli</a
-                >
-              </li>
-              <li>
-                <a href="project-anandam.html"
-                  ><i class="fas fa-chevron-right"></i> Anandam</a
-                >
-              </li>
-              <li>
-                <a href="project-cyber-rakshak.html"
-                  ><i class="fas fa-chevron-right"></i> Cyber Rakshak</a
-                >
-              </li>
+              <li><a href="project-margdarshan.html"><i class="fas fa-chevron-right"></i> Margdarshan</a></li>
+              <li><a href="project-umeed-pathshala.html"><i class="fas fa-chevron-right"></i> Umeed Pathshala</a></li>
+              <li><a href="project-khushiyon-ki-potli.html"><i class="fas fa-chevron-right"></i> Khushiyon Ki Potli</a></li>
+              <li><a href="project-anandam.html"><i class="fas fa-chevron-right"></i> Anandam</a></li>
+              <li><a href="project-cyber-rakshak.html"><i class="fas fa-chevron-right"></i> Cyber Rakshak</a></li>
             </ul>
           </div>
 
@@ -3238,9 +2302,7 @@
               <div class="contact-icon"><i class="fas fa-envelope"></i></div>
               <div class="contact-text">
                 <span>EMAIL</span>
-                <a href="mailto:operationsmile2303@gmail.com"
-                  >operationsmile2303@gmail.com</a
-                >
+                <a href="mailto:operationsmile2303@gmail.com">operationsmile2303@gmail.com</a>
               </div>
             </div>
             <div class="contact-item">
@@ -3251,15 +2313,10 @@
               </div>
             </div>
             <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
               <div class="contact-text">
                 <span>ADDRESS</span>
-                <p>
-                  B-76, F/F, DDA Colony, New Zafrabad, Near Shiv Mandir,
-                  Delhi-110032
-                </p>
+                <p>B-76, F/F, DDA Colony, New Zafrabad, Near Shiv Mandir, Delhi-110032</p>
               </div>
             </div>
           </div>
@@ -3267,8 +2324,7 @@
 
         <div class="footer-bottom">
           <p class="mb-0">
-            &copy; <span id="currentYear"></span> Operation Smile. All Rights
-            Reserved.
+            &copy; <span id="currentYear"></span> Operation Smile. All Rights Reserved.
           </p>
         </div>
       </div>
@@ -3287,52 +2343,40 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
-      const SHEET_API_URL =
-        "https://script.google.com/macros/s/AKfycbzU3H5JvLuXDYdKwrAIN2V3KClvf5HDC8JD8I6o-RG6GyNVuDuohm4ibgmOjUWiylDTFA/exec";
+      const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbzU3H5JvLuXDYdKwrAIN2V3KClvf5HDC8JD8I6o-RG6GyNVuDuohm4ibgmOjUWiylDTFA/exec";
       const CACHE_DURATION_MS = 2 * 60 * 1000;
       const DEFAULT_DONATE_URL = "https://rzp.io/rzp/fUnPwsZ";
 
-      // FALLBACK DATA IS ONLY USED IF THE LIVE API FAILS
+      // Fallback Data updated for the 2 new offers
       const FALLBACK_DATA = {
         campaign: {
           campaignYear: "Diwali 2026",
           heroTitle: "Light Up a Life",
           heroDescription:
             "Every contribution brings warmth, joy, and a smile to someone's face. Join us in making this festival of lights truly special for everyone.",
-          goal: 200000,
-          raised: 5400, // Sum of donations in screenshot
-          tagline:
-            "Your contribution brings us one step closer to lighting up their Diwali.",
-          trackerMessage:
-            "Your contribution brings us one step closer to lighting up their Diwali.",
-          ctaMessage:
-            "Donate your combo today and help us bring light into someone's life this Diwali.",
+          goal: 150000,
+          raised: 5900,
+          tagline: "Your contribution brings us one step closer to lighting up their Diwali.",
+          trackerMessage: "Your contribution brings us one step closer to lighting up their Diwali.",
+          ctaMessage: "Donate your combo today and help us bring light into someone's life this Diwali.",
           donateUrl: DEFAULT_DONATE_URL,
           upiId: "merchant1524783.augp@aubank",
         },
         impact: [
           {
             emoji: "🎁",
-            name: "Gift & Sweet",
-            price: 500,
-            count: 3, // From screenshot
-            desc: "Help us provide festive gifts and sweets to bring smiles to children this Diwali.",
+            name: "Sweet, Clothes, Gifts and Crackers",
+            price: 900,
+            count: 3,
+            desc: "For one child",
             donateUrl: DEFAULT_DONATE_URL,
           },
           {
             emoji: "👨‍🎓",
             name: "Student Combo",
-            price: 750,
-            count: 2, // From screenshot
-            desc: "Support education with a useful student combo for their brighter future.",
-            donateUrl: DEFAULT_DONATE_URL,
-          },
-          {
-            emoji: "🧣",
-            name: "Warm Shawl / Saree",
-            price: 800,
-            count: 3, // From screenshot
-            desc: "Keep families warm this Diwali with shawls and sarees for those in need.",
+            price: 1500,
+            count: 2,
+            desc: "For two child combo or sponser",
             donateUrl: DEFAULT_DONATE_URL,
           },
         ],
@@ -3342,6 +2386,7 @@
           { name: "Jagriti Singh", amount: 750, badge: "Supporter", photo: "" },
           { name: "Ranvidra", amount: 750, badge: "Supporter", photo: "" },
           { name: "Sumit Kumar", amount: 500, badge: "Supporter", photo: "" },
+          { name: "Puja Gupta", amount: 500, badge: "Supporter", photo: "" },
           { name: "Sonal Singh Rathore", amount: 300, badge: "Supporter", photo: "" },
           { name: "Aarti Yadav", amount: 100, badge: "Supporter", photo: "" },
         ],
@@ -3431,35 +2476,15 @@
       function getDonorTier(amount) {
         const amt = Number(amount) || 0;
         if (amt >= 20000) {
-          return {
-            key: "platinum",
-            label: "Platinum Donor",
-            shortLabel: "Platinum",
-            icon: "fa-gem",
-          };
+          return { key: "platinum", label: "Platinum Donor", shortLabel: "Platinum", icon: "fa-gem" };
         }
         if (amt >= 10000) {
-          return {
-            key: "gold",
-            label: "Gold Donor",
-            shortLabel: "Gold",
-            icon: "fa-crown",
-          };
+          return { key: "gold", label: "Gold Donor", shortLabel: "Gold", icon: "fa-crown" };
         }
         if (amt >= 5000) {
-          return {
-            key: "silver",
-            label: "Silver Donor",
-            shortLabel: "Silver",
-            icon: "fa-medal",
-          };
+          return { key: "silver", label: "Silver Donor", shortLabel: "Silver", icon: "fa-medal" };
         }
-        return {
-          key: "supporter",
-          label: "Supporter",
-          shortLabel: "Supporter",
-          icon: "fa-heart",
-        };
+        return { key: "supporter", label: "Supporter", shortLabel: "Supporter", icon: "fa-heart" };
       }
 
       /* ============================================================
@@ -3471,12 +2496,7 @@
 
       async function fetchCampaignData(forceRefresh = false, retryAttempt = 0) {
         const now = Date.now();
-        if (
-          !forceRefresh &&
-          _dataCache &&
-          now - _dataCacheTime < CACHE_DURATION_MS
-        )
-          return _dataCache;
+        if (!forceRefresh && _dataCache && now - _dataCacheTime < CACHE_DURATION_MS) return _dataCache;
         if (_fetchPromise) return _fetchPromise;
 
         setDataSourceStatus("loading", retryAttempt > 0 ? "Retrying connection…" : "Connecting to live data…");
@@ -3497,16 +2517,13 @@
             if (data && data.error) throw new Error(data.error);
             _dataCache = data;
             _dataCacheTime = Date.now();
-            setDataSourceStatus(
-              "live",
-              "Live · " + new Date().toLocaleTimeString(),
-            );
+            setDataSourceStatus("live", "Live · " + new Date().toLocaleTimeString());
             return data;
           } catch (err) {
             if (err.name === 'AbortError') {
               console.warn("⚠️ Sheets fetch timed out.");
               if (retryAttempt < 1) {
-                _fetchPromise = null; // Reset promise so we can retry
+                _fetchPromise = null;
                 return fetchCampaignData(forceRefresh, retryAttempt + 1);
               }
             } else {
@@ -3537,8 +2554,7 @@
         el2.classList.remove("skeleton");
         el1.textContent = campaign.campaignYear || "Diwali 2026";
         el2.textContent = campaign.heroTitle || "Light Up a Life";
-        document.getElementById("heroDescription").textContent =
-          campaign.heroDescription || "";
+        document.getElementById("heroDescription").textContent = campaign.heroDescription || "";
       }
 
       function renderGoalTracker(campaign) {
@@ -3555,14 +2571,7 @@
         const progressBadge = document.getElementById("progressFill");
         const progressBarFill = document.getElementById("progressBarFill");
 
-        [
-          goalLabelEl,
-          goalAmountEl,
-          raisedAmountEl,
-          remainingAmountEl,
-          qrPanelAmountEl,
-          progressBadge,
-        ].forEach((el) => {
+        [goalLabelEl, goalAmountEl, raisedAmountEl, remainingAmountEl, qrPanelAmountEl, progressBadge].forEach(el => {
           if (el) el.classList.remove("skeleton");
         });
 
@@ -3570,15 +2579,10 @@
         animateValue(raisedAmountEl, raised, { duration: 1800 });
         animateValue(remainingAmountEl, remaining, { duration: 1800 });
         animateValue(qrPanelAmountEl, remaining, { duration: 1800 });
-        animateValue(goalLabelEl, goal, {
-          duration: 1800,
-          formatter: (v) => "₹" + v.toLocaleString("en-IN"),
-        });
+        animateValue(goalLabelEl, goal, { duration: 1800, formatter: (v) => "₹" + v.toLocaleString("en-IN") });
         animatePercent(progressBadge, percentage, 1800);
 
         if (progressBarFill) {
-          // Using double requestAnimationFrame ensures the browser registers the 0% state
-          // before applying the new percentage, ensuring smooth animation
           progressBarFill.style.width = "0%";
           requestAnimationFrame(() => {
             requestAnimationFrame(() => {
@@ -3587,8 +2591,7 @@
           });
         }
 
-        document.getElementById("trackerTagline").textContent =
-          campaign.tagline || "";
+        document.getElementById("trackerTagline").textContent = campaign.tagline || "";
       }
 
       function renderImpact(impactItems) {
@@ -3599,23 +2602,10 @@
           return;
         }
 
-        const descMap = {
-          "Student Combo":
-            "Support education with a useful student combo for their brighter future.",
-          "Warm Shawl / Saree":
-            "Keep families warm this Diwali with shawls and sarees for those in need.",
-          "Gift & Sweet":
-            "Help us provide festive gifts and sweets to bring smiles to children this Diwali.",
-        };
-
         grid.innerHTML = items
           .map((item, i) => {
-            const desc =
-              item.desc ||
-              descMap[item.name] ||
-              "Every contribution makes a difference.";
             const donateUrl = item.donateUrl || DEFAULT_DONATE_URL;
-            const count = Number(item.count) || 0; // Get the count from sheet
+            const count = Number(item.count) || 0;
 
             return `
           <div class="impact-card" data-aos="zoom-in" data-aos-delay="${100 + i * 100}">
@@ -3632,7 +2622,7 @@
               </span>
             </div>
 
-            <p class="item-desc">${desc}</p>
+            <p class="item-desc">${item.desc || "Every contribution makes a difference."}</p>
             <a href="${donateUrl}" target="_blank" rel="noopener noreferrer" class="impact-donate-btn" aria-label="Donate ${item.name || 'combo'}">
               <i class="fas fa-heart"></i> Donate Now
             </a>
@@ -3651,11 +2641,9 @@
       }
 
       function renderCTA(campaign) {
-        document.getElementById("donateNowBtn").href =
-          campaign.donateUrl || DEFAULT_DONATE_URL;
+        document.getElementById("donateNowBtn").href = campaign.donateUrl || DEFAULT_DONATE_URL;
       }
 
-      // ✨ FIXED: Clean data, sort properly, and avoid NaN/₹0 issues
       function renderDonors(donors) {
         const grid = document.getElementById("donorGrid");
         
@@ -3673,31 +2661,19 @@
           return;
         }
 
-        const palette = [
-          "f39c12",
-          "e67e22",
-          "27ae60",
-          "c0392b",
-          "8e44ad",
-          "2980b9",
-        ];
+        const palette = ["f39c12", "e67e22", "27ae60", "c0392b", "8e44ad", "2980b9"];
 
         // 2. SORT: Now that amounts are clean numbers, sort from highest to lowest
-        const sortedList = [...list].sort(
-          (a, b) => b.amount - a.amount
-        );
+        const sortedList = [...list].sort((a, b) => b.amount - a.amount);
 
         // 3. RENDER: Draw the cards
         grid.innerHTML = sortedList
           .map((donor, i) => {
             const amount = donor.amount;
             const tier = getDonorTier(amount);
-
             const bg = palette[i % palette.length];
             const photo = (donor.photo || "").trim();
-            const avatarUrl = photo
-              ? photo
-              : `https://ui-avatars.com/api/?name=${encodeURIComponent(donor.name || "Donor")}&background=${bg}&color=fff&size=80&bold=true`;
+            const avatarUrl = photo ? photo : `https://ui-avatars.com/api/?name=${encodeURIComponent(donor.name || "Donor")}&background=${bg}&color=fff&size=80&bold=true`;
 
             return `
               <div class="donor-card tier-${tier.key}" data-aos="fade-up" data-aos-delay="${100 + i * 50}">
@@ -3732,13 +2708,7 @@
       }
 
       document.addEventListener("DOMContentLoaded", function () {
-        // 1. Initialize AOS and UI elements
-        AOS.init({
-          duration: 800,
-          once: true,
-          offset: 100,
-          easing: "ease-in-out",
-        });
+        AOS.init({ duration: 800, once: true, offset: 100, easing: "ease-in-out" });
 
         window.addEventListener("scroll", function () {
           const header = document.querySelector(".navbar-custom");
@@ -3746,16 +2716,11 @@
           else header.classList.remove("scrolled");
         });
 
-        document.getElementById("currentYear").textContent =
-          new Date().getFullYear();
-
-        // 2. Fetch Data
-        // REMOVED: Initial rendering of FALLBACK_DATA.
-        // This prevents the amount getting stuck at 3000 and then jumping.
-        // The skeleton loaders will stay visible until the fetch is complete.
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+        
+        // Fetch Data (keeps skeleton loaders until done)
         refreshAll(false);
-
-        // 3. Set up auto-refresh
+        
         setInterval(() => refreshAll(true), 2 * 60 * 1000);
         document.addEventListener("visibilitychange", function () {
           if (!document.hidden) refreshAll(false);
