@@ -21,6 +21,8 @@
     <link rel="icon" type="image/png" href="assets/fevicon.png" />
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- HEIC to JPEG Converter -->
+    <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800;900&family=Caveat:wght@400;500;600;700&display=swap"
@@ -1034,6 +1036,8 @@
         display: block;
         transition: transform 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         border-radius: 10px;
+        min-width: 40%;
+        min-height: 40%;
       }
 
       .carousel-slide .slide-item:hover {
@@ -1076,6 +1080,48 @@
         align-items: center;
         gap: 6px;
         justify-content: center;
+      }
+
+      /* --- Broken / loading image placeholders --- */
+      .slide-item-broken img {
+        visibility: hidden;
+      }
+
+      .slide-item-broken::after {
+        content: "🖼️ HEIC format not supported by browser. Please convert this file to a standard JPEG.";
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #b9a48f;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        text-align: center;
+        padding: 15px;
+        background: repeating-linear-gradient(
+          45deg,
+          #fdf6ec,
+          #fdf6ec 10px,
+          #f9eeda 10px,
+          #f9eeda 20px
+        );
+        border-radius: 20px;
+      }
+
+      .slide-item-loading {
+        animation: softPulse 1.6s ease-in-out infinite;
+      }
+
+      @keyframes softPulse {
+        0%,
+        100% {
+          background-color: #ffffff;
+        }
+        50% {
+          background-color: #fdf3e3;
+        }
       }
 
       .carousel-btn {
@@ -1995,16 +2041,24 @@
         }
       });
 
-      // ============================================================
-      // GALLERY CATEGORIES (Replaced Emojis with Aesthetic FontAwesome Icons)
-      // ============================================================
+      /* ============================================================
+         GALLERY CATEGORIES
+         ============================================================ */
       const categories = [
+        {
+          name: "Diwali 2026",
+          folder: "Diwali Campaign 2026",
+          icon: '<i class="fas fa-fire"></i>',
+          description:
+            "Illuminating lives with joy, warmth, and the spirit of giving this festive season.",
+          color: "#d35400",
+        },
         {
           name: "Kanya Pujan 2026",
           folder: "Kanya Pujan 2026",
           icon: '<i class="fas fa-hands-holding-child"></i>',
           description: "Celebrating the divine spirit of young girls",
-          color: "#9b59b6", // Elegant Purple
+          color: "#9b59b6",
         },
         {
           name: "News Cover",
@@ -2195,13 +2249,16 @@
 
       const carouselTimers = [];
 
+      /* ============================================================
+         MANIFEST + CACHE (fallback detection)
+         ============================================================ */
       async function loadFromManifest() {
         try {
-          const response = await fetch(manifestPath);
+          const response = await fetch(manifestPath, { cache: "no-cache" });
           if (!response.ok) throw new Error("Manifest not found");
           return await response.json();
         } catch (e) {
-          console.warn("Manifest not found, using fallback method");
+          console.warn("Manifest not found, using fallback detection");
           return null;
         }
       }
@@ -2214,8 +2271,7 @@
           const cached = localStorage.getItem("gallery_cache");
           if (cached) {
             const data = JSON.parse(cached);
-            const now = Date.now();
-            if (now - data.timestamp < 86400000) {
+            if (Date.now() - data.timestamp < 86400000) {
               detectedCache = data.images || {};
               return true;
             }
@@ -2228,28 +2284,49 @@
         try {
           localStorage.setItem(
             "gallery_cache",
-            JSON.stringify({
-              timestamp: Date.now(),
-              images: detectedCache,
-            }),
+            JSON.stringify({ timestamp: Date.now(), images: detectedCache }),
           );
         } catch (e) {}
       }
 
+      function probeImage(url, timeout = 4000) {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          let settled = false;
+          const timer = setTimeout(() => {
+            if (settled) return;
+            settled = true;
+            img.src = "";
+            reject(new Error("timeout"));
+          }, timeout);
+          img.onload = () => {
+            if (settled) return;
+            settled = true;
+            clearTimeout(timer);
+            // Ensure the image actually decoded and has dimensions
+            if (img.naturalWidth === 0) {
+              reject(new Error("empty"));
+            } else {
+              resolve(url);
+            }
+          };
+          img.onerror = () => {
+            if (settled) return;
+            settled = true;
+            clearTimeout(timer);
+            reject(new Error("error"));
+          };
+          img.src = url;
+        });
+      }
+
       async function detectImageExtensionCached(folderPath, imageName) {
         const cacheKey = `${folderPath}${imageName}`;
-        if (detectedCache[cacheKey]) return detectedCache[cacheKey];
+        if (detectedCache[cacheKey] !== undefined) return detectedCache[cacheKey];
 
         for (const ext of imageExtensions) {
-          const img = new Image();
-          const url = `${folderPath}${imageName}.${ext}`;
-          img.src = url;
           try {
-            await new Promise((resolve, reject) => {
-              img.onload = () => resolve(url);
-              img.onerror = () => reject();
-              setTimeout(reject, 500);
-            });
+            await probeImage(`${folderPath}${imageName}.${ext}`);
             detectedCache[cacheKey] = ext;
             saveCache();
             return ext;
@@ -2258,35 +2335,212 @@
           }
         }
         detectedCache[cacheKey] = null;
+        saveCache();
         return null;
       }
 
-      async function loadCategoryImagesCached(folderPath, maxImages = 30) {
+      async function loadCategoryImagesCached(folderPath, maxImages = 60) {
         const foundImages = [];
+        let misses = 0;
         for (let i = 1; i <= maxImages; i++) {
           const ext = await detectImageExtensionCached(folderPath, i);
-          if (ext) foundImages.push(`${i}.${ext}`);
-          if (i > 5 && foundImages.length > 0) {
-            let missingCount = 0;
-            for (let j = i - 4; j <= i; j++) {
-              const checkExt = await detectImageExtensionCached(folderPath, j);
-              if (!checkExt) missingCount++;
-            }
-            if (missingCount >= 4) break;
+          if (ext) {
+            foundImages.push(`${i}.${ext}`);
+            misses = 0;
+          } else {
+            misses++;
+            if (foundImages.length > 0 && misses >= 6) break;
           }
         }
         return foundImages;
       }
 
-      function createCarousel(images, categoryName) {
+      /* ============================================================
+         IMAGE REPAIR ENGINE
+         ============================================================ */
+      const EXT_CANDIDATES = [
+        "jpg",
+        "JPG",
+        "jpeg",
+        "JPEG",
+        "png",
+        "PNG",
+        "webp",
+        "WEBP",
+        "heic",
+        "HEIC",
+        "heif",
+        "HEIF",
+      ];
+
+      function buildCandidateUrls(folder, name, declaredExt) {
+        const exts = [];
+        const push = (e) => {
+          if (e && !exts.includes(e)) exts.push(e);
+        };
+        push(declaredExt);
+        push((declaredExt || "").toLowerCase());
+        push((declaredExt || "").toUpperCase());
+        EXT_CANDIDATES.forEach(push);
+        return exts.map((e) => `${basePath}${folder}/${name}.${e}`);
+      }
+
+      async function isHeicBlob(blob) {
+        try {
+          const buf = await blob.slice(0, 16).arrayBuffer();
+          const b = new Uint8Array(buf);
+          // ftyp box: [size:4][ftyp:4][majorBrand:4][minorVersion:4][compat...]
+          if (
+            b[4] !== 0x66 || // f
+            b[5] !== 0x74 || // t
+            b[6] !== 0x79 || // y
+            b[7] !== 0x70 //   p
+          )
+            return false;
+          const major = String.fromCharCode(b[8], b[9], b[10], b[11]);
+          const known = [
+            "heic",
+            "heix",
+            "hevc",
+            "hevx",
+            "heim",
+            "heis",
+            "hevm",
+            "hevs",
+            "mif1",
+            "msf1",
+          ];
+          return known.includes(major);
+        } catch (e) {
+          return false;
+        }
+      }
+
+      async function convertHeicBlobToUrl(blob) {
+        try {
+          const out = await heic2any({
+            blob: blob,
+            toType: "image/jpeg",
+            quality: 0.88,
+            multiple: true, // Handles Live Photos / Multi-image HEICs
+          });
+          const jpeg = Array.isArray(out) ? out[0] : out;
+          return URL.createObjectURL(jpeg);
+        } catch (e) {
+          console.error(
+            "[gallery] HEIC conversion failed. The file uses an advanced HEVC profile (like 10-bit HDR) that heic2any cannot decode.",
+            e,
+          );
+          throw e;
+        }
+      }
+
+      function markBroken(el) {
+        const item = el.closest(".slide-item");
+        if (item) item.classList.add("slide-item-broken");
+        el.classList.remove("slide-item-loading");
+      }
+
+      function markResolved(el) {
+        el.dataset.repaired = "1";
+        el.dataset.repairing = "0";
+        const item = el.closest(".slide-item");
+        if (item) {
+          item.classList.remove("slide-item-broken");
+          item.classList.remove("slide-item-loading");
+        }
+      }
+
+      window.repairImage = async function (el) {
+        if (!el) return;
+        if (el.dataset.repairing === "1" || el.dataset.repaired === "1") return;
+        el.dataset.repairing = "1";
+
+        const item = el.closest(".slide-item");
+        if (item) item.classList.add("slide-item-loading");
+
+        const folder = el.dataset.folder || "";
+        const name = el.dataset.name || "";
+        const declaredExt = el.dataset.declaredExt || "jpg";
+
+        if (!folder || !name) {
+          markBroken(el);
+          el.dataset.repairing = "0";
+          return;
+        }
+
+        const candidates = buildCandidateUrls(folder, name, declaredExt);
+
+        /* --- 1) Try each candidate as a native image --- */
+        for (const url of candidates) {
+          try {
+            await probeImage(url, 4000);
+            el.src = url;
+            markResolved(el);
+            return;
+          } catch (e) {
+            /* try next */
+          }
+        }
+
+        /* --- 2) Try each candidate as a HEIC blob and convert --- */
+        if (typeof heic2any !== "undefined") {
+          for (const url of candidates) {
+            try {
+              const res = await fetch(url, { cache: "force-cache" });
+              if (!res.ok) continue;
+              const blob = await res.blob();
+              if (!(await isHeicBlob(blob))) continue;
+
+              const objUrl = await convertHeicBlobToUrl(blob);
+              el.src = objUrl;
+              markResolved(el);
+              el.addEventListener(
+                "load",
+                () => {
+                  try {
+                    URL.revokeObjectURL(objUrl);
+                  } catch (e) {}
+                },
+                { once: true },
+              );
+              return;
+            } catch (e) {
+              console.warn(
+                `[gallery] Failed to process ${url}. This is likely a 10-bit HEIC or Live Photo that cannot be converted in the browser. Please use a desktop tool to convert it to a standard JPEG.`,
+                e,
+              );
+            }
+          }
+        }
+
+        /* --- 3) Nothing worked --- */
+        console.warn("[gallery] Could not resolve image:", folder, name);
+        markBroken(el);
+        el.dataset.repairing = "0";
+      };
+
+      /* ============================================================
+         CAROUSEL BUILDER
+         ============================================================ */
+      function escapeAttr(str) {
+        return String(str)
+          .replace(/&/g, "&amp;")
+          .replace(/"/g, "&quot;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+      }
+
+      function createCarousel(images, folder) {
         const itemsPerSlide = 3;
         const slides = [];
         for (let i = 0; i < images.length; i += itemsPerSlide) {
           slides.push(images.slice(i, i + itemsPerSlide));
         }
 
-        const trackId = `track-${categoryName.replace(/\s+/g, "-")}`;
-        const dotId = `dots-${categoryName.replace(/\s+/g, "-")}`;
+        const slug = folder.replace(/[^a-zA-Z0-9]+/g, "-");
+        const trackId = `track-${slug}`;
+        const dotId = `dots-${slug}`;
 
         let html = `
         <div class="carousel-container" data-track-id="${trackId}" data-dot-id="${dotId}" data-total-slides="${slides.length}">
@@ -2296,13 +2550,24 @@
         slides.forEach((slide, index) => {
           html += `<div class="carousel-slide" data-index="${index}">`;
           slide.forEach((img) => {
-            const imgPath = `${basePath}${categoryName}/${img}`;
-            const imgName = img.split(".")[0];
+            const imgName = img.replace(/\.[^.]+$/, "");
+            const ext = img.split(".").pop();
+            const initialSrc = `${basePath}${folder}/${img}`;
+
             html += `
             <div class="slide-item">
-              <img src="${imgPath}" alt="${categoryName} - Image ${imgName}" loading="lazy" />
+              <img
+                src="${escapeAttr(initialSrc)}"
+                alt="${escapeAttr(folder)} - Image ${escapeAttr(imgName)}"
+                loading="lazy"
+                decoding="async"
+                data-folder="${escapeAttr(folder)}"
+                data-name="${escapeAttr(imgName)}"
+                data-declared-ext="${escapeAttr(ext)}"
+                onerror="window.repairImage && window.repairImage(this)"
+              />
               <div class="slide-overlay">
-                <span><i class="fas fa-image"></i> ${categoryName} · ${imgName}</span>
+                <span><i class="fas fa-image"></i> ${escapeAttr(folder)} · ${escapeAttr(imgName)}</span>
               </div>
             </div>
           `;
@@ -2400,7 +2665,7 @@
         const timer = setInterval(() => {
           const currentIndex = parseInt(track.dataset.currentIndex || 0);
           const totalSlides = slides.length;
-          let newIndex = (currentIndex + 1) % totalSlides;
+          const newIndex = (currentIndex + 1) % totalSlides;
 
           track.style.transform = `translateX(-${newIndex * 100}%)`;
           track.dataset.currentIndex = newIndex;
@@ -2428,6 +2693,9 @@
         });
       }
 
+      /* ============================================================
+         RENDER
+         ============================================================ */
       function renderGalleryFromData(categoryImages) {
         let html = "";
         let hasImages = false;
@@ -2473,13 +2741,13 @@
       async function renderGallery() {
         loadingIndicator.style.display = "flex";
         const manifest = await loadFromManifest();
-        let categoryImages = {};
+        const categoryImages = {};
 
         if (manifest && manifest.categories) {
           console.log("✅ Using manifest data for instant loading");
-          categoryImages = manifest.categories;
-          renderGalleryFromData(categoryImages);
+          Object.assign(categoryImages, manifest.categories);
           loadingIndicator.style.display = "none";
+          renderGalleryFromData(categoryImages);
           return;
         }
 
